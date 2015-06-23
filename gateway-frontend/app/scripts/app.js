@@ -161,9 +161,13 @@ angular
        templateUrl:'views/ui-elements/grid.html',
        url:'/grid'
    })
-	.state('dashboard.sensorTable',{
-       templateUrl:'views/ui-elements/sensorTable.html',
-       url:'/sensorTable'
+	.state('dashboard.sensorListTable',{
+       templateUrl:'views/ui-elements/sensorListTable.html',
+       url:'/sensorListTable'
+   })
+    .state('dashboard.customizeCloud',{
+       templateUrl:'views/ui-elements/customizeCloud.html',
+       url:'/customizeCloud'
    })
   }]);
 
