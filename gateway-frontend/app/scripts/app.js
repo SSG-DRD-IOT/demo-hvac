@@ -173,6 +173,10 @@ angular
        templateUrl:'views/ui-elements/actuatorListTable.html',
        url:'/actuatorListTable'
    })
+     .state('dashboard.triggerListTable',{
+       templateUrl:'views/ui-elements/triggerListTable.html',
+       url:'/triggerListTable'
+   })
   }]);
 
     
