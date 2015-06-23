@@ -161,6 +161,10 @@ angular
        templateUrl:'views/ui-elements/grid.html',
        url:'/grid'
    })
+	.state('dashboard.sensorTable',{
+       templateUrl:'views/ui-elements/sensorTable.html',
+       url:'/sensorTable'
+   })
   }]);
 
     
