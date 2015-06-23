@@ -169,6 +169,10 @@ angular
        templateUrl:'views/ui-elements/customizeCloud.html',
        url:'/customizeCloud'
    })
+    .state('dashboard.actuatorListTable',{
+       templateUrl:'views/ui-elements/actuatorListTable.html',
+       url:'/actuatorListTable'
+   })
   }]);
 
     
