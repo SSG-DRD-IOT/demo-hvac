@@ -177,6 +177,14 @@ angular
        templateUrl:'views/ui-elements/triggerListTable.html',
        url:'/triggerListTable'
    })
+     .state('dashboard.addTrigger',{
+       templateUrl:'views/ui-elements/addTrigger.html',
+       url:'/addTrigger'
+   })
+     .state('dashboard.deleteTrigger',{
+       templateUrl:'views/ui-elements/deleteTrigger.html',
+       url:'/deleteTrigger'
+   })
   }]);
 
     
