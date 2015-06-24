@@ -1,0 +1,6 @@
+CREATE TABLE "actuators" ("id" VARCHAR PRIMARY KEY  NOT NULL  UNIQUE , "name" VARCHAR NOT NULL , "description" VARCHAR, "api" TEXT, "pin" INTEGER NOT NULL , "ioType" VARCHAR NOT NULL , "active" BOOL NOT NULL );
+CREATE TABLE "cloudproviders" ("id" INTEGER PRIMARY KEY  NOT NULL , "name" VARCHAR NOT NULL );
+CREATE TABLE "sensor_clouds" ("id" INTEGER PRIMARY KEY  NOT NULL , "sensor_id" INTEGER NOT NULL , "cloudprovider_id" INTEGER NOT NULL );
+CREATE TABLE "sensors" ("id" VARCHAR PRIMARY KEY  NOT NULL  UNIQUE , "name" VARCHAR NOT NULL , "description" VARCHAR, "maxfrequency" INTEGER NOT NULL  DEFAULT 1000, "frequency" INTEGER NOT NULL  DEFAULT 1000, "active" BOOL NOT NULL  DEFAULT true, "ioType" VARCHAR);
+CREATE TABLE "triggers" ("id" VARCHAR PRIMARY KEY  NOT NULL , "name" VARCHAR NOT NULL , "sensor_id" INTEGER NOT NULL , "actuactor_id" INTEGER NOT NULL , "condition" TEXT NOT NULL , "triggerFunc" TEXT NOT NULL , "active" BOOL NOT NULL  DEFAULT true);
+CREATE TABLE "values" ("id" INTEGER PRIMARY KEY  NOT NULL , "sensor_id" INTEGER NOT NULL , "value" INTEGER NOT NULL , "timestamp" DATETIME NOT NULL  DEFAULT CURRENT_TIMESTAMP);
