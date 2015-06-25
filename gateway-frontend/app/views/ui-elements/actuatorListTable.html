@@ -17,23 +17,27 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                                <th>Actuator Name</th>
-                                <th>Actator Id</th>
-                                <th>Last Trigger</th>
+                                <th>Actuator Id</th>
+                                <th>Actator Name</th>
+                                <th>Description</th>
+								<th>Actuator Api</th>
+                                <th>Actator Pin</th>
+                                <th>Actuator IO ype</th>
+								<th>Actuator Active</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="odd gradeX">
-                                <td>Trident</td>
-                                <td>Win 95+</td>
-                                <td class="center">4</td>
-                                
-                            </tr>
-                            <tr class="gradeU">
-                                <td>Other browsers</td>
-                                <td>-</td>
-                                <td class="center">-</td>
-                            </tr>
+                        <tbody>	
+                         
+									<tr ng:repeat="actuator in actuators">
+									 <td>{{actuator.id}}</td>
+									  <td>{{actuator.name}}</td>
+									   <td>{{actuator.description}}</td>
+									    <td>{{actuator.api}}</td>
+										 <td>{{actuator.pin}}</td>
+										  <td>{{actuator.ioType}}</td>
+										 <td>{{actuator.active}}</td>
+									</tr>
+	
                         </tbody>
                     </table>
                 </div>

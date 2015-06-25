@@ -171,7 +171,16 @@ angular
    })
     .state('dashboard.actuatorListTable',{
        templateUrl:'views/ui-elements/actuatorListTable.html',
-       url:'/actuatorListTable'
+       url:'/actuatorListTable',
+       controller:'TableCtrl',
+       resolve: {
+          loadMyFile:function($ocLazyLoad) {
+            $ocLazyLoad.load({
+                name:'sbAdminApp',
+                files:['scripts/controllers/table.js']
+            })
+          }
+        }
    })
      .state('dashboard.triggerListTable',{
        templateUrl:'views/ui-elements/triggerListTable.html',

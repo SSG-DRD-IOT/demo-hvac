@@ -1,0 +1,13 @@
+{
+  "name": "sb-admin",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/start-angular/sb-admin-angular"
+  },
+  "dependencies": {
+    "express": "^4.13.0",
+	"sqlite3": "*",
+	"cors": "*"
+  }
+}
