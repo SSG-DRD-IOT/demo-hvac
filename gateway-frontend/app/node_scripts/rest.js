@@ -20,6 +20,43 @@ restapi.get('/listActuator', function(req, res){
     });
 });
  
+ restapi.get('/listSensor', function(req, res){
+    db.all("SELECT * FROM sensors", function(err, rows){
+        res.json(rows);
+    });
+});
+ 
+ 
+ restapi.get('/listTrigger', function(req, res){
+    db.all("SELECT * FROM triggers", function(err, rows){
+        res.json(rows);
+    });
+});
+ 
+ restapi.get('/listTrigger', function(req, res){
+    db.all("SELECT * FROM triggers", function(err, rows){
+        res.json(rows);
+    });ss
+});
+ 
+ restapi.get('/noOfSensor', function(req, res){
+    db.all("SELECT COUNT(*) FROM sensors WHERE active='true'", function(err, rows){
+        res.json(rows[0]["COUNT(*)"]);
+    });
+});
+ 
+  restapi.get('/noOfActuator', function(req, res){
+    db.all("SELECT COUNT(*) FROM actuators WHERE active='true'", function(err, rows){
+        res.json(rows[0]["COUNT(*)"]);
+    });
+});
+ 
+  restapi.get('/noOfTrigger', function(req, res){
+    db.all("SELECT COUNT(*) FROM triggers WHERE active='true'", function(err, rows){
+        res.json(rows[0]["COUNT(*)"]);
+    });
+});
+ 
 restapi.post('/data', function(req, res){
     db.run("UPDATE counts SET value = value + 1 WHERE key = ?", "counter", function(err, row){
         if (err){

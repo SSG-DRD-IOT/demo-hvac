@@ -19,24 +19,25 @@
                             <tr>
                                 <th>Sensor Name</th>
                                 <th>Sensor Id</th>
-                                <th>Current Reading</th>
-                                <th>Last activity</th>
+                                <th>Description</th>
+								<th>Max Frequency</th>
+								<th>Frequency</th>
+								<th>Active</th>
+								<th>IO Type</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="odd gradeX">
-                                <td>Trident</td>
-                                <td>Internet Explorer 4.0</td>
-                                <td>Win 95+</td>
-                                <td class="center">4</td>
-                                
-                            </tr>
-                            <tr class="gradeU">
-                                <td>Other browsers</td>
-                                <td>All others</td>
-                                <td>-</td>
-                                <td class="center">-</td>
-                            </tr>
+                       <tbody>	
+                         
+									<tr ng:repeat="sensor in sensors">
+									 <td>{{sensor.id}}</td>
+									  <td>{{sensor.name}}</td>
+									   <td>{{sensor.description}}</td>
+									    <td>{{sensor.maxfrequency}}</td>
+										 <td>{{sensor.frequency}}</td>
+										  <td>{{sensor.ioType}}</td>
+										 <td>{{sensor.active}}</td>
+									</tr>
+	
                         </tbody>
                     </table>
                 </div>

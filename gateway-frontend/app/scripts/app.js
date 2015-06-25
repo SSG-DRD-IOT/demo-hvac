@@ -163,7 +163,17 @@ angular
    })
 	.state('dashboard.sensorListTable',{
        templateUrl:'views/ui-elements/sensorListTable.html',
-       url:'/sensorListTable'
+       url:'/sensorListTable',
+        controller:'TableCtrl',
+       resolve: {
+          loadMyFile:function($ocLazyLoad) {
+            $ocLazyLoad.load({
+                name:'sbAdminApp',
+                files:['scripts/controllers/table.js']
+            })
+          }
+        }
+       
    })
     .state('dashboard.customizeCloud',{
        templateUrl:'views/ui-elements/customizeCloud.html',
@@ -184,7 +194,16 @@ angular
    })
      .state('dashboard.triggerListTable',{
        templateUrl:'views/ui-elements/triggerListTable.html',
-       url:'/triggerListTable'
+       url:'/triggerListTable',
+        controller:'TableCtrl',
+       resolve: {
+          loadMyFile:function($ocLazyLoad) {
+            $ocLazyLoad.load({
+                name:'sbAdminApp',
+                files:['scripts/controllers/table.js']
+            })
+          }
+        }
    })
      .state('dashboard.addTrigger',{
        templateUrl:'views/ui-elements/addTrigger.html',

@@ -13,5 +13,10 @@ angular.module('sbAdminApp')
          $http.get('http://localhost:3000/listActuator').success(function(data,satus) {
             $scope.actuators = data;
      });
-
+         $http.get('http://localhost:3000/listSensor').success(function(data,satus) {
+            $scope.sensors = data;
+     });
+         $http.get('http://localhost:3000/listTrigger').success(function(data,satus) {
+            $scope.triggers = data;
+     });
 }]);
