@@ -17,39 +17,32 @@
                         <form role="form">
                             <div class="form-group">
                                 <label>Enter Trigger Name</label>
-                                <input class="form-control" placeholder="Enter name of Trigger">
+                                <input class="form-control" placeholder="Enter name of Trigger" ng-model = "form.triggerName" required>
                             </div>
                              <div class="form-group">
                                 <label>Select Sensor</label>
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <select class="form-control" ng-model = "form.sensor">
+                                <option ng-repeat="sensor in sensors" value="{{sensor.id}}">{{sensor.name}}</option>
+								</select>
                             </div>                            
                             
                             <div class="form-group">
                                 <label>Enter Condition</label>
-                                <input class="form-control">
+                                <input class="form-control" ng-model = "form.conditions" required>
                                 <p class="help-block">&lt;condition&gt;&lt;space&gt;&lt;value&gt; Example, >= 50 </p>
                             </div>
                             
                             <div class="form-group">
                                 <label>Select Actuator</label>
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                                <select class="form-control" ng-model = "form.actuator">
+                                <option ng-repeat="actuator in actuators" value="{{actuator.id}}">{{actuator.name}}</option>
+								</select>
                             </div>        
                             
                             <div class="form-group">
                                 <label>Select Function</label>
-                                <select class="form-control">
+                                <select class="form-control" ng-model = "form.control" required>
+									
                                     <option>ON</option>
                                     <option>OFF</option>
                                 </select>
@@ -57,12 +50,12 @@
                             
                             
                         <div class="form-group">
-                            <button type="button" class="btn btn-outline btn-primary btn-lg" id="text-center">Save</button>
+                            <button type="submit" ng-click="saveData(form)" class="btn btn-outline btn-primary btn-lg" id="text-center">Save</button>
                          </div>
 				
                             
                         </form>
-                        
+            
                      </div>
                </div>
                 <!-- /.row -->            

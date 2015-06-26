@@ -26,22 +26,19 @@
 								<th>Delete</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="odd gradeX">
-                                <td>Trident</td>
-                                <td>Win 95+</td>
-                                <td class="center">4</td>
-								<td>Other browsers</td>
-                                <td>-</td>
-                                <td class="center">-</td>
-								<td>
-                                        <input type="button" value="Delete" class="btn btn-primary"/>
+                        <tbody>	
+                         
+									<tr ng:repeat="trigger in triggers">
+									 <td>{{trigger.name}}</td>
+									  <td>{{trigger.id}}</td>
+									   <td>{{trigger.sensor_id}}</td>
+									    <td>{{trigger.actuator_id}}</td>
+										 <td>{{trigger.condition}}</td>
+										 <td>{{trigger.triggerFunc}}</td>
+										 <td>
+                                <input type="button" value="Delete" class="btn btn-primary" ng-click="removeRow(trigger.id)"/>
                                 </td>
-                                
-                            </tr>
-                            <tr class="gradeU">
-                                
-                            </tr>
+									</tr>
                         </tbody>
                     </table>
                 </div>

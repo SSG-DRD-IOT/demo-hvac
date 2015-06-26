@@ -95,7 +95,8 @@ angular
               'scripts/directives/notifications/notifications.js',
               'scripts/directives/chat/chat.js',
               'scripts/directives/dashboard/stats/stats.js',
-			  'scripts/controllers/chartContoller.js'
+			  'scripts/controllers/chartContoller.js',
+              'scripts/controllers/table.js'
               ]
             })
           }
@@ -207,11 +208,29 @@ angular
    })
      .state('dashboard.addTrigger',{
        templateUrl:'views/ui-elements/addTrigger.html',
-       url:'/addTrigger'
+       url:'/addTrigger',
+        controller:'TableCtrl',
+       resolve: {
+          loadMyFile:function($ocLazyLoad) {
+            $ocLazyLoad.load({
+                name:'sbAdminApp',
+                files:['scripts/controllers/table.js']
+            })
+          }
+        }
    })
      .state('dashboard.deleteTrigger',{
        templateUrl:'views/ui-elements/deleteTrigger.html',
-       url:'/deleteTrigger'
+       url:'/deleteTrigger',
+       controller:'TableCtrl',
+       resolve: {
+          loadMyFile:function($ocLazyLoad) {
+            $ocLazyLoad.load({
+                name:'sbAdminApp',
+                files:['scripts/controllers/table.js']
+            })
+          }
+        }
    })
   }]);
 

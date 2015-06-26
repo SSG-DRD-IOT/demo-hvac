@@ -19,4 +19,6 @@ angular.module('sbAdminApp')
     $http.get('http://localhost:3000/noOfTrigger').success(function(data,satus) {
             $scope.noOfTrigger = data;
      });
+    
+    
   }]);

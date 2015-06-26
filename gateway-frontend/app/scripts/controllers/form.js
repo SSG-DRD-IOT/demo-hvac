@@ -8,11 +8,5 @@
  */
 angular.module('sbAdminApp')
   .controller('FormCtrl', function($scope) {
-    
-      $scope.listTable = {
-         $http.get('http://localhost:3000/listActuator').success(function(data) {
-            $scope.table = data;
-        });
-    };
-
+     
 }]);
