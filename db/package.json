@@ -1,0 +1,11 @@
+{
+  "name": "intel-commerical-iot-database-models",
+  "version": "1.0.0",
+  "description": "Model Objects that allow access to the gateways local database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Intel",
+  "license": "MIT"
+}
