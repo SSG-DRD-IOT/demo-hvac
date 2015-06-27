@@ -1,0 +1,24 @@
+{
+
+    "mqtt" : {
+        "url" : "mqtt://172.16.22.236"
+    },
+
+    "sqlite3" : {
+        "file" : "../../db/iotdemo.sqlite"
+    },
+    "debug" : "true",
+    "microsoftAzure" : {
+        "accessKey" : "bHdcJCA8N0vhCRDWYNkL0n+TdYlVOVjyDfTGU40T0+resAu5zKcJKENfLHg8YpgltnKWA2PJdHyOGInv33Jp+A==",
+        "accountName" : "inteliotstorage",
+        "table": "iotdemoTest1"
+    },
+
+    "googleDatastore" : {
+    	"cloud" : {
+            "projectId" : "iot-cloud-project",
+            "keyFilename" : "./plugins/google-datastore/key.json"
+    	},
+    	"namespace" : "ns-iot"
+    }
+}
