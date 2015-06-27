@@ -20,5 +20,15 @@ angular.module('sbAdminApp')
             $scope.noOfTrigger = data;
      });
     
+    $scope.getSensorData = function(actuatorId){
+              var data = "{\"sensorId\":\"1\"}";
+              $http.post( 'http://localhost:3000/getSensorData',data).success(function (data, status, headers, config) {
+                     $scope.sensorData = data;
+            });    
+    };
+    
+    $http.get('http://172.16.21.73:4000/api/v0001/historic/data').success(function(data,status) {
+            $scope.line1 = data;
+     });
     
   }]);

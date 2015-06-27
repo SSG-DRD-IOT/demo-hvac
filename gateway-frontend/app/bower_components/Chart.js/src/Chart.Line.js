@@ -7,7 +7,7 @@
 
 	var defaultConfig = {
 
-		///Boolean - Whether grid lines are shown across the chart
+		//Boolean - Whether grid lines are shown across the chart
 		scaleShowGridLines : true,
 
 		//String - Colour of the grid lines
