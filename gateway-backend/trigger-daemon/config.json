@@ -1,10 +1,11 @@
 {
     "mqtt" : {
-        "url" : "mqtt://172.16.22.236"
+        "url" : "mqtt://gateway"
     },
 
     "sqlite3" : {
         "file" : "../../db/iotdemo.sqlite"
     },
+
     "debug" : "true"
 }
