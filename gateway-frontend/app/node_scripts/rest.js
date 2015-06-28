@@ -88,6 +88,7 @@ restapi.get('/listActuator', function(req, res){
       //  new_id = parseInt(id) + 1;
       //  console.log (new_id);
       var sql = "INSERT INTO \"main\".\"triggers\" (\"name\",\"sensor_id\",\"actuator_id\",\"condition\",\"triggerFunc\") VALUES (\""+req.param("triggerName")+"\",\""+req.param("sensor")+"\",\""+req.param("actuator")+"\",\""+req.param("conditions")+"\",\""+req.param("control")+"\");";
+      console.log(sql);
         db.all(sql, function(err, row){
            if (err){
               console.err(err);
