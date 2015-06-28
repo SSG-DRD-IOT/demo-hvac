@@ -70,18 +70,17 @@ var data = dataModel.find( function (err, data) {
     // data just pulled from the database
     var sensor_ids = _.uniq(_.pluck(data, "sensor_id"));
 
-    // logger.log("Sensor_ids in the retrieved data");
-    // logger.log(sensor_ids);
-    // logger.log("----------------------------------------");
+    // console.log("Sensor_ids in the retrieved data");
+    // console.log(sensor_ids);
+    // console.log("----------------------------------------");
 
     // Retrieve all relations between sensors and clouds
     var sensor_clouds = sensorCloudModel
             .find_sensor_cloud_data_relations(
                 function(err, results) {
 
-                    logger.log("Sensor/Cloud relations");
-                    logger.log(results);
-                    logger.log("----------------------------------------");
+                    console.log("Sensor/Cloud relations");
+                    console.log(results);
 
                     // Group all the data by sensor_id
                     var data_by_cloudprovider = _.groupBy(
@@ -90,19 +89,23 @@ var data = dataModel.find( function (err, data) {
                             return  k.cloudprovider_id;
                         });
 
-                    logger.log("Grouped");
-                    logger.log(data_by_cloudprovider);
+                    console.log("Grouped");
+                    console.log(data_by_cloudprovider);
 
-                    logger.log("Data");
+                    console.log("Data");
                     _.forEach(
                         data_by_cloudprovider,
                         function(data, cloudprovider_id) {
+                            console.log("Cloudprovider_id:", cloudprovider_id);
+                            console.log(data);
+                            console.log("----------------------------------------");
+
                             if (cloudprovider_id == 1) {
-                                logger.log("Writing to Azure");
+                                console.log("Writing to Azure");
                                 azure.write(data);
                             } else if ( cloudprovider_id == 3) {
-                                logger.log("Writing to Azure");
-                                google.write(data);
+                                // console.log("Writing to Google");
+                                // google.write(data);
                             }
                         });
                 });
@@ -113,18 +116,18 @@ var data = dataModel.find( function (err, data) {
 
 // google.read({sensor_id: 'b506768ce1e2353fe063d344e89e53e5'}, function(err, results){
 //      if(err) {
-//  	logger.log(err);
+//  	console.log(err);
 //      } else {
-//  	logger.log('In cloudd - Data received from Google cloud');
-//  	logger.log(results);
+//  	console.log('In cloudd - Data received from Google cloud');
+//  	console.log(results);
 //      }
 //  });
 
 // azure.read({sensor_id: 'b506768ce1e2353fe063d344e89e53e5'}, function(err, results){
 //     if(err) {
-// 	logger.log(err);
+// 	console.log(err);
 //     } else {
-// 	logger.log('In cloudd - Data received from Azure cloud');
-// 	logger.log(results);
+// 	console.log('In cloudd - Data received from Azure cloud');
+// 	console.log(results);
 //     }
 // });

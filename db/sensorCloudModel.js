@@ -23,14 +23,11 @@ var SensorCloudModel = function(db, data) {
     };
 
     this.find_sensor_cloud_data_relations = function(callback) {
-    console.log("hello1");
-        this.db.all("select sc.sensor_id, sc.cloudprovider_id, d.value from sensors_clouds AS sc, data as d WHERE sc.sensor_id=d.sensor_id", function(err, rows) {
-            console.log("hello2");
+
+        this.db.all("select sc.sensor_id, sc.cloudprovider_id, d.value, d.timestamp from sensors_clouds AS sc, data as d WHERE sc.sensor_id=d.sensor_id", function(err, rows) {
             if (err) {
-                console.log("hello3");
                 console.log(err);
             } else {
-                console.log("hello4");
                 callback(err, rows);
             }
         });
