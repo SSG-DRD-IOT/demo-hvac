@@ -1,16 +1,19 @@
-var config = require("./config.json");
+var config = require("./test-write.json");
 var GoogleDataStoreCloud = require("../index.js");
 var sleep = require('sleep');
 
 var googleDataStoreCloud = new GoogleDataStoreCloud(config);
 
+// googleDataStoreCloud.delete({sensor_id : 'b506768ce1e2353fe063d344e89e53e5'});
+// return;
+
 count = 0;
 result = [];
 while (count < 5)
 {
-  sleep.sleep(1);
-  result.push({ 'devId' : 'sensor-4321', 
-		'value' : (Math.random() * 30) + 60, 
+  sleep.usleep(6453);
+  result.push({ 'sensor_id' : 'sensor-4321',
+		'value' : (Math.random() * 30) + 60,
 		'sensorType' : 'temp',
 		'timestamp' : Date.now()
 	      });
@@ -24,8 +27,9 @@ date.setDate(date.getDate() - 1);
 
 
 googleDataStoreCloud.read({
-		devId: 'sensor-4321',
-		timestamp: Date.parse(date)	
-		});
-
-
+		sensor_id: 'sensor-4321',
+		timestamp: Date.parse(date)
+  }, function(err, res){
+    if(err) console.log(err);
+    else console.log(res);
+  });

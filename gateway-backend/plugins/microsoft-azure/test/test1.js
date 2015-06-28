@@ -3,7 +3,11 @@ var config = require("../config.json");
 var sleep = require('sleep');
 
 var azure = new azure(config);
+
 azure.connect();
+
+// azure.delete();
+// return;
 
 count = 0;
 var result = [];
@@ -11,18 +15,17 @@ var result = [];
 
 while (count < 50)
 {
-  sleep.msleep(200);
-  result.push({ devId : 'sensor-4321', 
-		value : Math.floor((Math.random() * 30) + 60), 
-		sensorType : "temp",
-		timestamp : Math.floor(Date.now()/1000)
+  //sleep.msleep(200);
+  result.push({ sensor_id : 'sensor-4321',
+		value : Math.floor((Math.random() * 30) + 60),
+		timestamp : Math.floor((Math.random() * 542356) + 789876)
 	      });
   count++;
 }
 
 //console.log(result);
 
-data = { 
+data = {
     devId: "5678",
     value : 80,
     sensorType : "temp",
@@ -33,9 +36,10 @@ azure.write(result);
 
 var date = new Date();
 date.setDate(date.getDate() - 1);
- 
-azure.read({
-     devId : "sensor-4321",
-     timestamp : Date.parse(date)/1000
-});
 
+azure.read({
+     sensor_id : "sensor-4321"
+}, function(err, res){
+  if(err) console.log(err);
+  else console.log(res);
+});

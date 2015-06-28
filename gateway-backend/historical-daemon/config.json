@@ -1,24 +1,33 @@
 {
 
-    "mqtt" : {
-        "url" : "mqtt://172.16.22.236"
-    },
+  "mqtt" : {
+    "url" : "mqtt://172.16.22.236"
+  },
 
-    "sqlite3" : {
-        "file" : "../../db/iotdemo.sqlite"
-    },
-    "debug" : "true",
-    "microsoftAzure" : {
-        "accessKey" : "bHdcJCA8N0vhCRDWYNkL0n+TdYlVOVjyDfTGU40T0+resAu5zKcJKENfLHg8YpgltnKWA2PJdHyOGInv33Jp+A==",
-        "accountName" : "inteliotstorage",
-        "table": "iotdemoTest1"
-    },
+  "sqlite3" : {
+    "file" : "../../db/iotdemo.sqlite"
+  },
 
-    "googleDatastore" : {
-    	"cloud" : {
-            "projectId" : "iot-cloud-project",
-            "keyFilename" : "../plugins/google-datastore/key.json"
-    	},
-    	"namespace" : "ns-iot"
-    }
+  "debug" : "true",
+
+  "path" : {
+    "azure" : "/api/v0001/azure/historic/data",
+    "datastore" : "/api/v0001/datastore/historic/data",
+    "bluemix" : "/api/v0001/bluemix/historic/data",
+    "kinesis" : "/api/v0001/kinesis/historic/data"
+  },
+
+  "microsoftAzure" : {
+    "accessKey" : "bHdcJCA8N0vhCRDWYNkL0n+TdYlVOVjyDfTGU40T0+resAu5zKcJKENfLHg8YpgltnKWA2PJdHyOGInv33Jp+A==",
+    "accountName" : "inteliotstorage",
+    "table": "iotdemoTest1"
+  },
+
+  "googleDatastore" : {
+    "cloud" : {
+      "projectId" : "iot-cloud-project",
+      "keyFilename" : "../plugins/google-datastore/key.json"
+    },
+    "namespace" : "ns-iot"
+  }
 }

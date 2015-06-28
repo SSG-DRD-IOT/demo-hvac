@@ -1,18 +1,15 @@
 //------------------------------------------------------------------------------
 // cloud-manager-daemon.js
-// This daemon is responsible for reading all of the sensor values from the
-// Intel Iot Gateway and storing them in the cloud
-//
+// This daemon is responsible for reading historical data from the cloud and
+// sending it over REST APIs for plotting graph
 // Currently, this daemon supports four cloud providers:
 //     1. Amazon Kinesis
 //     2. Microsoft Azure
 //     3. Google DataStorage
 //     4. IBM BlueMix
 //
-// The daemon retrieves all new data from the database every 60 seconds
-// and retrieves the associations between sensors and cloud providers
-// and store the data in blocks on the cloud providers that are configured
-// as destinations.
+// The daemon starts a server using express and provides REST APIs to retrieve
+// stored data from requested cloud providers.
 
 // Load the application specific configurations
 var config = require("./config.json");
@@ -48,18 +45,19 @@ var moment = require('moment');
 
 // Setup a logging system in this daemon
 var winston = require('winston');
-winston.add(winston.transports.File, { filename: 'cloudd.log' });
+//winston.add(winston.transports.File, { filename: 'cloudd.log' });
+
+var app = express();
+
+// For cross-origin requests
+app.use(cors());
+app.listen(4000);
 
 // Add the console logger if debug is set to "true" in the config
 if (config.debug != "true") {
   winston.remove(winston.transports.Console);
   //  winston.logger.transports.console.level = 'debug';
 }
-
-var app = express();
-
-app.use(cors());
-app.listen(4000);
 
 function formatDataForPlot(results){
   this.sensorData = {"timestamp" : [], "values" : []};
@@ -73,9 +71,8 @@ function formatDataForPlot(results){
   console.log(this.sensorData);
 }
 
-app.get('/api/v0001/historic/data', function (req, res) {
-  // TODO: Code to select database here
-  azure.connect();
+function getDataFromCloud(cloud_provider, req, callback) {
+  cloud_provider.connect();
   readQuery = {};
   if(req.query.id) {
     console.log('sensor_id: ' + req.query.id);
@@ -83,14 +80,36 @@ app.get('/api/v0001/historic/data', function (req, res) {
   } else {
     readQuery.sensor_id = 'b506768ce1e2353fe063d344e89e53e5';
   }
-  azure.read(readQuery, function(err, results){
-    if(err) {
-      console.log(err);
-    } else {
-      console.log('In Historic data daemon - Data received from Azure cloud');
+
+  cloud_provider.read(readQuery, function(err, results){
+    if(!err) {
       //console.log(results);
       formatDataForPlot(results);
+    }
+    callback(err);
+  });
+}
+
+app.get(config.path.azure, function (req, res) {
+  // TODO: Code to select database here
+  getDataFromCloud(azure, req, function(err){
+    if(err) {
+      console.log(err);
+    }  else {
+      console.log('In Historic data daemon - Data received from Azure cloud');
       res.send(this.sensorData);
     }
-  });
+  })
+});
+
+app.get(config.path.datastore, function (req, res) {
+  // TODO: Code to select database here
+  getDataFromCloud(google, req, function(err){
+    if(err) {
+      console.log(err);
+    }  else {
+      console.log('In Historic data daemon - Data received from Google cloud');
+      res.send(this.sensorData);
+    }
+  })
 });
