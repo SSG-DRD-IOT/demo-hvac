@@ -1,0 +1,11 @@
+{
+  kinesis : {
+    'region' : 'us-west-2'
+  },
+
+  sampleProducer : {
+    'stream' : '',
+    'shards' : '2',
+    'waitBetweenDescribeCallsInSeconds' : 5
+  }
+}

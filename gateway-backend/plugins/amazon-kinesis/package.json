@@ -1,0 +1,16 @@
+{
+  "name": "amazon-kinesis-pubsub",
+  "version": "1.0.0",
+  "description": "A plugin for the Intel Edison Iot Cloud tools to enable pubsub to Amazon Kinesis",
+  "main": "amazon-kinesis-plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Intel",
+  "license": "MIT",
+  "keywords": [
+    "kinesis",
+    "amazon",
+    "pubsub"
+  ]
+}

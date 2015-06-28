@@ -1,0 +1,8 @@
+{
+    "org" : "gijmss",
+    "type" : "intel-iot",
+    "id" : "020086a5e8ec",
+    "authmethod" : "token",
+    "username" : "use-token-auth",
+    "authtoken" : "O_FybJ4vjuDw+UVdtA"
+}

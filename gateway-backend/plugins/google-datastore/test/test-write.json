@@ -1,0 +1,11 @@
+{
+    "cloud" : {
+        "projectId": "iot-cloud-project",
+        "keyFilename": "./key.json"
+    },
+
+    "dataset" : {
+        "namespace": "ns-iot",
+        "path": ["Platform", "Edison"]
+    }
+}
