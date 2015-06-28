@@ -1,0 +1,19 @@
+{
+  "name": "trigger-daemon",
+  "version": "1.0.0",
+  "description": "Reads triggers from the database and check for when they should be executed",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "trigger",
+    "iot"
+  ],
+  "author": "Intel",
+  "license": "MIT",
+  "dependencies": {
+    "intel-commerical-iot-database-models": "^1.0.0"
+  }
+}

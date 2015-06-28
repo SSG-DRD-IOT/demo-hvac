@@ -9,6 +9,7 @@ var DataModel = function(db, data) {
     // INSERT INTO "main"."data" ("sensor_id","value") VALUES (?1,?2)
     this.save = function() {
         console.log(this.data);
+        console.log("Just before DB transaction");
         this.db.run("BEGIN TRANSACTION");
         this.db.run('INSERT INTO "main"."data" ("sensor_id","value") VALUES (?1,?2)', [this.data.sensor_id, this.data.value]  );
         this.db.run("END");
