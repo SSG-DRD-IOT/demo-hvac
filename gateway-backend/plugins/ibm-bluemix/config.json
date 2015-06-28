@@ -1,8 +1,5 @@
 {
-    "org" : "5anfde",
-    "type" : "intel-edison",
-    "id" : "020086a5e8ec",
-    "auth-method" : "token",
-    "auth-token" : "SDDjxLjXoW4(ZFBolZ",
-    "username" : "use-token-auth"
+    "accessKey" : "bHdcJCA8N0vhCRDWYNkL0n+TdYlVOVjyDfTGU40T0+resAu5zKcJKENfLHg8YpgltnKWA2PJdHyOGInv33Jp+A==",
+    "accountName" : "inteliotstorage",
+    "table": "iotdemoTest1"
 }
