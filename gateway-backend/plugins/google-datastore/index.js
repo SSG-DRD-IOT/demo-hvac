@@ -2,7 +2,7 @@ var gcloud = require('gcloud');
 
 function google(config) {
   var self = this;
-  console.log(config);
+  //console.log(config);
   this.db = gcloud.datastore.dataset(config.cloud);
   self.response = [];
   this.namespace = config.namespace;
@@ -19,7 +19,7 @@ google.prototype.write = function(data) {
     this.key = {
         "namespace": this.namespace,
         "path": [data[i].sensor_id, data[i].timestamp]
-           } 
+           }
     this.db.save({
             key: this.key,
             data: data[i]
@@ -39,7 +39,7 @@ if(readQuery.timestamp) {
   			.filter('timestamp >=', readQuery.timestamp);
 } else {
     this.dataQuery = this.db.createQuery(this.namespace, readQuery.sensor_id);
-}   
+}
 
 this.db.runQuery(this.dataQuery, function(err, result) {
   if(err) {
@@ -58,7 +58,7 @@ this.db.runQuery(this.dataQuery, function(err, result) {
 
 
 google.prototype.disconnect = function() {
-	
+
 };
 
 }
