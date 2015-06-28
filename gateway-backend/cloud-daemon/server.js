@@ -55,12 +55,12 @@ azure.connect();
 
 // Steps
 // 1. Set Interval to 60 seconds
-// 2. Get all Active Sensor IDs from sensors table
-// 3. Get the values for each sensor
+// 2. Get the values for each sensor
 // 4. Get the cloud providers for each sensor
-// 5. Send data to each cloud
+// 5. Group data by cloudprovider_id
+// 6. Write the data to the cloud
 
-// This server
+// This server retrieves data from the cloud on configurable interval
 setInterval(function() {
     var data = dataModel.find( function (err, data) {
 
