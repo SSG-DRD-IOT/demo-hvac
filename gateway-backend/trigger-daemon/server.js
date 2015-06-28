@@ -34,13 +34,13 @@ var newSubscriptions = _.filter(new_triggers, _.contains(triggers) == false);
 
 // Setup a logging system in this daemon
 var winston = require('winston');
-winston.add(winston.transports.File, { filename: 'announcementd.log' });
 
-// Add the console logger if debug is set to "true" in the config
-if (config.debug != "true") {
-    winston.remove(winston.transports.Console);
-    logger.transports.console.level = 'debug';
-}
+var logger = new (winston.Logger)({
+    transports: [
+        new (winston.transports.Console)(),
+        new (winston.transports.File)({ filename: 'trigger-daemon.log' })
+    ]
+});
 
 // Connect to the MQTT server
 var mqttClient  = mqtt.connect(config.mqtt.url);
@@ -79,6 +79,7 @@ _.map(triggers, '');
 // On the start of a connection, do the following...
 mqttClient.on('connect', function () {
     winston.log('info', "Connected to MQTT server");
+    mqttClient.subscribe('trigger-daemon/refresh');
     mqttClient.subscribe('sensors/+/data');
 });
 
@@ -101,16 +102,3 @@ mqttClient.on('message', function (topic, message) {
 
 
 });
-
-//Loop the following
-loop() {
-  setInterval(function () //Start our loop....
-                {
-                    //Loop Work!
-                }, interval);  //Once a [interval]!
-}
-
-
-
-// Implement a shutdown for the daemon
-//mqttClient.end();
