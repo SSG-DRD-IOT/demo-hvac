@@ -106,7 +106,6 @@ app.get(config.path.azure, function (req, res) {
     } else {
       logger.log('In Historic data daemon - Data received from Azure cloud');
       //logger.log(results);
-      formatDataForPlot(results);
       res.send(this.sensorData);
     }
   })
