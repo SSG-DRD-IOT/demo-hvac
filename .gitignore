@@ -1,3 +1,6 @@
 node_modules/
 
 models/.#*
+
+bower_components/
+*.log

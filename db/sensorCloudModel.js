@@ -23,7 +23,6 @@ var SensorCloudModel = function(db, data) {
     };
 
     this.find_sensor_cloud_data_relations = function(callback) {
-
         this.db.all("select sc.sensor_id, sc.cloudprovider_id, d.value, d.timestamp from sensors_clouds AS sc, data as d WHERE sc.sensor_id=d.sensor_id", function(err, rows) {
             if (err) {
                 console.log(err);
@@ -41,21 +40,6 @@ var SensorCloudModel = function(db, data) {
         });
     };
 
-    // this.update = function (d) {
-    //     var sql = "UPDATE sensors SET name='"
-    //             + d.name +
-    //             "', description='" + d.description +
-    //             "', maxfrequency='" + d.maxfrequency +
-    //             "', frequency='" + d.frequency+
-    //             "', active='" + d.active +
-    //             "', ioType='"+ d.ioType +
-    //             "' WHERE id ='" + d.id +
-    //             "'";
-
-    //     console.log(sql);
-
-    //     this.db.run(sql);
-    // };
 
     this.delete_by_id = function(id) {
         this.db.run("BEGIN TRANSACTION");

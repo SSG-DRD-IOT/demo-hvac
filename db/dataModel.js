@@ -62,37 +62,10 @@ var DataModel = function(db, data) {
         this.db.run("DELETE from sensors WHERE id = ?", id);
         this.db.run("END");
     };
+
+    this.delete_all_data = function(id) {
+        this.db.run("DELETE from sensors");
+    };
 };
 
 module.exports = DataModel;
-
-// var sensor = new ValueModel(dbconnection,
-//     {
-//         id : "3",
-//         name : "Sound Sensor",
-//         description : "read the noise",
-//         maxfrequency : "200",
-//         frequency : "1000",
-//         active : "true",
-//         ioType : "Analog"
-//     });
-
-// //sensor.save();
-// sensor.find_by_sensor_id('b506768ce1e2353fe063d344e89e53e5');
-
-// //sensor.find_by_id(3);
-
-// sensor.update(
-//     {
-//         id : "3",
-//         name : "Sound Sensor",
-//         description : "read the ambient noise har har har",
-//         maxfrequency : "200",
-//         frequency : "1000",
-//         active : "true",
-//         ioType : "Analog"
-//     }
-// );
-// //sensor.delete_by_id(3);
-
-// this.db.close();

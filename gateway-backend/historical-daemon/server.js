@@ -1,7 +1,9 @@
 //------------------------------------------------------------------------------
-// cloud-manager-daemon.js
-// This daemon is responsible for reading historical data from the cloud and
-// sending it over REST APIs for plotting graph
+// historical-daemon.js
+// This daemon is responsible for reading historical data from the cloud
+// and making it available over a RESTful API to the administration console
+
+//
 // Currently, this daemon supports four cloud providers:
 //     1. Amazon Kinesis
 //     2. Microsoft Azure
@@ -10,6 +12,7 @@
 //
 // The daemon starts a server using express and provides REST APIs to retrieve
 // stored data from requested cloud providers.
+
 
 // Load the application specific configurations
 var config = require("./config.json");
@@ -38,26 +41,31 @@ var dataModel = new DataModel(db);
 var azure = new Azure(config.microsoftAzure);
 var google = new Google(config.googleDatastore);
 
+// Express helps to provide RESTful API interfaces
 var express = require('express');
 var cors = require('cors');
-var moment = require('moment');
 
+// Manipulates time and date strings
+var moment = require('moment');
 
 // Setup a logging system in this daemon
 var winston = require('winston');
-//winston.add(winston.transports.File, { filename: 'cloudd.log' });
 
+var logger = new (winston.Logger)({
+    transports: [
+        new (winston.transports.Console)(),
+        new (winston.transports.File)({ filename: 'cloud-manager-daemon.log' })
+    ]
+});
+
+// Create the express application
 var app = express();
 
 // For cross-origin requests
 app.use(cors());
-app.listen(4000);
 
-// Add the console logger if debug is set to "true" in the config
-if (config.debug != "true") {
-  winston.remove(winston.transports.Console);
-  //  winston.logger.transports.console.level = 'debug';
-}
+// Listen on port 4000
+app.listen(4000);
 
 function formatDataForPlot(results){
   this.sensorData = {"timestamp" : [], "values" : []};
@@ -68,14 +76,14 @@ function formatDataForPlot(results){
   }
   this.sensorData.values.push(this.duplicateValues);
   this.sensorData.values.push(this.duplicateValues);
-  console.log(this.sensorData);
+  logger.log(this.sensorData);
 }
 
 function getDataFromCloud(cloud_provider, req, callback) {
   cloud_provider.connect();
   readQuery = {};
   if(req.query.id) {
-    console.log('sensor_id: ' + req.query.id);
+    logger.log('sensor_id: ' + req.query.id);
     readQuery.sensor_id = req.query.id;
   } else {
     readQuery.sensor_id = 'b506768ce1e2353fe063d344e89e53e5';
@@ -94,9 +102,11 @@ app.get(config.path.azure, function (req, res) {
   // TODO: Code to select database here
   getDataFromCloud(azure, req, function(err){
     if(err) {
-      console.log(err);
-    }  else {
-      console.log('In Historic data daemon - Data received from Azure cloud');
+      logger.log(err);
+    } else {
+      logger.log('In Historic data daemon - Data received from Azure cloud');
+      //logger.log(results);
+      formatDataForPlot(results);
       res.send(this.sensorData);
     }
   })
@@ -106,9 +116,9 @@ app.get(config.path.datastore, function (req, res) {
   // TODO: Code to select database here
   getDataFromCloud(google, req, function(err){
     if(err) {
-      console.log(err);
+      logger.log(err);
     }  else {
-      console.log('In Historic data daemon - Data received from Google cloud');
+      logger.log('In Historic data daemon - Data received from Google cloud');
       res.send(this.sensorData);
     }
   })

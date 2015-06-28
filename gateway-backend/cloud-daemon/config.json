@@ -20,5 +20,6 @@
             "keyFilename" : "../plugins/google-datastore/key.json"
     	},
     	"namespace" : "ns-iot"
-    }
+    },
+    "interval": "60000"
 }

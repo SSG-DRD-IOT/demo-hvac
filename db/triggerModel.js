@@ -22,9 +22,9 @@ var TriggerModel = function(db, data) {
         });
     };
 
-    this.find = function(conditions) {
+    this.find = function() {
         this.db.all("SELECT * FROM triggers", function(err, results) {
-            console.log(results);
+            callback(err, results);
         });
     };
 
