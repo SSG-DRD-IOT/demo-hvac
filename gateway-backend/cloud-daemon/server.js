@@ -91,42 +91,28 @@ setInterval(function() {
           // logger.log(data_by_cloudprovider);
 
           _.forEach(
-            data_by_cloudprovider,
-            function(data, cloudprovider_id) {
-              // logger.log("Cloudprovider_id:", cloudprovider_id);
-              // logger.log(data);
-              // logger.log("----------------------------------------");
+              data_by_cloudprovider,
+              function(data, cloudprovider_id) {
+                  // logger.log("Cloudprovider_id:", cloudprovider_id);
+                  // logger.log(data);
+                  // logger.log("----------------------------------------");
 
-              if (cloudprovider_id == 1) {
-                logger.log("Writing to Azure");
-                azure.write(data);
-              } else if ( cloudprovider_id == 3) {
-                logger.log("Writing to Google");
-                google.write(data);
-              }
-            });
+                  if (cloudprovider_id == 1) {
+                      logger.log("Writing to Microsoft Azure");
+                      azure.write(data);
+                  } else if (cloudprovider_id == 2 {
+                      logger.log("Writing to IBM BlueMix");
+                  } else if (cloudprovider_id == 3) {
+                      logger.log("Writing to Google DataStorage");
+                      google.write(data);
+                  } else if (cloudprovider_id == 4) {
+                      logger.log("Writing to Amazon Kinesis");
+                  }
+                            });
 
-            dataModel.delete_all_data();
+              dataModel.delete_all_data();
           });
 
 
-        });
-      }, config.interval);
-
-      // google.read({sensor_id: 'b506768ce1e2353fe063d344e89e53e5'}, function(err, results){
-      //      if(err) {
-      //  	logger.log(err);
-      //      } else {
-      //  	logger.log('In cloudd - Data received from Google cloud');
-      //  	logger.log(results);
-      //      }
-      //  });
-
-      // azure.read({sensor_id: 'b506768ce1e2353fe063d344e89e53e5'}, function(err, results){
-      //     if(err) {
-      // 	logger.log(err);
-      //     } else {
-      // 	logger.log('In cloudd - Data received from Azure cloud');
-      // 	logger.log(results);
-      //     }
-      // });
+    });
+                           }, config.interval);
