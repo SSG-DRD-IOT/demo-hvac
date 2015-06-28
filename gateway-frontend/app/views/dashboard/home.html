@@ -25,20 +25,11 @@
 
 
   <div class="row">
-    <div class="col-lg-6 col-sm-12" id="line-chart" ng-controller="ChartCtrl">
+    <div class="col-lg-12 col-sm-12" id="line-chart" ng-controller="ChartCtrl">
       <div class="panel panel-default">
         <div class="panel-heading">Line Chart</div>
         <div class="panel-body">
           <canvas id="line" class="chart chart-line chart-xl" data="line1.values" labels="line1.timestamp" legend="true" barShowLables= "false", click="lineonClick"  >    </canvas>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 col-sm-12" id="bar-chart" ng-controller="ChartCtrl">
-      <div class="panel panel-default">
-        <div class="panel-heading">Bar Chart</div>
-        <div class="panel-body">
-          <canvas id="bar" class="chart chart-bar" data="bar.data" labels="bar.labels" series="bar.series"
-                  options="bar.options"></canvas>
         </div>
       </div>
     </div>
@@ -48,7 +39,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Doughnut Chart</div>
         <div class="panel-body">
-          <canvas id="doughnut" class="chart chart-doughnut chart-xs" data="donut.data" labels="donut.labels" legend="false"></canvas>
+          <canvas id="doughnut" class="chart chart-doughnut chart-xs" data="line1.data" labels="line1.labels" legend="false"></canvas>
         </div>
       </div>
     </div>
@@ -56,7 +47,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">Radar Chart</div>
         <div class="panel-body">
-          <canvas id="area" class="chart chart-radar" data="radar.data" labels="radar.labels" click="onClick"></canvas>
+          <canvas id="area" class="chart chart-radar" data="line2.data" labels="line2.labels" click="onClick"></canvas>
         </div>
       </div>
     </div>

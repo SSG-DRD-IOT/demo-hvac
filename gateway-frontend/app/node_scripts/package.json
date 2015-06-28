@@ -10,6 +10,7 @@
     "cors": "*",
     "express": "^4.13.0",
     "semver": "*",
-    "sqlite3": "*"
+    "sqlite3": "*",
+    "lodash": "*"
   }
 }

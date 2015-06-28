@@ -1,5 +1,5 @@
 var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('data/demodb02.s3db');
+var db = new sqlite3.Database('../../../db/iotdemo.sqlite');
 var cors = require('cors');
 var bodyParse = require('body-parser');
 var _ = require('lodash');
@@ -81,31 +81,23 @@ restapi.get('/listActuator', function(req, res){
     // To add a new trigger to database
     restapi.post('/addTrigger',function(req,res){
        // console.log(req.body);
-        db.all("SELECT MAX(id) FROM triggers ORDER BY id DESC", function(err, rows){
+     //   db.all("SELECT MAX(id) FROM triggers ORDER BY id DESC", function(err, rows){
            // console.log(rows)
-        id = rows[0]["MAX(id)"];
-        id = id.replace(/"/g, "");
-        new_id = parseInt(id) + 1;
-        console.log (new_id);
-        db.run("INSERT INTO \"main\".\"triggers\" (\"id\",\"name\",\"sensor_id\",\"actuactor_id\",\"condition\",\"triggerFunc\") VALUES (\""+ new_id+"\",\""+req.param("triggerName")+"\",\""+req.param("sensor")+"\",\""+req.param("actuator")+"\",\""+req.param("conditions")+"\",\""+req.param("control")+"\");" , function(err, row){
-          if(err !== null) {
-      next(err);
-    }
-    else {
-      res.redirect('back');
-    }
-           // if (err){
-            //   console.err(err);
-            //    res.status(500);
-          //  }
-          //  else {
+        //id = rows[0]["MAX(id)"];
+       // id = id.replace(/"/g, "");
+      //  new_id = parseInt(id) + 1;
+      //  console.log (new_id);
+      var sql = "INSERT INTO \"main\".\"triggers\" (\"name\",\"sensor_id\",\"actuator_id\",\"condition\",\"triggerFunc\") VALUES (\""+req.param("triggerName")+"\",\""+req.param("sensor")+"\",\""+req.param("actuator")+"\",\""+req.param("conditions")+"\",\""+req.param("control")+"\");";
+        db.all(sql, function(err, row){
+           if (err){
+              console.err(err);
+              res.status(500);
+            }
+           else {
             res.status(202);
-          //  }
-            db.finalize();
+            }
             res.end();
-        });
          });
- 
 });
     
     // To get api according to actuator Id

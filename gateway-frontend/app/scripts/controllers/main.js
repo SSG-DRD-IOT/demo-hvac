@@ -27,7 +27,8 @@ angular.module('sbAdminApp')
             });    
     };
     
-    $http.get('http://172.16.21.73:4000/api/v0001/historic/data').success(function(data,status) {
+    
+    $http.get('http://172.16.21.85:4000/api/v0001/historic/data?id=123').success(function(data,status) {
             $scope.line1 = data;
      });
     

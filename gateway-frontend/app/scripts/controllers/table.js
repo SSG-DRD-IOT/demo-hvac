@@ -9,7 +9,7 @@
  */
 angular.module('sbAdminApp')
 
-  .controller('TableCtrl',['$scope','$http', function($scope,$http) {
+  .controller('TableCtrl',['$scope','$location','$http', '$window', function($scope,$location,$http,$window) {
          $http.get('http://localhost:3000/listActuator').success(function(data,status) {
             $scope.actuators = data;
      });
@@ -23,7 +23,7 @@ angular.module('sbAdminApp')
        $scope.removeRow = function(triggerId){
               var data = "{\"id\":\""+triggerId+ "\"}";
               $http.post( 'http://localhost:3000/removeTrigger',data).success(function (data, status, headers, config) {
-               //$route.reload();
+              $window.location.reload();
             });
     };
     
@@ -36,6 +36,7 @@ angular.module('sbAdminApp')
     
      $scope.saveData = function(data){
               $http.post( 'http://localhost:3000/addTrigger',data).success(function (data, status, headers, config) {
+            $window.location.reload();
             });      
     };
     

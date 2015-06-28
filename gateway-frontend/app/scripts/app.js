@@ -71,6 +71,11 @@ angular
                   name:'ngTouch',
                   files:['bower_components/angular-touch/angular-touch.js']
                 })
+                $ocLazyLoad.load(
+                {
+                  name:'ngRoute',
+                  files:['bower_components/angular-route/angular-route.js']
+                })
             }
         }
     })
@@ -172,6 +177,11 @@ angular
                 name:'sbAdminApp',
                 files:['scripts/controllers/table.js']
             })
+            $ocLazyLoad.load(
+                {
+                  name:'ngRoute',
+                  files:['bower_components/angular-route/angular-route.js']
+                })
           }
         }
        
@@ -190,6 +200,11 @@ angular
                 name:'sbAdminApp',
                 files:['scripts/controllers/table.js']
             })
+            $ocLazyLoad.load(
+                {
+                  name:'ngRoute',
+                  files:['bower_components/angular-route/angular-route.js']
+                })
           }
         }
    })
@@ -203,6 +218,11 @@ angular
                 name:'sbAdminApp',
                 files:['scripts/controllers/table.js']
             })
+            $ocLazyLoad.load(
+                {
+                  name:'ngRoute',
+                  files:['bower_components/angular-route/angular-route.js']
+                })
           }
         }
    })
@@ -216,6 +236,11 @@ angular
                 name:'sbAdminApp',
                 files:['scripts/controllers/table.js']
             })
+            $ocLazyLoad.load(
+                {
+                  name:'ngRoute',
+                  files:['bower_components/angular-route/angular-route.js']
+                })
           }
         }
    })
@@ -229,6 +254,11 @@ angular
                 name:'sbAdminApp',
                 files:['scripts/controllers/table.js']
             })
+            $ocLazyLoad.load(
+                {
+                  name:'ngRoute',
+                  files:['bower_components/angular-route/angular-route.js']
+                })
           }
         }
    })
