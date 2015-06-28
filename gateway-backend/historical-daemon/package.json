@@ -22,8 +22,12 @@
   "author": "Intel",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.7.1",
+    "express": "^4.13.0",
+    "gcloud": "^0.16.0",
     "intel-commerical-iot-database-models": "^1.0.0",
     "intel-commerical-iot-google-datastore-pubsub": "^1.0.0",
-    "intel-commerical-iot-microsoft-azure-pubsub": "^1.0.0"
+    "intel-commerical-iot-microsoft-azure-pubsub": "^1.0.0",
+    "moment": "^2.10.3"
   }
 }
