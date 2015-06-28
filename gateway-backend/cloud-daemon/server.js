@@ -100,7 +100,7 @@ setInterval(function() {
                   if (cloudprovider_id == 1) {
                       logger.log("Writing to Microsoft Azure");
                       azure.write(data);
-                  } else if (cloudprovider_id == 2 {
+                  } else if (cloudprovider_id == 2) {
                       logger.log("Writing to IBM BlueMix");
                   } else if (cloudprovider_id == 3) {
                       logger.log("Writing to Google DataStorage");
