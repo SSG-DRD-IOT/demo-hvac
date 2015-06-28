@@ -31,7 +31,7 @@ var DataModel = function(db, data) {
             if (err) {
                 return callback(err, results);
             } else {
-                return callback(null, results);
+                return callback(err, results);
             }
         });
     };
