@@ -62,6 +62,10 @@ var DataModel = function(db, data) {
         this.db.run("DELETE from sensors WHERE id = ?", id);
         this.db.run("END");
     };
+
+    this.delete_all_data = function(id) {
+        this.db.run("DELETE from sensors");
+    };
 };
 
 module.exports = DataModel;
