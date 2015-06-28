@@ -5,7 +5,7 @@
     },
 
     "sqlite3" : {
-        "file" : "../db/iotdemo.sqlite"
+        "file" : "../../db/iotdemo.sqlite"
     },
     "debug" : "true",
     "microsoftAzure" : {
