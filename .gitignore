@@ -2,4 +2,5 @@ node_modules/
 
 models/.#*
 
-db/.#sensorCloudModel.js
+bower_components/
+*.log
