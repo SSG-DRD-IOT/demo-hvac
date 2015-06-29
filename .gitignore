@@ -8,3 +8,5 @@ bower_components/
 *.log
 
 gateway-backend/edge-device-daemon/.#server.js
+
+*.sqlite
