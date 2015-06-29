@@ -8,8 +8,7 @@ var port = 1883;
 module.exports = {
 
     connect: function(json) {
-
-        console.log("Entered the connection function");
+        // console.log("Entered the connection function");
         this.config = json;
 
 	getmac.getMac(function(err, macAddress) {

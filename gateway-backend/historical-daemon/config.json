@@ -29,5 +29,10 @@
       "keyFilename" : "../plugins/google-datastore/key.json"
     },
     "namespace" : "ns-iot"
+  },
+
+  "ibmBluemix" : {
+    "url" : "mongodb://IbmCloud_59dftfui_elarvo9j_48c79dpm:seKCjpDr_ntBPYvfHXoS8zsn30Zl0EPK@ds037812.mongolab.com:37812/IbmCloud_59dftfui_elarvo9j",
+    "db": "iotdemoTest1"
   }
 }

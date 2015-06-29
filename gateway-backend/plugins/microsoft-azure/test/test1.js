@@ -28,12 +28,11 @@ while (count < 50)
 data = {
     devId: "5678",
     value : 80,
-    sensorType : "temp",
     timestamp : Date.now()
 }
 
 azure.write(result);
-
+// return;
 var date = new Date();
 date.setDate(date.getDate() - 1);
 

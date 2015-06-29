@@ -1,25 +1,32 @@
 {
 
-    "mqtt" : {
-        "url" : "mqtt://172.16.22.236"
-    },
+  "mqtt" : {
+    "url" : "mqtt://172.16.22.236"
+  },
 
-    "sqlite3" : {
-        "file" : "../../db/iotdemo.sqlite"
-    },
-    "debug" : "true",
-    "microsoftAzure" : {
-        "accessKey" : "bHdcJCA8N0vhCRDWYNkL0n+TdYlVOVjyDfTGU40T0+resAu5zKcJKENfLHg8YpgltnKWA2PJdHyOGInv33Jp+A==",
-        "accountName" : "inteliotstorage",
-        "table": "iotdemoTest1"
-    },
+  "sqlite3" : {
+    "file" : "../../db/iotdemo.sqlite"
+  },
+  
+  "debug" : "true",
+  "microsoftAzure" : {
+    "accessKey" : "bHdcJCA8N0vhCRDWYNkL0n+TdYlVOVjyDfTGU40T0+resAu5zKcJKENfLHg8YpgltnKWA2PJdHyOGInv33Jp+A==",
+    "accountName" : "inteliotstorage",
+    "table": "iotdemoTest1"
+  },
 
-    "googleDatastore" : {
-    	"cloud" : {
-            "projectId" : "iot-cloud-project",
-            "keyFilename" : "../plugins/google-datastore/key.json"
-    	},
-    	"namespace" : "ns-iot"
+  "googleDatastore" : {
+    "cloud" : {
+      "projectId" : "iot-cloud-project",
+      "keyFilename" : "../plugins/google-datastore/key.json"
     },
-    "interval": "60000"
+    "namespace" : "ns-iot"
+  },
+
+  "ibmBluemix" : {
+    "url" : "mongodb://IbmCloud_59dftfui_elarvo9j_48c79dpm:seKCjpDr_ntBPYvfHXoS8zsn30Zl0EPK@ds037812.mongolab.com:37812/IbmCloud_59dftfui_elarvo9j",
+    "db": "iotdemoTest1"
+  },
+
+  "interval": "60000"
 }
