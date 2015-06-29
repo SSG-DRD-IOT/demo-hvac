@@ -19,58 +19,38 @@ var dataModel = new DataModel(db);
 var triggerModel = new TriggerModel(db);
 
 
-var triggers = [ { id: '1',
-    name: 'FanON',
-    sensor_id: 'virtualTempSensor',
-    actuator_id: 'Fan',
-    condition: '>80',
-    triggerFunc: 'on',
-    active: 'true' },
-{ id: '2',
-    name: 'LampON',
-    sensor_id: 'virtualTempSensor',
-    actuator_id: 'Lamp',
-    condition: '<79',
-    triggerFunc: 'on',
-    active: 'true' },
-{ id: '3',
-    name: 'FanError',
-    sensor_id: 'soundSensor',
-    actuator_id: 'Fan',
-    condition: '>85',
-    triggerFunc: 'on',
-    active: 'true' },
-{ id: '4',
-    name: 'LampError',
-    sensor_id: 'lightSensor',
-    actuator_id: 'Lamp',
-    condition: '<65',
-    triggerFunc: 'on',
-    active: 'true' } ];
+var triggers;
+var triggers_by_sensor_id;
+var lock = true;
 
-function compareFuncBuilder(operator, triggerValue) {
-    return function (sensorValue) {
-        var functionStr = sensorValue + operator + triggerValue;
-        return eval(functionStr);
-    };
-
-}
-
-var triggerFuncs = _.map(triggers, function(element) {
-    var op = element.condition.match(/[<>=]+/);
-    var triggerValue = element.condition.match(/\d+/);
-
-    if (op == "" || triggerValue == "") {
-        console.log("SyntaxError: with op or triggerValue");
-        return;
-    }
-    var fcond = compareFuncBuilder(op, triggerValue);
-    return _.extend({}, element, {condfunc: fcond});
-});
-
-var triggers_by_sensor_id = _.groupBy(triggerFuncs, "sensor_id");
-
-console.log(triggers_by_sensor_id);
+// var triggers = [ { id: '1',
+//     name: 'FanON',
+//     sensor_id: 'virtualTempSensor',
+//     actuator_id: 'Fan',
+//     condition: '>80',
+//     triggerFunc: 'on',
+//     active: 'true' },
+// { id: '2',
+//     name: 'LampON',
+//     sensor_id: 'virtualTempSensor',
+//     actuator_id: 'Lamp',
+//     condition: '<79',
+//     triggerFunc: 'on',
+//     active: 'true' },
+// { id: '3',
+//     name: 'FanError',
+//     sensor_id: 'soundSensor',
+//     actuator_id: 'Fan',
+//     condition: '>85',
+//     triggerFunc: 'on',
+//     active: 'true' },
+// { id: '4',
+//     name: 'LampError',
+//     sensor_id: 'lightSensor',
+//     actuator_id: 'Lamp',
+//     condition: '<65',
+//     triggerFunc: 'on',
+//     active: 'true' } ];
 
 // var sensorValue = 90;
 // var op = "==";
@@ -106,18 +86,6 @@ var topicHelper = require("./topicHelper.js");
 // Connect to the MQTT server
 var mqttClient  = mqtt.connect(config.mqtt.url);
 
-
-function getDBtriggers() {
-    triggerModel.find(function(err, results) {
-        if (err) {
-            console.log("Error in getDBtriggers callback");
-        } else {
-            console.log("publishing new triggers from db");
-            mqttClient.publish('trigger', results);
-        }
-    });
-}
-
 // On the start of a connection, do the following...
 mqttClient.on('connect', function () {
     logger.log('info', "Connected to MQTT server");
@@ -131,8 +99,11 @@ mqttClient.on('connect', function () {
 mqttClient.on('message', function (topic, message) {
     json = JSON.parse(message);
 
-    console.log(topic + ":" + message.toString());
-    if (topic.match(/sensors\/[A-Za-z0-9]{0,32}\/data/)) {
+    console.log("lock: " + lock);
+    console.log(json);
+    console.log(triggers_by_sensor_id);
+    // console.log(topic + ":" + message.toString());
+    if (topic.match(/sensors\/[A-Za-z0-9]{0,32}\/data/) && lock == false) {
 
         var sensor_id = json.sensor_id;
         var value = json.value;
@@ -141,31 +112,84 @@ mqttClient.on('message', function (topic, message) {
             triggers_by_sensor_id[sensor_id],
             function(trigger) {
                 if (trigger.condfunc(value)) {
-                    console.log("Trigger has fired!  " + trigger.name);
+                    //    console.log("Trigger has fired!  " + trigger.name);
                     mqttClient.publish('actuator/' + trigger.actuator_id + '/trigger', trigger.triggerFunc);
                 }
             });
     } else if (topic.match(/trigger-daemon\/refresh/)) {
         // Message recieved on the refresh topic
-        console.log("Received a refresh trigger");
+        console.log("Received a refresh trigger!!!!!!!!!!!!!!!!!!!!");
         getDBtriggers();
     } else if (topic.match(/trigger/)) {
         console.log("Yes! New Triggers");
         triggers = json;
+        console.log(triggers);
+        newTriggers(triggers);
     }
 
 });
 
 
+function getDBtriggers() {
+    console.log("Entering getDBtriggers");
+
+    db.all("SELECT * FROM triggers",
+           function(err, results) {
+               console.log("Entering getDBtriggers callback");
+               if (err) {
+                   console.log("Error in getDBtriggers callback");
+               } else {
+                   console.log("publishing new triggers from db");
+                   console.log(results);
+                   mqttClient.publish('trigger', results);
+               }
+           });
+
+}
+
+
+function compareFuncBuilder(operator, triggerValue) {
+    return function (sensorValue) {
+        var functionStr = sensorValue + operator + triggerValue;
+        return eval(functionStr);
+    };
+
+}
+
+function newTriggers(triggers) {
+    console.log(triggers);
+    var triggerFuncs = _.map(triggers, function(element) {
+
+        console.log("element.condition: " + element.condition);
+        var op = element.condition.match(/[<>=]+/);
+        var triggerValue = element.condition.match(/\d+/);
+
+        if (op == "" || triggerValue == "") {
+            console.log("SyntaxError: with op or triggerValue");
+            return;
+        }
+        var fcond = compareFuncBuilder(op, triggerValue);
+        return _.extend({}, element, {condfunc: fcond});
+    });
+
+    triggers_by_sensor_id = _.groupBy(triggerFuncs, "sensor_id");
+
+    lock = false;
+    console.log("lock: " + lock);
+    console.log(triggers_by_sensor_id);
+}
+
 // setTimeout(function(mqttCient) {
 //     console.log("Fetching triggers from database");
-//     // Fetch the initial set of Triggers
-//     triggerModel.find(mqttClient, function(mqttClient, results) {
-//         console.log("Printing the mqttClient");
-//         console.log("----------------------");
-//         console.log("Database triggers are fetched");
-//         console.log(results);
-//         mqttClient.publish('trigger', results);
+//     console.log(triggers);
+// Fetch the initial set of Triggers
 
-//     });
-// }, 1000);
+// triggerModel.find(mqttClient, function(mqttClient, results) {
+//     console.log("Printing the mqttClient");
+//     console.log("----------------------");
+//     console.log("Database triggers are fetched");
+//     console.log(results);
+//     mqttClient.publish('trigger', results);
+
+// });
+//}, 1000);

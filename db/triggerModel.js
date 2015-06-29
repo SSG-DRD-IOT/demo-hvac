@@ -19,7 +19,7 @@ var TriggerModel = function(db, data) {
     this.find = function(callback) {
         this.db.all("SELECT * FROM triggers",
                     function(err, results) {
-                        callback(err, results);
+                        return callback(err, results);
                     });
     };
 
