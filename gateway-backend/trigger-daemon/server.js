@@ -18,121 +18,161 @@ var sensorCloudModel = new SensorCloudModel(db);
 var dataModel = new DataModel(db);
 var triggerModel = new TriggerModel(db);
 
-
-var triggers;
-var triggers_by_sensor_id;
-var lock = true;
-
-// var triggers = [ { id: '1',
-//     name: 'FanON',
-//     sensor_id: 'virtualTempSensor',
-//     actuator_id: 'Fan',
-//     condition: '>80',
-//     triggerFunc: 'on',
-//     active: 'true' },
-// { id: '2',
-//     name: 'LampON',
-//     sensor_id: 'virtualTempSensor',
-//     actuator_id: 'Lamp',
-//     condition: '<79',
-//     triggerFunc: 'on',
-//     active: 'true' },
-// { id: '3',
-//     name: 'FanError',
-//     sensor_id: 'soundSensor',
-//     actuator_id: 'Fan',
-//     condition: '>85',
-//     triggerFunc: 'on',
-//     active: 'true' },
-// { id: '4',
-//     name: 'LampError',
-//     sensor_id: 'lightSensor',
-//     actuator_id: 'Lamp',
-//     condition: '<65',
-//     triggerFunc: 'on',
-//     active: 'true' } ];
+var triggers = [];
+var triggers_by_sensor_id = [];
 
 // Setup a logging system in this daemon
 var winston = require('winston');
 
 var logger = new (winston.Logger)({
+    levels: {
+        trace: 0,
+        input: 1,
+        verbose: 2,
+        prompt: 3,
+        debug: 4,
+        info: 5,
+        data: 6,
+        help: 7,
+        warn: 8,
+        error: 9
+    },
+    colors: {
+        trace: 'magenta',
+        input: 'grey',
+        verbose: 'cyan',
+        prompt: 'grey',
+        debug: 'blue',
+        info: 'green',
+        data: 'grey',
+        help: 'cyan',
+        warn: 'yellow',
+        error: 'red'
+    },
     transports: [
-        new (winston.transports.Console)({
+        new (winston.transports.Console)(
+            {
+                level: 'warn',
+                prettyPrint: true,
+                colorize: true,
+                silent: false,
+                timestamp: false
+            }),
+        new (winston.transports.File)({
+            prettyPrint: false,
+            level: 'info',
+            silent: false,
             colorize: true,
-            handleExceptions: true,
-            json: false,
-            level: "debug"
-        }),
-        new (winston.transports.File)({ filename: 'trigger-daemon.log' })
-    ]
-});
-logger.log('info', "Trigger Daemon is starting...");
-var topicHelper = require("./topicHelper.js");
+            timestamp: true,
+            filename: './trigger-daemon.log',
+            maxsize: 40000,
+            maxFiles: 10,
+            json: false
+        })]
+    });
+
+logger.info("Trigger Daemon is starting...");
+
+// Import the Utilities functions
+var utils = require("./utils.js");
 
 // Connect to the MQTT server
 var mqttClient  = mqtt.connect(config.mqtt.url);
 
 // On the start of a connection, do the following...
 mqttClient.on('connect', function () {
-    logger.log('info', "Connected to MQTT server");
-    mqttClient.subscribe('trigger-daemon/refresh');
-    mqttClient.subscribe('trigger');
+    logger.info("Connected to MQTT server");
+    mqttClient.subscribe('trigger/refresh');
+    mqttClient.subscribe('trigger/data');
     mqttClient.subscribe('sensors/+/data');
-    mqttClient.publish('trigger-daemon/refresh', '{"refresh" : "true"}');
+    mqttClient.publish('trigger/refresh', '{"refresh" : "true"}');
 });
 
 // Every time a new message is received, do the following
 mqttClient.on('message', function (topic, message) {
-    json = JSON.parse(message);
+    logger.trace(topic + ":" + message);
+    var json;
 
-    winston.info("lock: " + lock);
-    winston.info(json);
-    winston.info(triggers_by_sensor_id);
-    // winston.info(topic + ":" + message.toString());
-    if (topic.match(/sensors\/[A-Za-z0-9]{0,32}\/data/) && lock == false) {
+    // Parse incoming JSON and print an error if JSON is bad
+    try {
+        json = JSON.parse(message);
+    } catch(error) {
+        logger.error("Malformated JSON received: " + message);
+    }
 
-        var sensor_id = json.sensor_id;
-        var value = json.value;
-
-        _.forEach(
-            triggers_by_sensor_id[sensor_id],
-            function(trigger) {
-                if (trigger.condfunc(value)) {
-                    //    winston.info("Trigger has fired!  " + trigger.name);
-                    mqttClient.publish('actuator/' + trigger.actuator_id + '/trigger', trigger.triggerFunc);
-                }
-            });
-    } else if (topic.match(/trigger-daemon\/refresh/)) {
-        // Message recieved on the refresh topic
-        winston.info("Received a refresh trigger!!!!!!!!!!!!!!!!!!!!");
-        getDBtriggers();
-    } else if (topic.match(/trigger/)) {
-        winston.info("Yes! New Triggers");
-        triggers = json;
-        winston.info(triggers);
-        newTriggers(triggers);
+    // Determine which topic Command Dispatcher
+    if (utils.isSensorTopic(topic)) {
+        // Received a message on a Sesnor MQTT topic
+        processSensorData(json);
+    } else if (utils.isRefreshTopic(topic)) {
+        // Received a message on the Refresh MQTT topic
+        processRefresh(json);
+    } else if (utils.isTriggerTopic(topic)) {
+        // Received a message on the Trigger MQTT topic
+        processTriggers(json);
     }
 
 });
 
+function processTriggers(triggers) {
+    logger.info("Received a message on the Trigger MQTT topic");
+    logger.info(triggers);
+    var triggerFuncs = _.map(triggers, function(element) {
 
-function getDBtriggers() {
-    winston.info("Entering getDBtriggers");
+        logger.info("element.condition: " + element.condition);
+        var op = element.condition.match(/[<>=]+/);
+        var triggerValue = element.condition.match(/\d+/);
+
+        if (op == "" || triggerValue == "") {
+            logger.error("SyntaxError: with op or triggerValue");
+            return;
+        }
+        var fcond = compareFuncBuilder(op, triggerValue);
+        return _.extend({}, element, {condfunc: fcond});
+    });
+
+    triggers_by_sensor_id = _.groupBy(triggerFuncs, "sensor_id");
+    logger.debug(triggers_by_sensor_id);
+}
+
+function processRefresh(json) {
+    // Message recieved on the refresh topic
+    logger.info("Received a message on the Refresh MQTT topic");
+
 
     db.all("SELECT * FROM triggers",
            function(err, results) {
-               winston.info("Entering getDBtriggers callback");
                if (err) {
-                   winston.info("Error in getDBtriggers callback");
+                   logger.error("Error in fetching triggers from the database");
                } else {
-                   winston.info("publishing new triggers from db");
-                   winston.info(results);
-                   mqttClient.publish('trigger', results);
+                   logger.info("Publishing new triggers from db");
+                   mqttClient.publish('trigger/data', JSON.stringify(results));
                }
            });
-
 }
 
+function processSensorData(json) {
+    var sensor_id = json.sensor_id;
+    var value = json.value;
+
+    // Loop through all of the triggers for the sensor which
+    // is sending this incoming sensor data.
+    _.forEach(
+        triggers_by_sensor_id[sensor_id],
+
+        // Check if the triggers predicate evaluates to true
+        function(trigger) {
+            if (trigger.condfunc(value)) {
+                logger.info("Trigger has fired!  " + trigger.name);
+
+                // Build the topic string for the actuator that is notified
+                var actuatorTopic = 'actuator/' + trigger.actuator_id + '/trigger';
+
+                // Send a response to the actuator
+                mqttClient.publish(actuatorTopic, trigger.triggerFunc);
+            }
+        });
+}
 
 function compareFuncBuilder(operator, triggerValue) {
     return function (sensorValue) {
@@ -143,38 +183,19 @@ function compareFuncBuilder(operator, triggerValue) {
 }
 
 function newTriggers(triggers) {
-    winston.info(triggers);
-    var triggerFuncs = _.map(triggers, function(element) {
 
-        winston.info("element.condition: " + element.condition);
-        var op = element.condition.match(/[<>=]+/);
-        var triggerValue = element.condition.match(/\d+/);
-
-        if (op == "" || triggerValue == "") {
-            winston.info("SyntaxError: with op or triggerValue");
-            return;
-        }
-        var fcond = compareFuncBuilder(op, triggerValue);
-        return _.extend({}, element, {condfunc: fcond});
-    });
-
-    triggers_by_sensor_id = _.groupBy(triggerFuncs, "sensor_id");
-
-    lock = false;
-    winston.info("lock: " + lock);
-    winston.info(triggers_by_sensor_id);
 }
 
 // setTimeout(function(mqttCient) {
-//     winston.info("Fetching triggers from database");
-//     winston.info(triggers);
+//     logger.info("Fetching triggers from database");
+//     logger.info(triggers);
 // Fetch the initial set of Triggers
 
 // triggerModel.find(mqttClient, function(mqttClient, results) {
-//     winston.info("Printing the mqttClient");
-//     winston.info("----------------------");
-//     winston.info("Database triggers are fetched");
-//     winston.info(results);
+//     logger.info("Printing the mqttClient");
+//     logger.info("----------------------");
+//     logger.info("Database triggers are fetched");
+//     logger.info(results);
 //     mqttClient.publish('trigger', results);
 
 // });

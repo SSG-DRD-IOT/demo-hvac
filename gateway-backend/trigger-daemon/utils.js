@@ -24,5 +24,26 @@ module.exports = {
     //Get the type of data being parsed from an announcement.
     getType: function (topic) {
         return topic.substr(42, topic.length);
+    },
+
+    isSensorTopic: function(str) {
+        return str.match(/sensors\/[A-Za-z0-9]{0,32}\/data/);
+    },
+
+    isTriggerTopic: function(str) {
+        return str.match(/trigger\/data/);
+    },
+
+    isRefreshTopic: function(str) {
+        return str.match(/trigger\/refresh/);
     }
+
 };
+
+// { id: 2,
+//   name: 'LampON',
+//   sensor_id: 1,
+//   actuator_id: 2,
+//   condition: '<75',
+//   triggerFunc: 'on',
+//   active: 'true' }
