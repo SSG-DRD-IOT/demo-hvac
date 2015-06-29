@@ -107,13 +107,13 @@ setInterval(function() {
 
               if (cloudprovider_id == 1) {
                 logger.info("Writing to Microsoft Azure");
-                // azure.write(data);
+                azure.write(data);
               } else if (cloudprovider_id == 2) {
                 bluemix.write(data);
                 logger.info("Writing to IBM BlueMix");
               } else if (cloudprovider_id == 3) {
                 logger.info("Writing to Google DataStorage");
-                // google.write(data);
+                google.write(data);
               } else if (cloudprovider_id == 4) {
                 logger.info("Writing to Amazon Kinesis");
               }
