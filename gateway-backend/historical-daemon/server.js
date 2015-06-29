@@ -65,7 +65,7 @@ var logger = new (winston.Logger)({
 // Create the express application
 var app = express();
 
-if(self.config.debug != "true") {
+if(config.debug != "true") {
   logger.remove(winston.transports.Console);
 }
 

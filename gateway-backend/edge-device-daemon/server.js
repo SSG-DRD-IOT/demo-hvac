@@ -27,7 +27,7 @@ var logger = new (winston.Logger)({
     ]
 });
 
-if(self.config.debug != "true") {
+if(config.debug != "true") {
   logger.remove(winston.transports.Console);
 }
 

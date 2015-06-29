@@ -54,7 +54,7 @@ var google = new Google(config.googleDatastore);
 var bluemix = new Bluemix(config.ibmBluemix);
 
 
-if(self.config.debug != "true") {
+if(config.debug != "true") {
   logger.remove(winston.transports.Console);
 }
 
