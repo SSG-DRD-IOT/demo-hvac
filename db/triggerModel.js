@@ -12,14 +12,15 @@ var TriggerModel = function(db, data) {
 
     this.find_by_sensor_id = function(sensor_id, callback) {
         this.db.all("SELECT * FROM triggers WHERE sensor_id = ?", sensor_id, function(err, rows) {
-            callback(err, rows);
+            return callback(err, rows);
         });
     };
 
-    this.find = function() {
-        this.db.all("SELECT * FROM triggers", function(err, results) {
-            callback(err, results);
-        });
+    this.find = function(callback) {
+        this.db.all("SELECT * FROM triggers",
+                    function(err, results) {
+                        callback(err, results);
+                    });
     };
 
     this.delete_by_id = function(id) {

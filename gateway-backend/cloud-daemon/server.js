@@ -93,9 +93,9 @@ setInterval(function() {
           _.forEach(
               data_by_cloudprovider,
               function(data, cloudprovider_id) {
-                  // logger.log("Cloudprovider_id:", cloudprovider_id);
-                  // logger.log(data);
-                  // logger.log("----------------------------------------");
+                  logger.log("Cloudprovider_id:", cloudprovider_id);
+                  logger.log(data);
+                  logger.log("----------------------------------------");
 
                   if (cloudprovider_id == 1) {
                       logger.log("Writing to Microsoft Azure");
@@ -110,6 +110,7 @@ setInterval(function() {
                   }
                             });
 
+          logger.log("Deleting all sensor readings from the Database");
               dataModel.delete_all_data();
           });
 

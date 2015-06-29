@@ -8,6 +8,7 @@ var DataModel = function(db, data) {
 
     // INSERT INTO "main"."data" ("sensor_id","value") VALUES (?1,?2)
     this.save = function() {
+        console.log(data);
         this.db.run('INSERT INTO "main"."data" ("sensor_id","value", "timestamp") VALUES (?1,?2,?3)', [this.data.sensor_id, this.data.value, this.data.timestamp]  );
     };
 

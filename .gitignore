@@ -4,3 +4,7 @@ models/.#*
 
 bower_components/
 *.log
+
+*.log
+
+gateway-backend/edge-device-daemon/.#server.js

@@ -2430,3 +2430,799 @@
 {"level":"info","message":"hello","timestamp":"2015-06-28T02:05:13.290Z"}
 {"level":"info","message":"sensors/b506768ce1e2353fe063d344e89e53e5/data:{\"sensor_id\":\"b506768ce1e2353fe063d344e89e53e5\",\"value\":\"74.10\",\"timestamp\":1435457114349}","timestamp":"2015-06-28T02:05:15.110Z"}
 {"level":"info","message":"hello","timestamp":"2015-06-28T02:05:15.110Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T18:27:15.610Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T19:14:41.965Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T19:15:00.582Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{sensor_id: \"virutalTempSensor\", value: \"80.0325670549646\", timestamp:\"1435518900880\"}","timestamp":"2015-06-28T19:15:00.882Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T21:00:35.623Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.36945395730436\", \"timestamp\":\"1435525235677\"}","timestamp":"2015-06-28T21:00:35.678Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.20077490620315\", \"timestamp\":\"1435525236180\"}","timestamp":"2015-06-28T21:00:36.181Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.43033023783937\", \"timestamp\":\"1435525236685\"}","timestamp":"2015-06-28T21:00:36.686Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.79771913588047\", \"timestamp\":\"1435525237192\"}","timestamp":"2015-06-28T21:00:37.193Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.19977994868532\", \"timestamp\":\"1435525237694\"}","timestamp":"2015-06-28T21:00:37.695Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.9450862747617\", \"timestamp\":\"1435525238198\"}","timestamp":"2015-06-28T21:00:38.199Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.1319294301793\", \"timestamp\":\"1435525238699\"}","timestamp":"2015-06-28T21:00:38.700Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.06178017659113\", \"timestamp\":\"1435525239202\"}","timestamp":"2015-06-28T21:00:39.203Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.97591340355575\", \"timestamp\":\"1435525239706\"}","timestamp":"2015-06-28T21:00:39.707Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.3751917919144\", \"timestamp\":\"1435525240211\"}","timestamp":"2015-06-28T21:00:40.211Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.99825876345858\", \"timestamp\":\"1435525240713\"}","timestamp":"2015-06-28T21:00:40.714Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.20346759399399\", \"timestamp\":\"1435525241219\"}","timestamp":"2015-06-28T21:00:41.220Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.04872211348265\", \"timestamp\":\"1435525241722\"}","timestamp":"2015-06-28T21:00:41.722Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.43793229199946\", \"timestamp\":\"1435525242226\"}","timestamp":"2015-06-28T21:00:42.227Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.35474212747067\", \"timestamp\":\"1435525242727\"}","timestamp":"2015-06-28T21:00:42.728Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.873406002298\", \"timestamp\":\"1435525243230\"}","timestamp":"2015-06-28T21:00:43.231Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.3422093805857\", \"timestamp\":\"1435525243733\"}","timestamp":"2015-06-28T21:00:43.733Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.35892770253122\", \"timestamp\":\"1435525244236\"}","timestamp":"2015-06-28T21:00:44.236Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.45068479143083\", \"timestamp\":\"1435525244737\"}","timestamp":"2015-06-28T21:00:44.739Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.18667563796043\", \"timestamp\":\"1435525245243\"}","timestamp":"2015-06-28T21:00:45.244Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.61730927787721\", \"timestamp\":\"1435525245745\"}","timestamp":"2015-06-28T21:00:45.746Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.39525230973959\", \"timestamp\":\"1435525246246\"}","timestamp":"2015-06-28T21:00:46.247Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.03708837321028\", \"timestamp\":\"1435525246749\"}","timestamp":"2015-06-28T21:00:46.749Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.50366073753685\", \"timestamp\":\"1435525247250\"}","timestamp":"2015-06-28T21:00:47.251Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.37597863888368\", \"timestamp\":\"1435525247752\"}","timestamp":"2015-06-28T21:00:47.752Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.50500483810902\", \"timestamp\":\"1435525248253\"}","timestamp":"2015-06-28T21:00:48.254Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.45845305453986\", \"timestamp\":\"1435525248754\"}","timestamp":"2015-06-28T21:00:48.755Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.87001223582774\", \"timestamp\":\"1435525249259\"}","timestamp":"2015-06-28T21:00:49.261Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.40008166292682\", \"timestamp\":\"1435525249761\"}","timestamp":"2015-06-28T21:00:49.763Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.2306860620156\", \"timestamp\":\"1435525250263\"}","timestamp":"2015-06-28T21:00:50.264Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.35187248839065\", \"timestamp\":\"1435525250767\"}","timestamp":"2015-06-28T21:00:50.767Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.42069107526913\", \"timestamp\":\"1435525251272\"}","timestamp":"2015-06-28T21:00:51.272Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.5652911956422\", \"timestamp\":\"1435525251773\"}","timestamp":"2015-06-28T21:00:51.774Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.11346263531595\", \"timestamp\":\"1435525252275\"}","timestamp":"2015-06-28T21:00:52.276Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.98259732546285\", \"timestamp\":\"1435525252777\"}","timestamp":"2015-06-28T21:00:52.777Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.29311156412587\", \"timestamp\":\"1435525253278\"}","timestamp":"2015-06-28T21:00:53.279Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.83154203090817\", \"timestamp\":\"1435525253780\"}","timestamp":"2015-06-28T21:00:53.780Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.48715071892366\", \"timestamp\":\"1435525254285\"}","timestamp":"2015-06-28T21:00:54.286Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.41927523026243\", \"timestamp\":\"1435525254786\"}","timestamp":"2015-06-28T21:00:54.787Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.1482690218836\", \"timestamp\":\"1435525255288\"}","timestamp":"2015-06-28T21:00:55.291Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.63621392427012\", \"timestamp\":\"1435525255789\"}","timestamp":"2015-06-28T21:00:55.790Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.1073356717825\", \"timestamp\":\"1435525256290\"}","timestamp":"2015-06-28T21:00:56.291Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.16032773349434\", \"timestamp\":\"1435525256792\"}","timestamp":"2015-06-28T21:00:56.793Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.5651098289527\", \"timestamp\":\"1435525257293\"}","timestamp":"2015-06-28T21:00:57.294Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.25262948172167\", \"timestamp\":\"1435525257793\"}","timestamp":"2015-06-28T21:00:57.794Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.99545972980559\", \"timestamp\":\"1435525258294\"}","timestamp":"2015-06-28T21:00:58.295Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.57741457317024\", \"timestamp\":\"1435525258796\"}","timestamp":"2015-06-28T21:00:58.797Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.63588692341\", \"timestamp\":\"1435525259299\"}","timestamp":"2015-06-28T21:00:59.300Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.4294434483163\", \"timestamp\":\"1435525259804\"}","timestamp":"2015-06-28T21:00:59.805Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.81950013525784\", \"timestamp\":\"1435525260305\"}","timestamp":"2015-06-28T21:01:00.306Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.67262301873416\", \"timestamp\":\"1435525260806\"}","timestamp":"2015-06-28T21:01:00.807Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.42889138823375\", \"timestamp\":\"1435525261309\"}","timestamp":"2015-06-28T21:01:01.310Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.81627896055579\", \"timestamp\":\"1435525261816\"}","timestamp":"2015-06-28T21:01:01.816Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.66752331564203\", \"timestamp\":\"1435525262318\"}","timestamp":"2015-06-28T21:01:02.319Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.08891537599266\", \"timestamp\":\"1435525262818\"}","timestamp":"2015-06-28T21:01:02.819Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.71063804347068\", \"timestamp\":\"1435525263319\"}","timestamp":"2015-06-28T21:01:03.320Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.4145152173005\", \"timestamp\":\"1435525263824\"}","timestamp":"2015-06-28T21:01:03.826Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.75128783239052\", \"timestamp\":\"1435525264331\"}","timestamp":"2015-06-28T21:01:04.331Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.51335293613374\", \"timestamp\":\"1435525264832\"}","timestamp":"2015-06-28T21:01:04.833Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.8105715974234\", \"timestamp\":\"1435525265336\"}","timestamp":"2015-06-28T21:01:05.339Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.1897915713489\", \"timestamp\":\"1435525265841\"}","timestamp":"2015-06-28T21:01:05.841Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.36725165089592\", \"timestamp\":\"1435525266343\"}","timestamp":"2015-06-28T21:01:06.344Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.54558632196859\", \"timestamp\":\"1435525266847\"}","timestamp":"2015-06-28T21:01:06.848Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.90623608930036\", \"timestamp\":\"1435525267348\"}","timestamp":"2015-06-28T21:01:07.349Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.50091783842072\", \"timestamp\":\"1435525267851\"}","timestamp":"2015-06-28T21:01:07.852Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.1028240066953\", \"timestamp\":\"1435525268351\"}","timestamp":"2015-06-28T21:01:08.352Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.48494100570679\", \"timestamp\":\"1435525268853\"}","timestamp":"2015-06-28T21:01:08.853Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.14733759034425\", \"timestamp\":\"1435525269354\"}","timestamp":"2015-06-28T21:01:09.355Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.55482801608741\", \"timestamp\":\"1435525269859\"}","timestamp":"2015-06-28T21:01:09.859Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.68223687214777\", \"timestamp\":\"1435525270360\"}","timestamp":"2015-06-28T21:01:10.360Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.03265381557867\", \"timestamp\":\"1435525270863\"}","timestamp":"2015-06-28T21:01:10.863Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.09455447597429\", \"timestamp\":\"1435525271365\"}","timestamp":"2015-06-28T21:01:11.365Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.51055215205997\", \"timestamp\":\"1435525271867\"}","timestamp":"2015-06-28T21:01:11.867Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.63631589431316\", \"timestamp\":\"1435525272374\"}","timestamp":"2015-06-28T21:01:12.380Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.46315898699686\", \"timestamp\":\"1435525272878\"}","timestamp":"2015-06-28T21:01:12.879Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.0200913567096\", \"timestamp\":\"1435525273381\"}","timestamp":"2015-06-28T21:01:13.382Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.64331610873342\", \"timestamp\":\"1435525273887\"}","timestamp":"2015-06-28T21:01:13.888Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.78231075638905\", \"timestamp\":\"1435525274387\"}","timestamp":"2015-06-28T21:01:14.388Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.7718216329813\", \"timestamp\":\"1435525274895\"}","timestamp":"2015-06-28T21:01:14.895Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.37385707302019\", \"timestamp\":\"1435525275395\"}","timestamp":"2015-06-28T21:01:15.396Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.1208058516495\", \"timestamp\":\"1435525275897\"}","timestamp":"2015-06-28T21:01:15.897Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.29815165279433\", \"timestamp\":\"1435525276401\"}","timestamp":"2015-06-28T21:01:16.401Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.76676167966798\", \"timestamp\":\"1435525276904\"}","timestamp":"2015-06-28T21:01:16.904Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.76590774673969\", \"timestamp\":\"1435525277405\"}","timestamp":"2015-06-28T21:01:17.406Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.62841281341389\", \"timestamp\":\"1435525277908\"}","timestamp":"2015-06-28T21:01:17.908Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.7765219276771\", \"timestamp\":\"1435525278413\"}","timestamp":"2015-06-28T21:01:18.414Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.58394091716036\", \"timestamp\":\"1435525278915\"}","timestamp":"2015-06-28T21:01:18.916Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.7477270080708\", \"timestamp\":\"1435525279418\"}","timestamp":"2015-06-28T21:01:19.419Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.27712476905435\", \"timestamp\":\"1435525279922\"}","timestamp":"2015-06-28T21:01:19.923Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.96725411713123\", \"timestamp\":\"1435525280423\"}","timestamp":"2015-06-28T21:01:20.424Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.22142842970788\", \"timestamp\":\"1435525280924\"}","timestamp":"2015-06-28T21:01:20.925Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.23968181665987\", \"timestamp\":\"1435525281431\"}","timestamp":"2015-06-28T21:01:21.431Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.54798026476055\", \"timestamp\":\"1435525281931\"}","timestamp":"2015-06-28T21:01:21.932Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.85253647621721\", \"timestamp\":\"1435525282437\"}","timestamp":"2015-06-28T21:01:22.438Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T21:02:44.730Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.00997421750799\", \"timestamp\":\"1435525364874\"}","timestamp":"2015-06-28T21:02:44.875Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.90275250282139\", \"timestamp\":\"1435525365378\"}","timestamp":"2015-06-28T21:02:45.379Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.32778166094795\", \"timestamp\":\"1435525365882\"}","timestamp":"2015-06-28T21:02:45.883Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T21:03:59.035Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T21:04:39.866Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T21:05:06.880Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.76523247268051\", \"timestamp\":\"1435525507127\"}","timestamp":"2015-06-28T21:05:07.128Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.93120631715283\", \"timestamp\":\"1435525507628\"}","timestamp":"2015-06-28T21:05:07.629Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.07839731825516\", \"timestamp\":\"1435525508130\"}","timestamp":"2015-06-28T21:05:08.130Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.62613226938993\", \"timestamp\":\"1435525508634\"}","timestamp":"2015-06-28T21:05:08.634Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.40985065186396\", \"timestamp\":\"1435525509135\"}","timestamp":"2015-06-28T21:05:09.136Z"}
+{"level":"info","message":"sensors/virutalTempSensor/data:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.12861340725794\", \"timestamp\":\"1435525509639\"}","timestamp":"2015-06-28T21:05:09.640Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T21:06:30.425Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.00180687522516\", \"timestamp\":\"1435525590596\"}","timestamp":"2015-06-28T21:06:30.597Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.306277660653\", \"timestamp\":\"1435525591096\"}","timestamp":"2015-06-28T21:06:31.097Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.51017171423882\", \"timestamp\":\"1435525591598\"}","timestamp":"2015-06-28T21:06:31.599Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.14822351140901\", \"timestamp\":\"1435525592102\"}","timestamp":"2015-06-28T21:06:32.103Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.5031818561256\", \"timestamp\":\"1435525592607\"}","timestamp":"2015-06-28T21:06:32.608Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.57554604765028\", \"timestamp\":\"1435525593112\"}","timestamp":"2015-06-28T21:06:33.113Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.08788870321587\", \"timestamp\":\"1435525593613\"}","timestamp":"2015-06-28T21:06:33.614Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.70068156486377\", \"timestamp\":\"1435525594115\"}","timestamp":"2015-06-28T21:06:34.116Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.82754374202341\", \"timestamp\":\"1435525594617\"}","timestamp":"2015-06-28T21:06:34.617Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.87051691580564\", \"timestamp\":\"1435525595118\"}","timestamp":"2015-06-28T21:06:35.119Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.07414959650487\", \"timestamp\":\"1435525595623\"}","timestamp":"2015-06-28T21:06:35.623Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.38966227089986\", \"timestamp\":\"1435525596126\"}","timestamp":"2015-06-28T21:06:36.127Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.67247611377388\", \"timestamp\":\"1435525596627\"}","timestamp":"2015-06-28T21:06:36.628Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.8423982472159\", \"timestamp\":\"1435525597130\"}","timestamp":"2015-06-28T21:06:37.131Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.34590765833855\", \"timestamp\":\"1435525597633\"}","timestamp":"2015-06-28T21:06:37.634Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.11407280899584\", \"timestamp\":\"1435525598140\"}","timestamp":"2015-06-28T21:06:38.141Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.93506642570719\", \"timestamp\":\"1435525598640\"}","timestamp":"2015-06-28T21:06:38.641Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.00221183896065\", \"timestamp\":\"1435525599143\"}","timestamp":"2015-06-28T21:06:39.143Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.29632307589054\", \"timestamp\":\"1435525599647\"}","timestamp":"2015-06-28T21:06:39.648Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.20779621647671\", \"timestamp\":\"1435525600151\"}","timestamp":"2015-06-28T21:06:40.152Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.3323605293408\", \"timestamp\":\"1435525600653\"}","timestamp":"2015-06-28T21:06:40.654Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.47152292961255\", \"timestamp\":\"1435525601157\"}","timestamp":"2015-06-28T21:06:41.158Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.961555685848\", \"timestamp\":\"1435525601662\"}","timestamp":"2015-06-28T21:06:41.663Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.76474976120517\", \"timestamp\":\"1435525602164\"}","timestamp":"2015-06-28T21:06:42.164Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.30440664244816\", \"timestamp\":\"1435525602668\"}","timestamp":"2015-06-28T21:06:42.669Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.82168559264392\", \"timestamp\":\"1435525603173\"}","timestamp":"2015-06-28T21:06:43.173Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.00939044356346\", \"timestamp\":\"1435525603673\"}","timestamp":"2015-06-28T21:06:43.673Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.7540382198058\", \"timestamp\":\"1435525604176\"}","timestamp":"2015-06-28T21:06:44.177Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.18941944558173\", \"timestamp\":\"1435525604677\"}","timestamp":"2015-06-28T21:06:44.677Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.73187137721106\", \"timestamp\":\"1435525605178\"}","timestamp":"2015-06-28T21:06:45.179Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.92063004663214\", \"timestamp\":\"1435525605680\"}","timestamp":"2015-06-28T21:06:45.681Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.92613254813477\", \"timestamp\":\"1435525606181\"}","timestamp":"2015-06-28T21:06:46.182Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.14874111535028\", \"timestamp\":\"1435525606685\"}","timestamp":"2015-06-28T21:06:46.686Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.64193533919752\", \"timestamp\":\"1435525607189\"}","timestamp":"2015-06-28T21:06:47.190Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.96408995613456\", \"timestamp\":\"1435525607690\"}","timestamp":"2015-06-28T21:06:47.690Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.64548575971276\", \"timestamp\":\"1435525608190\"}","timestamp":"2015-06-28T21:06:48.192Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.53259751945734\", \"timestamp\":\"1435525608696\"}","timestamp":"2015-06-28T21:06:48.697Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.26255618128926\", \"timestamp\":\"1435525609198\"}","timestamp":"2015-06-28T21:06:49.199Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.24599592201412\", \"timestamp\":\"1435525609698\"}","timestamp":"2015-06-28T21:06:49.699Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.94961696956307\", \"timestamp\":\"1435525610202\"}","timestamp":"2015-06-28T21:06:50.203Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.35886103380471\", \"timestamp\":\"1435525610704\"}","timestamp":"2015-06-28T21:06:50.705Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.32251987233758\", \"timestamp\":\"1435525611207\"}","timestamp":"2015-06-28T21:06:51.208Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.25395175395533\", \"timestamp\":\"1435525611712\"}","timestamp":"2015-06-28T21:06:51.713Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.43739587813616\", \"timestamp\":\"1435525626210\"}","timestamp":"2015-06-28T21:07:06.210Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.56168529950082\", \"timestamp\":\"1435525628211\"}","timestamp":"2015-06-28T21:07:08.213Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.84913900122046\", \"timestamp\":\"1435525630213\"}","timestamp":"2015-06-28T21:07:10.214Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.64635005779564\", \"timestamp\":\"1435525632218\"}","timestamp":"2015-06-28T21:07:12.219Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.29694625549018\", \"timestamp\":\"1435525634218\"}","timestamp":"2015-06-28T21:07:14.218Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.53483490459621\", \"timestamp\":\"1435525636223\"}","timestamp":"2015-06-28T21:07:16.224Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.82553033856675\", \"timestamp\":\"1435525638227\"}","timestamp":"2015-06-28T21:07:18.227Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.9766326234676\", \"timestamp\":\"1435525640229\"}","timestamp":"2015-06-28T21:07:20.230Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.95697625586763\", \"timestamp\":\"1435525642230\"}","timestamp":"2015-06-28T21:07:22.230Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.2734452104196\", \"timestamp\":\"1435525644231\"}","timestamp":"2015-06-28T21:07:24.232Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.07442384539172\", \"timestamp\":\"1435525646233\"}","timestamp":"2015-06-28T21:07:26.234Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.03026411589235\", \"timestamp\":\"1435525648237\"}","timestamp":"2015-06-28T21:07:28.238Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.72209571115673\", \"timestamp\":\"1435525650238\"}","timestamp":"2015-06-28T21:07:30.238Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.00167075684294\", \"timestamp\":\"1435525652238\"}","timestamp":"2015-06-28T21:07:32.239Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.1801410857588\", \"timestamp\":\"1435525654238\"}","timestamp":"2015-06-28T21:07:34.240Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.7950416598469\", \"timestamp\":\"1435525656245\"}","timestamp":"2015-06-28T21:07:36.246Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.86960117612034\", \"timestamp\":\"1435525658249\"}","timestamp":"2015-06-28T21:07:38.250Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.26855821721256\", \"timestamp\":\"1435525660253\"}","timestamp":"2015-06-28T21:07:40.254Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.6871560071595\", \"timestamp\":\"1435525662257\"}","timestamp":"2015-06-28T21:07:42.258Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.52790250768885\", \"timestamp\":\"1435525664259\"}","timestamp":"2015-06-28T21:07:44.260Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.88707084208727\", \"timestamp\":\"1435525666262\"}","timestamp":"2015-06-28T21:07:46.263Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.332060999237\", \"timestamp\":\"1435525668267\"}","timestamp":"2015-06-28T21:07:48.268Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.29629582865164\", \"timestamp\":\"1435525670271\"}","timestamp":"2015-06-28T21:07:50.272Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.3330474649556\", \"timestamp\":\"1435525672274\"}","timestamp":"2015-06-28T21:07:52.275Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.40404915623367\", \"timestamp\":\"1435525674280\"}","timestamp":"2015-06-28T21:07:54.280Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.07517629908398\", \"timestamp\":\"1435525676282\"}","timestamp":"2015-06-28T21:07:56.283Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.58019983861595\", \"timestamp\":\"1435525678287\"}","timestamp":"2015-06-28T21:07:58.288Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.95230439351872\", \"timestamp\":\"1435525680288\"}","timestamp":"2015-06-28T21:08:00.289Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.20313429739326\", \"timestamp\":\"1435525682291\"}","timestamp":"2015-06-28T21:08:02.292Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.57460853317752\", \"timestamp\":\"1435525684297\"}","timestamp":"2015-06-28T21:08:04.297Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.29910879209638\", \"timestamp\":\"1435525686302\"}","timestamp":"2015-06-28T21:08:06.303Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.67067252518609\", \"timestamp\":\"1435525688307\"}","timestamp":"2015-06-28T21:08:08.307Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.61306057171896\", \"timestamp\":\"1435525690312\"}","timestamp":"2015-06-28T21:08:10.312Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.7529221540317\", \"timestamp\":\"1435525692316\"}","timestamp":"2015-06-28T21:08:12.317Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.25813951622695\", \"timestamp\":\"1435525694317\"}","timestamp":"2015-06-28T21:08:14.317Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.1457240586169\", \"timestamp\":\"1435525696321\"}","timestamp":"2015-06-28T21:08:16.322Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.70586661901325\", \"timestamp\":\"1435525698323\"}","timestamp":"2015-06-28T21:08:18.323Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.91329979849979\", \"timestamp\":\"1435525700324\"}","timestamp":"2015-06-28T21:08:20.324Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.57374409493059\", \"timestamp\":\"1435525702325\"}","timestamp":"2015-06-28T21:08:22.325Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.1132984450087\", \"timestamp\":\"1435525704327\"}","timestamp":"2015-06-28T21:08:24.328Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.89372899802402\", \"timestamp\":\"1435525706328\"}","timestamp":"2015-06-28T21:08:26.329Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.17773706233129\", \"timestamp\":\"1435525708331\"}","timestamp":"2015-06-28T21:08:28.332Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.36483926745132\", \"timestamp\":\"1435525710336\"}","timestamp":"2015-06-28T21:08:30.337Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.52158600836992\", \"timestamp\":\"1435525712338\"}","timestamp":"2015-06-28T21:08:32.339Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.53699539322406\", \"timestamp\":\"1435525714339\"}","timestamp":"2015-06-28T21:08:34.340Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.08685791911557\", \"timestamp\":\"1435525716342\"}","timestamp":"2015-06-28T21:08:36.343Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.8452854026109\", \"timestamp\":\"1435525718347\"}","timestamp":"2015-06-28T21:08:38.348Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.5683035934344\", \"timestamp\":\"1435525720352\"}","timestamp":"2015-06-28T21:08:40.353Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.33834853908047\", \"timestamp\":\"1435525722355\"}","timestamp":"2015-06-28T21:08:42.356Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.5678775748238\", \"timestamp\":\"1435525724355\"}","timestamp":"2015-06-28T21:08:44.356Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.80304690357298\", \"timestamp\":\"1435525726356\"}","timestamp":"2015-06-28T21:08:46.357Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.13913956098258\", \"timestamp\":\"1435525728363\"}","timestamp":"2015-06-28T21:08:48.364Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.52122965129092\", \"timestamp\":\"1435525730366\"}","timestamp":"2015-06-28T21:08:50.366Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.88823621626943\", \"timestamp\":\"1435525732369\"}","timestamp":"2015-06-28T21:08:52.370Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.15995134785771\", \"timestamp\":\"1435525734371\"}","timestamp":"2015-06-28T21:08:54.371Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.82164893485606\", \"timestamp\":\"1435525736371\"}","timestamp":"2015-06-28T21:08:56.372Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.97858937224373\", \"timestamp\":\"1435525738373\"}","timestamp":"2015-06-28T21:08:58.374Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.89038693439215\", \"timestamp\":\"1435525740377\"}","timestamp":"2015-06-28T21:09:00.382Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.92361682187766\", \"timestamp\":\"1435525742379\"}","timestamp":"2015-06-28T21:09:02.380Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.97088959813118\", \"timestamp\":\"1435525744383\"}","timestamp":"2015-06-28T21:09:04.384Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.11283937981352\", \"timestamp\":\"1435525746387\"}","timestamp":"2015-06-28T21:09:06.387Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.08205934707075\", \"timestamp\":\"1435525748390\"}","timestamp":"2015-06-28T21:09:08.391Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.70023622736335\", \"timestamp\":\"1435525750395\"}","timestamp":"2015-06-28T21:09:10.396Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.24971040710807\", \"timestamp\":\"1435525752400\"}","timestamp":"2015-06-28T21:09:12.401Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.71063074702397\", \"timestamp\":\"1435525754402\"}","timestamp":"2015-06-28T21:09:14.403Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.36295516975224\", \"timestamp\":\"1435525756405\"}","timestamp":"2015-06-28T21:09:16.406Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.43240262335166\", \"timestamp\":\"1435525758408\"}","timestamp":"2015-06-28T21:09:18.408Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.76285804156214\", \"timestamp\":\"1435525760411\"}","timestamp":"2015-06-28T21:09:20.411Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.79438409209251\", \"timestamp\":\"1435525762411\"}","timestamp":"2015-06-28T21:09:22.412Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.16711127012968\", \"timestamp\":\"1435525764414\"}","timestamp":"2015-06-28T21:09:24.415Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.26121377199888\", \"timestamp\":\"1435525766420\"}","timestamp":"2015-06-28T21:09:26.420Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.37687009619549\", \"timestamp\":\"1435525768424\"}","timestamp":"2015-06-28T21:09:28.425Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.76751253800467\", \"timestamp\":\"1435525770429\"}","timestamp":"2015-06-28T21:09:30.429Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.95045611541718\", \"timestamp\":\"1435525772430\"}","timestamp":"2015-06-28T21:09:32.431Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.37815420469269\", \"timestamp\":\"1435525774432\"}","timestamp":"2015-06-28T21:09:34.433Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.43829142628238\", \"timestamp\":\"1435525776435\"}","timestamp":"2015-06-28T21:09:36.435Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.1476801703684\", \"timestamp\":\"1435525778440\"}","timestamp":"2015-06-28T21:09:38.440Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.66125496244058\", \"timestamp\":\"1435525780443\"}","timestamp":"2015-06-28T21:09:40.443Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.53661740897223\", \"timestamp\":\"1435525782445\"}","timestamp":"2015-06-28T21:09:42.445Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.2035302799195\", \"timestamp\":\"1435525784449\"}","timestamp":"2015-06-28T21:09:44.449Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.03504596743733\", \"timestamp\":\"1435525786451\"}","timestamp":"2015-06-28T21:09:46.451Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.597044355236\", \"timestamp\":\"1435525788455\"}","timestamp":"2015-06-28T21:09:48.456Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.84438953734934\", \"timestamp\":\"1435525790460\"}","timestamp":"2015-06-28T21:09:50.461Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.03871677536517\", \"timestamp\":\"1435525792462\"}","timestamp":"2015-06-28T21:09:52.462Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.89592204382643\", \"timestamp\":\"1435525794466\"}","timestamp":"2015-06-28T21:09:54.467Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.79793094284832\", \"timestamp\":\"1435525796471\"}","timestamp":"2015-06-28T21:09:56.472Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.72800564207137\", \"timestamp\":\"1435525798472\"}","timestamp":"2015-06-28T21:09:58.473Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.36581709329039\", \"timestamp\":\"1435525800474\"}","timestamp":"2015-06-28T21:10:00.475Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.42844469984993\", \"timestamp\":\"1435525802475\"}","timestamp":"2015-06-28T21:10:02.477Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.54816753882915\", \"timestamp\":\"1435525804476\"}","timestamp":"2015-06-28T21:10:04.476Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.99643489392474\", \"timestamp\":\"1435525806480\"}","timestamp":"2015-06-28T21:10:06.480Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.3168631196022\", \"timestamp\":\"1435525808480\"}","timestamp":"2015-06-28T21:10:08.481Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.77640041150153\", \"timestamp\":\"1435525810485\"}","timestamp":"2015-06-28T21:10:10.486Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.33365534571931\", \"timestamp\":\"1435525812487\"}","timestamp":"2015-06-28T21:10:12.488Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.50301731331274\", \"timestamp\":\"1435525814490\"}","timestamp":"2015-06-28T21:10:14.491Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.34846276137978\", \"timestamp\":\"1435525816496\"}","timestamp":"2015-06-28T21:10:16.497Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.32844973076135\", \"timestamp\":\"1435525818501\"}","timestamp":"2015-06-28T21:10:18.502Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.0408648122102\", \"timestamp\":\"1435525820508\"}","timestamp":"2015-06-28T21:10:20.509Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.06613123090938\", \"timestamp\":\"1435525822512\"}","timestamp":"2015-06-28T21:10:22.513Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.11246767593548\", \"timestamp\":\"1435525824516\"}","timestamp":"2015-06-28T21:10:24.517Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.67687080428004\", \"timestamp\":\"1435525826521\"}","timestamp":"2015-06-28T21:10:26.521Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.55700608808547\", \"timestamp\":\"1435525828522\"}","timestamp":"2015-06-28T21:10:28.523Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.2741450611502\", \"timestamp\":\"1435525830524\"}","timestamp":"2015-06-28T21:10:30.525Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.93758726818487\", \"timestamp\":\"1435525832527\"}","timestamp":"2015-06-28T21:10:32.527Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.15360570466146\", \"timestamp\":\"1435525834530\"}","timestamp":"2015-06-28T21:10:34.530Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.32598059996963\", \"timestamp\":\"1435525836531\"}","timestamp":"2015-06-28T21:10:36.532Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.26867382740602\", \"timestamp\":\"1435525838537\"}","timestamp":"2015-06-28T21:10:38.538Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.71779316151515\", \"timestamp\":\"1435525840543\"}","timestamp":"2015-06-28T21:10:40.543Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.69448323594406\", \"timestamp\":\"1435525842550\"}","timestamp":"2015-06-28T21:10:42.551Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.0943984137848\", \"timestamp\":\"1435525844554\"}","timestamp":"2015-06-28T21:10:44.555Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.29163277568296\", \"timestamp\":\"1435525846555\"}","timestamp":"2015-06-28T21:10:46.556Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.28303544735536\", \"timestamp\":\"1435525848555\"}","timestamp":"2015-06-28T21:10:48.556Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.84572808397934\", \"timestamp\":\"1435525850559\"}","timestamp":"2015-06-28T21:10:50.560Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.0693661053665\", \"timestamp\":\"1435525852564\"}","timestamp":"2015-06-28T21:10:52.565Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.00503618596122\", \"timestamp\":\"1435525854565\"}","timestamp":"2015-06-28T21:10:54.566Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.6855224003084\", \"timestamp\":\"1435525856569\"}","timestamp":"2015-06-28T21:10:56.569Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.48090821644291\", \"timestamp\":\"1435525858573\"}","timestamp":"2015-06-28T21:10:58.574Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.46949021145701\", \"timestamp\":\"1435525860577\"}","timestamp":"2015-06-28T21:11:00.578Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.84687848575413\", \"timestamp\":\"1435525862584\"}","timestamp":"2015-06-28T21:11:02.584Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.49414246529341\", \"timestamp\":\"1435525864584\"}","timestamp":"2015-06-28T21:11:04.585Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.7495797984302\", \"timestamp\":\"1435525866588\"}","timestamp":"2015-06-28T21:11:06.588Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.2444016635418\", \"timestamp\":\"1435525868589\"}","timestamp":"2015-06-28T21:11:08.590Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.92437002575025\", \"timestamp\":\"1435525870590\"}","timestamp":"2015-06-28T21:11:10.590Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.67443861300126\", \"timestamp\":\"1435525872591\"}","timestamp":"2015-06-28T21:11:12.592Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.05628607328981\", \"timestamp\":\"1435525874597\"}","timestamp":"2015-06-28T21:11:14.597Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.08701497875154\", \"timestamp\":\"1435525876601\"}","timestamp":"2015-06-28T21:11:16.602Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.10513626318425\", \"timestamp\":\"1435525878602\"}","timestamp":"2015-06-28T21:11:18.603Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.34176314529032\", \"timestamp\":\"1435525880605\"}","timestamp":"2015-06-28T21:11:20.605Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.78950239624828\", \"timestamp\":\"1435525882607\"}","timestamp":"2015-06-28T21:11:22.613Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.802156903781\", \"timestamp\":\"1435525884614\"}","timestamp":"2015-06-28T21:11:24.616Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.92321076290682\", \"timestamp\":\"1435525886618\"}","timestamp":"2015-06-28T21:11:26.620Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.36046712426469\", \"timestamp\":\"1435525888626\"}","timestamp":"2015-06-28T21:11:28.627Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.31271061720327\", \"timestamp\":\"1435525890631\"}","timestamp":"2015-06-28T21:11:30.632Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.64354835450649\", \"timestamp\":\"1435525892636\"}","timestamp":"2015-06-28T21:11:32.637Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.20448110811412\", \"timestamp\":\"1435525894639\"}","timestamp":"2015-06-28T21:11:34.640Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.13105245446786\", \"timestamp\":\"1435525896642\"}","timestamp":"2015-06-28T21:11:36.643Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.41396725783125\", \"timestamp\":\"1435525898646\"}","timestamp":"2015-06-28T21:11:38.647Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.93647888302803\", \"timestamp\":\"1435525900646\"}","timestamp":"2015-06-28T21:11:40.647Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.11706722900271\", \"timestamp\":\"1435525902648\"}","timestamp":"2015-06-28T21:11:42.648Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.22501750616357\", \"timestamp\":\"1435525904650\"}","timestamp":"2015-06-28T21:11:44.651Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.8294739741832\", \"timestamp\":\"1435525906654\"}","timestamp":"2015-06-28T21:11:46.655Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.43266004184261\", \"timestamp\":\"1435525908659\"}","timestamp":"2015-06-28T21:11:48.660Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.96933321096003\", \"timestamp\":\"1435525910664\"}","timestamp":"2015-06-28T21:11:50.665Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.6179533987306\", \"timestamp\":\"1435525912666\"}","timestamp":"2015-06-28T21:11:52.667Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.52658029086888\", \"timestamp\":\"1435525914668\"}","timestamp":"2015-06-28T21:11:54.669Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.6099340193905\", \"timestamp\":\"1435525916670\"}","timestamp":"2015-06-28T21:11:56.671Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.70270405896008\", \"timestamp\":\"1435525918674\"}","timestamp":"2015-06-28T21:11:58.675Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.83566091535613\", \"timestamp\":\"1435525920680\"}","timestamp":"2015-06-28T21:12:00.681Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.55682009737939\", \"timestamp\":\"1435525922681\"}","timestamp":"2015-06-28T21:12:02.682Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.99662114074454\", \"timestamp\":\"1435525924682\"}","timestamp":"2015-06-28T21:12:04.683Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.16537131275982\", \"timestamp\":\"1435525926683\"}","timestamp":"2015-06-28T21:12:06.684Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.37340452289209\", \"timestamp\":\"1435525928684\"}","timestamp":"2015-06-28T21:12:08.684Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.8470594342798\", \"timestamp\":\"1435525930685\"}","timestamp":"2015-06-28T21:12:10.685Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.4673650758341\", \"timestamp\":\"1435525932685\"}","timestamp":"2015-06-28T21:12:12.686Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.74085872480646\", \"timestamp\":\"1435525934692\"}","timestamp":"2015-06-28T21:12:14.692Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.85540998727083\", \"timestamp\":\"1435525936695\"}","timestamp":"2015-06-28T21:12:16.696Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.37471870332956\", \"timestamp\":\"1435525938696\"}","timestamp":"2015-06-28T21:12:18.697Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.92177629098296\", \"timestamp\":\"1435525940702\"}","timestamp":"2015-06-28T21:12:20.703Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.23814994469285\", \"timestamp\":\"1435525942707\"}","timestamp":"2015-06-28T21:12:22.708Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.24587926082313\", \"timestamp\":\"1435525944712\"}","timestamp":"2015-06-28T21:12:24.713Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.818341080565\", \"timestamp\":\"1435525946717\"}","timestamp":"2015-06-28T21:12:26.718Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.37290796171874\", \"timestamp\":\"1435525948724\"}","timestamp":"2015-06-28T21:12:28.725Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.64979679416865\", \"timestamp\":\"1435525950729\"}","timestamp":"2015-06-28T21:12:30.730Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.15979635110125\", \"timestamp\":\"1435525952733\"}","timestamp":"2015-06-28T21:12:32.734Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.66923401877284\", \"timestamp\":\"1435525954735\"}","timestamp":"2015-06-28T21:12:34.736Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.50404071435332\", \"timestamp\":\"1435525956740\"}","timestamp":"2015-06-28T21:12:36.740Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.84461972815916\", \"timestamp\":\"1435525958745\"}","timestamp":"2015-06-28T21:12:38.746Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.66149173490703\", \"timestamp\":\"1435525960749\"}","timestamp":"2015-06-28T21:12:40.750Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.46134144533426\", \"timestamp\":\"1435525962750\"}","timestamp":"2015-06-28T21:12:42.750Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.21717717731372\", \"timestamp\":\"1435525964752\"}","timestamp":"2015-06-28T21:12:44.753Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.09506831178442\", \"timestamp\":\"1435525966758\"}","timestamp":"2015-06-28T21:12:46.758Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.04195185750723\", \"timestamp\":\"1435525968762\"}","timestamp":"2015-06-28T21:12:48.763Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.65265728905797\", \"timestamp\":\"1435525970767\"}","timestamp":"2015-06-28T21:12:50.768Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.50510457530618\", \"timestamp\":\"1435525972771\"}","timestamp":"2015-06-28T21:12:52.772Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.10287632932886\", \"timestamp\":\"1435525974772\"}","timestamp":"2015-06-28T21:12:54.773Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.06799810612574\", \"timestamp\":\"1435525976779\"}","timestamp":"2015-06-28T21:12:56.779Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.47308503929526\", \"timestamp\":\"1435525978782\"}","timestamp":"2015-06-28T21:12:58.783Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.14007608452812\", \"timestamp\":\"1435525980787\"}","timestamp":"2015-06-28T21:13:00.788Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.31663090595976\", \"timestamp\":\"1435525982794\"}","timestamp":"2015-06-28T21:13:02.795Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.49494028510526\", \"timestamp\":\"1435525984798\"}","timestamp":"2015-06-28T21:13:04.799Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.4664840688929\", \"timestamp\":\"1435525986801\"}","timestamp":"2015-06-28T21:13:06.802Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.52849694015458\", \"timestamp\":\"1435525988802\"}","timestamp":"2015-06-28T21:13:08.803Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.32444173283875\", \"timestamp\":\"1435525990806\"}","timestamp":"2015-06-28T21:13:10.807Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.12099771620706\", \"timestamp\":\"1435525992811\"}","timestamp":"2015-06-28T21:13:12.811Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.7508489312604\", \"timestamp\":\"1435525994816\"}","timestamp":"2015-06-28T21:13:14.817Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.01863739825785\", \"timestamp\":\"1435525996819\"}","timestamp":"2015-06-28T21:13:16.820Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.49504932994023\", \"timestamp\":\"1435525998820\"}","timestamp":"2015-06-28T21:13:18.821Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.99348418414593\", \"timestamp\":\"1435526000825\"}","timestamp":"2015-06-28T21:13:20.826Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.61906674969941\", \"timestamp\":\"1435526002827\"}","timestamp":"2015-06-28T21:13:22.827Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.24246094096452\", \"timestamp\":\"1435526004830\"}","timestamp":"2015-06-28T21:13:24.830Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.42893025930971\", \"timestamp\":\"1435526006834\"}","timestamp":"2015-06-28T21:13:26.835Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.5275228926912\", \"timestamp\":\"1435526008838\"}","timestamp":"2015-06-28T21:13:28.839Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.09912499738857\", \"timestamp\":\"1435526010845\"}","timestamp":"2015-06-28T21:13:30.845Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.8773522125557\", \"timestamp\":\"1435526012845\"}","timestamp":"2015-06-28T21:13:32.846Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.20218716096133\", \"timestamp\":\"1435526014847\"}","timestamp":"2015-06-28T21:13:34.849Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.29084146441892\", \"timestamp\":\"1435526016854\"}","timestamp":"2015-06-28T21:13:36.855Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.87192036351189\", \"timestamp\":\"1435526018856\"}","timestamp":"2015-06-28T21:13:38.856Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.85513862175867\", \"timestamp\":\"1435526020857\"}","timestamp":"2015-06-28T21:13:40.858Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.81616384536028\", \"timestamp\":\"1435526022862\"}","timestamp":"2015-06-28T21:13:42.862Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.72864489722997\", \"timestamp\":\"1435526024864\"}","timestamp":"2015-06-28T21:13:44.865Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.95122822653502\", \"timestamp\":\"1435526026865\"}","timestamp":"2015-06-28T21:13:46.865Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.04871199745685\", \"timestamp\":\"1435526028866\"}","timestamp":"2015-06-28T21:13:48.867Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.62217824207619\", \"timestamp\":\"1435526030870\"}","timestamp":"2015-06-28T21:13:50.870Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.4409825229086\", \"timestamp\":\"1435526032874\"}","timestamp":"2015-06-28T21:13:52.875Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.89455624297261\", \"timestamp\":\"1435526034880\"}","timestamp":"2015-06-28T21:13:54.881Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.81096118502319\", \"timestamp\":\"1435526036885\"}","timestamp":"2015-06-28T21:13:56.886Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.60329960891977\", \"timestamp\":\"1435526038891\"}","timestamp":"2015-06-28T21:13:58.891Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.26295510446653\", \"timestamp\":\"1435526040895\"}","timestamp":"2015-06-28T21:14:00.896Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.94284097617492\", \"timestamp\":\"1435526042899\"}","timestamp":"2015-06-28T21:14:02.900Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.52280173264444\", \"timestamp\":\"1435526044906\"}","timestamp":"2015-06-28T21:14:04.907Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.45571185043082\", \"timestamp\":\"1435526046907\"}","timestamp":"2015-06-28T21:14:06.907Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.82632595812902\", \"timestamp\":\"1435526048910\"}","timestamp":"2015-06-28T21:14:08.911Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.0016251001507\", \"timestamp\":\"1435526050911\"}","timestamp":"2015-06-28T21:14:10.911Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.0886448211968\", \"timestamp\":\"1435526052912\"}","timestamp":"2015-06-28T21:14:12.913Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.93367048539221\", \"timestamp\":\"1435526054912\"}","timestamp":"2015-06-28T21:14:14.913Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.27116114925593\", \"timestamp\":\"1435526056913\"}","timestamp":"2015-06-28T21:14:16.913Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.77809996716678\", \"timestamp\":\"1435526058918\"}","timestamp":"2015-06-28T21:14:18.919Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.42441829340532\", \"timestamp\":\"1435526060920\"}","timestamp":"2015-06-28T21:14:20.920Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.4478382715024\", \"timestamp\":\"1435526062921\"}","timestamp":"2015-06-28T21:14:22.922Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.77668796246871\", \"timestamp\":\"1435526064924\"}","timestamp":"2015-06-28T21:14:24.925Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.78311905032024\", \"timestamp\":\"1435526066927\"}","timestamp":"2015-06-28T21:14:26.928Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.56273142527789\", \"timestamp\":\"1435526068928\"}","timestamp":"2015-06-28T21:14:28.930Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.6992473565042\", \"timestamp\":\"1435526070935\"}","timestamp":"2015-06-28T21:14:30.935Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.4142390685156\", \"timestamp\":\"1435526072937\"}","timestamp":"2015-06-28T21:14:32.938Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.10424870066345\", \"timestamp\":\"1435526074940\"}","timestamp":"2015-06-28T21:14:34.941Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.81884884275496\", \"timestamp\":\"1435526076944\"}","timestamp":"2015-06-28T21:14:36.945Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.77490522526205\", \"timestamp\":\"1435526078946\"}","timestamp":"2015-06-28T21:14:38.947Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T21:19:42.594Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.16776222269982\", \"timestamp\":\"1435526382718\"}","timestamp":"2015-06-28T21:19:42.719Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.01661388250068\", \"timestamp\":\"1435526384720\"}","timestamp":"2015-06-28T21:19:44.720Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.03741862811148\", \"timestamp\":\"1435526386723\"}","timestamp":"2015-06-28T21:19:46.724Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.54674842813984\", \"timestamp\":\"1435526388724\"}","timestamp":"2015-06-28T21:19:48.725Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.7020587134175\", \"timestamp\":\"1435526390729\"}","timestamp":"2015-06-28T21:19:50.729Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.54972717631608\", \"timestamp\":\"1435526392731\"}","timestamp":"2015-06-28T21:19:52.731Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.5129849226214\", \"timestamp\":\"1435526394731\"}","timestamp":"2015-06-28T21:19:54.732Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.51943354029208\", \"timestamp\":\"1435526396737\"}","timestamp":"2015-06-28T21:19:56.737Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.38896901439875\", \"timestamp\":\"1435526398738\"}","timestamp":"2015-06-28T21:19:58.739Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.64903558557853\", \"timestamp\":\"1435526400745\"}","timestamp":"2015-06-28T21:20:00.745Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.9293659767136\", \"timestamp\":\"1435526402748\"}","timestamp":"2015-06-28T21:20:02.748Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.10210316441953\", \"timestamp\":\"1435526404751\"}","timestamp":"2015-06-28T21:20:04.752Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.01451188931242\", \"timestamp\":\"1435526406754\"}","timestamp":"2015-06-28T21:20:06.755Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.916544389911\", \"timestamp\":\"1435526408758\"}","timestamp":"2015-06-28T21:20:08.758Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.07361445203424\", \"timestamp\":\"1435526410760\"}","timestamp":"2015-06-28T21:20:10.761Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.42240708973259\", \"timestamp\":\"1435526412762\"}","timestamp":"2015-06-28T21:20:12.762Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.94664054457098\", \"timestamp\":\"1435526414763\"}","timestamp":"2015-06-28T21:20:14.763Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.08579141832888\", \"timestamp\":\"1435526416766\"}","timestamp":"2015-06-28T21:20:16.766Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.39895408274606\", \"timestamp\":\"1435526418769\"}","timestamp":"2015-06-28T21:20:18.770Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.43663358408958\", \"timestamp\":\"1435526420774\"}","timestamp":"2015-06-28T21:20:20.775Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.05539080686867\", \"timestamp\":\"1435526422778\"}","timestamp":"2015-06-28T21:20:22.779Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.81529811630026\", \"timestamp\":\"1435526424782\"}","timestamp":"2015-06-28T21:20:24.783Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.5404456295073\", \"timestamp\":\"1435526426786\"}","timestamp":"2015-06-28T21:20:26.787Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.90404809964821\", \"timestamp\":\"1435526428791\"}","timestamp":"2015-06-28T21:20:28.792Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.3486658683978\", \"timestamp\":\"1435526430795\"}","timestamp":"2015-06-28T21:20:30.795Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.12272767303512\", \"timestamp\":\"1435526432799\"}","timestamp":"2015-06-28T21:20:32.800Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.40411360375583\", \"timestamp\":\"1435526434802\"}","timestamp":"2015-06-28T21:20:34.803Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.64101421181113\", \"timestamp\":\"1435526436807\"}","timestamp":"2015-06-28T21:20:36.807Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.4115437255241\", \"timestamp\":\"1435526438808\"}","timestamp":"2015-06-28T21:20:38.809Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.58221229398623\", \"timestamp\":\"1435526440812\"}","timestamp":"2015-06-28T21:20:40.813Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.60541439987719\", \"timestamp\":\"1435526442815\"}","timestamp":"2015-06-28T21:20:42.817Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.5471800151281\", \"timestamp\":\"1435526444817\"}","timestamp":"2015-06-28T21:20:44.818Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.85519297607243\", \"timestamp\":\"1435526446820\"}","timestamp":"2015-06-28T21:20:46.820Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.96562442881986\", \"timestamp\":\"1435526448822\"}","timestamp":"2015-06-28T21:20:48.823Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.41443877667189\", \"timestamp\":\"1435526450824\"}","timestamp":"2015-06-28T21:20:50.825Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.68813066417351\", \"timestamp\":\"1435526452829\"}","timestamp":"2015-06-28T21:20:52.829Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.83157101413235\", \"timestamp\":\"1435526454833\"}","timestamp":"2015-06-28T21:20:54.833Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.34254727326334\", \"timestamp\":\"1435526456835\"}","timestamp":"2015-06-28T21:20:56.838Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.7845949055627\", \"timestamp\":\"1435526458839\"}","timestamp":"2015-06-28T21:20:58.839Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.64180215960369\", \"timestamp\":\"1435526460843\"}","timestamp":"2015-06-28T21:21:00.843Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.69496135599911\", \"timestamp\":\"1435526462846\"}","timestamp":"2015-06-28T21:21:02.846Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.79848508769646\", \"timestamp\":\"1435526464851\"}","timestamp":"2015-06-28T21:21:04.851Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.36382145201787\", \"timestamp\":\"1435526466854\"}","timestamp":"2015-06-28T21:21:06.855Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.1433040946722\", \"timestamp\":\"1435526468859\"}","timestamp":"2015-06-28T21:21:08.860Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.50265103159472\", \"timestamp\":\"1435526470866\"}","timestamp":"2015-06-28T21:21:10.867Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.9977598763071\", \"timestamp\":\"1435526472871\"}","timestamp":"2015-06-28T21:21:12.872Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.2832980202511\", \"timestamp\":\"1435526474875\"}","timestamp":"2015-06-28T21:21:14.876Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.90322953788564\", \"timestamp\":\"1435526476878\"}","timestamp":"2015-06-28T21:21:16.879Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.67752281250432\", \"timestamp\":\"1435526478884\"}","timestamp":"2015-06-28T21:21:18.884Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.55498308502138\", \"timestamp\":\"1435526480889\"}","timestamp":"2015-06-28T21:21:20.889Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.9547894205898\", \"timestamp\":\"1435526482890\"}","timestamp":"2015-06-28T21:21:22.890Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.80281011760235\", \"timestamp\":\"1435526484891\"}","timestamp":"2015-06-28T21:21:24.891Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.3433142574504\", \"timestamp\":\"1435526486892\"}","timestamp":"2015-06-28T21:21:26.892Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.39062764542177\", \"timestamp\":\"1435526488897\"}","timestamp":"2015-06-28T21:21:28.898Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.91959697008133\", \"timestamp\":\"1435526490898\"}","timestamp":"2015-06-28T21:21:30.899Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.57306147040799\", \"timestamp\":\"1435526492905\"}","timestamp":"2015-06-28T21:21:32.905Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.20762297743931\", \"timestamp\":\"1435526494909\"}","timestamp":"2015-06-28T21:21:34.910Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.42435735557228\", \"timestamp\":\"1435526496914\"}","timestamp":"2015-06-28T21:21:36.915Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.8034407645464\", \"timestamp\":\"1435526498919\"}","timestamp":"2015-06-28T21:21:38.920Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.18489553872496\", \"timestamp\":\"1435526500923\"}","timestamp":"2015-06-28T21:21:40.923Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.82917048223317\", \"timestamp\":\"1435526502927\"}","timestamp":"2015-06-28T21:21:42.927Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.74864622903988\", \"timestamp\":\"1435526504928\"}","timestamp":"2015-06-28T21:21:44.928Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.68074547732249\", \"timestamp\":\"1435526506929\"}","timestamp":"2015-06-28T21:21:46.929Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.97393928235397\", \"timestamp\":\"1435526508930\"}","timestamp":"2015-06-28T21:21:48.931Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.71887355530635\", \"timestamp\":\"1435526510932\"}","timestamp":"2015-06-28T21:21:50.933Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.06259146239609\", \"timestamp\":\"1435526512933\"}","timestamp":"2015-06-28T21:21:52.934Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.65707677137107\", \"timestamp\":\"1435526514936\"}","timestamp":"2015-06-28T21:21:54.937Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.05736627290025\", \"timestamp\":\"1435526516938\"}","timestamp":"2015-06-28T21:21:56.938Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.5515535697341\", \"timestamp\":\"1435526518943\"}","timestamp":"2015-06-28T21:21:58.943Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.7100523407571\", \"timestamp\":\"1435526520943\"}","timestamp":"2015-06-28T21:22:00.944Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.18841514876112\", \"timestamp\":\"1435526522947\"}","timestamp":"2015-06-28T21:22:02.947Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.07194981025532\", \"timestamp\":\"1435526524948\"}","timestamp":"2015-06-28T21:22:04.948Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.70708608487621\", \"timestamp\":\"1435526526948\"}","timestamp":"2015-06-28T21:22:06.949Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.92949111759663\", \"timestamp\":\"1435526528950\"}","timestamp":"2015-06-28T21:22:08.951Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.83913770923391\", \"timestamp\":\"1435526530953\"}","timestamp":"2015-06-28T21:22:10.953Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.11921012261882\", \"timestamp\":\"1435526532956\"}","timestamp":"2015-06-28T21:22:12.957Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.4876869325526\", \"timestamp\":\"1435526534958\"}","timestamp":"2015-06-28T21:22:14.959Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.24386446038261\", \"timestamp\":\"1435526536961\"}","timestamp":"2015-06-28T21:22:16.961Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.58297933544964\", \"timestamp\":\"1435526538961\"}","timestamp":"2015-06-28T21:22:18.962Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.77858291799203\", \"timestamp\":\"1435526540963\"}","timestamp":"2015-06-28T21:22:20.963Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.83747168630362\", \"timestamp\":\"1435526542963\"}","timestamp":"2015-06-28T21:22:22.965Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.00336126703769\", \"timestamp\":\"1435526544967\"}","timestamp":"2015-06-28T21:22:24.968Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.80123674077913\", \"timestamp\":\"1435526546972\"}","timestamp":"2015-06-28T21:22:26.972Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.00812428584322\", \"timestamp\":\"1435526548976\"}","timestamp":"2015-06-28T21:22:28.977Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.70262392051518\", \"timestamp\":\"1435526550978\"}","timestamp":"2015-06-28T21:22:30.979Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.90371933672577\", \"timestamp\":\"1435526552979\"}","timestamp":"2015-06-28T21:22:32.980Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.5532949976623\", \"timestamp\":\"1435526554985\"}","timestamp":"2015-06-28T21:22:34.986Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.23193283891305\", \"timestamp\":\"1435526556987\"}","timestamp":"2015-06-28T21:22:36.988Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.02234369842336\", \"timestamp\":\"1435526558990\"}","timestamp":"2015-06-28T21:22:38.991Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.80169544415548\", \"timestamp\":\"1435526560993\"}","timestamp":"2015-06-28T21:22:40.994Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.95969979837537\", \"timestamp\":\"1435526562997\"}","timestamp":"2015-06-28T21:22:42.998Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.398141594138\", \"timestamp\":\"1435526565002\"}","timestamp":"2015-06-28T21:22:45.004Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.57558260532096\", \"timestamp\":\"1435526567005\"}","timestamp":"2015-06-28T21:22:47.009Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.77969613997266\", \"timestamp\":\"1435526569008\"}","timestamp":"2015-06-28T21:22:49.009Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.82879804167897\", \"timestamp\":\"1435526571012\"}","timestamp":"2015-06-28T21:22:51.013Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.50148794660345\", \"timestamp\":\"1435526573014\"}","timestamp":"2015-06-28T21:22:53.014Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.964934470132\", \"timestamp\":\"1435526575019\"}","timestamp":"2015-06-28T21:22:55.021Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.04729554103687\", \"timestamp\":\"1435526577024\"}","timestamp":"2015-06-28T21:22:57.025Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.06530223274603\", \"timestamp\":\"1435526579030\"}","timestamp":"2015-06-28T21:22:59.031Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.40368248755112\", \"timestamp\":\"1435526581032\"}","timestamp":"2015-06-28T21:23:01.033Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.14502911735326\", \"timestamp\":\"1435526583037\"}","timestamp":"2015-06-28T21:23:03.038Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.07864244934171\", \"timestamp\":\"1435526585042\"}","timestamp":"2015-06-28T21:23:05.043Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.17111750179902\", \"timestamp\":\"1435526587046\"}","timestamp":"2015-06-28T21:23:07.047Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.98879327950999\", \"timestamp\":\"1435526589052\"}","timestamp":"2015-06-28T21:23:09.053Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.33883423916996\", \"timestamp\":\"1435526591056\"}","timestamp":"2015-06-28T21:23:11.056Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.95900917891413\", \"timestamp\":\"1435526593060\"}","timestamp":"2015-06-28T21:23:13.061Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.48196758097038\", \"timestamp\":\"1435526595061\"}","timestamp":"2015-06-28T21:23:15.061Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.29401281708851\", \"timestamp\":\"1435526597063\"}","timestamp":"2015-06-28T21:23:17.064Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.67592467414215\", \"timestamp\":\"1435526599067\"}","timestamp":"2015-06-28T21:23:19.068Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.24817654676735\", \"timestamp\":\"1435526601072\"}","timestamp":"2015-06-28T21:23:21.072Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.47027638321742\", \"timestamp\":\"1435526603073\"}","timestamp":"2015-06-28T21:23:23.074Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.82930048462003\", \"timestamp\":\"1435526605078\"}","timestamp":"2015-06-28T21:23:25.079Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.44361043721437\", \"timestamp\":\"1435526607083\"}","timestamp":"2015-06-28T21:23:27.083Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.45843832474202\", \"timestamp\":\"1435526609087\"}","timestamp":"2015-06-28T21:23:29.087Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.92541964165866\", \"timestamp\":\"1435526611087\"}","timestamp":"2015-06-28T21:23:31.088Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.60283637652174\", \"timestamp\":\"1435526613094\"}","timestamp":"2015-06-28T21:23:33.094Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.1273119612597\", \"timestamp\":\"1435526615098\"}","timestamp":"2015-06-28T21:23:35.099Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.24669261742383\", \"timestamp\":\"1435526617100\"}","timestamp":"2015-06-28T21:23:37.101Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.24719986366108\", \"timestamp\":\"1435526619103\"}","timestamp":"2015-06-28T21:23:39.103Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.17881381744519\", \"timestamp\":\"1435526621108\"}","timestamp":"2015-06-28T21:23:41.111Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.37537444382906\", \"timestamp\":\"1435526623112\"}","timestamp":"2015-06-28T21:23:43.114Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.26151482621208\", \"timestamp\":\"1435526625116\"}","timestamp":"2015-06-28T21:23:45.118Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.68434034800157\", \"timestamp\":\"1435526627123\"}","timestamp":"2015-06-28T21:23:47.124Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.31356011610478\", \"timestamp\":\"1435526629129\"}","timestamp":"2015-06-28T21:23:49.129Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.60808346560225\", \"timestamp\":\"1435526631134\"}","timestamp":"2015-06-28T21:23:51.134Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.46335918968543\", \"timestamp\":\"1435526633139\"}","timestamp":"2015-06-28T21:23:53.140Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.67058569798246\", \"timestamp\":\"1435526635142\"}","timestamp":"2015-06-28T21:23:55.143Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.70711676590145\", \"timestamp\":\"1435526637143\"}","timestamp":"2015-06-28T21:23:57.144Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.06267488468438\", \"timestamp\":\"1435526639148\"}","timestamp":"2015-06-28T21:23:59.149Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.25969356903806\", \"timestamp\":\"1435526641153\"}","timestamp":"2015-06-28T21:24:01.155Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.00825632363558\", \"timestamp\":\"1435526643154\"}","timestamp":"2015-06-28T21:24:03.155Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.71911641582847\", \"timestamp\":\"1435526645157\"}","timestamp":"2015-06-28T21:24:05.158Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.2402137904428\", \"timestamp\":\"1435526647160\"}","timestamp":"2015-06-28T21:24:07.161Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.1721193920821\", \"timestamp\":\"1435526649165\"}","timestamp":"2015-06-28T21:24:09.166Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.52717367513105\", \"timestamp\":\"1435526651168\"}","timestamp":"2015-06-28T21:24:11.169Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.28746111225337\", \"timestamp\":\"1435526653173\"}","timestamp":"2015-06-28T21:24:13.174Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.95806052768603\", \"timestamp\":\"1435526655179\"}","timestamp":"2015-06-28T21:24:15.179Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.59869763348252\", \"timestamp\":\"1435526657183\"}","timestamp":"2015-06-28T21:24:17.184Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.44536737445742\", \"timestamp\":\"1435526659186\"}","timestamp":"2015-06-28T21:24:19.186Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.14648490725085\", \"timestamp\":\"1435526661187\"}","timestamp":"2015-06-28T21:24:21.188Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.0450240233913\", \"timestamp\":\"1435526663190\"}","timestamp":"2015-06-28T21:24:23.190Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.08619262464345\", \"timestamp\":\"1435526665193\"}","timestamp":"2015-06-28T21:24:25.193Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.09379208134487\", \"timestamp\":\"1435526667193\"}","timestamp":"2015-06-28T21:24:27.194Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.69973875256255\", \"timestamp\":\"1435526669195\"}","timestamp":"2015-06-28T21:24:29.196Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.67239853087813\", \"timestamp\":\"1435526671199\"}","timestamp":"2015-06-28T21:24:31.200Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.18868467910215\", \"timestamp\":\"1435526673201\"}","timestamp":"2015-06-28T21:24:33.202Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.565532266628\", \"timestamp\":\"1435526675202\"}","timestamp":"2015-06-28T21:24:35.203Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.68307430064306\", \"timestamp\":\"1435526677208\"}","timestamp":"2015-06-28T21:24:37.209Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.60700458148494\", \"timestamp\":\"1435526679209\"}","timestamp":"2015-06-28T21:24:39.210Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.37571243196726\", \"timestamp\":\"1435526681211\"}","timestamp":"2015-06-28T21:24:41.212Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.63965710764751\", \"timestamp\":\"1435526683218\"}","timestamp":"2015-06-28T21:24:43.218Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.75207934621722\", \"timestamp\":\"1435526685221\"}","timestamp":"2015-06-28T21:24:45.221Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.55087876087055\", \"timestamp\":\"1435526687223\"}","timestamp":"2015-06-28T21:24:47.224Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.96263263234869\", \"timestamp\":\"1435526689230\"}","timestamp":"2015-06-28T21:24:49.231Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.96804085699841\", \"timestamp\":\"1435526691230\"}","timestamp":"2015-06-28T21:24:51.231Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.13260063854977\", \"timestamp\":\"1435526693236\"}","timestamp":"2015-06-28T21:24:53.236Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.06717366771773\", \"timestamp\":\"1435526695237\"}","timestamp":"2015-06-28T21:24:55.237Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.28538053203374\", \"timestamp\":\"1435526697242\"}","timestamp":"2015-06-28T21:24:57.243Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.86119970027357\", \"timestamp\":\"1435526699244\"}","timestamp":"2015-06-28T21:24:59.245Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.78251522127539\", \"timestamp\":\"1435526701245\"}","timestamp":"2015-06-28T21:25:01.246Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.88506490085274\", \"timestamp\":\"1435526703246\"}","timestamp":"2015-06-28T21:25:03.246Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.04995984630659\", \"timestamp\":\"1435526705251\"}","timestamp":"2015-06-28T21:25:05.252Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.16426725126803\", \"timestamp\":\"1435526707252\"}","timestamp":"2015-06-28T21:25:07.253Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.05295730568469\", \"timestamp\":\"1435526709255\"}","timestamp":"2015-06-28T21:25:09.255Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.54603247949854\", \"timestamp\":\"1435526711259\"}","timestamp":"2015-06-28T21:25:11.260Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.78944597858936\", \"timestamp\":\"1435526713264\"}","timestamp":"2015-06-28T21:25:13.264Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.28270413493738\", \"timestamp\":\"1435526715267\"}","timestamp":"2015-06-28T21:25:15.268Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.41338743455708\", \"timestamp\":\"1435526717269\"}","timestamp":"2015-06-28T21:25:17.271Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.25902099581435\", \"timestamp\":\"1435526719272\"}","timestamp":"2015-06-28T21:25:19.273Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.59777773078531\", \"timestamp\":\"1435526721278\"}","timestamp":"2015-06-28T21:25:21.279Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.5207734471187\", \"timestamp\":\"1435526723282\"}","timestamp":"2015-06-28T21:25:23.283Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.05507160769776\", \"timestamp\":\"1435526725289\"}","timestamp":"2015-06-28T21:25:25.290Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.2866221955046\", \"timestamp\":\"1435526727290\"}","timestamp":"2015-06-28T21:25:27.291Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.14486214285716\", \"timestamp\":\"1435526729292\"}","timestamp":"2015-06-28T21:25:29.293Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.95473496010527\", \"timestamp\":\"1435526731295\"}","timestamp":"2015-06-28T21:25:31.296Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.65495165949687\", \"timestamp\":\"1435526733298\"}","timestamp":"2015-06-28T21:25:33.299Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.26156882802024\", \"timestamp\":\"1435526735302\"}","timestamp":"2015-06-28T21:25:35.303Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.36816675681621\", \"timestamp\":\"1435526737306\"}","timestamp":"2015-06-28T21:25:37.307Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.00132738472894\", \"timestamp\":\"1435526739310\"}","timestamp":"2015-06-28T21:25:39.311Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.269296457991\", \"timestamp\":\"1435526741315\"}","timestamp":"2015-06-28T21:25:41.316Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.75619005924091\", \"timestamp\":\"1435526743318\"}","timestamp":"2015-06-28T21:25:43.319Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.10004867333919\", \"timestamp\":\"1435526745325\"}","timestamp":"2015-06-28T21:25:45.326Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.97372592613101\", \"timestamp\":\"1435526747328\"}","timestamp":"2015-06-28T21:25:47.329Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.85040137451142\", \"timestamp\":\"1435526749329\"}","timestamp":"2015-06-28T21:25:49.329Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.69712354056537\", \"timestamp\":\"1435526751331\"}","timestamp":"2015-06-28T21:25:51.333Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.8865509852767\", \"timestamp\":\"1435526753336\"}","timestamp":"2015-06-28T21:25:53.336Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.081383978948\", \"timestamp\":\"1435526755341\"}","timestamp":"2015-06-28T21:25:55.341Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.93621182069182\", \"timestamp\":\"1435526757344\"}","timestamp":"2015-06-28T21:25:57.344Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.43871080037206\", \"timestamp\":\"1435526759345\"}","timestamp":"2015-06-28T21:25:59.345Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.73116257926449\", \"timestamp\":\"1435526761350\"}","timestamp":"2015-06-28T21:26:01.351Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.66974943131208\", \"timestamp\":\"1435526763352\"}","timestamp":"2015-06-28T21:26:03.353Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.82163068698719\", \"timestamp\":\"1435526765353\"}","timestamp":"2015-06-28T21:26:05.353Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.9476063977927\", \"timestamp\":\"1435526767354\"}","timestamp":"2015-06-28T21:26:07.354Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.82985148020089\", \"timestamp\":\"1435526769357\"}","timestamp":"2015-06-28T21:26:09.358Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.17190441256389\", \"timestamp\":\"1435526771362\"}","timestamp":"2015-06-28T21:26:11.363Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.45168472547084\", \"timestamp\":\"1435526773367\"}","timestamp":"2015-06-28T21:26:13.368Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.83048201166093\", \"timestamp\":\"1435526775369\"}","timestamp":"2015-06-28T21:26:15.370Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.85958977928385\", \"timestamp\":\"1435526777375\"}","timestamp":"2015-06-28T21:26:17.375Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.25464013637975\", \"timestamp\":\"1435526779375\"}","timestamp":"2015-06-28T21:26:19.376Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.84883981151506\", \"timestamp\":\"1435526781375\"}","timestamp":"2015-06-28T21:26:21.378Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.04745113477111\", \"timestamp\":\"1435526783378\"}","timestamp":"2015-06-28T21:26:23.379Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.52373590366915\", \"timestamp\":\"1435526785380\"}","timestamp":"2015-06-28T21:26:25.381Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.34451415669173\", \"timestamp\":\"1435526787381\"}","timestamp":"2015-06-28T21:26:27.382Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.13332275254652\", \"timestamp\":\"1435526789382\"}","timestamp":"2015-06-28T21:26:29.383Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.28608970250934\", \"timestamp\":\"1435526791383\"}","timestamp":"2015-06-28T21:26:31.384Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.5233817473054\", \"timestamp\":\"1435526793386\"}","timestamp":"2015-06-28T21:26:33.386Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.53151585301384\", \"timestamp\":\"1435526795389\"}","timestamp":"2015-06-28T21:26:35.391Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.26863985974342\", \"timestamp\":\"1435526797393\"}","timestamp":"2015-06-28T21:26:37.393Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.84768000757322\", \"timestamp\":\"1435526799395\"}","timestamp":"2015-06-28T21:26:39.396Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.0000982992351\", \"timestamp\":\"1435526801399\"}","timestamp":"2015-06-28T21:26:41.399Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.61172282369807\", \"timestamp\":\"1435526803401\"}","timestamp":"2015-06-28T21:26:43.402Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.48125413060188\", \"timestamp\":\"1435526805402\"}","timestamp":"2015-06-28T21:26:45.403Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.76543782604858\", \"timestamp\":\"1435526807407\"}","timestamp":"2015-06-28T21:26:47.407Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.85707175312564\", \"timestamp\":\"1435526809407\"}","timestamp":"2015-06-28T21:26:49.408Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.36993274325505\", \"timestamp\":\"1435526811407\"}","timestamp":"2015-06-28T21:26:51.408Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.25622100196779\", \"timestamp\":\"1435526813411\"}","timestamp":"2015-06-28T21:26:53.412Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.57987794978544\", \"timestamp\":\"1435526815413\"}","timestamp":"2015-06-28T21:26:55.413Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.00794259505346\", \"timestamp\":\"1435526817418\"}","timestamp":"2015-06-28T21:26:57.419Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.78005310893059\", \"timestamp\":\"1435526819424\"}","timestamp":"2015-06-28T21:26:59.424Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.117188481614\", \"timestamp\":\"1435526821427\"}","timestamp":"2015-06-28T21:27:01.428Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.20561756845564\", \"timestamp\":\"1435526823431\"}","timestamp":"2015-06-28T21:27:03.432Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.27138012973592\", \"timestamp\":\"1435526825435\"}","timestamp":"2015-06-28T21:27:05.435Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.72366845421493\", \"timestamp\":\"1435526827439\"}","timestamp":"2015-06-28T21:27:07.440Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.12417675508186\", \"timestamp\":\"1435526829445\"}","timestamp":"2015-06-28T21:27:09.445Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.4967869836837\", \"timestamp\":\"1435526831449\"}","timestamp":"2015-06-28T21:27:11.449Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.08770169690251\", \"timestamp\":\"1435526833454\"}","timestamp":"2015-06-28T21:27:13.455Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.10227531241253\", \"timestamp\":\"1435526835458\"}","timestamp":"2015-06-28T21:27:15.459Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.91384374722838\", \"timestamp\":\"1435526837463\"}","timestamp":"2015-06-28T21:27:17.464Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.54916169028729\", \"timestamp\":\"1435526839465\"}","timestamp":"2015-06-28T21:27:19.466Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.77946931682527\", \"timestamp\":\"1435526841465\"}","timestamp":"2015-06-28T21:27:21.466Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.6057864963077\", \"timestamp\":\"1435526843471\"}","timestamp":"2015-06-28T21:27:23.471Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.5297416485846\", \"timestamp\":\"1435526845473\"}","timestamp":"2015-06-28T21:27:25.474Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.41422779392451\", \"timestamp\":\"1435526847475\"}","timestamp":"2015-06-28T21:27:27.476Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.2060159300454\", \"timestamp\":\"1435526849480\"}","timestamp":"2015-06-28T21:27:29.481Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.0313508878462\", \"timestamp\":\"1435526851482\"}","timestamp":"2015-06-28T21:27:31.483Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.12778375297785\", \"timestamp\":\"1435526853485\"}","timestamp":"2015-06-28T21:27:33.486Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.02429786929861\", \"timestamp\":\"1435526855488\"}","timestamp":"2015-06-28T21:27:35.489Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.78403148474172\", \"timestamp\":\"1435526857492\"}","timestamp":"2015-06-28T21:27:37.493Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.039380854927\", \"timestamp\":\"1435526859492\"}","timestamp":"2015-06-28T21:27:39.493Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.21429656865075\", \"timestamp\":\"1435526861497\"}","timestamp":"2015-06-28T21:27:41.498Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.35198969161138\", \"timestamp\":\"1435526863502\"}","timestamp":"2015-06-28T21:27:43.503Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.63209282560274\", \"timestamp\":\"1435526865506\"}","timestamp":"2015-06-28T21:27:45.507Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.63643316971138\", \"timestamp\":\"1435526867508\"}","timestamp":"2015-06-28T21:27:47.509Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.09760248987004\", \"timestamp\":\"1435526869514\"}","timestamp":"2015-06-28T21:27:49.514Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.3189393170178\", \"timestamp\":\"1435526871519\"}","timestamp":"2015-06-28T21:27:51.519Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.60917877964675\", \"timestamp\":\"1435526873524\"}","timestamp":"2015-06-28T21:27:53.525Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.4344232082367\", \"timestamp\":\"1435526875526\"}","timestamp":"2015-06-28T21:27:55.526Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.40573266055435\", \"timestamp\":\"1435526877531\"}","timestamp":"2015-06-28T21:27:57.532Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.004609644413\", \"timestamp\":\"1435526879533\"}","timestamp":"2015-06-28T21:27:59.534Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.43870975123718\", \"timestamp\":\"1435526881535\"}","timestamp":"2015-06-28T21:28:01.536Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.8653579573147\", \"timestamp\":\"1435526883536\"}","timestamp":"2015-06-28T21:28:03.537Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.35321772936732\", \"timestamp\":\"1435526885537\"}","timestamp":"2015-06-28T21:28:05.537Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.0188523135148\", \"timestamp\":\"1435526887542\"}","timestamp":"2015-06-28T21:28:07.544Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.43671808112413\", \"timestamp\":\"1435526889545\"}","timestamp":"2015-06-28T21:28:09.546Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.20410444168374\", \"timestamp\":\"1435526891549\"}","timestamp":"2015-06-28T21:28:11.549Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.34788256743923\", \"timestamp\":\"1435526893550\"}","timestamp":"2015-06-28T21:28:13.550Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.37072942405939\", \"timestamp\":\"1435526895551\"}","timestamp":"2015-06-28T21:28:15.552Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.92570170015097\", \"timestamp\":\"1435526897556\"}","timestamp":"2015-06-28T21:28:17.556Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.93365358421579\", \"timestamp\":\"1435526899560\"}","timestamp":"2015-06-28T21:28:19.561Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.06218186765909\", \"timestamp\":\"1435526901563\"}","timestamp":"2015-06-28T21:28:21.564Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.80941327149048\", \"timestamp\":\"1435526903567\"}","timestamp":"2015-06-28T21:28:23.568Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.9404688552022\", \"timestamp\":\"1435526905574\"}","timestamp":"2015-06-28T21:28:25.574Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.26979006733745\", \"timestamp\":\"1435526907577\"}","timestamp":"2015-06-28T21:28:27.578Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.13735297182575\", \"timestamp\":\"1435526909581\"}","timestamp":"2015-06-28T21:28:29.582Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.79312548274174\", \"timestamp\":\"1435526911584\"}","timestamp":"2015-06-28T21:28:31.584Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.8894153079018\", \"timestamp\":\"1435526913589\"}","timestamp":"2015-06-28T21:28:33.589Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.62367043271661\", \"timestamp\":\"1435526915593\"}","timestamp":"2015-06-28T21:28:35.594Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.096442789305\", \"timestamp\":\"1435526917595\"}","timestamp":"2015-06-28T21:28:37.596Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.42251080879942\", \"timestamp\":\"1435526919600\"}","timestamp":"2015-06-28T21:28:39.601Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.81360069615766\", \"timestamp\":\"1435526921602\"}","timestamp":"2015-06-28T21:28:41.602Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.13570661004633\", \"timestamp\":\"1435526923607\"}","timestamp":"2015-06-28T21:28:43.608Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.29825897375122\", \"timestamp\":\"1435526925613\"}","timestamp":"2015-06-28T21:28:45.613Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.43417338933796\", \"timestamp\":\"1435526927614\"}","timestamp":"2015-06-28T21:28:47.615Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.48238134663552\", \"timestamp\":\"1435526929620\"}","timestamp":"2015-06-28T21:28:49.620Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.34913141326979\", \"timestamp\":\"1435526931625\"}","timestamp":"2015-06-28T21:28:51.626Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.44217618880793\", \"timestamp\":\"1435526933631\"}","timestamp":"2015-06-28T21:28:53.631Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.9996355175972\", \"timestamp\":\"1435526935636\"}","timestamp":"2015-06-28T21:28:55.636Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.31615310162306\", \"timestamp\":\"1435526937638\"}","timestamp":"2015-06-28T21:28:57.638Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.6727651283145\", \"timestamp\":\"1435526939641\"}","timestamp":"2015-06-28T21:28:59.642Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.35565309831873\", \"timestamp\":\"1435526941644\"}","timestamp":"2015-06-28T21:29:01.645Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.88002104032785\", \"timestamp\":\"1435526943650\"}","timestamp":"2015-06-28T21:29:03.651Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.2703163861297\", \"timestamp\":\"1435526945651\"}","timestamp":"2015-06-28T21:29:05.651Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.7305841059424\", \"timestamp\":\"1435526947651\"}","timestamp":"2015-06-28T21:29:07.652Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.45505188917741\", \"timestamp\":\"1435526949657\"}","timestamp":"2015-06-28T21:29:09.657Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.08218189748004\", \"timestamp\":\"1435526951662\"}","timestamp":"2015-06-28T21:29:11.663Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.97811020957306\", \"timestamp\":\"1435526953669\"}","timestamp":"2015-06-28T21:29:13.670Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.18025452829897\", \"timestamp\":\"1435526955674\"}","timestamp":"2015-06-28T21:29:15.675Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.53379873279482\", \"timestamp\":\"1435526957680\"}","timestamp":"2015-06-28T21:29:17.681Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.18416419439018\", \"timestamp\":\"1435526959683\"}","timestamp":"2015-06-28T21:29:19.683Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.6975513775833\", \"timestamp\":\"1435526961684\"}","timestamp":"2015-06-28T21:29:21.684Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.49845269462094\", \"timestamp\":\"1435526963686\"}","timestamp":"2015-06-28T21:29:23.687Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.99993325164542\", \"timestamp\":\"1435526965690\"}","timestamp":"2015-06-28T21:29:25.690Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.06280086422339\", \"timestamp\":\"1435526967690\"}","timestamp":"2015-06-28T21:29:27.690Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.28363801818341\", \"timestamp\":\"1435526969690\"}","timestamp":"2015-06-28T21:29:29.691Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.09819315653294\", \"timestamp\":\"1435526971695\"}","timestamp":"2015-06-28T21:29:31.696Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.19531752262264\", \"timestamp\":\"1435526973700\"}","timestamp":"2015-06-28T21:29:33.701Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.63642385508865\", \"timestamp\":\"1435526975703\"}","timestamp":"2015-06-28T21:29:35.704Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.83646297641098\", \"timestamp\":\"1435526977705\"}","timestamp":"2015-06-28T21:29:37.706Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.5275534153916\", \"timestamp\":\"1435526979708\"}","timestamp":"2015-06-28T21:29:39.709Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.55846909247339\", \"timestamp\":\"1435526981709\"}","timestamp":"2015-06-28T21:29:41.709Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.12453302741051\", \"timestamp\":\"1435526983714\"}","timestamp":"2015-06-28T21:29:43.715Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.22444499889389\", \"timestamp\":\"1435526985716\"}","timestamp":"2015-06-28T21:29:45.717Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.07265550410375\", \"timestamp\":\"1435526987723\"}","timestamp":"2015-06-28T21:29:47.723Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.90907481312752\", \"timestamp\":\"1435526989726\"}","timestamp":"2015-06-28T21:29:49.727Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.15386904077604\", \"timestamp\":\"1435526991729\"}","timestamp":"2015-06-28T21:29:51.730Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.86109350342304\", \"timestamp\":\"1435526993732\"}","timestamp":"2015-06-28T21:29:53.733Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.99660669034347\", \"timestamp\":\"1435526995733\"}","timestamp":"2015-06-28T21:29:55.734Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.90405199490488\", \"timestamp\":\"1435526997737\"}","timestamp":"2015-06-28T21:29:57.737Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.97580351307988\", \"timestamp\":\"1435526999742\"}","timestamp":"2015-06-28T21:29:59.742Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.70130614191294\", \"timestamp\":\"1435527001743\"}","timestamp":"2015-06-28T21:30:01.744Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.24284339183941\", \"timestamp\":\"1435527003748\"}","timestamp":"2015-06-28T21:30:03.749Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.5621226769872\", \"timestamp\":\"1435527005752\"}","timestamp":"2015-06-28T21:30:05.753Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.60750868823379\", \"timestamp\":\"1435527007757\"}","timestamp":"2015-06-28T21:30:07.757Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.09126879973337\", \"timestamp\":\"1435527009760\"}","timestamp":"2015-06-28T21:30:09.761Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.036055452656\", \"timestamp\":\"1435527011763\"}","timestamp":"2015-06-28T21:30:11.764Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.93478890229017\", \"timestamp\":\"1435527013765\"}","timestamp":"2015-06-28T21:30:13.765Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.54349875217304\", \"timestamp\":\"1435527015766\"}","timestamp":"2015-06-28T21:30:15.767Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.48122794274241\", \"timestamp\":\"1435527017772\"}","timestamp":"2015-06-28T21:30:17.772Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.00641941046342\", \"timestamp\":\"1435527019773\"}","timestamp":"2015-06-28T21:30:19.774Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.68257723888382\", \"timestamp\":\"1435527021774\"}","timestamp":"2015-06-28T21:30:21.775Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.89862161222845\", \"timestamp\":\"1435527023775\"}","timestamp":"2015-06-28T21:30:23.776Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.84812196996063\", \"timestamp\":\"1435527025779\"}","timestamp":"2015-06-28T21:30:25.779Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.9773484962061\", \"timestamp\":\"1435527027782\"}","timestamp":"2015-06-28T21:30:27.783Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.26508212368935\", \"timestamp\":\"1435527029785\"}","timestamp":"2015-06-28T21:30:29.785Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.12109680986032\", \"timestamp\":\"1435527031786\"}","timestamp":"2015-06-28T21:30:31.787Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.98360700672492\", \"timestamp\":\"1435527033787\"}","timestamp":"2015-06-28T21:30:33.787Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.78883312549442\", \"timestamp\":\"1435527035792\"}","timestamp":"2015-06-28T21:30:35.797Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.84297835314646\", \"timestamp\":\"1435527037797\"}","timestamp":"2015-06-28T21:30:37.797Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.76721870619804\", \"timestamp\":\"1435527039802\"}","timestamp":"2015-06-28T21:30:39.803Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.38310789410025\", \"timestamp\":\"1435527041806\"}","timestamp":"2015-06-28T21:30:41.807Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.49565473990515\", \"timestamp\":\"1435527043808\"}","timestamp":"2015-06-28T21:30:43.808Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.05103073827922\", \"timestamp\":\"1435527045809\"}","timestamp":"2015-06-28T21:30:45.810Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.34276666399091\", \"timestamp\":\"1435527047814\"}","timestamp":"2015-06-28T21:30:47.815Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.51341292727739\", \"timestamp\":\"1435527049816\"}","timestamp":"2015-06-28T21:30:49.817Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.99940752983093\", \"timestamp\":\"1435527051818\"}","timestamp":"2015-06-28T21:30:51.819Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.71158325113356\", \"timestamp\":\"1435527053824\"}","timestamp":"2015-06-28T21:30:53.824Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.79197084950283\", \"timestamp\":\"1435527055825\"}","timestamp":"2015-06-28T21:30:55.826Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.79578025499359\", \"timestamp\":\"1435527057831\"}","timestamp":"2015-06-28T21:30:57.831Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.6301965881139\", \"timestamp\":\"1435527059833\"}","timestamp":"2015-06-28T21:30:59.833Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.80113710928708\", \"timestamp\":\"1435527061833\"}","timestamp":"2015-06-28T21:31:01.834Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.64933525491506\", \"timestamp\":\"1435527063835\"}","timestamp":"2015-06-28T21:31:03.836Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.47187208011746\", \"timestamp\":\"1435527065836\"}","timestamp":"2015-06-28T21:31:05.836Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.41462150588632\", \"timestamp\":\"1435527067837\"}","timestamp":"2015-06-28T21:31:07.837Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.74238674668595\", \"timestamp\":\"1435527069837\"}","timestamp":"2015-06-28T21:31:09.838Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.29571764543653\", \"timestamp\":\"1435527071838\"}","timestamp":"2015-06-28T21:31:11.838Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.95813110331073\", \"timestamp\":\"1435527073841\"}","timestamp":"2015-06-28T21:31:13.842Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.24975282838568\", \"timestamp\":\"1435527075845\"}","timestamp":"2015-06-28T21:31:15.846Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.94081700919196\", \"timestamp\":\"1435527077849\"}","timestamp":"2015-06-28T21:31:17.849Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.10870038392022\", \"timestamp\":\"1435527079852\"}","timestamp":"2015-06-28T21:31:19.853Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T21:32:16.343Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.59209145698696\", \"timestamp\":\"1435527137947\"}","timestamp":"2015-06-28T21:32:17.949Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.96158756827936\", \"timestamp\":\"1435527139953\"}","timestamp":"2015-06-28T21:32:19.954Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.66841052053496\", \"timestamp\":\"1435527141956\"}","timestamp":"2015-06-28T21:32:21.958Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.27725994866341\", \"timestamp\":\"1435527143960\"}","timestamp":"2015-06-28T21:32:23.961Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T21:35:42.771Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.96665794635192\", \"timestamp\":\"1435527344273\"}","timestamp":"2015-06-28T21:35:44.274Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.98742587305605\", \"timestamp\":\"1435527346277\"}","timestamp":"2015-06-28T21:35:46.277Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.54275815933943\", \"timestamp\":\"1435527348281\"}","timestamp":"2015-06-28T21:35:48.282Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.90046399459243\", \"timestamp\":\"1435527350285\"}","timestamp":"2015-06-28T21:35:50.286Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.23453935002908\", \"timestamp\":\"1435527352287\"}","timestamp":"2015-06-28T21:35:52.288Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.35547149321064\", \"timestamp\":\"1435527354289\"}","timestamp":"2015-06-28T21:35:54.289Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.43085960065946\", \"timestamp\":\"1435527356293\"}","timestamp":"2015-06-28T21:35:56.294Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.17207870073617\", \"timestamp\":\"1435527358297\"}","timestamp":"2015-06-28T21:35:58.298Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.2826814209111\", \"timestamp\":\"1435527360300\"}","timestamp":"2015-06-28T21:36:00.301Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.33242597617209\", \"timestamp\":\"1435527362302\"}","timestamp":"2015-06-28T21:36:02.302Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.04060694063082\", \"timestamp\":\"1435527364305\"}","timestamp":"2015-06-28T21:36:04.306Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.2308235745877\", \"timestamp\":\"1435527366307\"}","timestamp":"2015-06-28T21:36:06.307Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.70325215952471\", \"timestamp\":\"1435527368309\"}","timestamp":"2015-06-28T21:36:08.310Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.71930665196851\", \"timestamp\":\"1435527370311\"}","timestamp":"2015-06-28T21:36:10.311Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.80389613844454\", \"timestamp\":\"1435527372312\"}","timestamp":"2015-06-28T21:36:12.312Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.7952786711976\", \"timestamp\":\"1435527374316\"}","timestamp":"2015-06-28T21:36:14.317Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.93225220451131\", \"timestamp\":\"1435527376317\"}","timestamp":"2015-06-28T21:36:16.318Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.67697685211897\", \"timestamp\":\"1435527378318\"}","timestamp":"2015-06-28T21:36:18.319Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.73729487229139\", \"timestamp\":\"1435527380319\"}","timestamp":"2015-06-28T21:36:20.319Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.66935219476\", \"timestamp\":\"1435527382320\"}","timestamp":"2015-06-28T21:36:22.320Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.31933855172247\", \"timestamp\":\"1435527384324\"}","timestamp":"2015-06-28T21:36:24.325Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.23009294085205\", \"timestamp\":\"1435527386330\"}","timestamp":"2015-06-28T21:36:26.330Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.97919401386753\", \"timestamp\":\"1435527388330\"}","timestamp":"2015-06-28T21:36:28.331Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.27259912760928\", \"timestamp\":\"1435527390334\"}","timestamp":"2015-06-28T21:36:30.335Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.39408210851252\", \"timestamp\":\"1435527392337\"}","timestamp":"2015-06-28T21:36:32.338Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.84138436987996\", \"timestamp\":\"1435527394339\"}","timestamp":"2015-06-28T21:36:34.340Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.31794130988419\", \"timestamp\":\"1435527396342\"}","timestamp":"2015-06-28T21:36:36.343Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.70798596087843\", \"timestamp\":\"1435527398346\"}","timestamp":"2015-06-28T21:36:38.347Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.97250764071941\", \"timestamp\":\"1435527400346\"}","timestamp":"2015-06-28T21:36:40.347Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.02625675080344\", \"timestamp\":\"1435527402351\"}","timestamp":"2015-06-28T21:36:42.352Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.31472659809515\", \"timestamp\":\"1435527404356\"}","timestamp":"2015-06-28T21:36:44.357Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.07638504821807\", \"timestamp\":\"1435527406361\"}","timestamp":"2015-06-28T21:36:46.362Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"82.486118148081\", \"timestamp\":\"1435527408365\"}","timestamp":"2015-06-28T21:36:48.366Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.71520550502464\", \"timestamp\":\"1435527410365\"}","timestamp":"2015-06-28T21:36:50.366Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.43654693197459\", \"timestamp\":\"1435527412366\"}","timestamp":"2015-06-28T21:36:52.367Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.81661480013281\", \"timestamp\":\"1435527414372\"}","timestamp":"2015-06-28T21:36:54.373Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.30400699889287\", \"timestamp\":\"1435527416379\"}","timestamp":"2015-06-28T21:36:56.380Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.3800092972815\", \"timestamp\":\"1435527418381\"}","timestamp":"2015-06-28T21:36:58.385Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.60163138760254\", \"timestamp\":\"1435527420386\"}","timestamp":"2015-06-28T21:37:00.387Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.53952666092664\", \"timestamp\":\"1435527422392\"}","timestamp":"2015-06-28T21:37:02.393Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.30299471318722\", \"timestamp\":\"1435527424395\"}","timestamp":"2015-06-28T21:37:04.396Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.76089170807973\", \"timestamp\":\"1435527426402\"}","timestamp":"2015-06-28T21:37:06.402Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.13608924904838\", \"timestamp\":\"1435527428403\"}","timestamp":"2015-06-28T21:37:08.404Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.4659164948389\", \"timestamp\":\"1435527430403\"}","timestamp":"2015-06-28T21:37:10.404Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.208653410431\", \"timestamp\":\"1435527432403\"}","timestamp":"2015-06-28T21:37:12.403Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"79.49368182942271\", \"timestamp\":\"1435527434408\"}","timestamp":"2015-06-28T21:37:14.409Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.92825488932431\", \"timestamp\":\"1435527436411\"}","timestamp":"2015-06-28T21:37:16.411Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.39211543137208\", \"timestamp\":\"1435527438413\"}","timestamp":"2015-06-28T21:37:18.414Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.96486597135663\", \"timestamp\":\"1435527440418\"}","timestamp":"2015-06-28T21:37:20.418Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.13241457287222\", \"timestamp\":\"1435527442420\"}","timestamp":"2015-06-28T21:37:22.421Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"81.4896584986709\", \"timestamp\":\"1435527444421\"}","timestamp":"2015-06-28T21:37:24.422Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"77.17257847310975\", \"timestamp\":\"1435527446423\"}","timestamp":"2015-06-28T21:37:26.424Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.82189339026809\", \"timestamp\":\"1435527448428\"}","timestamp":"2015-06-28T21:37:28.428Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"78.69802784360945\", \"timestamp\":\"1435527450430\"}","timestamp":"2015-06-28T21:37:30.431Z"}
+{"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.32000218285248\", \"timestamp\":\"1435527452434\"}","timestamp":"2015-06-28T21:37:32.434Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T21:38:06.204Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T22:04:07.865Z"}

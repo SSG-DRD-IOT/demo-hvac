@@ -1,6 +1,6 @@
 {
     "mqtt" : {
-        "url" : "mqtt://gateway"
+        "url" : "mqtt://localhost"
     },
 
     "sqlite3" : {

@@ -6,6 +6,6 @@
     "sqlite3" : {
         "file" : "../../db/iotdemo.sqlite"
     },
-
-    "debug" : "true"
+    "debug" : "true",
+    "interval" : "2000"
 }

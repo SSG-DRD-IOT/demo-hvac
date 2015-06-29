@@ -1,6 +1,6 @@
 {
   "name": "intel-commerical-iot-database-models",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "Model Objects that allow access to the gateways local database",
   "main": "index.js",
   "scripts": {

@@ -28,7 +28,6 @@ var logger = new (winston.Logger)({
 });
 
 logger.log('info', "Edge Device Daemon is starting");
-
 // Connect to the MQTT server
 var mqttClient  = mqtt.connect(config.mqtt.url);
 
@@ -50,33 +49,29 @@ function getType(topic) {
 
 // MQTT connection function
 mqttClient.on('connect', function () {
-    console.log("Connected to MQTT server");
+    logger.log("Connected to MQTT server");
     mqttClient.subscribe('announcements');
     mqttClient.subscribe('sensors/+/data');
 });
 
 // A function that runs when MQTT receives a message
 mqttClient.on('message', function (topic, message) {
-    logger.log('info', topic + ":" + message.toString());
+   // logger.log('info', topic + ":" + message.toString());
 
     json = JSON.parse(message);
 
     if (topic == "announcements") {
         logger.log("Received an Announcement");
+        logger.log('info', topic + ":" + message.toString());
 
         var sensor = new SensorModel(db, json);
         sensor.save();
-
-        // logger.log('info', sensor);
     };
 
-    if (getType(topic) == "data") {
-        logger.log('info', "hello");
+    if (topic.match(/data/)) {
+   //     logger.log('info', "Writing to db:" + message.toString());
         var value = new DataModel(db, json);
         value.save();
     }
 
 });
-
-// Implement a shutdown for the daemon
-//mqttClient.end();
