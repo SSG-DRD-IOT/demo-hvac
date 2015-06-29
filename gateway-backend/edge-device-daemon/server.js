@@ -27,6 +27,10 @@ var logger = new (winston.Logger)({
     ]
 });
 
+if(self.config.debug != "true") {
+  logger.remove(winston.transports.Console);
+}
+
 logger.log('info', "Edge Device Daemon is starting");
 // Connect to the MQTT server
 var mqttClient  = mqtt.connect(config.mqtt.url);

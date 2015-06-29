@@ -13,11 +13,10 @@ while (count < 5)
 {
   sleep.usleep(6453);
   result.push({ 'sensor_id' : 'sensor-4321',
-		'value' : (Math.random() * 30) + 60,
-		'sensorType' : 'temp',
-		'timestamp' : Date.now()
-	      });
-  count++;
+  'value' : (Math.random() * 30) + 60,
+  'timestamp' : Date.now()
+});
+count++;
 }
 
 googleDataStoreCloud.write(result);
@@ -27,9 +26,9 @@ date.setDate(date.getDate() - 1);
 
 
 googleDataStoreCloud.read({
-		sensor_id: 'sensor-4321',
-		timestamp: Date.parse(date)
-  }, function(err, res){
-    if(err) console.log(err);
-    else console.log(res);
-  });
+  sensor_id: 'sensor-4321',
+  timestamp: Date.parse(date)
+}, function(err, res){
+  if(err) console.log(err);
+  else console.log(res);
+});

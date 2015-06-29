@@ -23,8 +23,10 @@ var _ = require("lodash");
 // Load the I/O and connectivity libraries
 var mqtt = require('mqtt');
 var sqlite3 = require('sqlite3').verbose();
+
 var Azure = require('intel-commerical-iot-microsoft-azure-pubsub');
 var Google = require('intel-commerical-iot-google-datastore-pubsub');
+var Bluemix = require('intel-commerical-iot-ibm-bluemix-pubsub');
 
 // Setup a logging system in this daemon
 var winston = require('winston');
@@ -49,6 +51,12 @@ var dataModel = new DataModel(db);
 // Setup the Azure and Google objects
 var azure = new Azure(config.microsoftAzure);
 var google = new Google(config.googleDatastore);
+var bluemix = new Bluemix(config.ibmBluemix);
+
+
+if(self.config.debug != "true") {
+  logger.remove(winston.transports.Console);
+}
 
 // Establish a connection to Microsoft Azure
 azure.connect();
@@ -68,17 +76,17 @@ setInterval(function() {
     // data just pulled from the database
     var sensor_ids = _.uniq(_.pluck(data, "sensor_id"));
 
-    // logger.log("Sensor_ids in the retrieved data");
-    // logger.log(sensor_ids);
-    // logger.log("----------------------------------------");
+    // logger.info("Sensor_ids in the retrieved data");
+    // logger.info(sensor_ids);
+    // logger.info("----------------------------------------");
 
     // Retrieve all relations between sensors and clouds
     sensorCloudModel
     .find_sensor_cloud_data_relations(
       function(err, results) {
 
-        // logger.log("Sensor/Cloud relations");
-        // logger.log(results);
+        // logger.info("Sensor/Cloud relations");
+        // logger.info(results);
 
         // Group all the data by sensor_id
         var data_by_cloudprovider = _.groupBy(
@@ -87,33 +95,34 @@ setInterval(function() {
             return  k.cloudprovider_id;
           });
 
-          // logger.log("Grouped");
-          // logger.log(data_by_cloudprovider);
+          // logger.info("Grouped");
+          // logger.info(data_by_cloudprovider);
 
           _.forEach(
-              data_by_cloudprovider,
-              function(data, cloudprovider_id) {
-                  logger.log("Cloudprovider_id:", cloudprovider_id);
-                  logger.log(data);
-                  logger.log("----------------------------------------");
+            data_by_cloudprovider,
+            function(data, cloudprovider_id) {
+              logger.info("Cloudprovider_id:", cloudprovider_id);
+              logger.info(JSON.stringify(data, null, ' '));
+              logger.info("----------------------------------------");
 
-                  if (cloudprovider_id == 1) {
-                      logger.log("Writing to Microsoft Azure");
-                      azure.write(data);
-                  } else if (cloudprovider_id == 2) {
-                      logger.log("Writing to IBM BlueMix");
-                  } else if (cloudprovider_id == 3) {
-                      logger.log("Writing to Google DataStorage");
-                      google.write(data);
-                  } else if (cloudprovider_id == 4) {
-                      logger.log("Writing to Amazon Kinesis");
-                  }
-                            });
+              if (cloudprovider_id == 1) {
+                logger.info("Writing to Microsoft Azure");
+                // azure.write(data);
+              } else if (cloudprovider_id == 2) {
+                bluemix.write(data);
+                logger.info("Writing to IBM BlueMix");
+              } else if (cloudprovider_id == 3) {
+                logger.info("Writing to Google DataStorage");
+                // google.write(data);
+              } else if (cloudprovider_id == 4) {
+                logger.info("Writing to Amazon Kinesis");
+              }
+            });
 
-          logger.log("Deleting all sensor readings from the Database");
-              dataModel.delete_all_data();
+            logger.info("Deleting all sensor readings from the Database");
+            dataModel.delete_all_data();
           });
 
 
-    });
-                           }, config.interval);
+        });
+      }, config.interval);
