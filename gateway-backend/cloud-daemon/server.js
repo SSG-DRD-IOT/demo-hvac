@@ -32,16 +32,51 @@ var Bluemix = require('intel-commerical-iot-ibm-bluemix-pubsub');
 var winston = require('winston');
 
 var logger = new (winston.Logger)({
+    levels: {
+        trace: 0,
+        input: 1,
+        verbose: 2,
+        prompt: 3,
+        debug: 4,
+        info: 5,
+        data: 6,
+        help: 7,
+        warn: 8,
+        error: 9
+    },
+    colors: {
+        trace: 'magenta',
+        input: 'grey',
+        verbose: 'cyan',
+        prompt: 'grey',
+        debug: 'blue',
+        info: 'green',
+        data: 'grey',
+        help: 'cyan',
+        warn: 'yellow',
+        error: 'red'
+    },
     transports: [
-        new (winston.transports.Console)({
+        new (winston.transports.Console)(
+            {
+                level: 'trace',
+                prettyPrint: true,
+                colorize: true,
+                silent: false,
+                timestamp: false
+            }),
+        new (winston.transports.File)({
+            prettyPrint: false,
+            level: 'info',
+            silent: false,
             colorize: true,
-            handleExceptions: true,
-            json: false,
-            level: "debug"
-        }),
-        new (winston.transports.File)({ filename: 'cloud-daemon-daemon.log' })
-    ]
-});
+            timestamp: true,
+            filename: './trigger-daemon.log',
+            maxsize: 40000,
+            maxFiles: 10,
+            json: false
+        })]
+    });
 
 // Create a connection to a SQLITE3 database
 var db = new sqlite3.Database(config.sqlite3.file);
@@ -91,6 +126,7 @@ setInterval(function() {
     .find_sensor_cloud_data_relations(
       function(err, results) {
 
+          logger.info("Database returned " + results.length + " sensorReadings");
         // logger.info("Sensor/Cloud relations");
         // logger.info(results);
 

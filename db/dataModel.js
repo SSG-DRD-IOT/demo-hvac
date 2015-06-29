@@ -42,7 +42,7 @@ var DataModel = function(db, data) {
     };
 
     this.delete_all_data = function(id) {
-        this.db.run("DELETE from sensors");
+        this.db.run("DELETE from data");
     };
 };
 

@@ -17,20 +17,56 @@ var SensorModel = require('intel-commerical-iot-database-models').SensorModel;
 var sensorModel = new SensorModel(db);
 var dataModel = new DataModel(db);
 
+
 // Setup a logging system in this daemon
 var winston = require('winston');
 
 var logger = new (winston.Logger)({
+    levels: {
+        trace: 0,
+        input: 1,
+        verbose: 2,
+        prompt: 3,
+        debug: 4,
+        info: 5,
+        data: 6,
+        help: 7,
+        warn: 8,
+        error: 9
+    },
+    colors: {
+        trace: 'magenta',
+        input: 'grey',
+        verbose: 'cyan',
+        prompt: 'grey',
+        debug: 'blue',
+        info: 'green',
+        data: 'grey',
+        help: 'cyan',
+        warn: 'yellow',
+        error: 'red'
+    },
     transports: [
-        new (winston.transports.Console)({
+        new (winston.transports.Console)(
+            {
+                level: 'warn',
+                prettyPrint: true,
+                colorize: true,
+                silent: false,
+                timestamp: false
+            }),
+        new (winston.transports.File)({
+            prettyPrint: false,
+            level: 'info',
+            silent: false,
             colorize: true,
-            handleExceptions: true,
-            json: false,
-            level: "debug"
-        }),
-        new (winston.transports.File)({ filename: 'edge-device-daemon.log' })
-    ]
-});
+            timestamp: true,
+            filename: './trigger-daemon.log',
+            maxsize: 40000,
+            maxFiles: 10,
+            json: false
+        })]
+    });
 
 if(config.debug != "true") {
   logger.remove(winston.transports.Console);
@@ -58,7 +94,7 @@ function getType(topic) {
 
 // MQTT connection function
 mqttClient.on('connect', function () {
-    logger.log("Connected to MQTT server");
+    logger.info("Connected to MQTT server");
     mqttClient.subscribe('announcements');
     mqttClient.subscribe('sensors/+/data');
 });
@@ -71,14 +107,14 @@ mqttClient.on('message', function (topic, message) {
 
     if (topic == "announcements") {
         logger.info("Received an Announcement");
-        logger.debug('info', topic + ":" + message.toString());
+        logger.debug(topic + ":" + message.toString());
 
         var sensor = new SensorModel(db, json);
         sensor.save();
     };
 
     if (topic.match(/data/)) {
-   //     logger.log('info', "Writing to db:" + message.toString());
+        logger.debug("Writing to db:" + message.toString());
         var value = new DataModel(db, json);
         value.save();
     }

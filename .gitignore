@@ -12,3 +12,5 @@ gateway-backend/edge-device-daemon/.#server.js
 *.sqlite
 
 *.log
+
+*.log
