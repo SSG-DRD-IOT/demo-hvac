@@ -22,7 +22,12 @@ var winston = require('winston');
 
 var logger = new (winston.Logger)({
     transports: [
-        new (winston.transports.Console)(),
+        new (winston.transports.Console)({
+            colorize: true,
+            handleExceptions: true,
+            json: false,
+            level: "debug"
+        }),
         new (winston.transports.File)({ filename: 'edge-device-daemon.log' })
     ]
 });
@@ -31,7 +36,7 @@ if(config.debug != "true") {
   logger.remove(winston.transports.Console);
 }
 
-logger.log('info', "Edge Device Daemon is starting");
+logger.info("Edge Device Daemon is starting");
 // Connect to the MQTT server
 var mqttClient  = mqtt.connect(config.mqtt.url);
 
@@ -65,8 +70,8 @@ mqttClient.on('message', function (topic, message) {
     json = JSON.parse(message);
 
     if (topic == "announcements") {
-        logger.log("Received an Announcement");
-        logger.log('info', topic + ":" + message.toString());
+        logger.info("Received an Announcement");
+        logger.debug('info', topic + ":" + message.toString());
 
         var sensor = new SensorModel(db, json);
         sensor.save();

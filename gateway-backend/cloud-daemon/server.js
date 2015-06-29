@@ -30,11 +30,17 @@ var Bluemix = require('intel-commerical-iot-ibm-bluemix-pubsub');
 
 // Setup a logging system in this daemon
 var winston = require('winston');
+
 var logger = new (winston.Logger)({
-  transports: [
-    new (winston.transports.Console)(),
-    new (winston.transports.File)({ filename: 'cloud-manager-daemon.log' })
-  ]
+    transports: [
+        new (winston.transports.Console)({
+            colorize: true,
+            handleExceptions: true,
+            json: false,
+            level: "debug"
+        }),
+        new (winston.transports.File)({ filename: 'cloud-daemon-daemon.log' })
+    ]
 });
 
 // Create a connection to a SQLITE3 database

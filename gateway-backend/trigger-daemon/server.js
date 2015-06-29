@@ -52,34 +52,20 @@ var lock = true;
 //     triggerFunc: 'on',
 //     active: 'true' } ];
 
-// var sensorValue = 90;
-// var op = "==";
-// var triggerValue = 80;
-
-// var fcond = compareFuncBuilder(op, triggerValue);
-// console.log(sensorValue + op + triggerValue);
-// console.log(fcond(sensorValue));
-
-
-
-
-// var triggersInDatabase = new Array();
-// var newTriggers = new Array();
-// var suscribedTopics = new Array();
-
-//var triggerNames = _.pluck(triggers, 'name');
-//var newSubscriptions = _.filter(new_triggers, _.contains(triggers) == false);
-
 // Setup a logging system in this daemon
 var winston = require('winston');
 
 var logger = new (winston.Logger)({
     transports: [
-        new (winston.transports.Console)(),
+        new (winston.transports.Console)({
+            colorize: true,
+            handleExceptions: true,
+            json: false,
+            level: "debug"
+        }),
         new (winston.transports.File)({ filename: 'trigger-daemon.log' })
     ]
 });
-
 logger.log('info', "Trigger Daemon is starting...");
 var topicHelper = require("./topicHelper.js");
 
@@ -99,10 +85,10 @@ mqttClient.on('connect', function () {
 mqttClient.on('message', function (topic, message) {
     json = JSON.parse(message);
 
-    console.log("lock: " + lock);
-    console.log(json);
-    console.log(triggers_by_sensor_id);
-    // console.log(topic + ":" + message.toString());
+    winston.info("lock: " + lock);
+    winston.info(json);
+    winston.info(triggers_by_sensor_id);
+    // winston.info(topic + ":" + message.toString());
     if (topic.match(/sensors\/[A-Za-z0-9]{0,32}\/data/) && lock == false) {
 
         var sensor_id = json.sensor_id;
@@ -112,18 +98,18 @@ mqttClient.on('message', function (topic, message) {
             triggers_by_sensor_id[sensor_id],
             function(trigger) {
                 if (trigger.condfunc(value)) {
-                    //    console.log("Trigger has fired!  " + trigger.name);
+                    //    winston.info("Trigger has fired!  " + trigger.name);
                     mqttClient.publish('actuator/' + trigger.actuator_id + '/trigger', trigger.triggerFunc);
                 }
             });
     } else if (topic.match(/trigger-daemon\/refresh/)) {
         // Message recieved on the refresh topic
-        console.log("Received a refresh trigger!!!!!!!!!!!!!!!!!!!!");
+        winston.info("Received a refresh trigger!!!!!!!!!!!!!!!!!!!!");
         getDBtriggers();
     } else if (topic.match(/trigger/)) {
-        console.log("Yes! New Triggers");
+        winston.info("Yes! New Triggers");
         triggers = json;
-        console.log(triggers);
+        winston.info(triggers);
         newTriggers(triggers);
     }
 
@@ -131,16 +117,16 @@ mqttClient.on('message', function (topic, message) {
 
 
 function getDBtriggers() {
-    console.log("Entering getDBtriggers");
+    winston.info("Entering getDBtriggers");
 
     db.all("SELECT * FROM triggers",
            function(err, results) {
-               console.log("Entering getDBtriggers callback");
+               winston.info("Entering getDBtriggers callback");
                if (err) {
-                   console.log("Error in getDBtriggers callback");
+                   winston.info("Error in getDBtriggers callback");
                } else {
-                   console.log("publishing new triggers from db");
-                   console.log(results);
+                   winston.info("publishing new triggers from db");
+                   winston.info(results);
                    mqttClient.publish('trigger', results);
                }
            });
@@ -157,15 +143,15 @@ function compareFuncBuilder(operator, triggerValue) {
 }
 
 function newTriggers(triggers) {
-    console.log(triggers);
+    winston.info(triggers);
     var triggerFuncs = _.map(triggers, function(element) {
 
-        console.log("element.condition: " + element.condition);
+        winston.info("element.condition: " + element.condition);
         var op = element.condition.match(/[<>=]+/);
         var triggerValue = element.condition.match(/\d+/);
 
         if (op == "" || triggerValue == "") {
-            console.log("SyntaxError: with op or triggerValue");
+            winston.info("SyntaxError: with op or triggerValue");
             return;
         }
         var fcond = compareFuncBuilder(op, triggerValue);
@@ -175,20 +161,20 @@ function newTriggers(triggers) {
     triggers_by_sensor_id = _.groupBy(triggerFuncs, "sensor_id");
 
     lock = false;
-    console.log("lock: " + lock);
-    console.log(triggers_by_sensor_id);
+    winston.info("lock: " + lock);
+    winston.info(triggers_by_sensor_id);
 }
 
 // setTimeout(function(mqttCient) {
-//     console.log("Fetching triggers from database");
-//     console.log(triggers);
+//     winston.info("Fetching triggers from database");
+//     winston.info(triggers);
 // Fetch the initial set of Triggers
 
 // triggerModel.find(mqttClient, function(mqttClient, results) {
-//     console.log("Printing the mqttClient");
-//     console.log("----------------------");
-//     console.log("Database triggers are fetched");
-//     console.log(results);
+//     winston.info("Printing the mqttClient");
+//     winston.info("----------------------");
+//     winston.info("Database triggers are fetched");
+//     winston.info(results);
 //     mqttClient.publish('trigger', results);
 
 // });

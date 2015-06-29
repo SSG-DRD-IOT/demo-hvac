@@ -54,11 +54,15 @@ var moment = require('moment');
 
 // Setup a logging system in this daemon
 var winston = require('winston');
-
 var logger = new (winston.Logger)({
     transports: [
-        new (winston.transports.Console)(),
-        new (winston.transports.File)({ filename: 'cloud-manager-daemon.log' })
+        new (winston.transports.Console)({
+            colorize: true,
+            handleExceptions: true,
+            json: false,
+            level: "debug"
+        }),
+        new (winston.transports.File)({ filename: 'historical-data-daemon.log' })
     ]
 });
 
