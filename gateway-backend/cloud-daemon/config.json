@@ -1,11 +1,11 @@
 {
 
   "mqtt" : {
-    "url" : "mqtt://172.16.22.236"
+    "url" : "mqtt://localhost"
   },
 
   "sqlite3" : {
-    "file" : "../../db/iotdemo.sqlite"
+    "file" : "/industrial-demo/db/iotdemo.sqlite"
   },
   
   "debug" : "true",

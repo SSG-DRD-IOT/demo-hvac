@@ -1,16 +1,7 @@
 node_modules/
-
+db/iotdemo.sqlite
 models/.#*
-
 bower_components/
 *.log
-
-*.log
-
 gateway-backend/edge-device-daemon/.#server.js
-
 *.sqlite
-
-*.log
-
-*.log

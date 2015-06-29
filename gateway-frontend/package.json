@@ -5,8 +5,8 @@
     "type": "git",
     "url": "https://github.com/start-angular/sb-admin-angular"
   },
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
+    "lodash": "^3.9.3",
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^0.7.3",
     "grunt-concurrent": "^0.5.0",

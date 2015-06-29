@@ -4,7 +4,7 @@
     },
 
     "sqlite3" : {
-        "file" : "../../db/iotdemo.sqlite"
+        "file" : "/industrial-demo/db/iotdemo.sqlite"
     },
 
     "debug" : "true"

@@ -1,6 +1,12 @@
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('../../../db/iotdemo.sqlite');
+console.log("Hello1");
 var cors = require('cors');
+console.log("Hello-----");
+var sqlite3 = require('sqlite3').verbose();
+console.log("Hello2");
+var db = new sqlite3.Database('../../../db/iotdemo.sqlite');
+console.log("Hello3");
+var cors = require('cors');
+console.log("Hello4");
 var bodyParse = require('body-parser');
 var _ = require('lodash');
  
