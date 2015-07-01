@@ -71,6 +71,24 @@
             "env": {
                 "NODE_ENV": "production"
             }
+        },
+        {
+            "name"             : "Administrative Web Interface",
+            "script"           : "gateway-frontend/app/node_scripts/rest.js",
+            "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+            "error_file"       : "/srv/log/admin-web-interface.stderr.log",
+            "out_file"         : "/srv/log/admin-web-interface.stdout.log",
+            "pid_file"         : "/srv/pids/admin-web-interface.pid",
+            "min_uptime"       : "200s", // 200 seconds, defaults to 1000
+            "max_restarts"     : "15", // defaults to 15
+            "watch"            : false,
+            "ignore_watch"     : ["[\\/\\\\]\\./", "node_modules"],
+            "merge_logs"       : true,
+            "exec_interpreter" : "node",
+            "autorestart"      : true, // enable/disable automatic restart when an app crashes or exits
+            "env": {
+                "NODE_ENV": "production"
+            }
         }
     ]
 }
