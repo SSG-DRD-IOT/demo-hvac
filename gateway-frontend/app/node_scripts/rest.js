@@ -1,12 +1,12 @@
-console.log("Hello1");
+
 var cors = require('cors');
-console.log("Hello-----");
+
 var sqlite3 = require('sqlite3').verbose();
-console.log("Hello2");
+
 var db = new sqlite3.Database('../../../db/iotdemo.sqlite');
-console.log("Hello3");
+
 var cors = require('cors');
-console.log("Hello4");
+
 var bodyParse = require('body-parser');
 var _ = require('lodash');
  
@@ -49,14 +49,14 @@ restapi.get('/listActuator', function(req, res){
  
  // To get Number of Sensors which are active
  restapi.get('/noOfSensor', function(req, res){
-    db.all("SELECT COUNT(*) FROM sensors WHERE active='true'", function(err, rows){
+    db.all("SELECT COUNT(*) FROM sensors", function(err, rows){
         res.json(rows[0]["COUNT(*)"]);
     });
 });
  
  // To get Number of Actuators which are active
   restapi.get('/noOfActuator', function(req, res){
-    db.all("SELECT COUNT(*) FROM actuators WHERE active='true'", function(err, rows){
+    db.all("SELECT COUNT(*) FROM actuators", function(err, rows){
         res.json(rows[0]["COUNT(*)"]);
     });
 });
@@ -93,7 +93,7 @@ restapi.get('/listActuator', function(req, res){
        // id = id.replace(/"/g, "");
       //  new_id = parseInt(id) + 1;
       //  console.log (new_id);
-      var sql = "INSERT INTO \"main\".\"triggers\" (\"name\",\"sensor_id\",\"actuator_id\",\"condition\",\"triggerFunc\") VALUES (\""+req.param("triggerName")+"\",\""+req.param("sensor")+"\",\""+req.param("actuator")+"\",\""+req.param("conditions")+"\",\""+req.param("control")+"\");";
+      var sql = "INSERT INTO \"main\".\"triggers\" (\"name\",\"sensor_id\",\"actuator_id\",\"condition\",\"triggerFunc\") VALUES (\""+req.param("triggerName")+"\",\""+req.param("sensor")+"\",\""+req.param("actuator")+"\",\""+req.param("conditions")+"\",\'"+req.param("control")+"\');";
       console.log(sql);
         db.all(sql, function(err, row){
            if (err){

@@ -83,17 +83,18 @@ function formatDataForPlot(results){
   this.sensorData = {"timestamp" : [], "values" : []};
   this.duplicateValues = [];
   for(i in results) {
-    this.sensorData.timestamp.push(moment(results[i].timestamp).format('h:mm:ss a'));
+    this.sensorData.timestamp.push(moment(results[i].timestamp).format("YYYY-MM-DD HH:mm:ss"));
     this.duplicateValues.push(results[i].value);
   }
   this.sensorData.values.push(this.duplicateValues);
   this.sensorData.values.push(this.duplicateValues);
-  logger.log(this.sensorData);
+  //logger.log(this.sensorData);
 }
 
 function getDataFromCloud(cloud_provider, req, callback) {
   cloud_provider.connect();
   readQuery = {};
+  //logger.info(req);
   if(req.query.id) {
     logger.log('sensor_id: ' + req.query.id);
     readQuery.sensor_id = req.query.id;
@@ -114,10 +115,10 @@ app.get(config.path.azure, function (req, res) {
   // TODO: Code to select database here
   getDataFromCloud(azure, req, function(err){
     if(err) {
-      logger.log(err);
+      logger.error(err);
     } else {
-      logger.log('In Historic data daemon - Data received from Azure cloud');
-      //logger.log(results);
+      logger.log("In Historic data daemon - Data received from Azure cloud");
+      //logger.info(results);
       res.send(this.sensorData);
     }
   })
@@ -127,9 +128,9 @@ app.get(config.path.datastore, function (req, res) {
   // TODO: Code to select database here
   getDataFromCloud(google, req, function(err){
     if(err) {
-      logger.log(err);
+      logger.error(err);
     }  else {
-      logger.log('In Historic data daemon - Data received from Google cloud');
+      logger.log("In Historic data daemon - Data received from Google cloud");
       res.send(this.sensorData);
     }
   })
@@ -139,9 +140,9 @@ app.get(config.path.bluemix, function (req, res) {
   // TODO: Code to select database here
   getDataFromCloud(bluemix, req, function(err){
     if(err) {
-      logger.log(err);
+      logger.error(err);
     }  else {
-      logger.log('In Historic data daemon - Data received from IBM Bluemix');
+      logger.log("In Historic data daemon - Data received from IBM Bluemix");
       res.send(this.sensorData);
     }
   })

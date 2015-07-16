@@ -59,7 +59,7 @@ function google(json) {
       self.dataQuery = self.db.createQuery(self.config.namespace, readQuery.sensor_id)
       .filter('timestamp >=', readQuery.timestamp);
     } else {
-      self.dataQuery = self.db.createQuery(self.config.namespace, readQuery.sensor_id);
+      self.dataQuery = self.db.createQuery(self.config.namespace, readQuery.sensor_id).limit(100);
     }
 
     self.db.runQuery(self.dataQuery, function(err, result) {

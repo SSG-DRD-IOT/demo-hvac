@@ -1,6 +1,6 @@
 {
   "name": "intel-commerical-iot-google-datastore-pubsub",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A plugin for the Intel Edison Iot Cloud tools to enable pubsub to Google DataStore",
   "main": "google-datastore-plugin.js",
   "scripts": {
@@ -12,5 +12,11 @@
     "google",
     "datastore",
     "pubsub"
-  ]
+  ],
+  "dependencies": {
+    "gcloud": "^0.16.0",
+    "lodash": "^3.9.3",
+    "sleep": "^2.0.0",
+    "winston": "^1.0.1"
+  }
 }
