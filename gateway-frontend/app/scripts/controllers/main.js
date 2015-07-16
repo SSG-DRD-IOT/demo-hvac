@@ -11,25 +11,57 @@ angular.module('sbAdminApp')
 
   .controller('MainCtrl',['$scope', '$http', function($scope,$http,$position) {
     
-    $http.get('http://172.16.21.235:3000/noOfSensor').success(function(data,satus) {
+    // To get Number of Sensors for Main Page
+    $http.get('/noOfSensor').success(function(data,satus) {
             $scope.noOfSensor = data;
      });
-    $http.get('http://172.16.21.235:3000/noOfActuator').success(function(data,satus) {
+    // To get number of actuators for main page
+    $http.get('/noOfActuator').success(function(data,satus) {
             $scope.noOfActuator = data;
      });
-    $http.get('http://172.16.21.235:3000/noOfTrigger').success(function(data,satus) {
+    // To get number of triggers for main page
+    $http.get('/noOfTrigger').success(function(data,satus) {
             $scope.noOfTrigger = data;
      });
     
+    // To get Sensor details for particular sensor Id
     $scope.getSensorData = function(actuatorId){
               var data = "{\"sensorId\":\"1\"}";
-              $http.post( 'http://172.16.21.235:3000/getSensorData',data).success(function (data, status, headers, config) {
+              $http.post( '/getSensorData',data).success(function (data, status, headers, config) {
                      $scope.sensorData = data;
             });    
     };
+
+    // To get data for customization of cloud
+     $http.get('/getCustomizeCloud').success(function(data,status) {
+            $scope.customizeCloud = data;
+     });
+
+     // To remove row from trigger
+    $scope.removeRow = function(triggerId){
+              var data = "{\"id\":\""+triggerId+ "\"}";
+              $http.post( '/removeTrigger',data).success(function (data, status, headers, config) {
+              $window.location.reload();
+            });
+    };
     
+    // To get Api from particular actuator
+    $scope.getApi = function(actuatorId){
+              var data = "{\"id\":\""+actuatorId+ "\"}";
+              $http.post( '/getApi',data).success(function (data, status, headers, config) {
+                     $scope.api = data;
+            });    
+    };
     
-    $http.get('http://172.16.21.235:4000/api/v0001/azure/historic/data?id=b506768ce1e2353fe063d344e89e53e5').success(function(data,status) {
+    // To Save data for trigger
+     $scope.saveData = function(data){
+              $http.post( '/addTrigger',data).success(function (data, status, headers, config) {
+            $window.location.reload();
+            });      
+    };
+
+      // To get historic data from cloud
+    $http.get('http://172.16.21.235:4000/api/v0001/historic/data?id=123').success(function(data,status) {
             $scope.line1 = data;
      });
     

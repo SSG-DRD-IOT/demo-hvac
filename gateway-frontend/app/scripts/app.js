@@ -188,7 +188,16 @@ angular
    })
     .state('dashboard.customizeCloud',{
        templateUrl:'views/ui-elements/customizeCloud.html',
-       url:'/customizeCloud'
+       url:'/customizeCloud',
+       controller:'TableCtrl',
+       resolve: {
+          loadMyFile:function($ocLazyLoad) {
+            $ocLazyLoad.load({
+                name:'sbAdminApp',
+                files:['scripts/controllers/table.js']
+            })
+            }
+        }
    })
     .state('dashboard.actuatorListTable',{
        templateUrl:'views/ui-elements/actuatorListTable.html',
