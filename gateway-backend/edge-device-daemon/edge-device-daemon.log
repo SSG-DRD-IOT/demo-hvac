@@ -3226,3 +3226,4 @@
 {"level":"info","message":"Writing to db:{\"sensor_id\": \"virutalTempSensor\", \"value\": \"80.32000218285248\", \"timestamp\":\"1435527452434\"}","timestamp":"2015-06-28T21:37:32.434Z"}
 {"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T21:38:06.204Z"}
 {"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-28T22:04:07.865Z"}
+{"level":"info","message":"Edge Device Daemon is starting","timestamp":"2015-06-29T03:22:47.605Z"}
