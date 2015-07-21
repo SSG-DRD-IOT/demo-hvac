@@ -144,7 +144,7 @@ setInterval(function() {
             data_by_cloudprovider,
             function(data, cloudprovider_id) {
               logger.info("Cloudprovider_id:", cloudprovider_id);
-              logger.info(JSON.stringify(data, null, ' '));
+              // logger.info(JSON.stringify(data, null, ' '));
               logger.info("----------------------------------------");
 
               if (cloudprovider_id == 1) {
@@ -155,7 +155,7 @@ setInterval(function() {
                 logger.info("Writing to IBM BlueMix");
               } else if (cloudprovider_id == 3) {
                 logger.info("Writing to Google DataStorage");
-                google.write(data);
+                // google.write(data);
               } else if (cloudprovider_id == 4) {
                 logger.info("Writing to Amazon Kinesis");
               }
