@@ -26,7 +26,7 @@ while (count < 50)
 //console.log(result);
 
 data = {
-    devId: "5678",
+    devId: "sensor-4321",
     value : 80,
     timestamp : Date.now()
 }

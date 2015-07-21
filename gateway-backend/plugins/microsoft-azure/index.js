@@ -26,7 +26,7 @@ function azure(json) {
 
     //  logger.info('Azure: Entered connect function');
     azureTable.setDefaultClient({
-      accountUrl: 'https://' + self.config.accountName + '.table.core.windows.net/',
+      accountUrl: 'http://' + self.config.accountName + '.table.core.windows.net/',
       accountName: self.config.accountName,
       accountKey: self.config.accessKey,
       timeout: 10000
