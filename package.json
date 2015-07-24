@@ -1,8 +1,15 @@
 {
-  "name": "industrial-demo",
+  "name": "intel-commercial-iot-demo",
   "version": "1.0.0",
   "description": "An example IoT training architecture for modeling various commerical deployments",
   "main": "index.json",
+  "dependencies": {
+    "cloud-daemon": "^1.0.0",
+    "edge-device-daemon": "^1.0.0",
+    "historical-daemon": "^1.0.0",
+    "intel-iot-commercial-admin-interface": "0.0.0",
+    "trigger-daemon": "^1.0.0"
+  },
   "devDependencies": {
     "grunt": "^0.4.5"
   },
