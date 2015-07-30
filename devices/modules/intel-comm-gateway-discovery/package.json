@@ -1,0 +1,14 @@
+{
+  "name": "iot-comm-gateway-discovery",
+  "version": "1.0.0",
+  "description": "Gateway discovery for Intel Industrial Demo.  Uses MDNS, run first.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Drew Williams <drew.williams@intel.com>",
+  "license": "MIT",
+  "dependencies": {
+      "mdns": "2.2.9"
+  }
+}

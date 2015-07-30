@@ -4,16 +4,19 @@
 
 // We use mdns to look at the daemons that are being run over the network
 var mdns = require('mdns');
+
 //We use child processes to run the code for starting the edison.
 var exec = require('child_process').exec;
-//We're going to start the main.js file on the Edison.
-var configs = require('./config.json');
+
+//We're going to need the main configuration file on the Edison - this is two folders up.
+//(i.e. it is not in intel-comm-gateway-discovery or in node_modules)
+var configs = require('../../config.json');
 
 // Creates a browser for xdk-app-daemon services
 var browser = mdns.createBrowser(mdns.tcp('xdk-app-daemon'),58888);
 
-//We're also going to create some variables for storing the gateway host in, in
-//addition to
+//We're also going to create some variables for storing the gateway host in, in addition to 
+//the gateway IP.
 var gatewayHost = 'gateway';
 var gatewayIP = [];
 

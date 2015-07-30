@@ -1,5 +1,6 @@
 {
     "name": "relay",
+    "genid" : "3",
     "api":["on","off"],
     "type": "actuator",
     "ioType": "gpio"
