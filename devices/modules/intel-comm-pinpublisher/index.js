@@ -22,7 +22,7 @@ winston.log('debug', 'Debug logs set up.');
 ////////////// Now we can begin the module code! ///////////////////////////////
 
 //Step One: Get your configuration information.
-var moduleData = require('./config.json');
+var moduleData = require('../../config.json');
 //This JSON is automatically imported as a JSON object, so it does not
 //need to be parsed!
 
@@ -32,22 +32,31 @@ winston.info('Transport manager connected.');
 
 
 //Now with that client, we can define a loop:
-
 function loop () {
   //Does nothing...for now
+  
   var loopnum = 0; //Debugging.  Every time the loop restarts, the loopnum goes to 0.
+  
   var interval = moduleData.frequency * 1000; //Get our frequency, from config.
                                               //Defined in seconds.
+                                              
   var component = componentManager.getComponent(moduleData.name, moduleData.pin);
+  
   setInterval(function () //Start our loop....
                 {
                     winston.log('debug','Loop began.'); //Loop is beginning its work.
-                    //Get a reading, send a reading!
-                    var data = component.readData(moduleData.pin);
+                    
+                    //Get a reading (UPM style)
+                    var data = component.value();
                     winston.log('debug','Data was read from a pin: ' + data);
+                    
+                    //Send a reading
                     transportManager.publishData(client, moduleData, data);
+                    
+                    //Another loop completed!
                     loopnum = loopnum+1;
                     winston.log('debug','Data has been published to the server ' + loopnum + " times.");
+                    
                 }, interval);  //Once a [interval]!
 };
 
