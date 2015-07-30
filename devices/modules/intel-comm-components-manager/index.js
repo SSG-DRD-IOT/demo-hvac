@@ -1,40 +1,49 @@
 //Manager for the individual components that may interface with
 //commercial IoT projects.
 
-//Components.  Add components here so the manager can deal with them.
-var light = require('intel-comm-components-light');
-var sound = require('intel-comm-components-sound');
-var temperature = require('intel-comm-components-temperature');
-var relay = require('intel-comm-components-relay');
+//As of 7-30-15, we're opting to use UPM for sensors.
+var upm = require('jsupm_grove');
 
-//This code is passed the users' sensor name, and returns the
-//appropriate sensor variable.
+//However, due to the nature of the relays, relays still require
+//a separate API
+var relay = require('intel-comm-components-relay')
 
-//Sensors all use the readData command.
-//Actuators vary depending on their work.
-
-exports.getComponent = function getComponent(name)
+//This function returns the UPM component for a sensor, or the API components
+//for an actuator.  
+exports.getComponent = function getComponent(name, pin)
 {
   var returnedComponent = {};
+  
+  //Note: the below is bad practice, and will be changed eventually.
   if (name === "light")
   {
-    returnedComponent = light;
+    returnedComponent = new groveSensor.GroveLight(+pin);
   }
   if (name === "sound")
   {
-    returnedComponent = sound;
+    returnedComponent = new loudnessSensor.GroveLoudness(+pin);
   }
   if (name === "temperature")
   {
-    returnedComponent = temperature;
+    returnedComponent = new groveSensor.GroveTemp(+pin);
   }
   if (name === "relay")
   {
     returnedComponent = relay;
   }
-  //if (name === "rgblcd")
-  //{
-  //  returnedComponent = rgblcd;
-  //}
+  
+  //Note that it's not required that returnedComponent is assigned to anything, so it could be NULL in some
+  //situations.
+  
   return returnedComponent;
+}
+
+exports.returnType = function returnTypeOfDevice(name) {
+    var configs = require('./'+name+'.json');
+    return configs.type;
+};
+
+exports.returnIO = function getIoOfDevice(name) {
+    var configs = require('./'+name+'.json');
+    return configs.io;
 }

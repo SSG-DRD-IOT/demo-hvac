@@ -38,7 +38,7 @@ function loop () {
   var loopnum = 0; //Debugging.  Every time the loop restarts, the loopnum goes to 0.
   var interval = moduleData.frequency * 1000; //Get our frequency, from config.
                                               //Defined in seconds.
-  var component = componentManager.getComponent(moduleData.name);
+  var component = componentManager.getComponent(moduleData.name, moduleData.pin);
   setInterval(function () //Start our loop....
                 {
                     winston.log('debug','Loop began.'); //Loop is beginning its work.
