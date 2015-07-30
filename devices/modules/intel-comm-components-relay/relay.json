@@ -1,0 +1,6 @@
+{
+    "name": "relay",
+    "api":["on","off"],
+    "type": "actuator",
+    "ioType": "gpio"
+}

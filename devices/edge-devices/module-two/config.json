@@ -1,0 +1,7 @@
+{
+  "name" : "light",
+  "description" : "A light sensor.",
+  "frequency" : "1",
+  "pin" : "0",
+  "transport" : "mqtt"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "ModuleOne",
+  "description": "Industrial IoT Demonstration - temperature sensor.",
+  "version": "0.1.0",
+  "main": "discovery.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "mraa": "^0.7.2",
+    "upm": "^0.0.20",
+    "winston" : "^1.0.0",
+    "mdns":"^2.2.9"
+  }
+}

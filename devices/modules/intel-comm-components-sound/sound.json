@@ -1,0 +1,5 @@
+{
+    "name": "sound",
+    "type": "sensor",
+    "io": "aio"
+}

@@ -1,0 +1,7 @@
+{
+  "name" : "sound",
+  "description" : "A loudness sensor.",
+  "frequency" : "1",
+  "pin" : "0",
+  "transport" : "mqtt"
+}

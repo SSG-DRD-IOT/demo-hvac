@@ -1,0 +1,16 @@
+{
+  "name": "iot-comm-components-relay",
+  "version": "1.0.0",
+  "description": "Relay for Intel commercial demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vaghesh Patel <vaghesh.patel@intel.com>",
+  "license": "MIT",
+  "dependencies": 
+  {
+      "mraa": "^0.7.2",
+      "upm": "^0.0.20"
+  }
+}

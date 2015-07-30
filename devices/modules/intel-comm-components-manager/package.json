@@ -1,0 +1,15 @@
+{
+  "name": "iot-comm-components-manager",
+  "version": "1.0.0",
+  "description": "Component manager for IoT projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Drew Williams <drew.williams@intel.com>",
+  "license": "MIT",
+  "dependencies": {
+      "mraa": "^0.7.2",
+      "upm": "^0.0.20"
+  }
+}

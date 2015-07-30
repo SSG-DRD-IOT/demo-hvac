@@ -1,0 +1,5 @@
+{
+    "name": "light",
+    "type": "sensor",
+    "io": "aio"
+}

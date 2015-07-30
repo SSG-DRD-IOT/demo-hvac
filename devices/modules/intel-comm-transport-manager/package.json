@@ -1,0 +1,15 @@
+{
+  "name": "iot-comm-transport-manager",
+  "version": "1.0.0",
+  "description": "Networking interfaces for IoT Commercial projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Drew Williams <drew.williams@intel.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mqtt": "^1.3.0",
+    "winston" : "^1.0.0"
+  }
+}
