@@ -1,5 +1,6 @@
 {
     "name": "sound",
+    "genid" : "2",
     "type": "sensor",
     "io": "aio"
 }

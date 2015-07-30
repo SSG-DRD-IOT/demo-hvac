@@ -1,5 +1,6 @@
 {
     "name": "light",
+    "genid" : "1",
     "type": "sensor",
     "io": "aio"
 }
