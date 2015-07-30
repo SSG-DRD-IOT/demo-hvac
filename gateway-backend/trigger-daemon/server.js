@@ -102,7 +102,7 @@ mqttClient.on('message', function (topic, message) {
 
     // Determine which topic Command Dispatcher
     if (utils.isSensorTopic(topic)) {
-        // Received a message on a Sesnor MQTT topic
+        // Received a message on a Sensor MQTT topic
         processSensorData(json);
     } else if (utils.isRefreshTopic(topic)) {
         // Received a message on the Refresh MQTT topic
@@ -170,6 +170,8 @@ function processSensorData(json) {
 
                 // Send a response to the actuator
                 mqttClient.publish(actuatorTopic, trigger.triggerFunc);
+                
+                //DATA CHECKS GO HERE!
             }
         });
 }
