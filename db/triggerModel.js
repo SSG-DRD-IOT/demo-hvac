@@ -7,7 +7,7 @@ var TriggerModel = function(db, data) {
     this.db = db;
 
     this.save = function() {
-        this.db.run("INSERT OR IGNORE INTO triggers (id, name, sensor_id, actuator_id, condition, triggerFunc, active) VALUES (?,?,?,?,?,?,?)", _.values(this.data) );
+        this.db.run("INSERT OR IGNORE INTO triggers (id, name, sensor_id, actuator_id, verification_id, condition, triggerFunc, active) VALUES (?,?,?,?,?,?,?)", _.values(this.data) );
     };
 
     this.find_by_sensor_id = function(sensor_id, callback) {

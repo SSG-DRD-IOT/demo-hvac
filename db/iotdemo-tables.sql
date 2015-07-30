@@ -20,6 +20,7 @@ CREATE TABLE "triggers" (
 	`name`	VARCHAR NOT NULL,
 	`sensor_id`	INTEGER NOT NULL,
 	`actuator_id`	INTEGER NOT NULL,
+	`verification_id`	INTEGER,
 	`condition`	TEXT NOT NULL,
 	`triggerFunc`	TEXT NOT NULL,
 	`active`	BOOL NOT NULL DEFAULT true
