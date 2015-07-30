@@ -1,0 +1,7 @@
+{
+  "name" : "short-device-name-generic",
+  "description" : "A detailed description of which device this is.  This description is hashed into a device ID, should be unique.",
+  "frequency" : "1",
+  "pin" : "0",
+  "transport" : "mqtt"
+}

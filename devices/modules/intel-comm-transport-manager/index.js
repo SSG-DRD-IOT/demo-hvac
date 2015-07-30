@@ -4,7 +4,7 @@
 //Requirements
 var crypto = require('crypto');
 var winston = require('winston');
-var mqtt = require('./scripts/mqtt_transport.js')
+var mqtt = require('intel-comm-transport-mqtt')
 
 /////Get the transport protocol.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function getTransportProtocol (configFile) {
