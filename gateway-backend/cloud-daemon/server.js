@@ -71,8 +71,8 @@ var logger = new (winston.Logger)({
             silent: false,
             colorize: true,
             timestamp: true,
-            filename: './trigger-daemon.log',
-            maxsize: 40000,
+            filename: './cloud-daemon.log',
+            maxsize: 400000,
             maxFiles: 10,
             json: false
         })]
