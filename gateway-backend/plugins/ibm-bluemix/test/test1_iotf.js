@@ -1,9 +1,9 @@
-var ibm = require("../index.js");
+var ibm = require("../index_iotf.js");
 var config = require("../config.json");
 
-ibm.connect(config);
+// ibm.connect(config);
 ibm.read();
-
+return;
 ibm.write({
     devId : "5678",
     value : 80,

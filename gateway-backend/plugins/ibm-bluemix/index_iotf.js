@@ -84,30 +84,29 @@ module.exports = {
     read: function() {
 
         console.log("here 1");
+        var start = Date.now() - 10;
+
         var options = {
             hostname: "internetofthings.ibmcloud.com"
             ,port: 443
-            ,auth: {
-                user: "a-5anfde-xxkarh3mxp"
-                ,pass: "pkaXR)SEnVrsuM21BY"
-            }
-            ,path: '/api/v0001/historian/5anfde/intel-edison?evt_type=temperatureEvent'
+            ,path: '/api/v0001/historian/ndag4d?start=78787676&end=' + Date.now()
             ,method: 'GET'
-            ,headers: { 'Content-Type': 'application/json' }
+            ,headers: {
+              'Authorization': 'Basic ' + new Buffer("a-ndag4d-3p2uynctid" + ":" + "0+ab38e2gGOjiI9m(V").toString('base64')
+              }
         };
         console.log("here 2");
 
         var req = https.get(options, function(res) {
-            console.log('STATUS: ' + res.statusCode);
-            console.log('HEADERS: ' + JSON.stringify(res.headers));
+            // console.log('STATUS: ' + res.statusCode);
+            // console.log('HEADERS: ' + JSON.stringify(res.headers));
 
             // Buffer the body entirely for processing as a whole.
-            var bodyChunks = [];
-            res.on('data', function(chunk) {
+            var body = "";
+            res.on('data', function(data) {
                 // You can process streamed parts here...
-                bodyChunks.push(chunk);
+                body += data;
             }).on('end', function() {
-                var body = Buffer.concat(bodyChunks);
                 console.log('BODY: ' + body);
                 // ...and/or process the entire body here.
             });
