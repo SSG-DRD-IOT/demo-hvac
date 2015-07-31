@@ -54,17 +54,53 @@ var moment = require('moment');
 
 // Setup a logging system in this daemon
 var winston = require('winston');
+
 var logger = new (winston.Logger)({
+    levels: {
+        trace: 0,
+        input: 1,
+        verbose: 2,
+        prompt: 3,
+        debug: 4,
+        info: 5,
+        data: 6,
+        help: 7,
+        warn: 8,
+        error: 9
+    },
+    colors: {
+        trace: 'magenta',
+        input: 'grey',
+        verbose: 'cyan',
+        prompt: 'grey',
+        debug: 'blue',
+        info: 'green',
+        data: 'grey',
+        help: 'cyan',
+        warn: 'yellow',
+        error: 'red'
+    },
     transports: [
-        new (winston.transports.Console)({
+        new (winston.transports.Console)(
+            {
+                level: 'trace',
+                prettyPrint: true,
+                colorize: true,
+                silent: false,
+                timestamp: false
+            }),
+        new (winston.transports.File)({
+            prettyPrint: false,
+            level: 'info',
+            silent: false,
             colorize: true,
-            handleExceptions: true,
-            json: false,
-            level: "debug"
-        }),
-        new (winston.transports.File)({ filename: 'historical-data-daemon.log' })
-    ]
-});
+            timestamp: true,
+            filename: './trigger-daemon.log',
+            maxsize: 40000,
+            maxFiles: 10,
+            json: false
+        })]
+    });
 
 // Create the express application
 var app = express();
@@ -80,14 +116,14 @@ app.use(cors());
 app.listen(4000);
 
 function formatDataForPlot(results){
-  this.sensorData = {"timestamp" : [], "values" : []};
-  this.duplicateValues = [];
+  sensorData = {"timestamp" : [], "values" : []};
+  duplicateValues = [];
   for(i in results) {
-    this.sensorData.timestamp.push(moment(results[i].timestamp).format("YYYY-MM-DD HH:mm:ss"));
-    this.duplicateValues.push(results[i].value);
+    sensorData.timestamp.push(moment(results[i].timestamp).format("YYYY-MM-DD HH:mm:ss"));
+    duplicateValues.push(results[i].value);
   }
-  this.sensorData.values.push(this.duplicateValues);
-  this.sensorData.values.push(this.duplicateValues);
+  sensorData.values.push(duplicateValues);
+  sensorData.values.push(duplicateValues);
   //logger.log(this.sensorData);
 }
 
@@ -98,13 +134,13 @@ function getDataFromCloud(cloud_provider, req, callback) {
   if(req.query.id) {
     logger.log('sensor_id: ' + req.query.id);
     readQuery.sensor_id = req.query.id;
-  } else {
+  } else { // Just for fail proof
     readQuery.sensor_id = 'b506768ce1e2353fe063d344e89e53e5';
   }
 
   cloud_provider.read(readQuery, function(err, results){
     if(!err) {
-      //console.log(results);
+      //logger.info(results);
       formatDataForPlot(results);
     }
     callback(err);
@@ -112,7 +148,7 @@ function getDataFromCloud(cloud_provider, req, callback) {
 }
 
 app.get(config.path.azure, function (req, res) {
-  // TODO: Code to select database here
+
   getDataFromCloud(azure, req, function(err){
     if(err) {
       logger.error(err);
@@ -124,20 +160,8 @@ app.get(config.path.azure, function (req, res) {
   })
 });
 
-app.get(config.path.datastore, function (req, res) {
-  // TODO: Code to select database here
-  getDataFromCloud(google, req, function(err){
-    if(err) {
-      logger.error(err);
-    }  else {
-      logger.log("In Historic data daemon - Data received from Google cloud");
-      res.send(this.sensorData);
-    }
-  })
-});
-
 app.get(config.path.bluemix, function (req, res) {
-  // TODO: Code to select database here
+
   getDataFromCloud(bluemix, req, function(err){
     if(err) {
       logger.error(err);
