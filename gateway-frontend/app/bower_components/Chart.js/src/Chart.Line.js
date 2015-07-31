@@ -7,7 +7,7 @@
 
 	var defaultConfig = {
 
-		//Boolean - Whether grid lines are shown across the chart
+		///Boolean - Whether grid lines are shown across the chart
 		scaleShowGridLines : true,
 
 		//String - Colour of the grid lines
@@ -17,7 +17,7 @@
 		scaleGridLineWidth : 1,
 
 		//Boolean - Whether to show horizontal lines (except X axis)
-		scaleShowHorizontalLines: false,
+		scaleShowHorizontalLines: true,
 
 		//Boolean - Whether to show vertical lines (except Y axis)
 		scaleShowVerticalLines: true,

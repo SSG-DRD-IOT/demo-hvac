@@ -11,7 +11,7 @@
  //var config = require('./config.json');
  angular.module('sbAdminApp')
 
- .controller('TableCtrl',['$scope','$location','$http', '$window', function($scope,$location,$http,$window) {
+ .controller('TableCtrl',['$scope','$location','$http', '$window',function($scope,$location,$http,$window) {
 
   // To get data from actuator table
   $http.get('/listActuator').success(function(data,status) {
@@ -27,6 +27,15 @@
    $http.get('/listTrigger').success(function(data,status) {
     $scope.triggers = data;
   });
+
+   $scope.url = $scope.swaggerUrl = 'http://10.246.15.211:10010';
+  
+   $scope.IsVisible = false;
+   $scope.ShowHide = function () {
+		//If DIV is visible it will be hidden and vice versa.
+		$scope.IsVisible = $scope.IsVisible ? false : true;
+   }
+
 
    
 
