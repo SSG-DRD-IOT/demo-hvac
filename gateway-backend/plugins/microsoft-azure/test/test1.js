@@ -4,7 +4,14 @@ var sleep = require('sleep');
 
 var azure = new azure(config);
 
-azure.connect();
+azure.connect(function(status)
+{
+  if(status) {
+    console.log('Connected successfully');
+  } else {
+    console.log('Connection failed');
+  }
+});
 
 // azure.delete();
 // return;

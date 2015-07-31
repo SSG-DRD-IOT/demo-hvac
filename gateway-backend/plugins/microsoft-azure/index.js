@@ -39,15 +39,19 @@ function azure(json) {
       self.client.createTable(self.config.table, function(err, resp) {
         if(err) {
           if(err.statusCode == 409) {
+            result = true;
             logger.info('Azure - Table already exists');
           } else {
             logger.error('Azure - Table creation failed');
             logger.error('Azure - Connection failed');
             logger.error(err);
+            result = false;
           }
         } else {
+          result = true;
           logger.info('Azure - Connected successfully');
         }
+        callback(result);
       });
     } else {
       logger.error('Azure - Connection failed');
