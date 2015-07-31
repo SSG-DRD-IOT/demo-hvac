@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var sensorSchema = new mongoose.schema({
+var sensorSchema = new mongoose.Schema({
     id : {
         type: String,
         required: true

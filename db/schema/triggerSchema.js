@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var triggerSchema = new mongoose.schema({
+var triggerSchema = new mongoose.Schema({
     id : {
         type: String,
         required: true
