@@ -1,4 +1,5 @@
 {
-  "url" : "mongodb://IbmCloud_59dftfui_elarvo9j_48c79dpm:seKCjpDr_ntBPYvfHXoS8zsn30Zl0EPK@ds037812.mongolab.com:37812/IbmCloud_59dftfui_elarvo9j",
-  "db": "iotdemoTest1"
+  "url": "mongodb://IbmCloud_ft37d2t4_8o67b5uj_o42uclt0:4EzYj7oYBUymgyE3LhW2-eqt27sQB-tN@ds027613.mongolab.com:27613/IbmCloud_ft37d2t4_8o67b5uj",
+  "db": "iotdemoTest1",
+  "debug": "true"
 }
