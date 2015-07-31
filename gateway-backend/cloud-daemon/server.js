@@ -100,8 +100,14 @@ if(config.debug != "true") {
 }
 
 // Establish a connection to Microsoft Azure
-azure.connect();
-
+azure.connect(function(status)
+{
+  if(status) {
+    console.log('Connected successfully');
+  } else {
+    console.log('Connection failed');
+  }
+});
 // Steps
 // 1. Set Interval to 60 seconds
 // 2. Get the values for each sensor
