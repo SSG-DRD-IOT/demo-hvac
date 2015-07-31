@@ -1,12 +1,19 @@
-var mongoose = require('mongoose');
+////////////////////////////////////////////////////////////////////////////////
+// Testing Suite for the Sensor Data DB Model
+////////////////////////////////////////////////////////////////////////////////
+
+var config = require ('./config.json');
 var fixtures = require('../fixtures/data.js');
+
+// Load the export and should testing styles
+var chai = require('chai'),
+    expect = chai.expect,
+    should = chai.should();
+
+// Connect to the MongoDB
+var mongoose = require('mongoose');
 var dataSchema = require('../schema/dataSchema.js');
 var Data = mongoose.model('dataModel', dataSchema);
-var config = require ('./config.json');
-
-var chai = require('chai')
-, expect = chai.expect
-, should = chai.should();
 
 // var dataModel = require('../model/data.js');
 mongoose.connect(config.mongodb);
@@ -16,10 +23,6 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
     //   console.log("Connection to MongoDB successful");
 });
-
-////////////////////////////////////////////////////////////////////////////////
-// Static functions on Data Model
-////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////
 // Validation Helpers
