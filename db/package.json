@@ -1,19 +1,22 @@
 {
   "name": "intel-commerical-iot-database-models",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Model Objects that allow access to the gateways local database",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "chai": "^3.2.0",
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.11.2",
-    "grunt-contrib-testem": "^0.5.16",
-    "sinon": "^1.15.4"
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.2.5"
   },
   "dependencies": {
-    "lodash": "^3.10.0"
+    "lodash": "^3.10.0",
+    "mongoose": "^4.1.0"
   },
   "author": "Intel",
   "license": "MIT"

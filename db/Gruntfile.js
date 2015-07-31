@@ -2,6 +2,8 @@ var grunt = require('grunt');
 
 module.exports = function(grunt) {
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+
         jshint: {
             all: ['src/**/*.js', 'test/**/*.js'],
             options: {
@@ -20,29 +22,38 @@ module.exports = function(grunt) {
                 devel: true
             }
         },
-        testem: {
-            unit: {
+
+        // Setup Mocha based testing
+        mochaTest: {
+            test: {
                 options: {
-                    framework: 'jasmine2',
-                    launch_in_dev: ['PhantomJS'],
-                    before_tests: 'grunt jshint',
-                    serve_files: [
-                        'node_modules/lodash/index.js',
-                        'node_modules/jquery/dist/jquery.js',
-                        'node_modules/sinon/pkg/sinon.js',
-                        'src/**/*.js',
-                        'test/**/*.js'
-                    ],
-                    watch_files: [
-                        'src/**/*.js',
-                        'test/**/*.js'
-                    ]
-                }
+                    reporter: 'spec',
+                    clearRequireCache: true
+                },
+                src: ['test/*_spec.js']
+            }
+        },
+
+        // Watch the tests, if they change then rerun the automated tests
+        watch: {
+            js: {
+                options: {
+                    spawn: true,
+                    interrupt: true,
+                    debounceDelay: 250,
+                },
+                files: ['Gruntfile.js', 'src/*.js', 'test/*.js'],
+                tasks: ['mochaTest']
             }
         }
-    });
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-testem');
 
-    grunt.registerTask('default', ['testem:run:unit']);
+    });
+
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-mocha-test');
+    grunt.registerTask('test', ['mochaTest']);
+    grunt.registerTask('default', ['mochaTest']);
+
+    //    grunt.registerTask('default', ['testem:run:unit']);
 };
