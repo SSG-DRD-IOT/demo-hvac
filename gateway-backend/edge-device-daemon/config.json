@@ -6,5 +6,6 @@
     "sqlite3" : {
         "file" : "/industrial-demo/db/iotdemo.sqlite"
     },
+    
     "debug" : "true"
 }

@@ -22,101 +22,102 @@ var dataModel = new DataModel(db);
 var winston = require('winston');
 
 var logger = new (winston.Logger)({
-    levels: {
-        trace: 0,
-        input: 1,
-        verbose: 2,
-        prompt: 3,
-        debug: 4,
-        info: 5,
-        data: 6,
-        help: 7,
-        warn: 8,
-        error: 9
-    },
-    colors: {
-        trace: 'magenta',
-        input: 'grey',
-        verbose: 'cyan',
-        prompt: 'grey',
-        debug: 'blue',
-        info: 'green',
-        data: 'grey',
-        help: 'cyan',
-        warn: 'yellow',
-        error: 'red'
-    },
-    transports: [
-        new (winston.transports.Console)(
-            {
-                level: 'trace',
-                prettyPrint: true,
-                colorize: true,
-                silent: false,
-                timestamp: false
-            }),
-        new (winston.transports.File)({
-            prettyPrint: false,
-            level: 'info',
-            silent: false,
-            colorize: true,
-            timestamp: true,
-            filename: './trigger-daemon.log',
-            maxsize: 400000,
-            maxFiles: 10,
-            json: false
-        })]
+  levels: {
+    trace: 0,
+    input: 1,
+    verbose: 2,
+    prompt: 3,
+    debug: 4,
+    info: 5,
+    data: 6,
+    help: 7,
+    warn: 8,
+    error: 9
+  },
+  colors: {
+    trace: 'magenta',
+    input: 'grey',
+    verbose: 'cyan',
+    prompt: 'grey',
+    debug: 'blue',
+    info: 'green',
+    data: 'grey',
+    help: 'cyan',
+    warn: 'yellow',
+    error: 'red'
+  },
+  transports: [
+    new (winston.transports.Console)(
+      {
+        level: 'trace',
+        prettyPrint: true,
+        colorize: true,
+        silent: false,
+        timestamp: false
+      }),
+      new (winston.transports.File)({
+        prettyPrint: false,
+        level: 'info',
+        silent: false,
+        colorize: true,
+        timestamp: true,
+        filename: './trigger-daemon.log',
+        maxsize: 400000,
+        maxFiles: 10,
+        json: false
+      })]
     });
 
-if(config.debug != "true") {
-  logger.remove(winston.transports.Console);
-}
+    if(config.debug != "true") {
+      logger.remove(winston.transports.File);
+      logger.remove(winston.transports.Console);
+    }
 
-logger.info("Edge Device Daemon is starting");
-// Connect to the MQTT server
-var mqttClient  = mqtt.connect(config.mqtt.url);
+    logger.info("Edge Device Daemon is starting");
+    // Connect to the MQTT server
+    var mqttClient  = mqtt.connect(config.mqtt.url);
 
-function dataTopic(id) {
-    return id + "-data";
-}
+    function dataTopic(id) {
+      return id + "-data";
+    }
 
-function errorTopic(id) {
-    return id + "-error";
-}
+    function errorTopic(id) {
+      return id + "-error";
+    }
 
-function getID(topic) {
-    return topic.substr(8, 32);
-}
+    function getID(topic) {
+      return topic.substr(8, 32);
+    }
 
-function getType(topic) {
-    return topic.substr(41, topic.length);
-}
+    function getType(topic) {
+      return topic.substr(41, topic.length);
+    }
 
-// MQTT connection function
-mqttClient.on('connect', function () {
-    logger.info("Connected to MQTT server");
-    mqttClient.subscribe('announcements');
-    mqttClient.subscribe('sensors/+/data');
-});
+    // MQTT connection function
+    mqttClient.on('connect', function () {
+      logger.info("Connected to MQTT server");
+      mqttClient.subscribe('announcements');
+      mqttClient.subscribe('sensors/+/data');
+    });
 
-// A function that runs when MQTT receives a message
-mqttClient.on('message', function (topic, message) {
-   // logger.log('info', topic + ":" + message.toString());
+    // A function that runs when MQTT receives a message
+    mqttClient.on('message', function (topic, message) {
+      // logger.log('info', topic + ":" + message.toString());
 
-    json = JSON.parse(message);
+      json = JSON.parse(message);
 
-    if (topic == "announcements") {
+      if (topic == "announcements") {
         logger.info("Received an Announcement");
         logger.debug(topic + ":" + message.toString());
 
         var sensor = new SensorModel(db, json);
         sensor.save();
-    };
+      };
 
-    if (topic.match(/data/)) {
+      if (topic.match(/data/)) {
         logger.debug("Writing to db:" + message.toString());
         var value = new DataModel(db, json);
         value.save();
-    }
+      }
 
-});
+    });

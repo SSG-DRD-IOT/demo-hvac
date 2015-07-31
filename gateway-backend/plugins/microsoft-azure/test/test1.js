@@ -47,5 +47,5 @@ azure.read({
      sensor_id : "sensor-4321"
 }, function(err, res){
   if(err) console.log(err);
-  else console.log(res);
+  // else console.log(res);
 });
