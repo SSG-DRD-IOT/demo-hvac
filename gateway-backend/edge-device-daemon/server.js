@@ -1,13 +1,20 @@
 var config = require("./config.json");
-var mqtt = require('mqtt');
-var _ = require('lodash');
-var client  = mqtt.connect(config.mqtt.url);
-
-var sqlite3 = require('sqlite3').verbose();
 var _ = require("lodash");
 
-// Establish a connection to the database
-var db = new sqlite3.Database(config.sqlite3.file);
+// Require the MQTT connections
+var mqtt = require('mqtt');
+var client  = mqtt.connect(config.mqtt.url);
+
+// Require the MongoDB libraries
+var mongoose = require('mongoose');
+
+mongoose.connect(config.mongodb);
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function (callback) {
+    //   console.log("Connection to MongoDB successful");
+});
 
 // Import the Database Model Objects
 var DataModel = require('intel-commerical-iot-database-models').DataModel;
@@ -110,13 +117,13 @@ var logger = new (winston.Logger)({
         logger.info("Received an Announcement");
         logger.debug(topic + ":" + message.toString());
 
-        var sensor = new SensorModel(db, json);
+        var sensor = new SensorModel(json);
         sensor.save();
       };
 
       if (topic.match(/data/)) {
         logger.debug("Writing to db:" + message.toString());
-        var value = new DataModel(db, json);
+        var value = new DataModel(json);
         value.save();
       }
 
