@@ -25,7 +25,6 @@ var mqtt = require('mqtt');
 var sqlite3 = require('sqlite3').verbose();
 
 var Azure = require('intel-commerical-iot-microsoft-azure-pubsub');
-var Google = require('intel-commerical-iot-google-datastore-pubsub');
 var Bluemix = require('intel-commerical-iot-ibm-bluemix-pubsub');
 
 // Setup a logging system in this daemon
@@ -111,9 +110,8 @@ var logger = new (winston.Logger)({
   var sensorCloudModel = new SensorCloudModel(db);
   var dataModel = new DataModel(db);
 
-  // Setup the Azure and Google objects
+  // Setup the Azure and Bluemix objects
   var azure = new Azure(config.microsoftAzure);
-  var google = new Google(config.googleDatastore);
   var bluemix = new Bluemix(config.ibmBluemix);
 
 

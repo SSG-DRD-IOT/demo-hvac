@@ -1,6 +1,5 @@
 var ibm = require("../index.js");
 var config = require("../config.json");
-var sleep = require('sleep');
 
 var ibm = new ibm(config);
 ibm.connect();
@@ -11,7 +10,6 @@ var result = [];
 
 while (count < 5)
 {
-  sleep.usleep(56786);
   result.push({ sensor_id : 'sensor-4321',
   value : (Math.random() * 30) + 60,
   timestamp : Math.floor(Date.now()/1000)

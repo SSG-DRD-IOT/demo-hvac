@@ -1,6 +1,5 @@
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var sleep = require('sleep');
 
 function ibm(json){
   var self = this;

@@ -26,7 +26,6 @@ var sqlite3 = require('sqlite3').verbose();
 
 
 var Azure = require('intel-commerical-iot-microsoft-azure-pubsub');
-var Google = require('intel-commerical-iot-google-datastore-pubsub');
 var Bluemix = require('intel-commerical-iot-ibm-bluemix-pubsub');
 
 // Create a connection to a SQLITE3 database
@@ -42,7 +41,6 @@ var dataModel = new DataModel(db);
 
 // Setup the Azure and Google objects
 var azure = new Azure(config.microsoftAzure);
-var google = new Google(config.googleDatastore);
 var bluemix = new Bluemix(config.ibmBluemix);
 
 // Express helps to provide RESTful API interfaces
