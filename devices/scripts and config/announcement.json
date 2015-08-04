@@ -1,0 +1,9 @@
+{ 
+  id: deviceID, 
+  name: configFile.name, 
+  description: configFile.description, 
+  maxfrequency: configFile.frequency, 
+  frequency: configFile.frequency, 
+  active: true, 
+  ioType: configFile.io 
+}
