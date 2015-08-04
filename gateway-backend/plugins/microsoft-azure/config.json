@@ -1,0 +1,6 @@
+{
+    "accessKey" : "Endpoint=sb://iotcloudeventhub.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=M+O/bZzxZPANa1Us5LzRXso5KMVzt/3j4iazUrmGUz4=",
+    "namespace" : "iotcloudeventhub",
+    "topic": "sensors",
+    "debug": "true"
+}
