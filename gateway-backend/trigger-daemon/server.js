@@ -1,16 +1,27 @@
 //This daemon listens to all data streams, and checks for particular trigger
 //conditions as needed.
 var mqtt = require('mqtt'); //This works over MQTT currently, will need to become extensible in future.
-var sqlite3 = require('sqlite3').verbose(); //We're using sqlite for our database
+//var sqlite3 = require('sqlite3').verbose(); //We're using sqlite for our database
 var _ = require("lodash"); //Library needed for data paring work.
 var config = require("./config.json");//Configuration information
 
 // Create a connection to a SQLITE3 database
-var db = new sqlite3.Database(config.sqlite3.file);
+// var db = new sqlite3.Database(config.sqlite3.file);
+
+// Require
+var mongoose = require('mongoose');
+
+mongoose.connect(config.mongodb);
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function (callback) {
+    //   console.log("Connection to MongoDB successful");
+});
 
 // Import the Database Model Objects
-var DataModel = require('intel-commerical-iot-database-models').DataModel;
-var SensorCloudModel = require('intel-commerical-iot-database-models').SensorCloudModel;
+//var DataModel = require('intel-commerical-iot-database-models').DataModel;
+//var SensorCloudModel = require('intel-commerical-iot-database-models').SensorCloudModel;
 var TriggerModel = require('intel-commerical-iot-database-models').TriggerModel;
 
 // Setup the models which can interact with the database
@@ -42,7 +53,7 @@ var logger = new (winston.Logger)({
         input: 'grey',
         verbose: 'cyan',
         prompt: 'grey',
-        debug: 'blue',
+                               debug: 'blue',
         info: 'green',
         data: 'grey',
         help: 'cyan',
@@ -126,7 +137,7 @@ function processTriggers(triggers) {
         if (op == "" || triggerValue == "") {
             logger.error("SyntaxError: with op or triggerValue");
             return;
-        }
+          }
         var fcond = compareFuncBuilder(op, triggerValue);
         return _.extend({}, element, {condfunc: fcond});
     });
@@ -138,6 +149,8 @@ function processTriggers(triggers) {
 function processRefresh(json) {
     // Message recieved on the refresh topic
     logger.info("Received a message on the Refresh MQTT topic");
+
+
 
 
     db.all("SELECT * FROM triggers",
@@ -170,11 +183,11 @@ function processSensorData(json) {
 
                 // Send a response to the actuator
                 mqttClient.publish(actuatorTopic, trigger.triggerFunc);
-                
+
                 //DATA CHECKS GO HERE!
             }
         });
-}
+ }
 
 function compareFuncBuilder(operator, triggerValue) {
     return function (sensorValue) {
@@ -183,22 +196,3 @@ function compareFuncBuilder(operator, triggerValue) {
     };
 
 }
-
-function newTriggers(triggers) {
-
-}
-
-// setTimeout(function(mqttCient) {
-//     logger.info("Fetching triggers from database");
-//     logger.info(triggers);
-// Fetch the initial set of Triggers
-
-// triggerModel.find(mqttClient, function(mqttClient, results) {
-//     logger.info("Printing the mqttClient");
-//     logger.info("----------------------");
-//     logger.info("Database triggers are fetched");
-//     logger.info(results);
-//     mqttClient.publish('trigger', results);
-
-// });
-//}, 1000);
