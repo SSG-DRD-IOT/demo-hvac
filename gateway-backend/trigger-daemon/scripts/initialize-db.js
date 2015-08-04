@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var _ = require('lodash');
-var config = require('./config.json');
+var config = require('../config.json');
 
 mongoose.connect(config.mongodb.host);
 var db = mongoose.connection;
@@ -82,7 +82,7 @@ var triggers = [
 ];
 
 TriggerModel.remove({}, function() {
-    console.log("Removing document");
+//    console.log("Removing document");
 });
 
 _.forEach(triggers,
@@ -90,7 +90,6 @@ _.forEach(triggers,
               var trigger = new TriggerModel(triggerJSON);
               trigger.save(function(err) {
                   if (err) console.log(err);
-                  else console.log("Saved");
               });
           });
 

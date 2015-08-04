@@ -1,5 +1,5 @@
 var mqtt    = require('mqtt');
-var config  = require('./config.json');
+var config  = require('../config.json');
 var client  = mqtt.connect(config.mqtt.uri);
 
 client.on('connect', function () {

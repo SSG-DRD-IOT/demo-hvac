@@ -1,9 +1,0 @@
-{
-    "mongodb" : {
-	"host": "mongodb://localhost"
-    },
-
-    "mqtt" : {
-        "url" : "mqtt://localhost"
-    }
-}
