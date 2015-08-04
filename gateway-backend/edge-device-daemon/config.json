@@ -3,9 +3,9 @@
         "url" : "mqtt://localhost"
     },
 
-    "sqlite3" : {
-        "file" : "/industrial-demo/db/iotdemo.sqlite"
+    "mongodb" : {
+        "host" : "mongodb://localhost"
     },
-    
+
     "debug" : "true"
 }
