@@ -4,7 +4,7 @@
     },
 
     "mongodb" : {
-        "host" : "mongodb://localhost"
+        "host" : "mongodb://localhost/iotdemo"
     },
 
     "debug" : "true"
