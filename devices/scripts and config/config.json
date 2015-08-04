@@ -1,6 +1,8 @@
 {
-  "name" : "short-device-name-generic",
-  "description" : "A detailed description of which device this is.  This description is hashed into a device ID, should be unique.",
+  "name" : "temperature",
+  "description" : "A temperature sensor.",
+  "type" : "sensor",
+  "io": "aio",
   "frequency" : "1",
   "pin" : "0",
   "transport" : "mqtt"
