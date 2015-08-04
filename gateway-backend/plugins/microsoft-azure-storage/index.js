@@ -1,4 +1,4 @@
-var azureTable = require('azure');
+var azureTable = require('azure-table-node');
 
 // Lodash is a functional library for manipulating data structures
 var _ = require("lodash");

@@ -11,9 +11,11 @@
   "keywords": [
     "microsoft",
     "azure",
-    "pubsub"
+    "pubsub",
+    "service bus",
+    "topics"
   ],
   "dependencies": {
-    "azure-table-node": "^1.4.1"
+    "azure": "^1.4.1"
   }
 }
