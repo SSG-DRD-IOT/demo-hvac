@@ -61,7 +61,7 @@ var logger = new (winston.Logger)({
         }),
         new (winston.transports.Console)(
             {
-                level: 'trace',
+                level: 'error',
                 prettyPrint: true,
                 colorize: true,
                 silent: false,

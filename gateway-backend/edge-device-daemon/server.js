@@ -52,15 +52,24 @@ mqttClient.on('message', function (topic, message) {
 
     if (topic == "announcements") {
         logger.info("Received an Announcement");
-        logger.debug(topic + ":" + message.toString());
+        logger.trace(topic + ":" + message.toString());
 
         var sensor = new SensorModel(json);
-        sensor.save();
+        sensor.save(function(err, sensor) {
+            if (err)
+                logger.error(err);
+            else
+                logger.trace("Wrote to db:" + sensor.toString());
+        });
     };
 
     if (topic.match(/data/)) {
-        logger.debug("Writing to db:" + message.toString());
         var value = new DataModel(json);
-        value.save();
+        value.save(function(err, data) {
+            if (err)
+                logger.error(err);
+            else
+                logger.trace("Wrote to db:" + data.toString());
+        });
     }
 });
