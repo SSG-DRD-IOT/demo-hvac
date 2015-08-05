@@ -1,5 +1,5 @@
 {
-  "name": "iot-comm-components-relay",
+  "name": "intel-comm-components-relay",
   "version": "1.0.0",
   "description": "Relay for Intel commercial demo",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "author": "Vaghesh Patel <vaghesh.patel@intel.com>",
   "license": "MIT",
-  "dependencies": 
+  "dependencies":
   {
       "mraa": "^0.7.2",
       "upm": "^0.0.20"
