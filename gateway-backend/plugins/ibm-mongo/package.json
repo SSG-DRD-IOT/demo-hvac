@@ -1,6 +1,6 @@
 {
   "name": "ibm-bluemix-pubsub",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A plugin for the Intel Edison Iot Cloud tools to enable MongoDB connection to IBM BlueMix",
   "main": "ibm-mongo-plugin.js",
   "scripts": {

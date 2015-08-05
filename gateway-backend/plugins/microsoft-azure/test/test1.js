@@ -1,6 +1,5 @@
 var azure = require("../index.js");
 var config = require("../config.json");
-var sleep = require('sleep');
 
 var azure = new azure(config);
 
