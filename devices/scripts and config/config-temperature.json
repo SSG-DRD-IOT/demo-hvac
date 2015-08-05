@@ -1,6 +1,8 @@
 {
   "name" : "temperature",
   "description" : "A temperature sensor.",
+  "type" : "sensor",
+  "io": "aio",
   "frequency" : "1",
   "pin" : "0",
   "transport" : "mqtt"

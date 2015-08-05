@@ -1,6 +1,8 @@
 {
   "name" : "light",
   "description" : "A light sensor.",
+  "type" : "sensor",
+  "io": "aio",
   "frequency" : "1",
   "pin" : "0",
   "transport" : "mqtt"

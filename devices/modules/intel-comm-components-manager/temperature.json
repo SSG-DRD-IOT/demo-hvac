@@ -1,6 +1,0 @@
-{
-    "name": "temperature",
-    "genid" : "0",
-    "type": "sensor",
-    "io": "aio"
-}

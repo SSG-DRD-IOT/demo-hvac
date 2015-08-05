@@ -5,6 +5,7 @@
 var crypto = require('crypto');
 var winston = require('winston');
 var mqtt = require('intel-comm-transport-mqtt')
+var configFile = require('../../config.json');
 
 /////Get the transport protocol.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function getTransportProtocol (configFile) {
@@ -21,7 +22,7 @@ function returnDeviceID(configFile)
 
 /////Connect to a transport protocol.  Returns a client, or other file needed by
 /////chosen transportation protocol. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-exports.connectToTransport = function connectToTransport(gatewayIP, configFile)
+exports.connectToTransport = function connectToTransport(gatewayIP)
 {
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
@@ -44,7 +45,7 @@ exports.connectToTransport = function connectToTransport(gatewayIP, configFile)
 }
 
 /////Publish an announcement to gateway announcement topic. \\\\\\\\\\\\\\\\\\\\
-exports.announcePresence = function announcePresence(client, component, configFile)
+exports.announcePresence = function announcePresence(client, component)
 {
 
   var deviceID = returnDeviceID(configFile);
@@ -56,14 +57,14 @@ exports.announcePresence = function announcePresence(client, component, configFi
 
   if (transportProtocol === "mqtt")
   {
-    if (component.returnType() === "sensor")
+    if (configFile.type === "sensor")
     {
-      var announceJSON = { id: deviceID, name: configFile.name, description: configFile.description, maxfrequency: configFile.frequency, frequency: configFile.frequency, active: true, ioType: component.returnIO() };
+      var announceJSON = { id: deviceID, name: configFile.name, description: configFile.description, maxfrequency: configFile.frequency, frequency: configFile.frequency, active: true, ioType: configFile.io };
       var pubString = JSON.stringify(announceJSON);
       winston.info('Announcement sent: ' + pubString);
       mqtt.publishAnnouncement(pubString, client);
     }
-    else if (component.returnType() === "actuator")
+    else if (configFile.type === "actuator")
     {
 		var announceJSON = { id: deviceID, name: configFile.name, description: configFile.description, api: configFile.api, pin: configFile.pin, active: true, ioType: configFile.ioType };
 		console.log(announceJSON);
@@ -84,7 +85,7 @@ exports.announcePresence = function announcePresence(client, component, configFi
 
 /////Publish data to device data topic. Called from sensors. \\\\\\\\\\\\\\\\\\\
 //Note: this only publishes one instance of data.  Needs to be called in a loop\
-exports.publishData = function publishDataTopic(client, component, configFile, newData)
+exports.publishData = function publishDataTopic(client, component, newData)
 {
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
@@ -95,14 +96,14 @@ exports.publishData = function publishDataTopic(client, component, configFile, n
 
   if (transportProtocol === "mqtt")
   {
-    if (component.returnType() === "sensor")
+    if (configFile.type === "sensor")
     {
       var dataJSON = { sensor_id: deviceID, value: newData, timestamp: Date.now() };
       var pubString = JSON.stringify(dataJSON);
       winston.info('Data sent: ' + pubString);
       mqtt.publishData(deviceID, client, pubString);
     }
-    else if (component.returnType() == "actuator")
+    else if (configFile.type == "actuator")
     {
       //Not required at this time.
     }
@@ -117,7 +118,7 @@ exports.publishData = function publishDataTopic(client, component, configFile, n
 }
 
 /////Publish errors to device error topic. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-exports.publishError = function publishErrorTopic(client, component, configFile, newError)
+exports.publishError = function publishErrorTopic(client, component, newError)
 {
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
@@ -128,12 +129,12 @@ exports.publishError = function publishErrorTopic(client, component, configFile,
 
   if (transportProtocol === "mqtt")
   {
-    if (component.returnType() === "sensor")
+    if (configFile.type === "sensor")
     {
       var pubString = { sensor_id: deviceID, error: newError, timestamp: Date.now() };
       mqtt.publishErrors(topicTitle, client);
     }
-    else if (component.returnType() == "actuator")
+    else if (configFile.type == "actuator")
     {
       var pubString = { error: newData };
       mqtt.publishErrors(topicTitle, client);
@@ -155,11 +156,11 @@ exports.subscribeControl = function subscribeControlTopic(client, component, con
 
 	var transportProtocol = getTransportProtocol(configFile);
 	 if (transportProtocol === "mqtt"){
-		 if (component.returnType() === "sensor")
+		 if (configFile.type === "sensor")
 		{
 		// Not needed.
 		}
-		else if (component.returnType() == "actuator")
+		else if (configFile.type == "actuator")
 		{
 			mqtt.subscribeToControl(channelTitle,client);
 		}
