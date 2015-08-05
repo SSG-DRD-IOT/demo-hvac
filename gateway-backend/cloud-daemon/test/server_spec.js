@@ -2,7 +2,7 @@
 // Testing Suite for the Sensor Data DB Model
 ////////////////////////////////////////////////////////////////////////////////
 //var config = require ('./config.json');
-//var data_fixtures = require('../fixtures/data.js');
+var data_fixtures = require('./fixtures/data.js');
 //var sensor_fixtures = require('../fixtures/sensor.js');
 //var cloudprovider_fixtures = require('../fixtures/cloudprovider.js');
 
@@ -29,25 +29,8 @@ var server_utils = require('../server.js');
 
 describe("When passing Data Readings to getSensorIDs()", function() {
     it("a list of all sensor ids should be return", function(done) {
-        var data = [
-            {
-                sensor_id: '1',
-                value: 74.54047151375562,
-                timestamp: 'Mon Jul 27 2015 09:47:59 GMT-0700 (PDT)'
-            },
-            {
-                sensor_id: '2',
-                value: 74.54047151375562,
-                timestamp: 'Mon Jul 27 2015 09:47:59 GMT-0700 (PDT)'
-            },
-            {
-                sensor_id: '1',
-                value: 74.54047151375562,
-                timestamp: 'Mon Jul 27 2015 09:47:59 GMT-0700 (PDT)'
-            }
-        ];
 
-        var sensor_ids = server_utils.getSensorIDs(data);
+        var sensor_ids = server_utils.getSensorIDs(data_fixtures);
         expect(sensor_ids).to.be.eql(['1','2']);
         done();
     });
