@@ -1,33 +1,37 @@
 {
 
-  "mqtt" : {
-    "url" : "mqtt://localhost"
-  },
-
-  "sqlite3" : {
-    "file" : "/industrial-demo/db/iotdemo.sqlite"
-  },
-
-  "debug" : "true",
-  
-  "microsoftAzure" : {
-    "accessKey" : "bHdcJCA8N0vhCRDWYNkL0n+TdYlVOVjyDfTGU40T0+resAu5zKcJKENfLHg8YpgltnKWA2PJdHyOGInv33Jp+A==",
-    "accountName" : "inteliotstorage",
-    "table": "iotdemoTest1"
-  },
-
-  "googleDatastore" : {
-    "cloud" : {
-      "projectId" : "iot-cloud-project",
-      "keyFilename" : "../plugins/google-datastore/key.json"
+    "mqtt" : {
+        "url" : "mqtt://localhost"
     },
-    "namespace" : "ns-iot"
-  },
 
-  "ibmBluemix" : {
-    "url" : "mongodb://IbmCloud_ft37d2t4_8o67b5uj_o42uclt0:4EzYj7oYBUymgyE3LhW2-eqt27sQB-tN@ds027613.mongolab.com:27613/IbmCloud_ft37d2t4_8o67b5uj",
-    "db": "iotdemoTest1"
-  },
+    "mongodb" : {
+        "host" : "mongodb://localhost/iotdemo"
+    },
 
-  "interval": "60000"
+    "sqlite3" : {
+        "file" : "/industrial-demo/db/iotdemo.sqlite"
+    },
+
+    "debug" : "true",
+
+    "microsoftAzure" : {
+        "accessKey" : "bHdcJCA8N0vhCRDWYNkL0n+TdYlVOVjyDfTGU40T0+resAu5zKcJKENfLHg8YpgltnKWA2PJdHyOGInv33Jp+A==",
+        "accountName" : "inteliotstorage",
+        "table": "iotdemoTest1"
+    },
+
+    "googleDatastore" : {
+        "cloud" : {
+            "projectId" : "iot-cloud-project",
+            "keyFilename" : "../plugins/google-datastore/key.json"
+        },
+        "namespace" : "ns-iot"
+    },
+
+    "ibmBluemix" : {
+        "url" : "mongodb://IbmCloud_ft37d2t4_8o67b5uj_o42uclt0:4EzYj7oYBUymgyE3LhW2-eqt27sQB-tN@ds027613.mongolab.com:27613/IbmCloud_ft37d2t4_8o67b5uj",
+        "db": "iotdemoTest1"
+    },
+
+    "interval": "60000"
 }
