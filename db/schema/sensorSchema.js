@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var cloudproviderSchema = require('./cloudproviderSchema.js');
 
 var sensorSchema = new mongoose.Schema({
     id : {
@@ -14,17 +15,18 @@ var sensorSchema = new mongoose.Schema({
         required: true
     },
     maxfrequency : {
-        type: String,
+        type: Number,
         required: true
     },
     active : {
-        type: String,
+        type: Boolean,
         required: true
     },
     ioType : {
         type: String,
         required: true
-    }
+    },
+    cloudproviders : [ cloudproviderSchema ]
 });
 
 module.exports = sensorSchema;
