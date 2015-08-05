@@ -1,86 +1,70 @@
 var mqtt = require('mqtt');
-var getmac = require('getmac');
 var https = require('https');
 var util = require('util');
 var EventEmitter = require('events').EventEmitter;
 
-// IBM BluxMix MQTT port
-var port = 1883;
-
-var bluemix = function(json){
+function bluemix(json){
 
   var self = this;
+  self.config = json;
+  self.organization = self.config.org;
+  self.type = self.config.type;
+  self.id = self.config.id;
+  self.port = self.config.port;
+  self.username = self.config.username;
+  self.password = self.config['auth-token'];
+  self.route = self.config.route;
+  self.broker = self.organization + self.route;
+
 
   this.on('connect', function() {
-    // console.log("Entered the connection function");
-    this.config = json;
-
-    getmac.getMac(function(err, macAddress) {
-      if (err) throw err;
-      macAddress = macAddress.toString().replace(/:/g, '').toLowerCase();
-    });
-
-    if(this.config) {
-
-      if(this.config['auth-method'] && (this.config['auth-method'] !== "token")){
-        throw "Authentication method not supported. Please make sure to use \"token\".";
-      }
-
-      if(!this.config['auth-token']) {
-        throw "Auth token not found";
-      }
-
-      if(!this.config.org){
-        throw "Configuration should include an org field that specifies your organization.";
-      }
-
-      if(!this.config.type){
-        throw "Configuration should include a type field that specifies your device type.";
-      }
-
-      if(!this.config.id){
-        this.config.id = macAddress;
-        throw "Configuration should include an id field that specifies your device id.";
-      }
-
-      this.organization = this.config.org;
-      this.deviceType = this.config.type;
-      this.macAddress = this.config.id;
-      this.port = this.config.port;
-
-      this.broker = this.organization + ".messaging.internetofthings.bluemixcloud.com";
-    }
-    else {
-      console.log("No configuration file found.");
-    }
+    console.log("Entered the connection function");
 
     client = mqtt.connect(
       {
-        host: this.broker,
-        port: this.port,
-        username: this.config['username'],
-        password : this.config['auth-token'],
-        clientId : "d:" + this.organization + ":" + this.deviceType + ":" + this.macAddress
+        host: self.broker,
+        port: self.port,
+        username: self.username,
+        password : self.password,
+        clientId : "d:" + self.organization + ":" + self.type + ":" + self.id
+      });
+
+      client.on('connect', function () {
+        self.topic_sub = 'iot-2/cmd/trigger/fmt/json';
+        client.subscribe(topic_sub);
+      });
+
+      client.on('message', function(topic, message) {
+        console.log('Received command on topic: ' + topic);
+        console.log(message);
+        try {
+          self.msg = JSON.parse(message);
+          self.emit('trigger', message);
+        }
+        catch (e) {
+          console.log("Couldn't parse recieved command. Please ensure it is valid JSON.");
+        }
       });
       //      console.log(client);
-
+      // setInterval( function() {
+      //   self.emit('trigger', 'LightON');
+      // }, 1000 );
     });
 
     // Store the data record with the evt_type equal to the devID
     // This allows us to retrieve the records based on devID
 
-    this.on('write', function() {
-      topic = "iot-2/evt/" + this.devId + "/fmt/json";
-      var message = {
+    this.on('write', function(data) {
+      self.topic_pub = "iot-2/evt/" + self.id + "/fmt/json";
+      self.message = {
         "d" : {
           "value" : data.value,
-          "sensorType" : data.sensorType,
           "timestamp" : data.timestamp
         }
       };
 
-      //	console.log(message);
-      client.publish(topic, JSON.stringify(message));
+      //	console.log(self.message);
+      client.publish(topic_pub, JSON.stringify(self.message));
     });
 
 

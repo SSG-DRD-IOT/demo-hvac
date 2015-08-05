@@ -1,8 +1,8 @@
 {
-  "name": "ibm-bluemix-pubsub",
-  "version": "1.0.2",
+  "name": "intel-commerical-iot-ibm-bluemix-storage",
+  "version": "1.0.0",
   "description": "A plugin for the Intel Edison Iot Cloud tools to enable MongoDB connection to IBM BlueMix",
-  "main": "ibm-mongo-plugin.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,10 +11,9 @@
   "keywords": [
     "ibm",
     "bluemix",
-    "pubsub"
+    "mongo"
   ],
   "dependencies": {
-    "getmac": "^1.0.7",
-    "mqtt": "^1.3.0"
+    "mongodb": "latest"
   }
 }

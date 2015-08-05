@@ -16,6 +16,6 @@
     "topics"
   ],
   "dependencies": {
-    "azure": "^1.4.1"
+    "azure": "^0.10.6"
   }
 }
