@@ -62,7 +62,12 @@ mqttClient.on('connect', function () {
 mqttClient.on('message', function (topic, message) {
     // logger.log('info', topic + ":" + message.toString());
 
-    json = JSON.parse(message);
+    // Parse the incoming data
+    try {
+        json = JSON.parse(message);
+    } catch(e){
+        logger.error(e);
+    }
 
     if (topic == "announcements") {
         logger.info("Received an Announcement");
@@ -77,5 +82,4 @@ mqttClient.on('message', function (topic, message) {
         var value = new DataModel(json);
         value.save();
     }
-
 });
