@@ -5,8 +5,10 @@ The code in these repositories should be loaded onto the Intel Edison devices.  
 
 To load an edge device, one needs to do the following:
 
-***Preexisting Sensor (Temperature, Sound, Light)
+###Preexisting Sensor (Temperature, Sound, Light)
+
 The code already exists for these sensors, so they are the easiest sensors to configure.
+
 1. **Create a directory called node_app_slot on the root directory of the Edison.** Theoretically the sensors should support the code being run from any folder, but this is the one that has been tested and confirmed.
 2. **Create a node_modules folder in this node_app_slot folder.**  This is where we copy the created modules for the edge device code.
 3. **Copy the modules under "modules" to the "node_modules" folder.**  For sensors, you can leave out the relay module - all other modules need to be copied.
