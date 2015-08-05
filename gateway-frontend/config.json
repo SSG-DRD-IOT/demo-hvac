@@ -1,0 +1,15 @@
+{
+    "mqtt" : {
+        "url" : "mqtt://localhost"
+    },
+
+    "mongodb" : {
+        "host" : "mongodb://localhost/iotdemo"
+    },
+
+    "sqlite3" : {
+        "file" : "/industrial-demo/db/iotdemo.sqlite"
+    },
+
+    "debug" : "false"
+}

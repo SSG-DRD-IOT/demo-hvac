@@ -1,17 +1,24 @@
+var config = require('./config.json');
+
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('../db/iotdemo.sqlite');
 var cors = require('cors');
 var bodyParse = require('body-parser');
 
+var mongoose = require('mongoose');
 
-//var _ = require('lodash');
+mongoose.connect(config.mongodb.host);
+var mdb = mongoose.connection;
 
-//db.serialize(function() {
-//   db.run("CREATE TABLE IF NOT EXISTS counts (key TEXT, value INTEGER)");
-//   db.run("INSERT INTO counts (key, value) VALUES (?, ?)", "counter", 0);
-//});
+mdb.on('error', console.error.bind(console, 'connection error:'));
+mdb.once('open', function (callback) {
+    console.log("Connection to MongoDB successful");
+});
 
-
+// Import the Database Model Objects
+var Data = require('intel-commerical-iot-database-models').DataModel;
+var Sensor = require('intel-commerical-iot-database-models').SensorModel;
+var Trigger = require('intel-commerical-iot-database-models').TriggerModel;
 
 var express = require('express');
 var restapi = express();
@@ -30,25 +37,25 @@ restapi.get('/listActuator', function(req, res){
 
 // API to get data from Sensors table
 restapi.get('/listSensor', function(req, res){
-  db.all("SELECT * FROM sensors", function(err, rows){
-    res.json(rows);
-  });
+    Sensor.find({}, function(err, sensors) {
+        res.json(sensors);
+    });
 });
 
 
 // API to get data from Triggers table
 restapi.get('/listTrigger', function(req, res){
-  db.all("SELECT * FROM triggers", function(err, rows){
-    res.json(rows);
-  });
+    Trigger.find({}, function(err, triggers) {
+        res.json(triggers);
+    });
 });
 
 
 // API to get Number of Sensors which are active
 restapi.get('/noOfSensor', function(req, res){
-  db.all("SELECT COUNT(*) FROM sensors WHERE active='true'", function(err, rows){
-    res.json(rows[0]["COUNT(*)"]);
-  });
+    Sensor.count({}, function(err, n) {
+        res.json(n);
+    });
 });
 
 
@@ -62,36 +69,46 @@ restapi.get('/noOfActuator', function(req, res){
 
 // API to get Number of Triggers which are active
 restapi.get('/noOfTrigger', function(req, res){
-  db.all("SELECT COUNT(*) FROM triggers WHERE active='true'", function(err, rows){
-    res.json(rows[0]["COUNT(*)"]);
-  });
+    Trigger.count({}, function(err, n) {
+        res.json(n);
+    });
 });
 
 
 // To remove a trigger from database
 restapi.post('/removeTrigger',function(req,res){
-  db.run("DELETE FROM triggers WHERE id =\'" + req.param('id') +"\'" , function(err, row){
-    if (err){
-res.status(500);
-}
-else {
-  res.status(202);
-}
-res.end();
-});
+    Trigger.remove({id:  req.param('id')}, function(err) {
+        if (err){
+            res.status(500);
+        }
+        else {
+            res.status(202);
+        }
+        res.end();
+    });
 });
 
 // To add a new trigger to database
 restapi.post('/addTrigger',function(req,res){
-  var sql = "INSERT INTO \"main\".\"triggers\" (\"name\",\"sensor_id\",\"actuator_id\",\"condition\",\"triggerFunc\") VALUES (\""+req.param("triggerName")+"\",\""+req.param("sensor")+"\",\""+req.param("actuator")+"\",\""+req.param("conditions")+"\",\""+req.param("control")+"\");";
-  db.all(sql, function(err, row){
-    if (err){
-      res.status(500);
-    }
-    else {
-      res.status(202);
-    }
-    res.end();
+    var trigger = new Trigger({
+        id: req.param("id"),
+        name: req.param("name"),
+        sensor_id: req.param("sensor"),
+        actuator_id: req.param("actuator"),
+        validator_id: req.param("validator"),
+        condition: req.param("conditions"),
+        triggerFunc: req.param("control")
+    });
+
+    trigger.save(function(err, row){
+        if (err){
+            res.json(err);
+            res.status(500);
+        }
+        else {
+            res.status(202);
+        }
+        res.end();
   });
 });
 
@@ -117,7 +134,7 @@ restapi.get('/getSensorData',function(req,res){
       res.status(500);
     }
     else {
-      console.log(JSON.stringify(rows));
+//      console.log(JSON.stringify(rows));
 //  var data = _.pluck(rows,'data');
 // var timestamp = _.pluck(rows,'timestamp');
 var dt = {
@@ -135,7 +152,7 @@ res.end();
 // Api to customize cloud data
 restapi.get('/getCustomizeCloud', function(req, res){
   var sql = "SELECT sensors.name AS sensorName, cloudproviders.name AS cloudName, sensors.id AS sensorId, cloudproviders.id AS cloudId FROM cloudproviders, sensors, sensors_clouds WHERE sensors_clouds.sensor_id = sensors.id AND cloudproviders.id = sensors_clouds.cloudprovider_id "
-  console.log(sql);
+//  console.log(sql);
   db.all(sql, function(err,rows){
     res.json(rows);
   });

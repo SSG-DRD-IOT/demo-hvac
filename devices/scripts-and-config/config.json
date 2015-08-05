@@ -1,0 +1,9 @@
+{
+  "name" : "short-sensor-name",
+  "description" : "A detailed description of sensor and location.",
+  "type" : "sensor",
+  "io": "aio",
+  "frequency" : "1",
+  "pin" : "0",
+  "transport" : "mqtt"
+}

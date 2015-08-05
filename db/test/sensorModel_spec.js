@@ -31,6 +31,12 @@ db.once('open', function (callback) {
 describe("When a sensor is saved", function() {
     describe("with valid data", function() {
 
+        before (function() {
+            Sensor.remove({}, function() {
+                console.log("Sensors cleared");
+            });
+        });
+
         it("should be successful", function(done) {
             var sensor = new Sensor(sensor_fixtures.valid_sensor_1);
             sensor.save(function(err, sensor) {
@@ -43,6 +49,23 @@ describe("When a sensor is saved", function() {
                 } catch( err ) {
                     done( err );
                 }
+            });
+        });
+
+        it("there should be 1 sensor", function(done) {
+            var sensor = new Sensor(sensor_fixtures.valid_sensor_1);
+            sensor.save(function(err, sensor) {
+                try {
+                    Sensor.find({}, function(err, sensors) {
+                        expect(err).to.be.null;
+                        sensors.length.should.equal(1);
+                    });
+                    done();
+                } catch( err ) {
+                    done( err );
+                }
+                var num = Sensor.count();
+                expect(num).to.be.equal(1);
             });
         });
 

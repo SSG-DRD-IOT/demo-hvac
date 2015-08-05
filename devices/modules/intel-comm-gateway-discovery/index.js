@@ -5,52 +5,56 @@
 // We use mdns to look at the daemons that are being run over the network
 var mdns = require('mdns');
 
-//We use child processes to run the code for starting the edison.
-var exec = require('child_process').exec;
+var publisher = require ('../intel-comm-pinpublisher/index.js');
+var subscriber = require ('../intel-comm-pinsubscriber/index.js');
 
-//We're going to need the main configuration file on the Edison - this is two folders up.
+//We're also going to need the main configuration file on the Edison - this is two folders up.
 //(i.e. it is not in intel-comm-gateway-discovery or in node_modules)
 var configs = require('../../config.json');
 
-// Creates a browser for xdk-app-daemon services
-var browser = mdns.createBrowser(mdns.tcp('xdk-app-daemon'),58888);
+//Now, we can start the process that will search for the gateway.
+exports.startGatewaySearch = function gatewaySearcher (gHostname) {
 
-//We're also going to create some variables for storing the gateway host in, in addition to 
-//the gateway IP.
-var gatewayHost = 'gateway';
-var gatewayIP = [];
+  //First, we're going to create some variables for storing the gateway host in, in addition to
+  //the gateway IP.
+  var gatewayHost = gHostname;
+  var gatewayIP = [];
 
-function run_script(ip){
-  var cmd  = 'node /node_app_slot/main.js '+ip;
-  console.log(cmd);
-  exec(cmd, function(error, stdout, stderr) {
-    if (stderr)
-    {
-      console.log("There's been an error: " + stderr);
-    }
+  // Next we create a browser for xdk-app-daemon services
+  var browser = mdns.createBrowser(mdns.tcp('xdk-app-daemon'),58888);
+
+  //We also need to figure out if this is a sensor or an actuator, as it will
+  //affect what code is run next.
+  var SenseOrAction = configs.type;
+
+  // Log all the services with that daemon running and which are still up
+  browser.on('serviceUp', function(service) {
+    //console.log("service up: ", service);
+
+     if (service.fullname === gatewayHost + "._xdk-app-daemon._tcp.local.")
+     {
+       //It's the gateway!  (This is bad practice, will fix later.)
+       console.log("We found the gateway!")
+       gatewayIP = service.addresses;
+       browser.stop();
+       if (SenseOrAction === "sensor")
+       {
+         publisher.publishDataLoop(gatewayIP);
+       }
+       else if (SenseOrAction === "actuator")
+       {
+         subscriber.subscribeDataLoop(gatewayIP);
+       }
+     }
   });
+
+  // On Error Generate an error log and report it.
+  browser.on('error', function (error) {
+      console.log("error");
+      console.log(error);
+  });
+
+  // Start the browser
+  browser.start();
+
 }
-
-// Log all the services with that daemon running and which are still up
-browser.on('serviceUp', function(service) {
-  //console.log("service up: ", service);
-
-   if (service.fullname === gatewayHost + "._xdk-app-daemon._tcp.local.")
-   {
-     //It's the gateway!  (This is bad practice, will fix later.)
-     console.log("We found the gateway!")
-     gatewayIP = service.addresses;
-     browser.stop();
-     run_script(gatewayIP);
-   }
-});
-
-// On Error Generate an error log and report it.
-browser.on('error', function (error) {
-    console.log("error");
-    console.log(error);
-});
-
-
-// Start the browser
-browser.start();

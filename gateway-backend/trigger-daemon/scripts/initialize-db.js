@@ -14,6 +14,55 @@ db.once('open', function (callback) {
 //var DataModel = require('intel-commerical-iot-database-models').DataModel;
 //var SensorCloudModel = require('intel-commerical-iot-database-models').SensorCloudModel;
 var TriggerModel = require('intel-commerical-iot-database-models').TriggerModel;
+var SensorModel = require('intel-commerical-iot-database-models').SensorModel;
+
+var sensors = [
+    {
+        "id":"1",
+        "name":"Temperature",
+        "description":"read the temp",
+        "maxfrequency":200,
+        "frequency":1000,
+        "active":"true",
+        "ioType":"Analog"
+    },
+    {
+        "id":"2",
+        "name":"Light Sensor",
+        "description":"read the ambient light",
+        "maxfrequency":200,
+        "frequency":1000,
+        "active":"true",
+        "ioType":"Analog"
+    },
+    {
+        "id":"3",
+        "name":"Sound Sensor",
+        "description":"read the ambient noise har har har",
+        "maxfrequency":200,
+        "frequency":1000,
+        "active":"true",
+        "ioType":"Analog"
+    },
+    {
+        "id":"aa2177fdd5dd740c9ad7915182aa8850",
+        "name":"sound",
+        "description":"A sound sensor - tells user when fan is not working.",
+        "maxfrequency":1,
+        "frequency":1,
+        "active":1,
+        "ioType":"aio"
+    },
+    {
+        "id":"b506768ce1e2353fe063d344e89e53e5",
+        "name":"temperature",
+        "description":"A temperature sensor.",
+        "maxfrequency":1,
+        "frequency":1,
+        "active":1,
+        "ioType":"analog"
+    }
+];
 
 var triggers = [
     {
@@ -82,7 +131,11 @@ var triggers = [
 ];
 
 TriggerModel.remove({}, function() {
-//    console.log("Removing document");
+    //    console.log("Removing document");
+});
+
+SensorModel.remove({},  function() {
+    //    console.log("Removing document");
 });
 
 _.forEach(triggers,
@@ -92,5 +145,15 @@ _.forEach(triggers,
                   if (err) console.log(err);
               });
           });
+
+
+_.forEach(sensors,
+          function(sensorJSON) {
+              var sensor = new SensorModel(sensorJSON);
+              sensor.save(function(err) {
+                  if (err) console.log(err);
+              });
+          });
+
 
 //db.close();

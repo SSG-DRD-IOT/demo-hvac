@@ -1,7 +1,0 @@
-{
-  "name" : "temperature",
-  "description" : "A temperature sensor.",
-  "frequency" : "1",
-  "pin" : "0",
-  "transport" : "mqtt"
-}
