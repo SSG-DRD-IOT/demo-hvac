@@ -22,7 +22,7 @@ var _ = require("lodash");
 
 // Load the I/O and connectivity libraries
 var mqtt = require('mqtt');
-var sqlite3 = require('sqlite3').verbose();
+// var sqlite3 = require('sqlite3').verbose();
 
 var Azure = require('intel-commerical-iot-microsoft-azure-pubsub');
 var Bluemix = require('intel-commerical-iot-ibm-bluemix-pubsub');
@@ -100,7 +100,7 @@ var logger = new (winston.Logger)({
   });
 
   // Create a connection to a SQLITE3 database
-  var db = new sqlite3.Database(config.sqlite3.file);
+  // var db = new sqlite3.Database(config.sqlite3.file);
 
   // Import the Database Model Objects
   var DataModel = require('intel-commerical-iot-database-models').DataModel;
@@ -138,7 +138,7 @@ var logger = new (winston.Logger)({
 
   // This server retrieves data from the cloud on configurable interval
   setInterval(function() {
-    var data = dataModel.find( function (err, data) {
+    var data = DataModel.find({}, function (err, data) {
 
       // Find all the unique sensor_id in the
       // data just pulled from the database
@@ -188,8 +188,13 @@ var logger = new (winston.Logger)({
                 }
               });
 
-              logger.info("Deleting all sensor readings from the Database");
-              dataModel.delete_all_data();
+            logger.info("Deleting all sensor readings from the Database");
+            DataModel.remove({}, function(err) {
+                if (err) {
+                    logger.error(err);
+                } else {
+                    logger.info('Removed all Data from MongoDB');
+                }
             });
 
 
