@@ -31,10 +31,6 @@ A new sensor requires that a few actions be taken before it will be recognized b
     returnedComponent = new upm2.###(+pin);
   }
 5. **Create a new config.json file for the sensor.**  Follow the examples.  Make sure the name you set in the string compare statement is the name of the sensor in the config.json file, or it might not be associated with the appropriate component!
-6. **Follow the instructions for adding a preexisting sensor.** The rest of the instructionsshould be the same!  
+6. **Follow the instructions for adding a preexisting sensor.** The rest of the instructions should be the same!  
 
-###Preexisting Actuator
-Coming Soon!
-
-###New Actuator
-Coming Soon!
+We welcome pull requests for new sensors!
