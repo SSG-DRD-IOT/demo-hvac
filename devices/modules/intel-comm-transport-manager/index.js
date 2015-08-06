@@ -59,7 +59,7 @@ exports.announcePresence = function announcePresence(client)
   {
     if (configFile.type === "sensor")
     {
-      var announceJSON = { id: deviceID, name: configFile.name, description: configFile.description, maxfrequency: configFile.frequency, frequency: configFile.frequency, active: true, ioType: configFile.io };
+      var announceJSON = { id: deviceID, name: configFile.name, description: configFile.description, verification-sensor: configFile.verification-sensor, maxfrequency: configFile.frequency, frequency: configFile.frequency, active: true, ioType: configFile.io };
       var pubString = JSON.stringify(announceJSON);
       winston.info('Announcement sent: ' + pubString);
       mqtt.publishAnnouncement(pubString, client);
