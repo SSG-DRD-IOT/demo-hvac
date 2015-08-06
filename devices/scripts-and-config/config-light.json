@@ -1,6 +1,7 @@
 {
   "name" : "light",
   "description" : "A light sensor.",
+  "verification-sensor" : "true",
   "type" : "sensor",
   "io": "aio",
   "frequency" : "1",
