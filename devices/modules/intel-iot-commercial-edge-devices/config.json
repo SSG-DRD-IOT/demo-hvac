@@ -1,6 +1,7 @@
 {
   "name" : "temperature",
   "description" : "A detailed description of sensor and location.",
+  "verification-sensor" : "true",
   "type" : "sensor",
   "io": "aio",
   "frequency" : "1",
