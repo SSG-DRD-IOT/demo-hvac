@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "intel-comm-components-manager": "^1.0.0",
-    "intel-comm-transport-manager": "^1.0.0"
+    "intel-comm-transport-manager": "^1.0.0",
+    "upm": "0.0.20"
   }
 }
