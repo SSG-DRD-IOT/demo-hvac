@@ -2,8 +2,8 @@
 //// Automated workflow for a sensor based on configuration file \\\\\\\\\\\\\\\
 
 //Requirements\\
-var componentManager = require('../intel-comm-components-manager/index.js'); // edge devices
-var transportManager = require('../intel-comm-transport-manager/index.js'); // transport
+var componentManager = require('intel-comm-components-manager'); // edge devices
+var transportManager = require('intel-comm-transport-manager'); // transport
 var winston = require('winston'); // Allows for async logging.
 
 var moduleData = require('../../config.json');

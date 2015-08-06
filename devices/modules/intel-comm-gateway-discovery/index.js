@@ -5,8 +5,8 @@
 // We use mdns to look at the daemons that are being run over the network
 var mdns = require('mdns');
 
-var publisher = require ('../intel-comm-pinpublisher/index.js');
-var subscriber = require ('../intel-comm-pinsubscriber/index.js');
+var publisher = require ('intel-comm-pinpublisher');
+var subscriber = require ('intel-comm-pinsubscriber');
 
 //We're also going to need the main configuration file on the Edison - this is two folders up.
 //(i.e. it is not in intel-comm-gateway-discovery or in node_modules)

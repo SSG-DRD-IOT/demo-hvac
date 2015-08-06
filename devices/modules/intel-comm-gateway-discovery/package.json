@@ -1,6 +1,6 @@
 {
   "name": "intel-comm-gateway-discovery",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Gateway discovery for Intel Industrial Demo.  Uses MDNS, run first.",
   "main": "index.js",
   "scripts": {
