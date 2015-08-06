@@ -37,7 +37,7 @@ function loop () {
                     winston.log('debug','Data was read from a pin: ' + data);
 
                     //Send a reading
-                    transportManager.publishData(client, data);
+                    transportManager.publishData(client, data, config);
 
                     //Another loop completed!
                     loopnum = loopnum+1;
@@ -50,6 +50,7 @@ exports.publishDataLoop = function dataLoop(ip, config) {
 
     gatewayIp = ip;
     console.log("'" + gatewayIp + "'");
+
 
     //Before we actually begin, we're also going to set up our logging to catch any
     //bugs that may pop up.

@@ -81,11 +81,11 @@ exports.announcePresence = function announcePresence(client, configFile)
     //with a device ID of any sort (gateway or sensor).
   }
 
-}
+};
 
 /////Publish data to device data topic. Called from sensors. \\\\\\\\\\\\\\\\\\\
 //Note: this only publishes one instance of data.  Needs to be called in a loop\
-exports.publishData = function publishDataTopic(client, newData)
+exports.publishData = function publishDataTopic(client, newData, configFile)
 {
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
@@ -115,7 +115,7 @@ exports.publishData = function publishDataTopic(client, newData)
     //The announcements channel on the gateway does not differentiate itself
     //with a device ID of any sort (gateway or sensor).
   }
-}
+};
 
 /////Publish errors to device error topic. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 exports.publishError = function publishErrorTopic(client, newError)
@@ -170,6 +170,6 @@ exports.subscribeControl = function subscribeControlTopic(client, configFile)
 		}
 	}
 
-	client.subscribe
+//	client.subscribe
 
 }

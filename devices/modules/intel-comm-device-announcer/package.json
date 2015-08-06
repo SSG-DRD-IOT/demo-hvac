@@ -1,0 +1,15 @@
+{
+  "name": "intel-comm-device-announcer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "intel-comm-transport-manager": "^1.0.5",
+    "winston": "^1.0.1"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "intel-comm-pinpublisher",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Sensor publisher for IoT projects",
   "main": "index.js",
   "scripts": {

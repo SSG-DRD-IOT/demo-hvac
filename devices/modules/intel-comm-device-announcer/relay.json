@@ -1,0 +1,11 @@
+{
+    "name" : "relay",
+    "description" : "A fan relay",
+    "type" : "actuator",
+    "io": "digital",
+    "pin" : "5",
+    "transport" : "mqtt",
+    "gateway" : {
+        "hostname" : "mqtt://localhost"
+    }
+}
