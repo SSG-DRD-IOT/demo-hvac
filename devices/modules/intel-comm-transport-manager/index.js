@@ -45,7 +45,7 @@ exports.connectToTransport = function connectToTransport(gatewayIP)
 }
 
 /////Publish an announcement to gateway announcement topic. \\\\\\\\\\\\\\\\\\\\
-exports.announcePresence = function announcePresence(client, component)
+exports.announcePresence = function announcePresence(client)
 {
 
   var deviceID = returnDeviceID(configFile);
@@ -85,7 +85,7 @@ exports.announcePresence = function announcePresence(client, component)
 
 /////Publish data to device data topic. Called from sensors. \\\\\\\\\\\\\\\\\\\
 //Note: this only publishes one instance of data.  Needs to be called in a loop\
-exports.publishData = function publishDataTopic(client, component, newData)
+exports.publishData = function publishDataTopic(client, newData)
 {
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
@@ -118,7 +118,7 @@ exports.publishData = function publishDataTopic(client, component, newData)
 }
 
 /////Publish errors to device error topic. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-exports.publishError = function publishErrorTopic(client, component, newError)
+exports.publishError = function publishErrorTopic(client, newError)
 {
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
@@ -149,7 +149,7 @@ exports.publishError = function publishErrorTopic(client, component, newError)
 }
 
 /////Subscribe to gateway's control topic. Called from actuators. \\\\\\\\\\\\\\
-exports.subscribeControl = function subscribeControlTopic(client, component, configFile)
+exports.subscribeControl = function subscribeControlTopic(client, configFile)
 {
 	var deviceID = returnDeviceID(configFile);
 	var channelTitle = "actuator/" + deviceID + "/trigger";

@@ -32,10 +32,6 @@ exports.getComponent = function getComponent(name, pin)
   {
     returnedComponent = new upm.GroveLoudness(+pin);
   }
-  else if (name == "relay")
-  {
-    returnedComponent = relay;
-  }
 
   //Note that it's not required that returnedComponent is assigned to anything, so it could be NULL in some
   //situations.
