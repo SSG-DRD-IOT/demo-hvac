@@ -4,8 +4,8 @@
 //Requirements
 var crypto = require('crypto');
 var winston = require('winston');
-var mqtt = require('intel-comm-transport-mqtt')
-var configFile = require('../../config.json');
+var mqtt = require('intel-comm-transport-mqtt');
+//var configFile = require('../../config.json');
 
 /////Get the transport protocol.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function getTransportProtocol (configFile) {
@@ -22,7 +22,7 @@ function returnDeviceID(configFile)
 
 /////Connect to a transport protocol.  Returns a client, or other file needed by
 /////chosen transportation protocol. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-exports.connectToTransport = function connectToTransport(gatewayIP)
+exports.connectToTransport = function connectToTransport(gatewayIP, configFile)
 {
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
@@ -42,10 +42,10 @@ exports.connectToTransport = function connectToTransport(gatewayIP)
     client = NULL;
   }
   return client;
-}
+};
 
 /////Publish an announcement to gateway announcement topic. \\\\\\\\\\\\\\\\\\\\
-exports.announcePresence = function announcePresence(client)
+exports.announcePresence = function announcePresence(client, configFile)
 {
 
   var deviceID = returnDeviceID(configFile);

@@ -1,12 +1,18 @@
 //// Sensor Code \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //// Automated workflow for a sensor based on configuration file \\\\\\\\\\\\\\\
+var config = {};
+try {
+    //config = require(process.argv[2]);
+    config = require('./temperature.json');
+} catch(e) {
+    console.log("No configuration file found");
+    process.exit();
+};
 
 //Requirements\\
 var componentManager = require('intel-comm-components-manager'); // edge devices
 var transportManager = require('intel-comm-transport-manager'); // transport
 var winston = require('winston'); // Allows for async logging.
-
-var moduleData = require(process.argv[2]);
 //This JSON is automatically imported as a JSON object, so it does not
 //need to be parsed!
 var gatewayIp = {};
@@ -17,10 +23,10 @@ function loop () {
 
     var loopnum = 0; //Debugging.  Every time the loop restarts, the loopnum goes to 0.
 
-    var interval = moduleData.frequency * 1000; //Get our frequency, from config.
+    var interval = config.frequency * 1000; //Get our frequency, from config.
     //Defined in seconds.
 
-    var component = componentManager.getComponent(moduleData.name, moduleData.pin);
+    var component = componentManager.getComponent(config.name, config.pin);
 
     setInterval(function () //Start our loop....
                 {
@@ -40,9 +46,10 @@ function loop () {
                 }, interval);  //Once a [interval]!
 };
 
-exports.publishDataLoop = function dataLoop(ip) {
+exports.publishDataLoop = function dataLoop(ip, config) {
 
     gatewayIp = ip;
+    console.log("'" + gatewayIp + "'");
 
     //Before we actually begin, we're also going to set up our logging to catch any
     //bugs that may pop up.
@@ -51,11 +58,11 @@ exports.publishDataLoop = function dataLoop(ip) {
     winston.log('debug', 'Debug logs set up.');
 
     ////////////// Now we can begin the module code! ///////////////////////////////
-    client = transportManager.connectToTransport(gatewayIp);
+    client = transportManager.connectToTransport(gatewayIp, config);
 
     //Announce our presence.  At this point, we need to
     //tell the gateway this Edison is functional.
-    transportManager.announcePresence(client);
+    transportManager.announcePresence(client, config);
     winston.log('debug','Hello!  I, Edison, have arrived to the announcement server.');
 
     //Step Four: Start publishing your data!  We now run the loop we crafted
@@ -64,5 +71,4 @@ exports.publishDataLoop = function dataLoop(ip) {
 };
 
 
-var ip_addr = process.argv[2];
-console.log(ip_addr);
+exports.publishDataLoop(config.gateway.hostname, config);
