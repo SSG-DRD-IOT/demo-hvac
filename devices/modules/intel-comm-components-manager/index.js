@@ -6,7 +6,6 @@ var upm = require('jsupm_grove');
 
 //However, due to the nature of the relays, relays still require
 //a separate API
-var relay = require('intel-comm-components-relay')
 
 //This function returns the UPM component for a sensor, or the API components
 //for an actuator.
