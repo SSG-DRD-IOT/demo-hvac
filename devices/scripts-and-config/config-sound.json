@@ -1,6 +1,7 @@
 {
   "name" : "sound",
   "description" : "A loudness sensor.",
+  "verification-sensor" : "true",
   "type" : "sensor",
   "io": "aio",
   "frequency" : "1",
