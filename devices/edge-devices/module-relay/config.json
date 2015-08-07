@@ -1,8 +1,0 @@
-{
-  "name" : "relay",
-  "description" : "Relay1 - New fan Relay",
-  "type" : "actuator",
-  "io" : "digital",
-  "pin" : "0",
-  "transport" : "mqtt"
-}

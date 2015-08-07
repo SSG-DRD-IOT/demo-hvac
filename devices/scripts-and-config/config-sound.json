@@ -1,9 +1,13 @@
 {
-  "name" : "sound",
-  "description" : "A loudness sensor.",
-  "type" : "sensor",
-  "io": "aio",
-  "frequency" : "1",
-  "pin" : "0",
-  "transport" : "mqtt"
+    "name" : "sound",
+    "description" : "A loudness sensor.",
+    "verification-sensor" : "true",
+    "type" : "sensor",
+    "io": "aio",
+    "frequency" : "1",
+    "pin" : "0",
+    "transport" : "mqtt"
+    "gateway" : {
+        "hostname" : "localhost"
+    }
 }

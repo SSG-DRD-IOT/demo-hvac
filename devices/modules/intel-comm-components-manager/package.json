@@ -1,6 +1,6 @@
 {
-  "name": "iot-comm-components-manager",
-  "version": "1.0.0",
+  "name": "intel-comm-components-manager",
+  "version": "1.0.6",
   "description": "Manager for sensor components for IoT Commercial Demo.",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,6 @@
   "author": "Drew Williams <drew.williams@intel.com>",
   "license": "MIT",
   "dependencies": {
-      "mraa": "^0.7.2",
       "upm": "^0.0.20"
   }
 }

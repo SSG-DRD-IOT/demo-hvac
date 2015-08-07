@@ -37,7 +37,28 @@ angular.module('sbAdminApp')
             $scope.customizeCloud = data;
      });
 
-     // To remove row from trigger
+	 
+	 
+	 
+	 
+	 
+	 // To get data from actuator table
+  $http.get('/listActuator').success(function(data,status) {
+    $scope.actuators = data;
+  });
+
+  // To get data from Sensor table
+   $http.get('/listSensor').success(function(data,status) {
+    $scope.sensors = data;
+  });
+
+   // To get data from Trigger table
+   $http.get('/listTrigger').success(function(data,status) {
+    $scope.triggers = data;
+  });
+
+   $scope.url = $scope.swaggerUrl = 'http://10.246.15.211:10010';
+  
     $scope.removeRow = function(triggerId){
               var data = "{\"id\":\""+triggerId+ "\"}";
               $http.post( '/removeTrigger',data).success(function (data, status, headers, config) {
@@ -59,10 +80,18 @@ angular.module('sbAdminApp')
             $window.location.reload();
             });      
     };
-
+	
+	
+	
+	
+	
+	
+	
+     // To remove row from trigger
+  
       // To get historic data from cloud
-    $http.get('http://172.16.21.235:4000/api/v0001/historic/data?id=123').success(function(data,status) {
-            $scope.line1 = data;
-     });
+    //$http.get('http://172.16.21.235:4000/api/v0001/historic/data?id=123').success(function(data,status) {
+     //       $scope.line1 = data;
+    // });
     
   }]);

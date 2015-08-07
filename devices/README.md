@@ -1,22 +1,20 @@
 The code in these repositories should be loaded onto the Intel Edison devices.  It's seperated into three parts:
-* **Scripts** - The start-up scripts that run on the Edison to pick out which modules should be loaded first.  Allows for automatic configuration.
+* **Scripts** - Examples of start-up scripts that run on the Edison to pick out which modules should be loaded first.  Allows for automatic configuration.
 * **Modules** - The individual nodeJS modules developed for the demonstration.
-* **Edge-Devices** - The code, pre-packaged, that needs to be dropped into place on each of the Edison devices. [DEPRECATED]
+* **Certificates** - The code for setting up a secure mosquitto server.
 
 To load an edge device, one needs to do the following:
 
-###Preexisting Sensor (Temperature, Sound, Light)
+###Known Sensor (Temperature, Sound, Light)
 
 The code already exists for these sensors, so they are the easiest sensors to configure.
 
-1. **Create a directory called node_app_slot on the root directory of the Edison.** Theoretically the sensors should support the code being run from any folder, but this is the one that has been tested and confirmed.
-2. **Create a node_modules folder in this node_app_slot folder.**  This is where we copy the created modules for the edge device code.
-3. **Copy the modules under "modules" to the "node_modules" folder.**  For sensors, you can leave out the relay module - all other modules need to be copied.
-4. **Copy the appropriate configuration JSON file from the scripts-and-config folder to the node_app_slot folder, and change the description to be appropriate for your use.**  Each sensor should have a different description.  Preexisting configuration files for the demo sensors exist, but they should be renamed to config.json when in use.  If you would like to build your own configuration file, please look at the config.json sample and edit it accordingly.
-5. **Copy the appropriate gateway configuration JSON file from the scripts-and-config folder to the node_app_slot folder, and change the gateway hostname if needed.**  This is critical for proper connection.
-6. **Copy the main.js and package.json files from the scripts-and-config folder to the node_app_slot folder.**  They should not have to be changed.  
-7. **Run 'npm install'.**  This will install the dependencies required of the different modules for the edison.
-8. **Run "node /node_app_slot/main.js".**  The sensor should find the gateway, announce its presence, and begin sending data.
+1. Make sure you have NPM installed on your system.
+2. Run "npm install intel-iot-commercial-edge-devices".
+3. Configure the config.json file **according to the sensor you are using**.  You can copy the appropriate configuration JSON file from the scripts-and-config folder in this github repository and replace the config.json file that come installed with the module by defalut, if you wish.  Note that each sensor should have a different description.  If you would like to build your own configuration file, please look at the config.json sample and edit it accordingly.
+5. Check the gateway.config JSON file from the scripts-and-config folder, and change the gateway hostname if needed.  This is critical for proper connection.
+7. Run 'npm install'.  This will install the dependencies required of the different modules for the edison.
+8. Run "node main.js from the main folder".  The sensor should find the gateway, announce its presence, and begin sending data.
 
 You're all set!
 
@@ -33,10 +31,6 @@ A new sensor requires that a few actions be taken before it will be recognized b
     returnedComponent = new upm2.###(+pin);
   }
 5. **Create a new config.json file for the sensor.**  Follow the examples.  Make sure the name you set in the string compare statement is the name of the sensor in the config.json file, or it might not be associated with the appropriate component!
-6. **Follow the instructions for adding a preexisting sensor.** The rest of the instructionsshould be the same!  
+6. **Follow the instructions for adding a preexisting sensor.** The rest of the instructions should be the same!  
 
-###Preexisting Actuator
-Coming Soon!
-
-###New Actuator
-Coming Soon!
+We welcome pull requests for new sensors!

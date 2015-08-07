@@ -1,6 +1,6 @@
 {
-  "name": "iot-comm-pinpublisher",
-  "version": "1.0.0",
+  "name": "intel-comm-pinpublisher",
+  "version": "1.0.3",
   "description": "Sensor publisher for IoT projects",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "intel-comm-components-manager": "^1.0.0",
-    "intel-comm-transport-manager": "^1.0.0"
+    "intel-comm-transport-manager": "^1.0.0",
+    "upm": "0.0.20"
   }
 }

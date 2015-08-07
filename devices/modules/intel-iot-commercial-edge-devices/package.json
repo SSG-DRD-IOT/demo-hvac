@@ -1,0 +1,23 @@
+{
+  "name": "intel-iot-commercial-edge-devices",
+  "version": "1.0.1",
+  "description": "Complete code for setting up a single edge device.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Drew Williams <drew.williams@intel.com>",
+  "license": "MIT",
+  "dependencies": {
+    "intel-comm-components-manager": "^1.0.0",
+    "intel-comm-gateway-discovery": "^1.0.0",
+    "intel-comm-pinpublisher": "^1.0.0",
+    "intel-comm-pinsubscriber": "^1.0.0",
+    "intel-comm-transport-manager": "^1.0.0",
+    "intel-comm-transport-mqtt": "^1.0.0",
+    "mdns": "2.2.9",
+    "mqtt": "^1.3.0",
+    "upm": "^0.0.20",
+    "winston": "^1.0.0"
+  }
+}

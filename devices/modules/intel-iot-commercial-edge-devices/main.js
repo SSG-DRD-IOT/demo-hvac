@@ -11,4 +11,4 @@ var gateway = require('intel-comm-gateway-discovery');
 var gatewayconfig = require('./gateway.json');
 
 //Now we can just start the gateway discovery scripts!
-gateway.startGatewaySearch(gatewayconfig.name);
+gateway.startGatewaySearch(gatewayconfig.host);

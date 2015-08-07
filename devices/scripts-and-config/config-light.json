@@ -1,9 +1,13 @@
 {
-  "name" : "light",
-  "description" : "A light sensor.",
-  "type" : "sensor",
-  "io": "aio",
-  "frequency" : "1",
-  "pin" : "0",
-  "transport" : "mqtt"
+    "name" : "light",
+    "description" : "A light sensor.",
+    "verification-sensor" : "true",
+    "type" : "sensor",
+    "io": "aio",
+    "frequency" : "1",
+    "pin" : "0",
+    "transport" : "mqtt"
+    "gateway" : {
+        "hostname" : "localhost"
+    }
 }

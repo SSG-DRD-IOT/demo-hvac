@@ -5,6 +5,9 @@ var _ = require("lodash");
 var mqtt = require('mqtt');
 var client  = mqtt.connect(config.mqtt.url);
 
+// Require the Winston Logger
+var logger = require('./logger.js');
+
 // Require the MongoDB libraries
 var mongoose = require('mongoose');
 
@@ -13,18 +16,12 @@ var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
-    //   console.log("Connection to MongoDB successful");
+    logger.info("Connection to MongoDB successful");
 });
 
 // Import the Database Model Objects
 var DataModel = require('intel-commerical-iot-database-models').DataModel;
 var SensorModel = require('intel-commerical-iot-database-models').SensorModel;
-
-// Setup a model for the relations between sensors and clouds
-var sensorModel = new SensorModel(db);
-var dataModel = new DataModel(db);
-
-var logger = require('./logger.js');
 
 if(config.debug != "true") {
     logger.remove(winston.transports.File);
@@ -35,22 +32,6 @@ logger.info("Edge Device Daemon is starting");
 // Connect to the MQTT server
 var mqttClient  = mqtt.connect(config.mqtt.url);
 
-function dataTopic(id) {
-    return id + "-data";
-}
-
-function errorTopic(id) {
-    return id + "-error";
-}
-
-function getID(topic) {
-    return topic.substr(8, 32);
-}
-
-function getType(topic) {
-    return topic.substr(41, topic.length);
-}
-
 // MQTT connection function
 mqttClient.on('connect', function () {
     logger.info("Connected to MQTT server");
@@ -60,7 +41,7 @@ mqttClient.on('connect', function () {
 
 // A function that runs when MQTT receives a message
 mqttClient.on('message', function (topic, message) {
-    // logger.log('info', topic + ":" + message.toString());
+    logger.trace(topic + ":" + message.toString());
 
     // Parse the incoming data
     try {
@@ -71,15 +52,24 @@ mqttClient.on('message', function (topic, message) {
 
     if (topic == "announcements") {
         logger.info("Received an Announcement");
-        logger.debug(topic + ":" + message.toString());
+        logger.trace(topic + ":" + message.toString());
 
         var sensor = new SensorModel(json);
-        sensor.save();
+        sensor.save(function(err, sensor) {
+            if (err)
+                logger.error(err);
+            else
+                logger.trace("Wrote to db:" + sensor.toString());
+        });
     };
 
     if (topic.match(/data/)) {
-        logger.debug("Writing to db:" + message.toString());
         var value = new DataModel(json);
-        value.save();
+        value.save(function(err, data) {
+            if (err)
+                logger.error(err);
+            else
+                logger.trace("Wrote to db:" + data.toString());
+        });
     }
 });

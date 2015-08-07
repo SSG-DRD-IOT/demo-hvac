@@ -1,0 +1,10 @@
+{ 
+  "id": "deviceID", 
+  "name": "configFile.name",
+  "verification-sensor" : "true",
+  "description": "configFile.description", 
+  "maxfrequency": "configFile.frequency", 
+  "frequency": "configFile.frequency", 
+  "active": "true", 
+  "ioType": "configFile.io" 
+}

@@ -1,5 +1,5 @@
 {
-  "name": "iot-comm-pinsubscriber",
+  "name": "intel-comm-pinsubscriber",
   "version": "1.0.0",
   "description": "Actuator subscriber for IoT projects",
   "main": "index.js",

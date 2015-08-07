@@ -171,12 +171,14 @@ angular
 	.state('dashboard.sensorListTable',{
        templateUrl:'views/ui-elements/sensorListTable.html',
        url:'/sensorListTable',
-        controller:'TableCtrl',
+        controller:'MainCtrl',
        resolve: {
           loadMyFile:function($ocLazyLoad) {
             $ocLazyLoad.load({
                 name:'sbAdminApp',
-                files:['scripts/controllers/table.js']
+                files:[
+				'scripts/controllers/main.js',
+				'scripts/controllers/table.js']
             })
             $ocLazyLoad.load(
                 {
@@ -190,12 +192,14 @@ angular
     .state('dashboard.customizeCloud',{
        templateUrl:'views/ui-elements/customizeCloud.html',
        url:'/customizeCloud',
-       controller:'TableCtrl',
+       controller:'MainCtrl',
        resolve: {
           loadMyFile:function($ocLazyLoad) {
             $ocLazyLoad.load({
                 name:'sbAdminApp',
-                files:['scripts/controllers/table.js']
+                files:[
+				'scripts/controllers/main.js',
+				'scripts/controllers/table.js']
             })
             }
         }
@@ -203,12 +207,14 @@ angular
     .state('dashboard.actuatorListTable',{
        templateUrl:'views/ui-elements/actuatorListTable.html',
        url:'/actuatorListTable',
-       controller:'TableCtrl',
+       controller:'MainCtrl',
        resolve: {
           loadMyFile:function($ocLazyLoad) {
             $ocLazyLoad.load({
                 name:'sbAdminApp',
-                files:['scripts/controllers/table.js']
+                files:[
+				'scripts/controllers/main.js',
+				'scripts/controllers/table.js']
             })
             $ocLazyLoad.load(
                 {
@@ -221,12 +227,14 @@ angular
      .state('dashboard.triggerListTable',{
        templateUrl:'views/ui-elements/triggerListTable.html',
        url:'/triggerListTable',
-        controller:'TableCtrl',
+        controller:'MainCtrl',
        resolve: {
           loadMyFile:function($ocLazyLoad) {
             $ocLazyLoad.load({
                 name:'sbAdminApp',
-                files:['scripts/controllers/table.js']
+                files:[
+				'scripts/controllers/main.js',
+				'scripts/controllers/table.js']
             })
             $ocLazyLoad.load(
                 {
@@ -239,12 +247,15 @@ angular
      .state('dashboard.addTrigger',{
        templateUrl:'views/ui-elements/addTrigger.html',
        url:'/addTrigger',
-        controller:'TableCtrl',
+        controller:'MainCtrl',
        resolve: {
           loadMyFile:function($ocLazyLoad) {
             $ocLazyLoad.load({
                 name:'sbAdminApp',
-                files:['scripts/controllers/table.js']
+                files:[
+				'scripts/controllers/main.js',
+				'scripts/controllers/table.js'
+				]
             })
             $ocLazyLoad.load(
                 {
@@ -257,12 +268,15 @@ angular
      .state('dashboard.deleteTrigger',{
        templateUrl:'views/ui-elements/deleteTrigger.html',
        url:'/deleteTrigger',
-       controller:'TableCtrl',
+       controller:'MainCtrl',
        resolve: {
           loadMyFile:function($ocLazyLoad) {
             $ocLazyLoad.load({
                 name:'sbAdminApp',
-                files:['scripts/controllers/table.js']
+                files:[
+				'scripts/controllers/main.js',
+				'scripts/controllers/table.js'
+				]
             })
             $ocLazyLoad.load(
                 {

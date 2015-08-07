@@ -6,8 +6,8 @@
     "io": "aio",
     "frequency" : "1",
     "pin" : "0",
-    "transport" : "mqtt"
+    "transport" : "mqtt",
     "gateway" : {
-        "hostname" : "localhost"
+        "hostname" : "mqtt://192.168.0.146"
     }
 }

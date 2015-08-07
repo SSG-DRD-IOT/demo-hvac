@@ -4,8 +4,8 @@
 //Requirements
 var crypto = require('crypto');
 var winston = require('winston');
-var mqtt = require('intel-comm-transport-mqtt')
-var configFile = require('../../config.json');
+var mqtt = require('intel-comm-transport-mqtt');
+//var configFile = require('../../config.json');
 
 /////Get the transport protocol.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function getTransportProtocol (configFile) {
@@ -22,7 +22,7 @@ function returnDeviceID(configFile)
 
 /////Connect to a transport protocol.  Returns a client, or other file needed by
 /////chosen transportation protocol. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-exports.connectToTransport = function connectToTransport(gatewayIP)
+exports.connectToTransport = function connectToTransport(gatewayIP, configFile)
 {
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
@@ -42,10 +42,10 @@ exports.connectToTransport = function connectToTransport(gatewayIP)
     client = NULL;
   }
   return client;
-}
+};
 
 /////Publish an announcement to gateway announcement topic. \\\\\\\\\\\\\\\\\\\\
-exports.announcePresence = function announcePresence(client, component)
+exports.announcePresence = function announcePresence(client, configFile)
 {
 
   var deviceID = returnDeviceID(configFile);
@@ -59,7 +59,7 @@ exports.announcePresence = function announcePresence(client, component)
   {
     if (configFile.type === "sensor")
     {
-      var announceJSON = { id: deviceID, name: configFile.name, description: configFile.description, maxfrequency: configFile.frequency, frequency: configFile.frequency, active: true, ioType: configFile.io };
+      var announceJSON = { id: deviceID, name: configFile.name, description: configFile.description, verification_sensor: configFile.verification_sensor, maxfrequency: configFile.frequency, frequency: configFile.frequency, active: true, ioType: configFile.io };
       var pubString = JSON.stringify(announceJSON);
       winston.info('Announcement sent: ' + pubString);
       mqtt.publishAnnouncement(pubString, client);
@@ -81,11 +81,11 @@ exports.announcePresence = function announcePresence(client, component)
     //with a device ID of any sort (gateway or sensor).
   }
 
-}
+};
 
 /////Publish data to device data topic. Called from sensors. \\\\\\\\\\\\\\\\\\\
 //Note: this only publishes one instance of data.  Needs to be called in a loop\
-exports.publishData = function publishDataTopic(client, component, newData)
+exports.publishData = function publishDataTopic(client, newData, configFile)
 {
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
@@ -115,10 +115,10 @@ exports.publishData = function publishDataTopic(client, component, newData)
     //The announcements channel on the gateway does not differentiate itself
     //with a device ID of any sort (gateway or sensor).
   }
-}
+};
 
 /////Publish errors to device error topic. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-exports.publishError = function publishErrorTopic(client, component, newError)
+exports.publishError = function publishErrorTopic(client, newError)
 {
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
@@ -149,7 +149,7 @@ exports.publishError = function publishErrorTopic(client, component, newError)
 }
 
 /////Subscribe to gateway's control topic. Called from actuators. \\\\\\\\\\\\\\
-exports.subscribeControl = function subscribeControlTopic(client, component, configFile)
+exports.subscribeControl = function subscribeControlTopic(client, configFile)
 {
 	var deviceID = returnDeviceID(configFile);
 	var channelTitle = "actuator/" + deviceID + "/trigger";
@@ -170,6 +170,6 @@ exports.subscribeControl = function subscribeControlTopic(client, component, con
 		}
 	}
 
-	client.subscribe
+//	client.subscribe
 
 }
