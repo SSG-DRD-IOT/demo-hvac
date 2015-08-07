@@ -1,9 +1,9 @@
 {
-    "org" : "5anfde",
-    "type" : "intel-edison",
+    "org" : "hg40h1",
+    "type" : "iot-gateway",
     "id" : "020086a5e8ec",
     "auth-method" : "token",
-    "auth-token" : "SDDjxLjXoW4(ZFBolZ",
+    "auth-token" : "X9Odm_(y7Lhd_mYKs0",
     "username" : "use-token-auth",
     "route" : ".messaging.internetofthings.bluemixcloud.com"
 }

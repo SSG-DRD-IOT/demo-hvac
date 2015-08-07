@@ -45,24 +45,19 @@ function bluemix(json){
           console.log("Couldn't parse recieved command. Please ensure it is valid JSON.");
         }
       });
-      //      console.log(client);
-      // setInterval( function() {
-      //   self.emit('trigger', 'LightON');
-      // }, 1000 );
+
     });
 
     // Store the data record with the evt_type equal to the devID
     // This allows us to retrieve the records based on devID
 
-    this.on('write', function(data) {
+    this.on('write', function(value) {
       self.topic_pub = "iot-2/evt/" + self.id + "/fmt/json";
       self.message = {
         "d" : {
-          "value" : data.value,
-          "timestamp" : data.timestamp
+          "value" : value,
         }
       };
-
       //	console.log(self.message);
       client.publish(topic_pub, JSON.stringify(self.message));
     });

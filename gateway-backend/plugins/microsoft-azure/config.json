@@ -1,6 +1,38 @@
 {
-    "accessKey" : "Endpoint=sb://iotcloudeventhub.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=M+O/bZzxZPANa1Us5LzRXso5KMVzt/3j4iazUrmGUz4=",
-    "namespace" : "iotcloudeventhub",
-    "topic": "sensors",
-    "debug": "true"
+  "accessKey" : "Endpoint=sb://iotcloudeventhub.servicebus.windows.net/;SharedAccessKeyName=sa_all;SharedAccessKey=eHJor9PM2srD5MwcFaP2vR8Vu1otygLdT87HUmB+pe4=",
+  "namespace" : "iotcloudeventhub",
+  "topic": "sensor",
+
+  "topicOptions": {
+    "MaxSizeInMegabytes": "5120",
+    "DefaultMessageTimeToLive": "PT1H"
+  },
+
+  "subscription": "temp",
+
+  "messageBody": {
+    "body": "",
+    "customProperties": {}
+  },
+
+  "debug": "true",
+
+  "rules":[
+    {
+      "sub": "fan_on",
+      "options": {"sqlExpressionFilter": "value >= 80"}
+    },
+    {
+      "sub": "fan_off",
+      "options": {"sqlExpressionFilter": "value >= 68 and value < 75"}
+    },
+    {
+      "sub": "light_on",
+      "options": {"sqlExpressionFilter": "value < 68"}
+    },
+    {
+      "sub": "light_off",
+      "options": {"sqlExpressionFilter": "value > 70"}
+    }
+  ]
 }
