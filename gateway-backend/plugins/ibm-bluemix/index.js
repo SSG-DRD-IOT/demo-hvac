@@ -2,6 +2,7 @@ var mqtt = require('mqtt');
 var https = require('https');
 var util = require('util');
 var EventEmitter = require('events').EventEmitter;
+var logger = require('./logger.js');
 
 function bluemix(json){
 
@@ -16,9 +17,13 @@ function bluemix(json){
   self.route = self.config.route;
   self.broker = self.organization + self.route;
 
+  if(self.config.debug != "true") {
+    logger.remove(winston.transports.logger);
+    logger.remove(winston.transports.File);
+  }
 
   this.on('connect', function() {
-    console.log("Entered the connection function");
+    logger.log("Entered the connection function");
 
     client = mqtt.connect(
       {
@@ -35,14 +40,14 @@ function bluemix(json){
       });
 
       client.on('message', function(topic, message) {
-        console.log('Received command on topic: ' + topic);
-        console.log(message);
+        logger.log('Received command on topic: ' + topic);
+        logger.log(message);
         try {
           self.msg = JSON.parse(message);
           self.emit('trigger', message);
         }
         catch (e) {
-          console.log("Couldn't parse recieved command. Please ensure it is valid JSON.");
+          logger.error("Couldn't parse recieved command. Please ensure it is valid JSON.");
         }
       });
 
@@ -58,14 +63,14 @@ function bluemix(json){
           "value" : value,
         }
       };
-      //	console.log(self.message);
+      //	logger.log(self.message);
       client.publish(topic_pub, JSON.stringify(self.message));
     });
 
 
     this.on('read', function() {
 
-      console.log("Bluemix - In read");
+      logger.log("Bluemix - In read");
       var start = Date.now() - 10;
 
       var options = {
@@ -77,11 +82,10 @@ function bluemix(json){
           'Authorization': 'Basic ' + new Buffer("a-ndag4d-3p2uynctid" + ":" + "0+ab38e2gGOjiI9m(V").toString('base64')
         }
       };
-      console.log("here 2");
 
       var req = https.get(options, function(res) {
-        // console.log('STATUS: ' + res.statusCode);
-        // console.log('HEADERS: ' + JSON.stringify(res.headers));
+        // logger.log('STATUS: ' + res.statusCode);
+        // logger.log('HEADERS: ' + JSON.stringify(res.headers));
 
         // Buffer the body entirely for processing as a whole.
         var body = "";
@@ -89,18 +93,18 @@ function bluemix(json){
           // You can process streamed parts here...
           body += data;
         }).on('end', function() {
-          console.log('BODY: ' + body);
+          logger.log('BODY: ' + body);
           // ...and/or process the entire body here.
         });
       });
 
       req.on('error', function(e) {
-        console.log('ERROR: ' + e.message);
+        logger.log('ERROR: ' + e.message);
       });
 
-      console.log("here 6");
+      logger.log("here 6");
       req.end();
-      console.log("here 7");
+      logger.log("here 7");
     });
 
   }
