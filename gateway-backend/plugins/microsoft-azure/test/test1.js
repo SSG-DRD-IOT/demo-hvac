@@ -1,12 +1,21 @@
 var azure = require("../index.js");
 var config = require("../config.json");
+var util = require('util');
 
 var azure = new azure(config);
 
 azure.emit('connect');
 console.log('After connect');
 
+setInterval(function(){
+  azure.emit('write', { sensor_id : 'sensor-4321',
+  value : Math.floor((Math.random() * 30) + 60),
+  timestamp : Math.floor((Math.random() * 542356) + 789876)
+});
+}, 1000);
 // azure.delete();
+console.log(util.inspect(azure.listeners('trigger')));
+
 return;
 
 count = 0;
