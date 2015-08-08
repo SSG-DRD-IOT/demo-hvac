@@ -18,6 +18,7 @@ mdb.once('open', function (callback) {
 // Import the Database Model Objects
 var Data = require('intel-commerical-iot-database-models').DataModel;
 var Sensor = require('intel-commerical-iot-database-models').SensorModel;
+var Actuator = require('intel-commerical-iot-database-models').ActuatorModel;
 var Trigger = require('intel-commerical-iot-database-models').TriggerModel;
 var Error = require('intel-commerical-iot-database-models').ErrorModel;
 
@@ -28,10 +29,11 @@ restapi.use(bodyParse());
 restapi.use(express.static(__dirname + '/app'));
 
 
+
 // API to get list from actuator table
 restapi.get('/listActuator', function(req, res){
-    db.all("SELECT * FROM actuators", function(err, rows){
-        res.json(rows);
+    Actuator.find({}, function(err, actuators) {
+        res.json(actuators);
     });
 });
 
@@ -69,8 +71,8 @@ restapi.get('/noOfError', function(req, res){
 
 // API to get Number of Actuators which are active
 restapi.get('/noOfActuator', function(req, res){
-    db.all("SELECT COUNT(*) FROM actuators WHERE active='true'", function(err, rows){
-        res.json(rows[0]["COUNT(*)"]);
+    Actuator.count({}, function(err, n) {
+        res.json(n);
     });
 });
 
@@ -135,27 +137,27 @@ restapi.post('/getApi',function(req,res){
 });
 
 // API to send sensor data for charts
-restapi.get('/getSensorData',function(req,res){
-    db.all("SELECT data,timestamp FROM data WHERE sensor_id =\'" + req.param('sensorId') +"\'" , function(err, rows){
-        if (err){
-            console.err(err);
-            res.status(500);
-        }
-        else {
-            //      console.log(JSON.stringify(rows));
-            //  var data = _.pluck(rows,'data');
-            // var timestamp = _.pluck(rows,'timestamp');
-            var dt = {
-                timestamp: ["2015-06-24 23:42:12","2015-06-24 23:42:14","2015-06-24 23:42:15","2015-06-24 23:42:16","2015-06-24 23:42:17","2015-06-24 23:42:18","2015-06-24 23:42:19","2015-06-24 23:42:20","2015-06-24 23:42:21","2015-06-24 23:42:22"],
-                values: [[75.2,74.57,75.04,74.88,74.26,74.57,73.95,74.73,74.1,74.26],
-                         [75.2,74.57,75.04,74.88,74.26,74.57,73.95,74.73,74.1,74.26]]}
-            // var dt = ('{labels:[" + data + "], data:[" +timestamp+ "]}')
+// restapi.get('/getSensorData',function(req,res){
+//     db.all("SELECT data,timestamp FROM data WHERE sensor_id =\'" + req.param('sensorId') +"\'" , function(err, rows){
+//         if (err){
+//             console.err(err);
+//             res.status(500);
+//         }
+//         else {
+//             //      console.log(JSON.stringify(rows));
+//             //  var data = _.pluck(rows,'data');
+//             // var timestamp = _.pluck(rows,'timestamp');
+//             var dt = {
+//                 timestamp: ["2015-06-24 23:42:12","2015-06-24 23:42:14","2015-06-24 23:42:15","2015-06-24 23:42:16","2015-06-24 23:42:17","2015-06-24 23:42:18","2015-06-24 23:42:19","2015-06-24 23:42:20","2015-06-24 23:42:21","2015-06-24 23:42:22"],
+//                 values: [[75.2,74.57,75.04,74.88,74.26,74.57,73.95,74.73,74.1,74.26],
+//                          [75.2,74.57,75.04,74.88,74.26,74.57,73.95,74.73,74.1,74.26]]}
+//             // var dt = ('{labels:[" + data + "], data:[" +timestamp+ "]}')
 
-            res.json(dt);
-        }
-        res.end();
-    });
-});
+//             res.json(dt);
+//         }
+//         res.end();
+//     });
+// });
 
 // Api to customize cloud data
 restapi.get('/getCustomizeCloud', function(req, res){
