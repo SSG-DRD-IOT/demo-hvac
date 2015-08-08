@@ -10,7 +10,7 @@ var ErrorSchema = require('./schema/ErrorSchema.js');
 
 module.exports = {
     SensorModel: mongoose.model('SensorModel', SensorSchema),
-    ActuatorModel: mongoose.model('SensorModel', ActuatorSchema),
+    ActuatorModel: mongoose.model('ActuatorModel', ActuatorSchema),
     DataModel: mongoose.model('DataModel', DataSchema),
     SensorCloudModel: mongoose.model('SensorCloudModel', SensorCloudSchema),
     TriggerModel: mongoose.model('TriggerModel', TriggerSchema),
