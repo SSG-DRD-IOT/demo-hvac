@@ -11,5 +11,7 @@
         "file" : "/industrial-demo/db/iotdemo.sqlite"
     },
 
-    "debug" : "false"
+    "debug" : {
+        "level" : "error"
+    }
 }

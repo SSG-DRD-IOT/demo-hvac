@@ -32,16 +32,36 @@ var logger = require('./logger.js');
 
 logger.info("Trigger Daemon is starting...");
 
-if(config.debug != "true") {
-    logger.remove(winston.transports.File);
-    logger.remove(winston.transports.Console);
+if(config.debug.level != "true") {
+    logger.transports.file.level = 'error';
+    logger.transports.console.level = 'error';
 }
 
 // Import the Utilities functions
 var utils = require("./utils.js");
 
+var TriggerDaemon = function (config) {
+
+    var default_config = {
+        "mqtt" : {
+            "uri" : "mqtt://localhost"
+        },
+
+        "mongodb" : {
+            "uri" : "mongodb://localhost/iotdemo"
+        },
+
+        "debug" : {
+            "level" : "error"
+        }
+    };
+
+    // Set default properties of the Trigger Daemon
+    this.config = config || default_config;
+};
+
 // Connect to the MQTT server
-var mqttClient  = mqtt.connect(config.mqtt.url);
+var mqttClient  = mqtt.connect(config.mqtt.uri);
 
 // On the start of a connection, do the following...
 mqttClient.on('connect', function () {
@@ -146,3 +166,5 @@ function compareFuncBuilder(operator, triggerValue) {
     };
 
 }
+
+module.exports = TriggerDaemon;
