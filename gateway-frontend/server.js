@@ -58,6 +58,13 @@ restapi.get('/noOfSensor', function(req, res){
     });
 });
 
+// API to get Number of Sensors which are active
+restapi.get('/noOfError', function(req, res){
+    Sensor.count({}, function(err, n) {
+        res.json(n);
+    });
+});
+
 
 // API to get Number of Actuators which are active
 restapi.get('/noOfActuator', function(req, res){
