@@ -19,6 +19,7 @@ mdb.once('open', function (callback) {
 var Data = require('intel-commerical-iot-database-models').DataModel;
 var Sensor = require('intel-commerical-iot-database-models').SensorModel;
 var Trigger = require('intel-commerical-iot-database-models').TriggerModel;
+var Error = require('intel-commerical-iot-database-models').ErrorModel;
 
 var express = require('express');
 var restapi = express();
@@ -29,9 +30,9 @@ restapi.use(express.static(__dirname + '/app'));
 
 // API to get list from actuator table
 restapi.get('/listActuator', function(req, res){
-  db.all("SELECT * FROM actuators", function(err, rows){
-    res.json(rows);
-  });
+    db.all("SELECT * FROM actuators", function(err, rows){
+        res.json(rows);
+    });
 });
 
 
@@ -60,7 +61,7 @@ restapi.get('/noOfSensor', function(req, res){
 
 // API to get Number of Sensors which are active
 restapi.get('/noOfError', function(req, res){
-    Sensor.count({}, function(err, n) {
+    Error.count({}, function(err, n) {
         res.json(n);
     });
 });
@@ -68,9 +69,9 @@ restapi.get('/noOfError', function(req, res){
 
 // API to get Number of Actuators which are active
 restapi.get('/noOfActuator', function(req, res){
-  db.all("SELECT COUNT(*) FROM actuators WHERE active='true'", function(err, rows){
-    res.json(rows[0]["COUNT(*)"]);
-  });
+    db.all("SELECT COUNT(*) FROM actuators WHERE active='true'", function(err, rows){
+        res.json(rows[0]["COUNT(*)"]);
+    });
 });
 
 
@@ -116,59 +117,59 @@ restapi.post('/addTrigger',function(req,res){
             res.status(202);
         }
         res.end();
-  });
+    });
 });
 
 // To get api according to actuator Id
 restapi.post('/getApi',function(req,res){
-  db.all("SELECT api FROM actuators WHERE id =\'" + req.param('id') +"\'" , function(err, row){
-    if (err){
-      console.err(err);
-      res.status(500);
-    }
-    else {
-      res.json(eval(row));
-    }
-    res.end();
-  });
+    db.all("SELECT api FROM actuators WHERE id =\'" + req.param('id') +"\'" , function(err, row){
+        if (err){
+            console.err(err);
+            res.status(500);
+        }
+        else {
+            res.json(eval(row));
+        }
+        res.end();
+    });
 });
 
 // API to send sensor data for charts
 restapi.get('/getSensorData',function(req,res){
-  db.all("SELECT data,timestamp FROM data WHERE sensor_id =\'" + req.param('sensorId') +"\'" , function(err, rows){
-    if (err){
-      console.err(err);
-      res.status(500);
-    }
-    else {
-//      console.log(JSON.stringify(rows));
-//  var data = _.pluck(rows,'data');
-// var timestamp = _.pluck(rows,'timestamp');
-var dt = {
-  timestamp: ["2015-06-24 23:42:12","2015-06-24 23:42:14","2015-06-24 23:42:15","2015-06-24 23:42:16","2015-06-24 23:42:17","2015-06-24 23:42:18","2015-06-24 23:42:19","2015-06-24 23:42:20","2015-06-24 23:42:21","2015-06-24 23:42:22"],
-  values: [[75.2,74.57,75.04,74.88,74.26,74.57,73.95,74.73,74.1,74.26],
-  [75.2,74.57,75.04,74.88,74.26,74.57,73.95,74.73,74.1,74.26]]}
-// var dt = ('{labels:[" + data + "], data:[" +timestamp+ "]}')
+    db.all("SELECT data,timestamp FROM data WHERE sensor_id =\'" + req.param('sensorId') +"\'" , function(err, rows){
+        if (err){
+            console.err(err);
+            res.status(500);
+        }
+        else {
+            //      console.log(JSON.stringify(rows));
+            //  var data = _.pluck(rows,'data');
+            // var timestamp = _.pluck(rows,'timestamp');
+            var dt = {
+                timestamp: ["2015-06-24 23:42:12","2015-06-24 23:42:14","2015-06-24 23:42:15","2015-06-24 23:42:16","2015-06-24 23:42:17","2015-06-24 23:42:18","2015-06-24 23:42:19","2015-06-24 23:42:20","2015-06-24 23:42:21","2015-06-24 23:42:22"],
+                values: [[75.2,74.57,75.04,74.88,74.26,74.57,73.95,74.73,74.1,74.26],
+                         [75.2,74.57,75.04,74.88,74.26,74.57,73.95,74.73,74.1,74.26]]}
+            // var dt = ('{labels:[" + data + "], data:[" +timestamp+ "]}')
 
-res.json(dt);
-}
-res.end();
-});
+            res.json(dt);
+        }
+        res.end();
+    });
 });
 
 // Api to customize cloud data
 restapi.get('/getCustomizeCloud', function(req, res){
-  var sql = "SELECT sensors.name AS sensorName, cloudproviders.name AS cloudName, sensors.id AS sensorId, cloudproviders.id AS cloudId FROM cloudproviders, sensors, sensors_clouds WHERE sensors_clouds.sensor_id = sensors.id AND cloudproviders.id = sensors_clouds.cloudprovider_id "
-//  console.log(sql);
-  db.all(sql, function(err,rows){
-    res.json(rows);
-  });
+    var sql = "SELECT sensors.name AS sensorName, cloudproviders.name AS cloudName, sensors.id AS sensorId, cloudproviders.id AS cloudId FROM cloudproviders, sensors, sensors_clouds WHERE sensors_clouds.sensor_id = sensors.id AND cloudproviders.id = sensors_clouds.cloudprovider_id "
+    //  console.log(sql);
+    db.all(sql, function(err,rows){
+        res.json(rows);
+    });
 });
 
 
 // Api to redirect to Angular.JS website
 restapi.get('*', function(req, res) {
-res.sendFile('./app/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    res.sendFile('./app/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 restapi.listen(8080);
