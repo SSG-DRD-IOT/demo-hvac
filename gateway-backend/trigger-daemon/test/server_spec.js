@@ -119,7 +119,7 @@ describe('When Trigger Daemon is connecting', function () {
 
     it('should emit a connect event and be marked as connected', function (done) {
         client.on('close', function () {
-            expect(client.connected).to.be.not.ok;
+            expect(client.connected).to.be.false;
             client.end();
             if (!client.connected) {
                 done();
@@ -128,9 +128,8 @@ describe('When Trigger Daemon is connecting', function () {
             }
         });
         client.once('connect', function () {
-            expect(client.connected).to.be.not.ok;
+            expect(client.connected).to.be.ok;
             client.stream.end();
-            done();
         });
     });
 
@@ -164,60 +163,21 @@ describe('When Trigger Daemon is connecting', function () {
     });
 
 
+    it('should have a property name "connected" that is set to true', function (done) {
 
-    // it('should allow instantiation of MqttClient without the \'new\' operator', function(done) {
-    //     client.on('connect', function(err) {
-    //         done();
-    //     });
+        client.on('connect', function () {
+            expect(client).to.have.property("connected");
+            expect(client.connected).to.be.true;
 
-    //     // mqttClient.on('error', function(err) {
-    //     //     expect(true).to.be.false;
-    //     //     done();
-    //     // });
+            client.stream.end();
+        });
 
-
-    // });
-    //        should(function () {
-    //            var client;
-    // try {
-    //     client = mqtt.MqttClient(function () {
-    //         throw Error('break');
-    //     }, {});
-    //     client.end();
-    //     done();
-    // } catch (err) {
-    //     if ('break' !== err.message) {
-    //         throw err;
-    //     }
-    //     done();
-    // }
-
-
-    // it('should connect to the broker', function (done) {
-    //     var mqttClient = connect();
-
-    //     mqttClient.on('error', function (err) {
-    //         throw err;
-    //     });
-
-    //     mqttClient.on('connect', function(err) {
-    //         done();
-    //     });
-
-    //     // server.once('client', function (serverClient) {
-    //     //   serverClient.disconnect();
-    //     //   done();
-    //     // });
-    // });
+        client.once('close', function () {
+            client.end();
+            done();
+        });
+    });
 });
 
-// describe("The Trigger daemon", function() {
-//     var triggerd = new TriggerDaemon
-//     before(function() {
 
-//     });
-
-//     it("should have a start() function", function() {
-
-//     });
-// });
+//describe("The Trigger daemon is

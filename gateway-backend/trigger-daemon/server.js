@@ -62,7 +62,7 @@ var TriggerDaemon = function (config) {
     this.start = function () {};
 
     // Connect to the MQTT server
-    var mqttClient  = mqtt.connect(this.config.mqtt.uri);
+    this.mqttClient  = mqtt.connect(this.config.mqtt.uri);
 };
 
 
