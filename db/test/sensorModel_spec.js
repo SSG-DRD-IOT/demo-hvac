@@ -72,6 +72,13 @@ describe("When a sensor is saved", function() {
     });
 });
 
+describe("When a sensor finds its data", function() {
+    it("should return a piece of data and a timestamp", function() {
+        Sensor.findData(function(data) {
+
+        });
+    });
+});
 
 describe("When a sensor is associated with a cloud provider", function() {
     describe("with valid data", function() {

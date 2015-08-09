@@ -12,6 +12,19 @@ var triggerd_config_fixture = {
             "level" : "error"
         }
     },
+    test_config : {
+        "mqtt" : {
+            "uri" : "mqtt://localhost"
+        },
+
+        "mongodb" : {
+            "uri" : "mongodb://localhost/iotdemo-test"
+        },
+
+        "debug" : {
+            "level" : "error"
+        }
+    },
     config_1 : {
         "mqtt" : {
             "uri" : "mqtt://config_1"

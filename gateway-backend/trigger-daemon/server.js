@@ -2,7 +2,7 @@
 //conditions as needed.
 var mqtt = require('mqtt'); //This works over MQTT currently, will need to become extensible in future.
 var _ = require("lodash"); //Library needed for data paring work.
-var config = require("./config.json");//Configuration information
+var config = require("./config.json"); //Configuration information
 
 var mongoose = require('mongoose');
 
@@ -58,7 +58,13 @@ var TriggerDaemon = function (config) {
 
     // Set default properties of the Trigger Daemon
     this.config = config || default_config;
+
+    this.start = function () {};
+
+    // Connect to the MQTT server
+    var mqttClient  = mqtt.connect(this.config.mqtt.uri);
 };
+
 
 // Connect to the MQTT server
 var mqttClient  = mqtt.connect(config.mqtt.uri);
