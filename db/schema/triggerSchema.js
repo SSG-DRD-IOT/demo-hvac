@@ -36,8 +36,26 @@ var triggerSchema = new mongoose.Schema({
     }
 });
 
-triggerSchema.eval_condition() {
-    return true;
+triggerSchema.methods.eval_condition = function (self) {
+    var result;
+    var scope = self || this;
+    try {
+        result = eval(this.condition).call(scope, true);
+    } catch(e) {
+        throw(e);
+    }
+    return result;
+};
+
+triggerSchema.methods.eval_triggerFunc = function (self) {
+    var result;
+    var scope = self || this;
+    try {
+        result = eval(this.condition).call(scope, true);
+    } catch(e) {
+        throw(e);
+    }
+    return result;
 };
 
 module.exports = triggerSchema;

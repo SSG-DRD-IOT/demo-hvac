@@ -34,7 +34,7 @@ describe("When a trigger is saved", function() {
         });
 
         it("should be successful", function(done) {
-            var trigger = new Trigger(trigger_fixtures.valid_trigger_1);
+            var trigger = new Trigger(trigger_fixtures.valid_1);
             trigger.save(function(err, trigger) {
                 try {
                     Trigger.find({}, function(err, triggers) {
@@ -66,4 +66,34 @@ describe("When a trigger is saved", function() {
         });
 
     });
+});
+
+
+describe("When a trigger evaluates its condition", function() {
+    var trigger;
+
+    beforeEach(function() {
+        trigger = new Trigger(trigger_fixtures.fan_on_condition_true);
+    });
+
+    it("should have a method to evaluate its condition", function() {
+        trigger = new Trigger(trigger_fixtures.fan_on_condition_true);
+        expect(trigger).to.have.property('eval_condition');
+    });
+
+    describe("and the codition is true", function() {
+        it("the condition should be true", function() {
+            trigger = new Trigger(trigger_fixtures.fan_on_condition_true);
+            expect(trigger.eval_condition()).to.be.equal(true);
+        });
+    });
+
+    describe("and the codition is false", function() {
+
+        it("the condition should be false", function() {
+            trigger = new Trigger(trigger_fixtures.fan_on_condition_false);
+            expect(trigger.eval_condition()).to.be.equal(false);
+        });
+    });
+
 });
