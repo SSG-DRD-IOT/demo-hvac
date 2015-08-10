@@ -36,4 +36,8 @@ var triggerSchema = new mongoose.Schema({
     }
 });
 
+triggerSchema.eval_condition() {
+    return true;
+};
+
 module.exports = triggerSchema;
