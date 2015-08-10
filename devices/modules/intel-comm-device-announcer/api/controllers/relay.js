@@ -1,10 +1,16 @@
 'use strict';
 var util = require('util');
 var mraa = require('mraa');
+var crypto = require('crypto');
 
-var led = new mraa.Gpio(13); 
+
+var relay = require("../../relay.json");
+var pin = relay.pin;
+
+var led = new mraa.Gpio(relay.pin); 
 led.dir(mraa.DIR_OUT);
-var deviceId = "abc";
+
+var deviceId = crypto.createHash('md5').update(relay.description).digest('hex');
 
 module.exports = {
   relay: relay
