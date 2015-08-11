@@ -1,5 +1,5 @@
 {
-    "name" : "relay",
+    "name" : "fan",
     "description" : "A fan relay",
     "type" : "actuator",
     "io": "digital",

@@ -9,7 +9,8 @@ var pin = relayConfig.pin;
 var led = new mraa.Gpio(parseInt(pin)); 
 led.dir(mraa.DIR_OUT);
 
-var deviceId = crypto.createHash('md5').update(relayConfig.description).digest('hex');
+//var deviceId = crypto.createHash('md5').update(relayConfig.description).digest('hex');
+var deviceId = relayConfig.name;
 console.log("**********************************");
 console.log(deviceId);
 module.exports = {
