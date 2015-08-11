@@ -5,6 +5,10 @@ var actuatorSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    ipaddress : {
+        type: String,
+        required: true
+    },
     name  : {
         type: String,
         required: true
