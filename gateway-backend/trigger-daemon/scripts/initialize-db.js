@@ -66,67 +66,68 @@ var sensors = [
 
 var triggers = [
     {
-        "id": "1",
-        "name": "Fan Off",
-        "sensor_id": "b506768ce1e2353fe063d344e89e53e5",
-        "actuator_id": "752293f38a3d0e683178cdac2f864468",
-        "validator_id": "b506768ce1e2353fe063d344e89e53e5",
-        "condition": "<80",
-        "triggerFunc": [
-            {
-                "deviceId": "752293f38a3d0e683178cdac2f864468",
-                "action": "off"
-            }
-        ],
-        "active": "true"
+        id : "temperature_greater_than_27",
+        name : "temperature_greater_than_27",
+        sensor_id : "temperature",
+        actuator_id : "fan",
+        validator_id : "sound",
+        condition :  "( function(temperature) { return temperature > 27; } )",
+        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature_g27/alerts','{\"alert\" : \"Hot\"}' ); })",
+        active: true
     },
 
     {
-        "id": "2",
-        "name": "Fan On",
-        "sensor_id": "b506768ce1e2353fe063d344e89e53e5",
-        "actuator_id": "752293f38a3d0e683178cdac2f864468",
-        "validator_id": "b506768ce1e2353fe063d344e89e53e5",
-        "condition": ">80",
-        "triggerFunc": [
-            {
-                "deviceId": "752293f38a3d0e683178cdac2f864468",
-                "action": "on"
-            }
-        ],
-        "active": "true"
+        id : "temperature_greater_than_27_light_on",
+        name : "temperature_greater_than_27_light_on",
+        sensor_id : "temperature",
+        actuator_id : "fan",
+        validator_id : "sound",
+        condition :  "( function(temperature) { return temperature > 27; } )",
+        triggerFunc: "( function() { if (this.stash[\"light\"] == \"on\") { this.mqttClient.publish('sensors/temperature_g27_light_on/alerts','{\"alert\" : \"HotError\"}' ); }})",
+        active: true
+    },
+    {
+        id : "temperature_less_than_20_fan_on",
+        name : "temperature_less_than_20_fan_on",
+        sensor_id : "temperature",
+        actuator_id : "fan",
+        validator_id : "sound",
+        condition :  "( function(temperature) { return temperature < 20; } )",
+        triggerFunc: "( function() { if (this.stash[\"fan\"] == \"on\") { this.mqttClient.publish('sensors/temperature_l20_fan_on/alerts','{\"alert\" : \"ColdError\"}' ); }})",
+        active: true
     },
 
     {
-        "id": "3",
-        "name": "Lamp Off",
-        "sensor_id": "b506768ce1e2353fe063d344e89e53e5",
-        "actuator_id": "e7b29b749fa4d940e0d43ab6a4f94f41",
-        "validator_id": "b506768ce1e2353fe063d344e89e53e5",
-        "condition": ">68",
-        "triggerFunc": [
-            {
-                "deviceId": "e7b29b749fa4d940e0d43ab6a4f94f41",
-                "action": "off"
-            }
-        ],
-        "active": "true"
+        id : "temperature_less_than_20",
+        name : "temperature_less_than_20",
+        sensor_id : "temperature",
+        actuator_id : "fan",
+        validator_id : "sound",
+        condition : "( function(temperature) { return temperature < 20; } )",
+        triggerFunc : "( function() { this.mqttClient.publish('sensors/temperature_l20/alerts','{\"alert\" : \"Cold\"}' ); })",
+        active: true
     },
 
     {
-        "id": "4",
-        "name": "Lamp On",
-        "sensor_id": "b506768ce1e2353fe063d344e89e53e5",
-        "actuator_id": "e7b29b749fa4d940e0d43ab6a4f94f41",
-        "validator_id": "b506768ce1e2353fe063d344e89e53e5",
-        "condition": "<68",
-        "triggerFunc": [
-            {
-                "deviceId": "e7b29b749fa4d940e0d43ab6a4f94f41",
-                "action": "on"
-            }
-        ],
-        "active": "true"
+        id : "temperature_less_than_or_equal_27",
+        name : "temperature_less_than_or_equal_27",
+        sensor_id : "temperature",
+        actuator_id : "fan",
+        validator_id : "sound",
+        condition :  "( function(temperature) { return temperature <= 27; } )",
+        triggerFunc: "( function() { this.stash = \"It worked!\"; this.mqttClient.publish('sensors/temperature_le27/alerts','{\"alert\" : \"Ok\"}' ); })",
+        active: true
+    },
+
+    {
+        id : "temperature_greater_than_or_equal_20",
+        name : "temperature_greater_than_or_equal_20",
+        sensor_id : "temperature",
+        actuator_id : "fan",
+        validator_id : "sound",
+        condition : "( function(temperature) { return temperature >= 20; } )",
+        triggerFunc : "( function() { this.mqttClient.publish('sensors/temperature_ge20/alerts','{\"alert\" : \"Ok\"}' ); })",
+        active: true
     }
 ];
 
