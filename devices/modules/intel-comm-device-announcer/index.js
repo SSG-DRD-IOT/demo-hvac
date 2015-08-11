@@ -30,7 +30,7 @@ announcer.start(function() {
     cp.exec("swagger project start");
 
     var exec = require('child_process').exec;
-    var swaggerProcess = exec('swagger project start');
+    var swaggerProcess = exec('swagger project start swagger-relay');
 
     swaggerProcess.stdout.on('data', function(data) {
         console.log(data);

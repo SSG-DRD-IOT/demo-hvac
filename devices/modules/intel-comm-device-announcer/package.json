@@ -7,13 +7,7 @@
   "license": "MIT",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.12.3",
-    "intel-comm-transport-manager": "^1.0.5",
-    "swagger-express-mw": "0.0.x",
+    "intel-comm-transport-manager": "1.0.5",
     "winston": "^1.0.1"
-  },
-  "devDependencies": {
-    "should": "^5.2.0",
-    "supertest": "^0.15.0"
   }
 }

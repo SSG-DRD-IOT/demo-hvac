@@ -4,14 +4,14 @@ var mraa = require('mraa');
 var crypto = require('crypto');
 
 
-var relay = require("../../relay.json");
-var pin = relay.pin;
-
-var led = new mraa.Gpio(relay.pin); 
+var relayConfig = require("../../../relay.json");
+var pin = relayConfig.pin;
+var led = new mraa.Gpio(parseInt(pin)); 
 led.dir(mraa.DIR_OUT);
 
-var deviceId = crypto.createHash('md5').update(relay.description).digest('hex');
-
+var deviceId = crypto.createHash('md5').update(relayConfig.description).digest('hex');
+console.log("**********************************");
+console.log(deviceId);
 module.exports = {
   relay: relay
 };
