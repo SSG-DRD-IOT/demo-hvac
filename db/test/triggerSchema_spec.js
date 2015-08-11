@@ -29,7 +29,7 @@ describe("When a trigger is saved", function() {
 
         before (function() {
             Trigger.remove({}, function() {
-//                console.log("Triggers cleared");
+                //                console.log("Triggers cleared");
             });
         });
 
@@ -60,7 +60,7 @@ describe("When a trigger is saved", function() {
                 } catch( err ) {
                     done( err );
                 }
-                 var num = Trigger.count();
+                var num = Trigger.count();
                 expect(num).to.be.equal(1);
             });
         });
@@ -69,7 +69,7 @@ describe("When a trigger is saved", function() {
 });
 
 
-describe("When a trigger evaluates its condition", function() {
+describe("When a trigger evaluates its string condition", function() {
     var trigger;
 
     beforeEach(function() {
@@ -81,7 +81,7 @@ describe("When a trigger evaluates its condition", function() {
         expect(trigger).to.have.property('eval_condition');
     });
 
-    describe("and the codition is true", function() {
+    describe("and the condition is true", function() {
         it("the condition should be true", function() {
             trigger = new Trigger(trigger_fixtures.fan_on_condition_true);
             expect(trigger.eval_condition()).to.be.equal(true);
@@ -94,6 +94,46 @@ describe("When a trigger evaluates its condition", function() {
             trigger = new Trigger(trigger_fixtures.fan_on_condition_false);
             expect(trigger.eval_condition()).to.be.equal(false);
         });
+
     });
 
+    describe("and the condition is arg > 27", function() {
+        it("and the temp is 28 then the condition should be true", function() {
+            trigger = new Trigger(trigger_fixtures.temperature_greater_than_27);
+            expect(trigger.eval_condition(this, 28)).to.be.equal(true);
+        });
+    });
+
+    describe("and the condition is arg < 20", function() {
+        it("and the temp is 19 then the condition should be true", function() {
+            trigger = new Trigger(trigger_fixtures.temperature_less_than_20);
+            expect(trigger.eval_condition(this, 19)).to.be.equal(true);
+        });
+    });
+
+    describe("and the condition is arg > 27", function() {
+        it("and the temp is 26 then the condition should be true", function() {
+            trigger = new Trigger(trigger_fixtures.temperature_greater_than_27);
+            expect(trigger.eval_condition(this, 26)).to.be.equal(false);
+        });
+    });
+
+    describe("and the condition is arg < 20", function() {
+        it("and the temp is 21 then the condition should be true", function() {
+            trigger = new Trigger(trigger_fixtures.temperature_less_than_20);
+            expect(trigger.eval_condition(this, 21)).to.be.equal(false);
+        });
+    });
 });
+
+// describe("When a trigger evaluates its function condition", function() {
+//     var trigger;
+
+//     describe("and the condition is true", function() {
+//         it("the condition should be true", function() {
+//             trigger = new Trigger(trigger_fixtures.temperature_greater_than_27);
+// //            console.log(trigger.condition);
+//             expect(trigger.eval_condition(this, 28)).to.be.equal(true);
+//         });
+//     });
+// });

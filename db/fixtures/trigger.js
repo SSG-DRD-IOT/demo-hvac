@@ -38,13 +38,35 @@ var trigger_fixtures = {
     fan_on_condition_passes_argument : {
         id : "FanOnTrue",
         name : "FanOn",
-        sensor_id : "Temperature",
-        actuator_id : "Fan",
-        validator_id : "Sound",
+        sensor_id : "temperature",
+        actuator_id : "fan",
+        validator_id : "sound",
         condition : "( function(arg) { return arg; } )",
         triggerFunc: "on",
         active: true
     },
+
+    temperature_greater_than_27 : {
+        id : "FanOnTrue",
+        name : "FanOn",
+        sensor_id : "temperature",
+        actuator_id : "fan",
+        validator_id : "sound",
+        condition : "( function(temperature) { return temperature > 27; } )",
+        triggerFunc: "on",
+        active: true
+    },
+
+    temperature_less_than_20 : {
+        id : "FanOnTrue",
+        name : "FanOn",
+        sensor_id : "temperature",
+        actuator_id : "fan",
+        validator_id : "sound",
+        condition : "( function(temperature) { return temperature < 20; } )",
+        triggerFunc: "on",
+        active: true
+    }
 
 };
 
