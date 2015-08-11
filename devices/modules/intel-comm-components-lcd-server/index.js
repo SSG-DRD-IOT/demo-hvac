@@ -11,7 +11,7 @@ var alertChannel = "sensors/temperature/alerts";
 var lcdMessage = ""; //Blank space for the LCD message.
 var myLCD = new LCD.Jhd1313m1(6, 0x3E, 0x62); //"address" for the RGB LCD
 
-var client  = mqtt.connect(config.gateway.hostname);
+var client  = mqtt.connect('mqtt://192.168.1.1');
 
  //When we connect, we're targeting the temperature sensor for the demo -
  //follow its data and error channels.
