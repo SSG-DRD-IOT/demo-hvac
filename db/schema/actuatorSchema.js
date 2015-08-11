@@ -17,10 +17,6 @@ var actuatorSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    api : {
-        type: Number,
-        required: true
-    },
     active : {
         type: Boolean,
         required: true

@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var _ = require('lodash');
 var config = require('../config.json');
 
-mongoose.connect(config.mongodb.host);
+mongoose.connect(config.mongodb.uri);
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -15,52 +15,55 @@ db.once('open', function (callback) {
 //var SensorCloudModel = require('intel-commerical-iot-database-models').SensorCloudModel;
 var TriggerModel = require('intel-commerical-iot-database-models').TriggerModel;
 var SensorModel = require('intel-commerical-iot-database-models').SensorModel;
+var ActuatorModel = require('intel-commerical-iot-database-models').ActuatorModel;
+
+var actuators = [
+    {
+        "id": "fan",
+        "ipaddress": "192.168.1.2",
+        "name": "fan",
+        "description": "Decreases the temperature",
+        "active": "true",
+        "ioType": "digital"
+    },
+    {
+        "id": "light",
+        "ipaddress": "192.168.1.3",
+        "name": "light",
+        "description": "Increases the temperature",
+        "active": "true",
+        "ioType": "digital"
+    }
+
+];
 
 var sensors = [
     {
-        "id":"1",
-        "name":"Temperature",
-        "description":"read the temp",
-        "maxfrequency":200,
-        "frequency":1000,
-        "active":"true",
-        "ioType":"Analog"
-    },
-    {
-        "id":"2",
-        "name":"Light Sensor",
-        "description":"read the ambient light",
-        "maxfrequency":200,
-        "frequency":1000,
-        "active":"true",
-        "ioType":"Analog"
-    },
-    {
-        "id":"3",
-        "name":"Sound Sensor",
-        "description":"read the ambient noise har har har",
-        "maxfrequency":200,
-        "frequency":1000,
-        "active":"true",
-        "ioType":"Analog"
-    },
-    {
-        "id":"aa2177fdd5dd740c9ad7915182aa8850",
-        "name":"sound",
-        "description":"A sound sensor - tells user when fan is not working.",
-        "maxfrequency":1,
-        "frequency":1,
-        "active":1,
-        "ioType":"aio"
-    },
-    {
-        "id":"b506768ce1e2353fe063d344e89e53e5",
+        "id":"temperature",
         "name":"temperature",
-        "description":"A temperature sensor.",
-        "maxfrequency":1,
-        "frequency":1,
-        "active":1,
-        "ioType":"analog"
+        "description":"read the temp",
+        "maxfrequency":"200",
+        "frequency":"1000",
+        "active":"true",
+        "ioType":"Analog"
+    },
+    {
+        "id":"light",
+        "name":"light",
+        "description":"read the ambient light",
+        "maxfrequency":"200",
+        "frequency":"1000",
+        "active":"true",
+        "ioType":"Analog"
+    },
+    {
+        "id":"sound",
+        "name":"sound",
+        "description":"read the ambient noise har har har",
+        "maxfrequency":"200",
+        "frequency":"1000",
+        "active":"true",
+        "ioType":"Analog"
     }
 ];
 
@@ -131,11 +134,18 @@ var triggers = [
     }
 ];
 
+
+
+console.log(sensors);
 TriggerModel.remove({}, function() {
     //    console.log("Removing document");
 });
 
 SensorModel.remove({},  function() {
+    //    console.log("Removing document");
+});
+
+ActuatorModel.remove({},  function() {
     //    console.log("Removing document");
 });
 
@@ -156,5 +166,13 @@ _.forEach(sensors,
               });
           });
 
+_.forEach(actuators,
+          function(JSON) {
+              var rec = new ActuatorModel(JSON);
+              rec.save(function(err) {
+                  if (err) console.log(err);
+              });
+          });
 
-//db.close();
+
+// //db.close();

@@ -18,6 +18,10 @@ var sensorSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    frequency : {
+        type: Number,
+        required: true
+    },
     active : {
         type: Boolean,
         required: true

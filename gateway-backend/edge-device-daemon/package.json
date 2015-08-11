@@ -1,6 +1,6 @@
 {
   "name": "edge-device-daemon",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "server.js",
   "directories": {
