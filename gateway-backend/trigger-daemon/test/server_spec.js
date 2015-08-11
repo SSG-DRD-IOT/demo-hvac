@@ -16,7 +16,7 @@ var chai = require('chai'),
 
 // Connect to the MongoDB
 var mongoose = require('mongoose');
-var TriggerModel = require('intel-commerical-iot-database-models').TriggerModel;
+var Trigger = require('intel-commerical-iot-database-models').TriggerModel;
 //var ErrorModel = require('intel-commerical-iot-database-models').ErrorModel;
 var TriggerDaemon = require('../server.js');
 
@@ -93,6 +93,12 @@ describe("When instantiating the Trigger Daemon", function() {
         it("the default log level should error", function () {
             expect(triggerd.config.debug.level).to.be.eql("error");
         });
+
+        it("there should be a function called processSensorData", function() {
+            expect(triggerd.config).to.be.ok;
+            expect(triggerd.hasOwnProperty('processSensorData')).to.be.true;
+        });
+
     });
 
     describe("with a configuration file", function() {
@@ -220,7 +226,7 @@ describe('When Trigger Daemon is connecting', function () {
 describe("When a trigger is added", function() {
     beforeEach (function () {
         triggerd = new TriggerDaemon(config_fixtures.test_config);
-//        TriggerModel.remove({}, function(err) {
+//        Trigger.remove({}, function(err) {
 //            console.log("Removed all triggers");
 //         });
     });
@@ -265,7 +271,7 @@ describe("When a temperature sensor sends data", function() {
     var triggerd;
 
     before(function () {
-        triggerd = new TriggerDaemon(config_fixtures.config_1);
+        triggerd = new TriggerDaemon(config_fixtures.test_config);
     });
 
 
@@ -292,23 +298,322 @@ describe("When a temperature sensor sends data", function() {
                 ).length.should.equal(1);
 
         });
+    });
+});
 
-        describe("and there is a trigger with a great than 80 condition", function() {
-            before(function () {
-                temperature_data = data_fixtures.temperature_greater_than_80;
+describe("When temp data > 27", function() {
+    var triggerd;
+    before(function () {
+        triggerd = new TriggerDaemon(config_fixtures.test_config);
+    });
+
+    describe("and trigger on temp > 27", function() {
+        var temperature_data;
+        var trigger;
+        var mqttTestClient;
+
+        beforeEach(function () {
+            temperature_data = data_fixtures.temperature_greater_than_27;
+            trigger = new Trigger(trigger_fixtures.temperature_greater_than_27);
+            mqttTestClient = mqtt.connect(config_fixtures.test_config.mqtt.uri);
+        });
+
+        it("the trigger's condition should evaluate to true", function() {
+            triggerd.addTrigger(trigger);   // Trigger Happy
+
+            expect(triggerd
+                   .filter_triggers_by_sensor_id(
+                       trigger.sensor_id
+                   )[0].eval_condition(this, temperature_data.value)).to.be.equal(true);
+        });
+
+        it("should send a MQTT alert", function(done) {
+            mqttTestClient.on('connect', function() {
+                mqttTestClient.subscribe('sensors/temperature_g27/alerts');
+                triggerd.processSensorData(temperature_data);
             });
 
-            it("the triggers condition should evaluate to true", function() {
-                var results = _.map(
-                    triggerd
-                        .filter_triggers_by_sensor_id(
-                            fan_on_trigger.sensor_id
-                        ), function (trigger) {
-                            return trigger.condition(temperature_reading);
-                        });
 
-                console.log(results);
+            mqttTestClient.on('message', function(topic, message) {
+                var json;
+                try {
+                    json = JSON.parse(message);
+                } catch(error) {
+                    logger.error("Malformated JSON received: " + message);
+                }
 
+                if (topic.match(/sensors\/temperature_g27\/alert/)) {
+                    expect(json).to.deep.equal(JSON.parse('{ "alert": "Hot" }'));
+                    done();
+                };
+            });
+        });
+    });
+});
+
+
+describe("When temp data > 27", function() {
+    var triggerd;
+    before(function () {
+        triggerd = new TriggerDaemon(config_fixtures.test_config);
+    });
+
+    describe("and trigger on temp > 27 and the light is on", function() {
+        var temperature_data;
+        var trigger;
+        var mqttTestClient;
+
+        beforeEach(function () {
+            temperature_data = data_fixtures.temperature_greater_than_27;
+            light_on = data_fixtures.light_on;
+            trigger = new Trigger(trigger_fixtures.temperature_greater_than_27_light_on);
+            mqttTestClient = mqtt.connect(config_fixtures.test_config.mqtt.uri);
+        });
+
+        it("the trigger's condition should evaluate to true", function() {
+            triggerd.addTrigger(trigger);   // Trigger Happy
+
+            expect(triggerd
+                   .filter_triggers_by_sensor_id(
+                       trigger.sensor_id
+                   )[0].eval_condition(this, temperature_data.value)).to.be.equal(true);
+        });
+
+        it("should send a MQTT error", function(done) {
+            mqttTestClient.on('connect', function() {
+                mqttTestClient.subscribe('sensors/temperature_g27_light_on/alerts');
+                triggerd.processSensorData(light_on);
+                triggerd.processSensorData(temperature_data);
+            });
+
+
+            mqttTestClient.on('message', function(topic, message) {
+                var json;
+                try {
+                    json = JSON.parse(message);
+                } catch(error) {
+                    logger.error("Malformated JSON received: " + message);
+                }
+
+                if (topic.match(/sensors\/temperature_g27_light_on\/alert/)) {
+                    expect(json).to.deep.equal(JSON.parse('{ "alert": "HotError" }'));
+                    done();
+                };
+            });
+        });
+    });
+});
+
+describe("When temp data < 20", function() {
+    var triggerd;
+    before(function () {
+        triggerd = new TriggerDaemon(config_fixtures.test_config);
+    });
+
+    describe("and trigger on temp < 20 and the fan is on", function() {
+        var temperature_data;
+        var trigger;
+        var mqttTestClient;
+
+        beforeEach(function () {
+            temperature_data = data_fixtures.temperature_less_than_20;
+            fan_on = data_fixtures.fan_on;
+            trigger = new Trigger(trigger_fixtures.temperature_less_than_20_fan_on);
+            mqttTestClient = mqtt.connect(config_fixtures.test_config.mqtt.uri);
+        });
+
+        it("the trigger's condition should evaluate to true", function() {
+            triggerd.addTrigger(trigger);   // Trigger Happy
+
+            expect(triggerd
+                   .filter_triggers_by_sensor_id(
+                       trigger.sensor_id
+                   )[0].eval_condition(this, temperature_data.value)).to.be.equal(true);
+        });
+
+        it("should send a MQTT error", function(done) {
+            mqttTestClient.on('connect', function() {
+                mqttTestClient.subscribe('sensors/temperature_l20_fan_on/alerts');
+                triggerd.processSensorData(fan_on);
+                triggerd.processSensorData(temperature_data);
+            });
+
+
+            mqttTestClient.on('message', function(topic, message) {
+                var json;
+                try {
+                    json = JSON.parse(message);
+                } catch(error) {
+                    logger.error("Malformated JSON received: " + message);
+                }
+
+                if (topic.match(/sensors\/temperature_l20_fan_on\/alert/)) {
+                    expect(json).to.deep.equal(JSON.parse('{ "alert": "ColdError" }'));
+                    done();
+                };
+            });
+        });
+    });
+});
+
+
+describe("When temp data < 20", function() {
+    var triggerd;
+    before(function () {
+        triggerd = new TriggerDaemon(config_fixtures.test_config);
+    });
+
+    describe("and trigger on temp < 20", function() {
+        var temperature_data;
+        var trigger;
+        var mqttTestClient;
+
+        beforeEach(function () {
+            temperature_data = data_fixtures.temperature_less_than_20;
+            trigger = new Trigger(trigger_fixtures.temperature_less_than_20);
+            mqttTestClient = mqtt.connect(config_fixtures.test_config.mqtt.uri);
+        });
+
+        it("the trigger's condition should evaluate to true", function() {
+            triggerd.addTrigger(trigger);   // Trigger Happy
+
+            expect(triggerd
+                   .filter_triggers_by_sensor_id(
+                       trigger.sensor_id
+                   )[0].eval_condition(this, temperature_data.value)).to.be.equal(true);
+        });
+
+        it("should send a MQTT alert", function(done) {
+            mqttTestClient.on('connect', function() {
+                mqttTestClient.subscribe('sensors/temperature_l20/alerts');
+//              mqttTestClient.publish('sensors/temperature/alerts','{"alert" : "Hot"}' );
+              //  triggerd.addTrigger(trigger);   // Trigger Happy
+//                mqttTestClient.publish('sensors/temperature/data', JSON.stringify(temperature_data));
+                triggerd.processSensorData(temperature_data);
+            });
+
+
+            mqttTestClient.on('message', function(topic, message) {
+                var json;
+                try {
+                    json = JSON.parse(message);
+                } catch(error) {
+                    logger.error("Malformated JSON received: " + message);
+                }
+
+                if (topic.match(/sensors\/temperature_l20\/alert/)) {
+                    expect(json).to.deep.equal(JSON.parse('{ "alert": "Cold" }'));
+                    done();
+                };
+            });
+        });
+    });
+});
+
+
+
+describe("When temp data <= 27", function() {
+    var triggerd;
+    before(function () {
+        triggerd = new TriggerDaemon(config_fixtures.test_config);
+    });
+
+    describe("and trigger on temp <= 27", function() {
+        var temperature_data;
+        var trigger;
+        var mqttTestClient;
+
+        beforeEach(function () {
+            temperature_data = data_fixtures.temperature_less_than_or_equal_27;
+            trigger = new Trigger(trigger_fixtures.temperature_less_than_or_equal_27);
+            mqttTestClient = mqtt.connect(config_fixtures.test_config.mqtt.uri);
+        });
+
+        it("the trigger's condition should evaluate to true", function() {
+            triggerd.addTrigger(trigger);   // Trigger Happy
+
+            expect(triggerd
+                   .filter_triggers_by_sensor_id(
+                       trigger.sensor_id
+                   )[0].eval_condition(this, temperature_data.value)).to.be.equal(true);
+        });
+
+        it("should send a MQTT alert", function(done) {
+            mqttTestClient.on('connect', function() {
+                mqttTestClient.subscribe('sensors/temperature_le27/alerts');
+//              mqttTestClient.publish('sensors/temperature/alerts','{"alert" : "Hot"}' );
+              //  triggerd.addTrigger(trigger);   // Trigger Happy
+//                mqttTestClient.publish('sensors/temperature/data', JSON.stringify(temperature_data));
+                triggerd.processSensorData(temperature_data);
+            });
+
+
+            mqttTestClient.on('message', function(topic, message) {
+                var json;
+                try {
+                    json = JSON.parse(message);
+                } catch(error) {
+                    logger.error("Malformated JSON received: " + message);
+                }
+
+                if (topic.match(/sensors\/temperature_le27\/alert/)) {
+                    expect(json).to.deep.equal(JSON.parse('{ "alert": "Ok" }'));
+                    done();
+                };
+            });
+        });
+    });
+});
+
+
+describe("When temp data >= 20", function() {
+    var triggerd;
+    before(function () {
+        triggerd = new TriggerDaemon(config_fixtures.test_config);
+    });
+
+    describe("and trigger on temp >= 20", function() {
+        var temperature_data;
+        var trigger;
+        var mqttTestClient;
+
+        beforeEach(function () {
+            temperature_data = data_fixtures.temperature_greater_than_or_equal_20;
+            trigger = new Trigger(trigger_fixtures.temperature_greater_than_or_equal_20);
+            mqttTestClient = mqtt.connect(config_fixtures.test_config.mqtt.uri);
+        });
+
+        it("the trigger's condition should evaluate to true", function() {
+            triggerd.addTrigger(trigger);   // Trigger Happy
+
+            expect(triggerd
+                   .filter_triggers_by_sensor_id(
+                       trigger.sensor_id
+                   )[0].eval_condition(this, temperature_data.value)).to.be.equal(true);
+        });
+
+        it("should send a MQTT alert", function(done) {
+            mqttTestClient.on('connect', function() {
+                mqttTestClient.subscribe('sensors/temperature_ge20/alerts');
+//              mqttTestClient.publish('sensors/temperature/alerts','{"alert" : "Hot"}' );
+              //  triggerd.addTrigger(trigger);   // Trigger Happy
+//                mqttTestClient.publish('sensors/temperature/data', JSON.stringify(temperature_data));
+                triggerd.processSensorData(temperature_data);
+            });
+
+
+            mqttTestClient.on('message', function(topic, message) {
+                var json;
+                try {
+                    json = JSON.parse(message);
+                } catch(error) {
+                    logger.error("Malformated JSON received: " + message);
+                }
+
+                if (topic.match(/sensors\/temperature_ge20\/alert/)) {
+                    expect(json).to.deep.equal(JSON.parse('{ "alert": "Ok" }'));
+                    done();
+                };
             });
         });
     });
@@ -316,9 +621,9 @@ describe("When a temperature sensor sends data", function() {
 
 
 // it("there should be 1 trigger", function(done) {
-    //     triggerd.addTrigger(trigger_fixtures.valid_1);
-    //     TriggerModel.count({}, function(err, c) {
-    //         done();
+//     triggerd.addTrigger(trigger_fixtures.valid_1);
+//     Trigger.count({}, function(err, c) {
+//         done();
     //     });
 
 

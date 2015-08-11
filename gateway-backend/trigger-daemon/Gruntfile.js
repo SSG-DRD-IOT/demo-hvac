@@ -42,7 +42,7 @@ module.exports = function(grunt) {
                     interrupt: true,
                     debounceDelay: 250,
                 },
-                files: ['Gruntfile.js', 'server.js', 'src/*.js', 'test/*.js'],
+                files: ['Gruntfile.js', 'server.js', 'src/*.js', 'test/*.js', 'test/fixtures/*.js'],
                 tasks: ['mochaTest']
             }
         }

@@ -56,6 +56,7 @@ var TriggerDaemon = function (config) {
     self.start = function () {};
 
     self.triggers = [];
+    self.stash = [];
 
     // Connect to the MQTT server
     self.mqttClient  = mqtt.connect(self.config.mqtt.uri);
@@ -79,7 +80,7 @@ var TriggerDaemon = function (config) {
     };
 
     self.closeMQTT = function() {
-        self.mqttClient.end();
+      //  self.mqttClient.end();
     };
 
     self.closeMongoDB = function () {
@@ -126,7 +127,7 @@ var TriggerDaemon = function (config) {
         // Determine which topic Command Dispatcher
         if (utils.isSensorTopic(topic)) {
             // Received a message on a Sensor MQTT topic
-            processSensorData(json);
+            self.processSensorData(json);
         }
 
         // else if (utils.isRefreshTopic(topic)) {
@@ -140,9 +141,29 @@ var TriggerDaemon = function (config) {
 
     self.filter_triggers_by_sensor_id = function(id) {
         return _.filter(self.triggers, {sensor_id : id});
-    }
+    };
 
+    self.processSensorData = function(json) {
+        var sensor_id = json.sensor_id;
+        var value = json.value;
 
+        // Loop through all of the triggers for the sensor which
+        // is sending this incoming sensor data.
+
+        self.stash[sensor_id] = value;
+
+        _.forEach(
+            self.filter_triggers_by_sensor_id(
+                sensor_id
+            ),
+
+            // Check if the triggers predicate evaluates to true
+            function(trigger) {
+                if (trigger.eval_condition(self, value)) {
+                    trigger.eval_triggerFunc(self);
+                }
+            });
+     };
 };
 
 // // Every time a new message is received, do the following
