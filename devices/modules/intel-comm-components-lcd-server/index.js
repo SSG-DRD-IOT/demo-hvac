@@ -50,7 +50,7 @@ client.on('message', function (topic, message) {
     {
       setInterval (function ()
       {
-        for i = 0; i < 10; i++
+        for (i = 0; i < 10; i++)
         {
           myLCD.setColor(0,0,0);
           setTimeout(function()
@@ -64,7 +64,7 @@ client.on('message', function (topic, message) {
     {
       setInterval (function ()
       {
-        for i = 0; i < 10; i++
+        for (i = 0; i < 10; i++)
         {
           myLCD.setColor(0,0,0);
           setTimeout(function()

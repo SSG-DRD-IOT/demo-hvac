@@ -18,7 +18,7 @@ try {
 };
 
 //If we're debugging, require information for the potentiometer.
-if debug == true
+if (debug == true)
 {
   var upm_grove = require('jsupm_grove');
   //If we're debugging this code, we're going to be using a potentiometer.
