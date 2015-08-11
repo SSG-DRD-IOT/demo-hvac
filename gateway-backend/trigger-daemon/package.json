@@ -1,6 +1,6 @@
 {
   "name": "trigger-daemon",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Reads triggers from the database and check for when they should be executed",
   "main": "server.js",
   "scripts": {

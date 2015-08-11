@@ -5,8 +5,6 @@ var mongoose = require('mongoose');
 var _ = require("lodash"); //Library needed for data paring work.
 var config = require("./config.json"); //Configuration information
 
- var mongoose = require('mongoose');
-
 // Import the Database Model Objects
 //var DataModel = require('intel-commerical-iot-database-models').DataModel;
 //var SensorCloudModel = require('intel-commerical-iot-database-models').SensorCloudModel;
@@ -21,7 +19,7 @@ var TriggerModel = require('intel-commerical-iot-database-models').TriggerModel;
 // var triggers = [];
 // var triggers_by_sensor_id = [];
 
- var logger = require('./logger.js');
+var logger = require('./logger.js');
 
 logger.info("Trigger Daemon is starting...");
 
@@ -33,8 +31,10 @@ if(config.debug.level != "true") {
 // Import the Utilities functions
 var utils = require("./utils.js");
 
-var TriggerDaemon = function (config) {
+var TriggerDaemon = function (config, logger) {
     var self = this;
+    self.logger = logger;
+    self.logger.trace("Hello");
 
     var default_config = {
         "mqtt" : {
@@ -104,7 +104,7 @@ var TriggerDaemon = function (config) {
 
     // On the start of a connection, do the following...
     self.mqttClient.on('connect', function () {
-        logger.trace("Connected to MQTT server");
+        self.logger.info("Connected to MQTT server");
         self.mqttClient.subscribe('trigger/refresh');
         self.mqttClient.subscribe('trigger/data');
         self.mqttClient.subscribe('sensors/+/data');
@@ -114,14 +114,14 @@ var TriggerDaemon = function (config) {
 
     // Every time a new message is received, do the following
     self.mqttClient.on('message', function (topic, message) {
-        logger.trace(topic + ":" + message);
+        self.logger.trace(topic + ":" + message);
         var json;
 
         // Parse incoming JSON and print an error if JSON is bad
         try {
             json = JSON.parse(message);
         } catch(error) {
-            logger.error("Malformated JSON received: " + message);
+            self.logger.error("Malformated JSON received: " + message);
         }
 
         // Determine which topic Command Dispatcher
@@ -168,14 +168,14 @@ var TriggerDaemon = function (config) {
 
 // // Every time a new message is received, do the following
 // mqttClient.on('message', function (topic, message) {
-//     logger.trace(topic + ":" + message);
+//     self.logger.trace(topic + ":" + message);
 //     var json;
 
 //     // Parse incoming JSON and print an error if JSON is bad
 //     try {
 //         json = JSON.parse(message);
 //     } catch(error) {
-//         logger.error("Malformated JSON received: " + message);
+//         self.logger.error("Malformated JSON received: " + message);
 //     }
 
 //     // Determine which topic Command Dispatcher
@@ -193,16 +193,16 @@ var TriggerDaemon = function (config) {
 // });
 
 // function processTriggers(triggers) {
-//     logger.info("Received a message on the Trigger MQTT topic");
-//     logger.info(triggers);
+//     self.logger.info("Received a message on the Trigger MQTT topic");
+//     self.logger.info(triggers);
 //     var triggerFuncs = _.map(triggers, function(element) {
 
-//         logger.info("element.condition: " + element.condition);
+//         self.logger.info("element.condition: " + element.condition);
 //         var op = element.condition.match(/[<>=]+/);
 //         var triggerValue = element.condition.match(/\d+/);
 
 //         if (op == "" || triggerValue == "") {
-//             logger.error("SyntaxError: with op or triggerValue");
+//             self.logger.error("SyntaxError: with op or triggerValue");
 //             return;
 //         }
 //         var fcond = compareFuncBuilder(op, triggerValue);
@@ -210,19 +210,19 @@ var TriggerDaemon = function (config) {
 //     });
 
 //     triggers_by_sensor_id = _.groupBy(triggerFuncs, "sensor_id");
-//     logger.debug(triggers_by_sensor_id);
+//     self.logger.debug(triggers_by_sensor_id);
 // }
 
 // function processRefresh(json) {
 //     // Message recieved on the refresh topic
-//     logger.info("Received a message on the Refresh MQTT topic");
+//     self.logger.info("Received a message on the Refresh MQTT topic");
 
 
 //     TriggerModel.find({}, function (err, results) {
 //         if (err) {
-//             logger.error("Error in fetching triggers from the database");
+//             self.logger.error("Error in fetching triggers from the database");
 //         } else {
-//             logger.info("Publishing new triggers from db");
+//             self.logger.info("Publishing new triggers from db");
 //             mqttClient.publish('trigger/data', JSON.stringify(results));
 //         }
 //     });
@@ -240,7 +240,7 @@ var TriggerDaemon = function (config) {
 //         // Check if the triggers predicate evaluates to true
 //         function(trigger) {
 //             if (trigger.condfunc(value)) {
-//                 logger.info("Trigger has fired!  " + trigger.name);
+//                 self.logger.info("Trigger has fired!  " + trigger.name);
 
 //                 // Build the topic string for the actuator that is notified
 //                 var actuatorTopic = 'actuator/' + trigger.actuator_id + '/trigger';
@@ -261,3 +261,5 @@ var TriggerDaemon = function (config) {
 // }
 
 module.exports = TriggerDaemon;
+
+new TriggerDaemon(config, logger);

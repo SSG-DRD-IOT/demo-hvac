@@ -4,14 +4,10 @@
     },
 
     "mongodb" : {
-        "host" : "mongodb://localhost/iotdemo"
-    },
-
-    "sqlite3" : {
-        "file" : "/industrial-demo/db/iotdemo.sqlite"
+        "uri" : "mongodb://localhost/iotdemo"
     },
 
     "debug" : {
-       "level" : "trace"
+       "level" : "info"
     }
 }

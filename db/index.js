@@ -5,7 +5,7 @@ var ActuatorSchema = require('./schema/actuatorSchema.js');
 var TriggerSchema = require('./schema/triggerSchema.js');
 var DataSchema = require('./schema/dataSchema.js');
 var SensorCloudSchema = require('./schema/sensorCloudSchema.js');
-var ErrorSchema = require('./schema/ErrorSchema.js');
+var ErrorSchema = require('./schema/errorSchema.js');
 
 
 module.exports = {
