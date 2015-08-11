@@ -46,7 +46,7 @@ exports.publishData = function publishData(devID, client, string)
 exports.publishErrors = function publishData(devID, client, string)
 {
     //Print to the server
-    var topicTitle = "other/"+deviceID+"/errors";
+    var topicTitle = "sensors/"+deviceID+"/errors";
     client.publish('data', string);
 };
 

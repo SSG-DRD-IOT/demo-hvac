@@ -6,7 +6,8 @@
 var mqtt = require('mqtt');
 var LCD  = require ('jsupm_i2clcd'); //Require the LCD library.
 var dataChannel = "sensors/temperature/data";
-var errorChannel = "other/temperature/errors";
+var errorChannel = "sensors/temperature/errors";
+var alertChannel = "sensors/temperature/alerts";
 var lcdMessage = ""; //Blank space for the LCD message.
 var myLCD = new LCD.Jhd1313m1(6, 0x3E, 0x62); //"address" for the RGB LCD
 
@@ -29,28 +30,48 @@ client.on('message', function (topic, message) {
     myLCD.setCursor(0,1);
     myLCD.write(lcdMessage);
   }
-  if (topic == errorChannel)
+  if (topic == alertChannel)
   {
     //Otherwise, if it's an error topic, we may need to change the color of the
     //RGB LCD.
-    if (message === "too hot") //If the temperature sensor is too hot...
+    if (message === "Hot") //If the temperature sensor is too hot...
     {
       myLCD.setColor(255,0,0);
     }
-    if (message === "too cold" ) //If the temperature sensor is too cold...
+    if (message === "Cold" ) //If the temperature sensor is too cold...
     {
       myLCD.setColor(0,0,255);
     }
-    if (message === "actuator failure" ) //If there's another error condition...
+  }
+  else if (topic == errorChannel)
+  {
+    if (message === "HotError" )   //If there's another error condition...
     {
       setInterval (function ()
       {
-        myLCD.setColor(0,0,0);
-        setTimeout(function()
+        for i = 0; i < 10; i++
         {
-          myLCD.setColor(255,0,0);
-        }, 1000);
-      }, 2000);
+          myLCD.setColor(0,0,0);
+          setTimeout(function()
+          {
+            myLCD.setColor(255,0,0);
+          }, 1000);
+        }
+      }
+    }
+    if (message === "ColdError" )   //If there's another error condition...
+    {
+      setInterval (function ()
+      {
+        for i = 0; i < 10; i++
+        {
+          myLCD.setColor(0,0,0);
+          setTimeout(function()
+          {
+            myLCD.setColor(0,0,255);
+          }, 1000);
+        }
+      }
     }
     if (message === "all clear" ) //If we get the all clear...
     {
