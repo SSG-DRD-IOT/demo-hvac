@@ -1,6 +1,6 @@
 {
   "name": "intel-iot-commercial-edge-devices",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Complete code for setting up a single edge device.",
   "main": "main.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "Drew Williams <drew.williams@intel.com>",
   "license": "MIT",
   "dependencies": {
+    "intel-comm-components-lcd-server": "^1.0.2",
     "intel-comm-components-manager": "^1.0.0",
     "intel-comm-gateway-discovery": "^1.0.0",
     "intel-comm-pinpublisher": "^1.0.0",

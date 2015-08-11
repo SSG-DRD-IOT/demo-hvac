@@ -51,7 +51,7 @@ function loop ()
                     if (debug === true)
                     {
                       var numericValue = +data;
-                      var rel = +groveRotary.rel_value() * 0.10;
+                      var rel = +groveRotary.rel_value() * 0.05;
                       var data = numericValue + rel;
                     }
                     winston.log('debug','Data was read from a pin: ' + data);

@@ -1,11 +1,15 @@
 {
   "name": "intel-comm-components-lcd-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "LCD server (watches MQTT streams + reports data)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Drew Williams",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+      "upm": "^0.0.20",
+      "mqtt": "^1.3.0"
+  }
 }
