@@ -19,6 +19,7 @@ client.on('connect', function ()
 {
   client.subscribe(dataChannel);
   client.subscribe(errorChannel);
+  client.subscribe(alertChannel);
 });
 
 client.on('message', function (topic, message) {
