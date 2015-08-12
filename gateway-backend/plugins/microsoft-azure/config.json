@@ -17,7 +17,7 @@
 
   "trigger": "trigger",
 
-  "debug": "true",
+  "debug": "false",
 
   "rules":[
     {

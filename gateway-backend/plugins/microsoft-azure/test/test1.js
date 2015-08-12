@@ -14,7 +14,13 @@ setInterval(function(){
 });
 }, 1000);
 // azure.delete();
+
 console.log(util.inspect(azure.listeners('trigger')));
+
+azure.on('trigger', function(data){
+  console.log('Trigger : ');
+  console.log(data);
+});
 
 return;
 

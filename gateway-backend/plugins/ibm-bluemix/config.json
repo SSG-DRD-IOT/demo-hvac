@@ -1,9 +1,11 @@
 {
-    "org" : "hg40h1",
+    "org" : "q4nnuh",
+    "port" : "1883",
     "type" : "iot-gateway",
     "id" : "020086a5e8ec",
     "auth-method" : "token",
-    "auth-token" : "X9Odm_(y7Lhd_mYKs0",
+    "auth-token" : "l)iZvVWt97bdEhp0a8",
     "username" : "use-token-auth",
-    "route" : ".messaging.internetofthings.bluemixcloud.com"
+    "route" : ".messaging.internetofthings.bluemixcloud.com",
+    "debug" : "true"
 }

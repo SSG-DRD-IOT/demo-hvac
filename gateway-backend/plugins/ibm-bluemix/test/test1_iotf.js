@@ -29,7 +29,9 @@ var bluemix = new ibm(config);
 bluemix.emit('connect');
 console.log('After connect');
 
-bluemix.emit('write', Math.floor((Math.random() * 30) + 60));
+setInterval(function(){
+  bluemix.emit('write', Math.floor((Math.random() * 30) + 60));
+  }, 2000);
 // console.log(util.inspect(bluemix.listeners('trigger')));
 
 
@@ -40,7 +42,7 @@ bluemix.emit('write', Math.floor((Math.random() * 30) + 60));
 console.log(util.inspect(bluemix.listeners('trigger')));
 
 bluemix.on('trigger', function(data){
-  console.log('Trigger : 1');
+  console.log('Trigger : ');
   console.log(data);
 });
 
