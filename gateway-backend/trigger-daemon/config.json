@@ -1,6 +1,6 @@
 {
     "mqtt" : {
-        "url" : "mqtt://localhost"
+        "uri" : "mqtt://localhost"
     },
 
     "mongodb" : {
@@ -8,6 +8,6 @@
     },
 
     "debug" : {
-       "level" : "true"
+       "level" : "trace"
     }
 }

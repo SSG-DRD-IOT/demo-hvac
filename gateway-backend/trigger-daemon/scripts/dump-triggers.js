@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var config = require("../config.json");//Configuration information
 
-mongoose.connect(config.mongodb.host);
+mongoose.connect(config.mongodb.uri);
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
