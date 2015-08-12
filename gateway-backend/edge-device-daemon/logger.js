@@ -54,7 +54,7 @@ var logger = new (winston.Logger)({
             silent: false,
             colorize: true,
             timestamp: true,
-            filename: './cloud-daemon.log',
+            filename: './edge-device-daemon.log',
             maxsize: 400000,
             maxFiles: 10,
             json: false
