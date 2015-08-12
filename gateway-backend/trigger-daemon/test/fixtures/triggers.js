@@ -82,7 +82,7 @@ var trigger_fixtures = {
         actuator_id : "fan",
         validator_id : "sound",
         condition :  "( function(temperature) { return temperature <= 27; } )",
-        triggerFunc: "( function() { this.stash = \"It worked!\"; this.mqttClient.publish('sensors/temperature_le27/alerts','{\"alert\" : \"Ok\"}' ); })",
+        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature_le27/alerts','{\"alert\" : \"Ok\"}' ); })",
         active: true
     },
 
