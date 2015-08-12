@@ -59,7 +59,7 @@ mqttClient.on('message', function (topic, message) {
             if (err)
                 logger.error(err);
             else
-                logger.trace("Wrote to db:" + sensor.toString());
+                logger.trace("Wrote sensor to db:" + sensor.toString());
         });
     };
 
@@ -69,7 +69,8 @@ mqttClient.on('message', function (topic, message) {
             if (err)
                 logger.error(err);
             else
-                logger.trace("Wrote to db:" + data.toString());
+                logger.info(data.sensor_id + ":" + data.value);
+                logger.trace("Wrote data to db:" + data.toString());
         });
     }
 });

@@ -132,7 +132,7 @@ var TriggerDaemon = function (config) {
 
     // Every time a new message is received, do the following
     self.mqttClient.on('message', function (topic, message) {
-        logger.info(topic + ":" + message);
+        logger.info(topic + ":" + message.toString());
         var json;
 
         // Parse incoming JSON and print an error if JSON is bad
@@ -165,9 +165,10 @@ var TriggerDaemon = function (config) {
 
         // Loop through all of the triggers for the sensor which
         // is sending this incoming sensor data.
-        logger.info("Stash: " + sensor_id + ":" + value);
+     //   logger.info("Stash: " + sensor_id + ":" + value);
+     //   console.log(self.stash);
         self.stash[sensor_id] = value;
-        console.log(self.stash);
+       // console.log(self.stash);
 
         _.forEach(
             self.filter_triggers_by_sensor_id(

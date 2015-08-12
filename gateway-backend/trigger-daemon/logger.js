@@ -36,7 +36,7 @@ var logger = new (winston.Logger)({
                 timestamp: false
             }),
         new (winston.transports.File)({
-            prettyPrint: false,
+            prettyPrint: true,
             level: 'info',
             silent: false,
             colorize: true,
