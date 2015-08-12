@@ -20,63 +20,66 @@ client.on('connect', function ()
   client.subscribe(dataChannel);
   client.subscribe(errorChannel);
   client.subscribe(alertChannel);
+  myLCD.setColor(0,0,0);
 });
 
-client.on('message', function (topic, message) {
+client.on('message', function (topic, message)
+{
   // message is Buffer
   if (topic == dataChannel)
   {
     //Print the new temperature to the LCD screen.
-    lcdMessage = message + " celsius";
+    myLCD.write("");
+    lcdMessage = JSON.parse(message).value + " celsius";
     myLCD.setCursor(0,1);
     myLCD.write(lcdMessage);
   }
   if (topic == alertChannel)
   {
-    //Otherwise, if it's an error topic, we may need to change the color of the
-    //RGB LCD.
-    if (message === "Hot") //If the temperature sensor is too hot...
+
+    //If it's too hot...
+    if (JSON.parse(message).alert === "Hot") //If the temperature sensor is too hot...
     {
+      //Set the screen color to red.
       myLCD.setColor(255,0,0);
     }
-    if (message === "Cold" ) //If the temperature sensor is too cold...
+    //If it's too cold...
+    if (JSON.parse(message).alert === "Cold" ) //If the temperature sensor is too cold...
     {
+      //Set the screen color to blue
       myLCD.setColor(0,0,255);
-    }
+   }
+   //If it's too cold...
+   if (JSON.parse(message).alert === "Ok" ) //If the temperature sensor is too cold...
+   {
+     //Set the screen color to blue
+     myLCD.setColor(0,0,0);
+   }
   }
   else if (topic == errorChannel)
   {
     if (message === "HotError" )   //If there's another error condition...
     {
-      setInterval (function ()
+      for (i = 0; i < 10; i++)
       {
-        for (i = 0; i < 10; i++)
+        myLCD.setColor(0,0,0);
+        setTimeout(function()
         {
-          myLCD.setColor(0,0,0);
-          setTimeout(function()
-          {
-            myLCD.setColor(255,0,0);
-          }, 1000);
-        }
+          myLCD.setColor(255,0,0);
+        }, 1000);
+        delay(1000);
       }
     }
     if (message === "ColdError" )   //If there's another error condition...
     {
-      setInterval (function ()
+      for (i = 0; i < 10; i++)
       {
-        for (i = 0; i < 10; i++)
+        myLCD.setColor(0,0,0);
+        setTimeout(function()
         {
-          myLCD.setColor(0,0,0);
-          setTimeout(function()
-          {
-            myLCD.setColor(0,0,255);
-          }, 1000);
-        }
+          myLCD.setColor(255,0,0);
+        }, 1000);
+        delay(1000);
       }
     }
-    if (message === "all clear" ) //If we get the all clear...
-    {
-      myLCD.setColor(0,0,0);
-    }
-  }
 });
