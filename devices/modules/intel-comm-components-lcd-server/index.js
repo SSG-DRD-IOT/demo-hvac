@@ -69,16 +69,20 @@ client.on('message', function (topic, message)
     if (parsedMessage.alert === "HotError" )   //If there's another error condition...
     {
       myLCD.setColor(255,255,0);
+      myLCD.setCursor(1,1);
+      myLCD.write("Heating error.");
       setTimeout( function() {
         myLCD.setColor(255,255,255);
-      }, 1000);
+      }, 5000);
     }
     if (parsedMessage.alert === "ColdError" )   //If there's another error condition...
     {
       myLCD.setColor(255,0,255);
+      myLCD.setCursor(1,1);
+      myLCD.write("Cooling error.");
       setTimeout( function() {
         myLCD.setColor(255,255,255);
-      }, 1000);
+      }, 5000);
     }
   }
 });
