@@ -8,6 +8,6 @@
     "pin" : "0",
     "transport" : "mqtt",
     "gateway" : {
-        "hostname" : "mqtt://192.168.0.146"
+        "hostname" : "mqtt://192.168.1.1"
     }
 }

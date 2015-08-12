@@ -17,7 +17,7 @@ function getTransportProtocol (configFile) {
 //Code Resource: http://stackoverflow.com/questions/5878682/node-js-hash-string
 function returnDeviceID(configFile)
 {
-  return crypto.createHash('md5').update(configFile.description).digest('hex');
+  return configFile.name;
 }
 
 /////Connect to a transport protocol.  Returns a client, or other file needed by

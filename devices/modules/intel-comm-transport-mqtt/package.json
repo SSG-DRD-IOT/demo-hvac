@@ -1,6 +1,6 @@
 {
   "name": "intel-comm-transport-mqtt",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Networking interfaces for IoT Commercial projects - MQTT Flavor.",
   "main": "index.js",
   "scripts": {

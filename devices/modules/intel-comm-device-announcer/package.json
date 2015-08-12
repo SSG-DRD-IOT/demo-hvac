@@ -1,15 +1,13 @@
 {
   "name": "intel-comm-device-announcer",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Responsible to announce an IoT device to the Intel Iot Gateway Demo",
+  "keywords": [],
+  "author": "Intel",
+  "license": "MIT",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "intel-comm-transport-manager": "^1.0.5",
+    "intel-comm-transport-manager": "1.0.5",
     "winston": "^1.0.1"
   }
 }
