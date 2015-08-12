@@ -3,10 +3,10 @@ var mqtt = require('mqtt');
 var _ = require('lodash');
 var client  = mqtt.connect(config.mqtt.url);
 
-var tempSensorName = "1";
+var tempSensorName = "temperature";
 var tempSensorTopic = "sensors/" + tempSensorName + "/data";
 
-var lightSensorName = "2";
+var lightSensorName = "light";
 var lightSensorTopic = "sensors/" + lightSensorName + "/data";
 
 client.on('connect', function () {
@@ -15,13 +15,13 @@ client.on('connect', function () {
 
 function getRandomTemp(min, max) {
     // Returns a random number between min (inclusive) and max (exclusive)
-  return Math.random() * (max - min) + min;
+  return Math.round(Math.random() * (max - min) + min);
 }
 
 setInterval(function() {
-    var temp = getRandomTemp(70, 90);
+    var temp = getRandomTemp(17, 30);
 
-    var lightTemp = getRandomTemp(63, 67);
+    var lightTemp = "off"; 
     var current_time = (new Date).getTime();
 
     var str = '{"sensor_id": "'

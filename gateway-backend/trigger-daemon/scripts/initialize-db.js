@@ -20,7 +20,7 @@ var ActuatorModel = require('intel-commerical-iot-database-models').ActuatorMode
 var actuators = [
     {
         "id": "fan",
-        "ipaddress": "192.168.1.2",
+        "ipaddress": "http://10.246.15.223:10010",
         "name": "fan",
         "description": "Decreases the temperature",
         "active": "true",
@@ -28,7 +28,7 @@ var actuators = [
     },
     {
         "id": "light",
-        "ipaddress": "192.168.1.3",
+        "ipaddress": "http://10.246.11.73:10010",
         "name": "light",
         "description": "Increases the temperature",
         "active": "true",
@@ -85,8 +85,8 @@ var triggers = [
         sensor_id : "temperature",
         actuator_id : "fan",
         validator_id : "sound",
-        condition :  "( function(temperature) { return temperature > 27; } )",
-        triggerFunc: "( function() { if (this.stash[\"light\"] == \"on\") { this.mqttClient.publish('sensors/temperature_g27_light_on/alerts','{\"alert\" : \"HotError\"}' ); }})",
+        condition :  "( function(temperature) { return this.stash[\"light\"] == \"on\" && temperature > 27; } )",
+        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature_g27_light_on/alerts','{\"alert\" : \"HotError\"}' ); })",
         active: true
     },
     {
@@ -95,8 +95,8 @@ var triggers = [
         sensor_id : "temperature",
         actuator_id : "fan",
         validator_id : "sound",
-        condition :  "( function(temperature) { return temperature < 20; } )",
-        triggerFunc: "( function() { if (this.stash[\"fan\"] == \"on\") { this.mqttClient.publish('sensors/temperature_l20_fan_on/alerts','{\"alert\" : \"ColdError\"}' ); }})",
+        condition :  "( function(temperature) { return this.stash[\"fan\"] == \"on\" && temperature < 20; } )",
+        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature_l20_fan_on/alerts','{\"alert\" : \"ColdError\"}' ); })",
         active: true
     },
 
@@ -128,7 +128,7 @@ var triggers = [
         sensor_id : "temperature",
         actuator_id : "fan",
         validator_id : "sound",
-        condition : "( function(temperature) { return temperature >= 20; } )",
+        condition : "( function(temperature) { return temperature < 27 && temperature >= 20; } )",
         triggerFunc : "( function() { this.mqttClient.publish('sensors/temperature_ge20/alerts','{\"alert\" : \"Ok\"}' ); })",
         active: true
     }

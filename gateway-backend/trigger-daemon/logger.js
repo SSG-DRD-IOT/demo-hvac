@@ -29,7 +29,7 @@ var logger = new (winston.Logger)({
     transports: [
         new (winston.transports.Console)(
             {
-                level: 'trace',
+                level: 'info',
                 prettyPrint: true,
                 colorize: true,
                 silent: false,

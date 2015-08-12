@@ -91,12 +91,22 @@ describe("When instantiating the Trigger Daemon", function() {
         });
 
         it("the default log level should error", function () {
-            expect(triggerd.config.debug.level).to.be.eql("error");
+            expect(triggerd.config.debug.level).to.be.eql("false");
         });
 
         it("there should be a function called processSensorData", function() {
             expect(triggerd.config).to.be.ok;
             expect(triggerd.hasOwnProperty('processSensorData')).to.be.true;
+        });
+
+        it("there should be a function called refreshTriggers", function() {
+            expect(triggerd.config).to.be.ok;
+            expect(triggerd.hasOwnProperty('refreshTriggers')).to.be.true;
+        });
+
+        it("there should be a function called processTriggers", function() {
+            expect(triggerd.config).to.be.ok;
+            expect(triggerd.hasOwnProperty('processTriggers')).to.be.true;
         });
 
     });
