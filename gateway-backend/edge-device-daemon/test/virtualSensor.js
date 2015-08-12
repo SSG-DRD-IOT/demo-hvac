@@ -21,7 +21,7 @@ function getRandomTemp(min, max) {
 setInterval(function() {
     var temp = getRandomTemp(17, 30);
 
-    var lightTemp = "off"; 
+    var lightTemp = getRandomTemp(200, 1000);
     var current_time = (new Date).getTime();
 
     var str = '{"sensor_id": "'
@@ -43,8 +43,8 @@ setInterval(function() {
             + '", "timestamp":"'
             + current_time +'"}';
 
-    console.log(str);
-    client.publish(lightSensorTopic, str);
+//    console.log(str);
+//    client.publish(lightSensorTopic, str);
 
 
 }, config.interval);
