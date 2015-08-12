@@ -14,7 +14,7 @@ var errorModel = require('intel-commerical-iot-database-models').ErrorModel;
 var logger = require('./logger.js');
 
 logger.info("Trigger Daemon is starting...");
-
+config.debug.level = "false";
 if(config.debug.level != "true") {
     logger.transports.file.level = 'error';
     logger.transports.console.level = 'error';
@@ -53,7 +53,7 @@ var TriggerDaemon = function (config) {
     self.mqttClient  = mqtt.connect(self.config.mqtt.uri);
 
     // Connect to the MongoDB server
-    var db = mongoose.connect(config.mongodb.uri);
+    var db = mongoose.createConnection(self.config.mongodb.uri);
     logger.info("Getting Triggers from the database");
 
     TriggerModel.find({}, function (err, triggers) {
@@ -80,6 +80,7 @@ var TriggerDaemon = function (config) {
     // });
 
     self.close = function() {
+        console.log("Trigger Daemon is closing");
         self.closeMQTT();
         self.closeMongoDB();
     };
@@ -89,8 +90,7 @@ var TriggerDaemon = function (config) {
     };
 
     self.closeMongoDB = function () {
-      //  console.log("Mongoose Disconnecting");
-        mongoose.disconnect();
+        mongoose.connection.close();
     };
 
 //    db.once('open', function () {
@@ -182,8 +182,32 @@ var TriggerDaemon = function (config) {
                     trigger.eval_triggerFunc(self);
                 }
             });
-     };
+    };
+
+
+
+    self.temperature_ok = function() {
+        this.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Ok\"}' );
+    };
+
+    self.temperature_too_cold = function() {
+        this.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Cold\"}' );
+    };
+
+    self.temperature_too_hot = function() {
+        this.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Hot\"}' );
+    };
+
+    self.temperature_cooling_error = function() {
+        this.mqttClient.publish('sensors/temperature/errors','{\"alert\" : \"ColdError\"}' );
+    };
+
+    self.temperature_heating_error = function() {
+        this.mqttClient.publish('sensors/temperature/errors','{\"alert\" : \"HotError\"}' );
+    };
+
 };
+
 
 // // Every time a new message is received, do the following
 // mqttClient.on('message', function (topic, message) {
