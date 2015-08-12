@@ -112,27 +112,15 @@ var triggers = [
     },
 
     {
-        id : "temperature_less_than_or_equal_27",
-        name : "temperature_less_than_or_equal_27",
+        id : "temperature_is_ok",
+        name : "temperature_is_ok",
         sensor_id : "temperature",
         actuator_id : "fan",
         validator_id : "sound",
-        condition :  "( function(temperature) { return temperature <= 27; } )",
-        triggerFunc: "( function() { this.stash = \"It worked!\"; this.mqttClient.publish('sensors/temperature_le27/alerts','{\"alert\" : \"Ok\"}' ); })",
+        condition :  "( function(temperature) { return temperature > 20 && temperature <= 27; } )",
+        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature_le27/alerts','{\"alert\" : \"Ok\"}' ); })",
         active: true
-    },
-
-    {
-        id : "temperature_greater_than_or_equal_20",
-        name : "temperature_greater_than_or_equal_20",
-        sensor_id : "temperature",
-        actuator_id : "fan",
-        validator_id : "sound",
-        condition : "( function(temperature) { return temperature < 27 && temperature >= 20; } )",
-        triggerFunc : "( function() { this.mqttClient.publish('sensors/temperature_ge20/alerts','{\"alert\" : \"Ok\"}' ); })",
-        active: true
-    }
-];
+    }];
 
 
 
