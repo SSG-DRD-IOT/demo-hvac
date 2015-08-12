@@ -1,6 +1,6 @@
 {
   "name": "intel-comm-pinpublisher",
-  "version": "1.0.9",
+  "version": "1.0.12",
   "description": "Sensor publisher for IoT projects",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,7 @@
   "dependencies": {
     "intel-comm-components-manager": "^1.0.0",
     "intel-comm-transport-manager": "^1.0.0",
-    "upm": "0.0.20"
+    "upm": "0.0.20",
+    "winston": "^1.0.1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "intel-comm-components-manager",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Manager for sensor components for IoT Commercial Demo.",
   "main": "index.js",
   "scripts": {

@@ -20,13 +20,13 @@ var Trigger = require('intel-commerical-iot-database-models').TriggerModel;
 //var ErrorModel = require('intel-commerical-iot-database-models').ErrorModel;
 var TriggerDaemon = require('../server.js');
 
-// mongoose.connect(config_fixtures.test_config.mongodb.uri);
-// var db = mongoose.connection;
+mongoose.createConnection(config_fixtures.test_config.mongodb.uri);
+var db = mongoose.connection;
 
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function (callback) {
-//     console.log("Connection to MongoDB successful");
-// });
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function (callback) {
+    console.log("Connection to MongoDB successful");
+});
 
 describe("The Trigger Daemon", function () {
     before (function () {
@@ -66,11 +66,8 @@ describe("When instantiating the Trigger Daemon", function() {
 
     describe(" with no configuration file", function() {
         before (function () {
-            triggerd = new TriggerDaemon();
-        });
-
-        after(function() {
             triggerd.close();
+            triggerd = new TriggerDaemon();
         });
 
         it ("should exist", function() {
@@ -91,7 +88,7 @@ describe("When instantiating the Trigger Daemon", function() {
         });
 
         it("the default log level should error", function () {
-            expect(triggerd.config.debug.level).to.be.eql("error");
+            expect(triggerd.config.debug.level).to.be.eql("false");
         });
 
         it("there should be a function called processSensorData", function() {
@@ -99,10 +96,21 @@ describe("When instantiating the Trigger Daemon", function() {
             expect(triggerd.hasOwnProperty('processSensorData')).to.be.true;
         });
 
+        it("there should be a function called refreshTriggers", function() {
+            expect(triggerd.config).to.be.ok;
+            expect(triggerd.hasOwnProperty('refreshTriggers')).to.be.true;
+        });
+
+        it("there should be a function called processTriggers", function() {
+            expect(triggerd.config).to.be.ok;
+            expect(triggerd.hasOwnProperty('processTriggers')).to.be.true;
+        });
+
     });
 
     describe("with a configuration file", function() {
         before (function () {
+            triggerd.close();
             triggerd = new TriggerDaemon(config_fixtures.config_1);
         });
 
@@ -283,10 +291,6 @@ describe("When a temperature sensor sends data", function() {
         it("should be the only trigger evaluated", function() {
             triggerd.addTrigger(fan_on_trigger);
 
-            // triggerd
-            //     .triggers_by_sensor_id[fan_on_trigger.sensor_id]
-            //     .length.should.equal(1);
-
             _.filter(
                 triggerd.triggers,
                 {sensor_id : fan_on_trigger.sensor_id})
@@ -401,6 +405,11 @@ describe("When temp data > 27", function() {
                 };
             });
         });
+
+        it("should record an error in the database", function() {
+
+        });
+
     });
 });
 

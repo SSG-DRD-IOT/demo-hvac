@@ -17,30 +17,31 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
+							    <th>Expand</th>
                                 <th>Trigger Name</th>
                                 <th>Trigger Id</th>
                                 <th>Sensor Id</th>
 								<th>Actuator Id</th>
-								<th>Condition</th>
-								<th>Trigger Function</th>
 								<th>Active</th>
                             </tr>
                         </thead>
                       <tbody>	
-                         
-									<tr ng:repeat="trigger in triggers">
+                         <tr ng-repeat-start="trigger in triggers" class="dropdown-toggle">
+							<td>
+								<button ng-if="trigger.expanded" ng-click="trigger.expanded = false">-</button>
+								<button ng-if="!trigger.expanded" ng-click="trigger.expanded = true">+</button>
+							</td>
 									 <td>{{trigger.id}}</td>
 									  <td>{{trigger.name}}</td>
 									   <td>{{trigger.sensor_id}}</td>
 									    <td>{{trigger.actuator_id}}</td>
-										 <td>{{trigger.condition}}</td>
-										 <td>{{trigger.triggerFunc}}</td>
 										 <td>{{trigger.active}}</td>
 									</tr>
-	
+							<tr ng-if="trigger.expanded" ng-repeat-end=""><td colspan = "8">
+							<p> Condition : </p> {{trigger.condition}}
+							<p>Trigger Function: </p> {{trigger.triggerFunc}}
+				</tr></td>	
                         </tbody>
                     </table>
                 </div>
 				</div>
-                
-   

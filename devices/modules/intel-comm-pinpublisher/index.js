@@ -52,7 +52,8 @@ function loop ()
                     {
                       var numericValue = +data;
                       var rel = +groveRotary.rel_value() * 0.05;
-                      var data = numericValue + rel;
+                      var firstPassData = numericValue + rel;
+                      var data = firstPassData.toFixed(2)
                     }
                     winston.log('debug','Data was read from a pin: ' + data);
 

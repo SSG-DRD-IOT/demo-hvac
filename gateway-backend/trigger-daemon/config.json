@@ -8,6 +8,6 @@
     },
 
     "debug" : {
-       "level" : "info"
+       "level" : "true"
     }
 }

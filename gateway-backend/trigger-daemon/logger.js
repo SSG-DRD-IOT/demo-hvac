@@ -29,14 +29,14 @@ var logger = new (winston.Logger)({
     transports: [
         new (winston.transports.Console)(
             {
-                level: 'trace',
+                level: 'info',
                 prettyPrint: true,
                 colorize: true,
                 silent: false,
                 timestamp: false
             }),
         new (winston.transports.File)({
-            prettyPrint: false,
+            prettyPrint: true,
             level: 'info',
             silent: false,
             colorize: true,
