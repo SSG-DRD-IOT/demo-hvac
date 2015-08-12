@@ -75,7 +75,7 @@ var triggers = [
         actuator_id : "fan",
         validator_id : "sound",
         condition :  "( function(temperature) { return temperature > 27; } )",
-        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature_g27/alerts','{\"alert\" : \"Hot\"}' ); })",
+        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Hot\"}' ); })",
         active: true
     },
 
@@ -86,7 +86,7 @@ var triggers = [
         actuator_id : "fan",
         validator_id : "sound",
         condition :  "( function(temperature) { return this.stash[\"light\"] == \"on\" && temperature > 27; } )",
-        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature_g27_light_on/alerts','{\"alert\" : \"HotError\"}' ); })",
+        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"HotError\"}' ); })",
         active: true
     },
     {
@@ -96,7 +96,7 @@ var triggers = [
         actuator_id : "fan",
         validator_id : "sound",
         condition :  "( function(temperature) { return this.stash[\"fan\"] == \"on\" && temperature < 20; } )",
-        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature_l20_fan_on/alerts','{\"alert\" : \"ColdError\"}' ); })",
+        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"ColdError\"}' ); })",
         active: true
     },
 
@@ -107,7 +107,7 @@ var triggers = [
         actuator_id : "fan",
         validator_id : "sound",
         condition : "( function(temperature) { return temperature < 20; } )",
-        triggerFunc : "( function() { this.mqttClient.publish('sensors/temperature_l20/alerts','{\"alert\" : \"Cold\"}' ); })",
+        triggerFunc : "( function() { this.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Cold\"}' ); })",
         active: true
     },
 
@@ -118,7 +118,7 @@ var triggers = [
         actuator_id : "fan",
         validator_id : "sound",
         condition :  "( function(temperature) { return temperature > 20 && temperature <= 27; } )",
-        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature_le27/alerts','{\"alert\" : \"Ok\"}' ); })",
+        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Ok\"}' ); })",
         active: true
     }];
 
