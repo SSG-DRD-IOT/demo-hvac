@@ -71,29 +71,18 @@ var trigger_fixtures = {
         actuator_id : "fan",
         validator_id : "sound",
         condition : "( function(temperature) { return temperature < 20; } )",
-        triggerFunc : "( function() { this.mqttClient.publish('sensors/temperature_l20/alerts','{\"alert\" : \"Cold\"}' ); })",
+        triggerFunc : "( function() { this.temperature_too_cold();} )",
         active: true
     },
 
-    temperature_less_than_or_equal_27 : {
+    temperature_ok : {
         id : "FanOnTrue",
         name : "FanOn",
         sensor_id : "temperature",
         actuator_id : "fan",
         validator_id : "sound",
         condition :  "( function(temperature) { return temperature <= 27; } )",
-        triggerFunc: "( function() { this.mqttClient.publish('sensors/temperature_le27/alerts','{\"alert\" : \"Ok\"}' ); })",
-        active: true
-    },
-
-    temperature_greater_than_or_equal_20 : {
-        id : "FanOnTrue",
-        name : "FanOn",
-        sensor_id : "temperature",
-        actuator_id : "fan",
-        validator_id : "sound",
-        condition : "( function(temperature) { return temperature >= 20; } )",
-        triggerFunc : "( function() { this.mqttClient.publish('sensors/temperature_ge20/alerts','{\"alert\" : \"Ok\"}' ); })",
+        triggerFunc: "( function() { this.temperature_ok(); } )",
         active: true
     }
 
