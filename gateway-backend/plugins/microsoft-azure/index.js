@@ -3,8 +3,8 @@ var azureTable = require('azure-table-node');
 // Lodash is a functional library for manipulating data structures
 var _ = require("lodash");
 
-// Setup a logging system in this daemon
-var winston = require('winston');
+// Setup a logging system in this plugin
+var logger = require('./logger.js');
 
 function azure(json) {
   var self = this;
@@ -12,57 +12,9 @@ function azure(json) {
   self.client;
   self.dataQuery = {};
 
-  self.logger = new (winston.Logger)({
-    levels: {
-      trace: 0,
-      input: 1,
-      verbose: 2,
-      prompt: 3,
-      debug: 4,
-      info: 5,
-      data: 6,
-      help: 7,
-      warn: 8,
-      error: 9
-    },
-    colors: {
-      trace: 'magenta',
-      input: 'grey',
-      verbose: 'cyan',
-      prompt: 'grey',
-      debug: 'blue',
-      info: 'green',
-      data: 'grey',
-      help: 'cyan',
-      warn: 'yellow',
-      error: 'red'
-    },
-    transports: [
-      new (winston.transports.File)({
-        prettyPrint: false,
-        level: 'info',
-        silent: false,
-        colorize: true,
-        timestamp: true,
-        filename: './microsoft-azure-plugin.log',
-        maxsize: 400000,
-        maxFiles: 10,
-        json: false
-      }),
-      new (winston.transports.Console)(
-        {
-          level: 'trace',
-          prettyPrint: true,
-          colorize: true,
-          silent: false,
-          timestamp: false
-        })
-      ]
-    });
-
     if(self.config.debug != "true") {
-      self.logger.remove(winston.transports.Console);
-      self.logger.remove(winston.transports.File);
+      logger.remove(winston.transports.Console);
+      logger.remove(winston.transports.File);
     }
 
     azure.prototype.connect = function(callback){
@@ -83,21 +35,21 @@ function azure(json) {
           if(err) {
             if(err.statusCode == 409) {
               result = true;
-              self.logger.info('Azure - Table already exists');
+              logger.info('Azure - Table already exists');
             } else {
-              self.logger.error('Azure - Table creation failed');
-              self.logger.error('Azure - Connection failed');
-              self.logger.error(err);
+              logger.error('Azure - Table creation failed');
+              logger.error('Azure - Connection failed');
+              logger.error(err);
               result = false;
             }
           } else {
             result = true;
-            self.logger.info('Azure - Connected successfully');
+            logger.info('Azure - Connected successfully');
           }
           callback(result);
         });
       } else {
-        self.logger.error('Azure - Connection failed');
+        logger.error('Azure - Connection failed');
       }
 
     };
@@ -121,10 +73,10 @@ function azure(json) {
 
         self.client.insertOrReplaceEntity(self.config.table, entity, function(err, results){
           if(err){
-            self.logger.error('Azure - Data sending failed');
-            self.logger.error(err);
+            logger.error('Azure - Data sending failed');
+            logger.error(err);
           } else {
-            self.logger.info('Azure - Data sent successfully');
+            logger.info('Azure - Data sent successfully');
             //logger.info(results);
           }
         });
@@ -147,10 +99,10 @@ function azure(json) {
         // onlyFields: ['sensor_id', 'timestamp', 'value']
       }, function(err, results, continuation) {
         if(err) {
-          self.logger.error('Azure - Data read failed');
+          logger.error('Azure - Data read failed');
         } else {
           _.map(results, function(d) {delete d.Timestamp; delete d.RowKey; delete d.PartitionKey});
-          self.logger.info("Azure - Data recieved: %d", results.length);
+          logger.info("Azure - Data recieved: %d", results.length);
           //logger.info(results);
         }
         callback(err, results);
@@ -159,8 +111,8 @@ function azure(json) {
 
     azure.prototype.delete = function() {
       self.client.deleteTable(self.config.table, function (err, resp) {
-        if(err) self.logger.error(err);
-        else self.logger.info('Table deleted');
+        if(err) logger.error(err);
+        else logger.info('Table deleted');
       });
     };
 
