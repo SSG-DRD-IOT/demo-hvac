@@ -9,7 +9,7 @@
  //var config = require('./config.json');
 angular.module('sbAdminApp')
 
-  .controller('MainCtrl',['$scope', '$http', function($scope,$http,$position) {
+  .controller('MainCtrl',['$scope','$location','$http', '$window',function($scope,$location,$http,$window) {
     
     // To get Number of Sensors for Main Page
     $http.get('/noOfSensor').success(function(data,satus) {
