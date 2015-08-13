@@ -17,8 +17,8 @@ var logger = require('./logger.js');
 logger.info("Trigger Daemon is starting...");
 
 //if(config.debug.level != "true") {
-logger.transports.file.level = 'trace';
-logger.transports.console.level = 'trace';
+logger.transports.file.level = config.debug.level;
+logger.transports.console.level = config.debug.level;
 //}
 
 // Import the Utilities functions
@@ -38,7 +38,7 @@ var TriggerDaemon = function (config) {
         },
 
         "debug" : {
-            "level" : "false"
+            "level" : "error"
         }
     };
 
@@ -128,7 +128,6 @@ var TriggerDaemon = function (config) {
         self.mqttClient.subscribe('trigger/refresh');
         self.mqttClient.subscribe('trigger/data');
         self.mqttClient.subscribe('sensors/+/data');
-        //        self.mqttClient.publish('trigger/refresh', '{"refresh" : "true"}');
     });
 
 
@@ -186,51 +185,87 @@ var TriggerDaemon = function (config) {
             });
     };
 
+    var sound_threshold = 40;
+    var light_threshold = 40;
+    var temp_high_threshold = 27;
+    var temp_low_threshold = 20;
+
+    self.temperature_greater_than_27_condition = function(temperature) {
+        return temperature > temp_high_threshold;
+    };
+
+    self.temperature_less_than_20_condition = function (temperature) {
+        return temperature < temp_low_threshold;
+    };
+
+    self.temperature_ok_condition = function(temperature) {
+        return temperature > temp_low_threshold && temperature <= temp_high_threshold;
+    };
+
+    self.temperature_greater_than_27_light_on_condition = function (temperature) {
+        return self.stash["light"] > light_threshold && temperature > temp_high_threshold;
+    };
+
+    self.temperature_less_than_20_fan_on_condition = function(temperature) {
+        return self.stash["sound"] > sound_threshold && temperature < temp_low_threshold;
+    };
+
+    self.temperature_greater_than_27_fan_off_condition = function (temperature) {
+        return self.stash["sound"] < sound_threshold && temperature > temp_high_threshold;
+    };
+
+    self.temperature_less_than_20_light_off_condition = function(temperature) {
+        return self.stash["light"] < light_threshold && temperature < temp_low_threshold;
+    };
 
 
     self.temperature_ok = function() {
         self.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Ok\"}' );
 
-        // http.get('http://fanandsound/...', function (err, res) {
-	//     if (err) {
-	// 	logger.error(err);
-	//     }
+        http.get('http://fanandsound:10010/action?deviceId=fan&action=off', function (err, res) {
+	    if (err) {
+                logger.error("Unable to turn fan off");
+		logger.error(err);
+	    }
+            logger.info("Turning fan off");
+	    //logger.trace(res.code, res.headers, res.buffer.toString());
+        });
 
-	//     //console.log(res.code, res.headers, res.buffer.toString());
-        // });
 
+        http.get('http://lightandlamp:10010/action?deviceId=light&action=off', function (err, res) {
+	    if (err) {
+                logger.error("Unable to turn light off");
+		logger.error(err);
+	    }
 
-        // http.get('http://lightandlamp/...', function (err, res) {
-	//     if (err) {
-	// 	logger.error(err);
-	//     }
-
-	//     //console.log(res.code, res.headers, res.buffer.toString());
-        // });
+	    //console.log(res.code, res.headers, res.buffer.toString());
+        });
     };
 
     self.temperature_too_cold = function() {
         self.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Cold\"}' );
 
-        // http.get('http://lightandlamp/...', function (err, res) {
-	//     if (err) {
-	// 	logger.error(err);
-	//     }
+        http.get('http://lightandlamp:10010/action?deviceId=light&action=on', function (err, res) {
+	    if (err) {
+                logger.error("Unable to turn light on");
+		logger.error(err);
+	    }
 
-	//     //console.log(res.code, res.headers, res.buffer.toString());
-        // });
+	    //console.log(res.code, res.headers, res.buffer.toString());
+        });
     };
 
     self.temperature_too_hot = function() {
         self.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Hot\"}' );
 
-        // http.get('http://fanandsound/...', function (err, res) {
-	//     if (err) {
-	// 	logger.error(err);
-	//     }
-
-	//     //console.log(res.code, res.headers, res.buffer.toString());
-        // });
+        http.get('http://fanandsound:10010/action?deviceId=fan&action=on', function (err, res) {
+	    if (err) {
+                logger.error("Unable to turn fan on");
+		logger.error(err);
+	    }
+            logger.info("Turning fan off");
+//	    logger.trace(res.code, res.headers, res.buffer.toString());
+        });
     };
 
 
@@ -250,7 +285,7 @@ var TriggerDaemon = function (config) {
         // The LCD screen status will changed based on this MQTT alert
         logger.error("Heating Error");
         self.mqttClient.publish('sensors/temperature/errors','{\"alert\" : \"HotError\"}' );
-        var error = new ErrorModel({ type: "HotError", message: "The fan has failed to run, and the temperature is too hot"});
+        var error = new ErrorModel({ type: "HotError", message: "The fan has failed to run"});
 
         error.save(function(err, sensor) {
             if (err) { throw(err); }

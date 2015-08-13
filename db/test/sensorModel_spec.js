@@ -92,17 +92,21 @@ describe("When a sensor is associated with a cloud provider", function() {
             var sensor = new Sensor(sensor_fixtures.valid_sensor_1);
 
             sensor.cloudproviders.push(cloudprovider_fixtures.microsoft);
+//            console.log(sensor);
+
             sensor.save(function(err, sensor) {
                 try {
                     Sensor.find({}, function(err, sensors) {
                         if (err) console.log(err);
-                        expect(err).to.be.empty;
+                        console.log(err);
+                        expect(err).to.be.null;
                         sensors.length.should.equal(1);
+                        console.log(sensors[0].cloudproviders.length);
+                        expect(sensors[0].cloudproviders.length).should.equal(1);
+                        expect(sensors[0].cloudproviders[0].name).should.equal("microsofdt");
+                        done();
                     });
-                    Sensor.findOne({}, function(s) {
-                        expect(s.cloudproviders).length.should.equal(1);
-                    });
-                    done();
+
                 } catch( err ) {
                     done( err );
                 }
