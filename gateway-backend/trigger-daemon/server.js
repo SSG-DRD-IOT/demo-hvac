@@ -191,46 +191,46 @@ var TriggerDaemon = function (config) {
     self.temperature_ok = function() {
         self.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Ok\"}' );
 
-        http.get('http://fanandsound/...', function (err, res) {
-	    if (err) {
-		logger.error(err);
-	    }
+        // http.get('http://fanandsound/...', function (err, res) {
+	//     if (err) {
+	// 	logger.error(err);
+	//     }
 
-	    //console.log(res.code, res.headers, res.buffer.toString());
-        });
+	//     //console.log(res.code, res.headers, res.buffer.toString());
+        // });
 
 
-        http.get('http://lightandlamp/...', function (err, res) {
-	    if (err) {
-		logger.error(err);
-	    }
+        // http.get('http://lightandlamp/...', function (err, res) {
+	//     if (err) {
+	// 	logger.error(err);
+	//     }
 
-	    //console.log(res.code, res.headers, res.buffer.toString());
-        });
+	//     //console.log(res.code, res.headers, res.buffer.toString());
+        // });
     };
 
     self.temperature_too_cold = function() {
         self.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Cold\"}' );
 
-        http.get('http://lightandlamp/...', function (err, res) {
-	    if (err) {
-		logger.error(err);
-	    }
+        // http.get('http://lightandlamp/...', function (err, res) {
+	//     if (err) {
+	// 	logger.error(err);
+	//     }
 
-	    //console.log(res.code, res.headers, res.buffer.toString());
-        });
+	//     //console.log(res.code, res.headers, res.buffer.toString());
+        // });
     };
 
     self.temperature_too_hot = function() {
         self.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Hot\"}' );
 
-        http.get('http://fanandsound/...', function (err, res) {
-	    if (err) {
-		logger.error(err);
-	    }
+        // http.get('http://fanandsound/...', function (err, res) {
+	//     if (err) {
+	// 	logger.error(err);
+	//     }
 
-	    //console.log(res.code, res.headers, res.buffer.toString());
-        });
+	//     //console.log(res.code, res.headers, res.buffer.toString());
+        // });
     };
 
 
