@@ -7,3 +7,13 @@ gateway-backend/edge-device-daemon/.#server.js
 
 
 *.log
+
+*._0
+
+*.0
+
+*.ns
+
+*.bson
+
+*.lock
