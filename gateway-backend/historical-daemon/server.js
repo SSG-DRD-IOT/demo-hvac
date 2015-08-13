@@ -53,9 +53,9 @@ app.listen(4000);
 
 function formatDataForPlot(results, name){
     values = [];
-    for(i in results) {
+    for(i=0;i<50 && i<results.length;i++) {
       entity = {};
-        entity.x = results[i].timestamp;
+        entity.x = parseInt(i);
         entity.y = results[i].value;
         values.push(entity);
     }
