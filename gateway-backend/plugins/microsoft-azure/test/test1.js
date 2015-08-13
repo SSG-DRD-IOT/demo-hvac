@@ -3,14 +3,7 @@ var config = require("../config.json");
 
 var azure = new azure(config);
 
-azure.connect(function(status)
-{
-  if(status) {
-    console.log('Connected successfully');
-  } else {
-    console.log('Connection failed');
-  }
-});
+azure.connect();
 
 // azure.delete();
 // return;

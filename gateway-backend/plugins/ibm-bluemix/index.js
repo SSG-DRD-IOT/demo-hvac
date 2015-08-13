@@ -6,6 +6,7 @@ var _ = require("lodash");
 
 // Setup a logging system in this plugin
 var logger = require('./logger.js');
+var winston = require('winston');
 
 function ibm(json){
   var self = this;

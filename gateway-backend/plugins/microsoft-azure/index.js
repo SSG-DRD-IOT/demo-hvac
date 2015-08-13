@@ -6,6 +6,8 @@ var _ = require("lodash");
 // Setup a logging system in this plugin
 var logger = require('./logger.js');
 
+var winston = require('winston');
+
 function azure(json) {
   var self = this;
   self.config = json;
@@ -17,7 +19,7 @@ function azure(json) {
     logger.remove(winston.transports.File);
   }
 
-  azure.prototype.connect = function(callback){
+  azure.prototype.connect = function(){
 
     //  logger.info('Azure: Entered connect function');
     azureTable.setDefaultClient({
@@ -34,19 +36,15 @@ function azure(json) {
       self.client.createTable(self.config.table, function(err, resp) {
         if(err) {
           if(err.statusCode == 409) {
-            result = true;
             logger.info('Azure - Table already exists');
           } else {
             logger.error('Azure - Table creation failed');
             logger.error('Azure - Connection failed');
             logger.error(err);
-            result = false;
           }
         } else {
-          result = true;
           logger.info('Azure - Connected successfully');
         }
-        callback(result);
       });
     } else {
       logger.error('Azure - Connection failed');
@@ -58,18 +56,10 @@ function azure(json) {
   azure.prototype.write = function(data) {
 
     // logger.info('Azure - Write function');
-
-    // Batch write does n't seem to work
-    //  var batchClient = self.client.startBatch();
-
-
     for(i in data) {
       entity = data[i];
       entity['PartitionKey'] = entity.sensor_id.toString();
       entity['RowKey'] = entity.timestamp.toString();
-
-      // Logging entities to be sent
-      // logger.info(data);
 
       self.client.insertOrReplaceEntity(self.config.table, entity, function(err, results){
         if(err){

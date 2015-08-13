@@ -22,10 +22,6 @@ var _ = require("lodash");
 var Azure = require('intel-commerical-iot-microsoft-azure-pubsub');
 var Bluemix = require('intel-commerical-iot-ibm-bluemix-pubsub');
 
-// Import the Database Model Objects
-var DataModel = require('intel-commerical-iot-database-models').DataModel;
-var SensorCloudModel = require('intel-commerical-iot-database-models').SensorCloudModel;
-
 // Setup the Azure and Google objects
 var azure = new Azure(config.microsoftAzure);
 var bluemix = new Bluemix(config.ibmBluemix);
@@ -41,6 +37,8 @@ var logger = require('./logger.js');
 
 // Create the express application
 var app = express();
+
+var winston = require('winston');
 
 if(config.debug != "true") {
     logger.remove(winston.transports.File);

@@ -4,10 +4,8 @@
 // Intel Iot Gateway and storing them in the cloud
 //
 // Currently, this daemon supports four cloud providers:
-//     1. Amazon Kinesis
-//     2. Microsoft Azure
-//     3. Google DataStorage
-//     4. IBM BlueMix
+//     1. Microsoft Azure
+//     2. IBM BlueMix
 //
 // The daemon retrieves all new data from the database every 60 seconds
 // and retrieves the associations between sensors and cloud providers
@@ -22,12 +20,23 @@ var _ = require("lodash");
 
 // Load the I/O and connectivity libraries
 var mqtt = require('mqtt');
-// var sqlite3 = require('sqlite3').verbose();
 
 var Azure = require('intel-commerical-iot-microsoft-azure-pubsub');
 var Bluemix = require('intel-commerical-iot-ibm-bluemix-pubsub');
 
+// Import the Database Model Objects
+var DataModel = require('intel-commerical-iot-database-models').DataModel;
+var SensorCloudModel = require('intel-commerical-iot-database-models').SensorCloudModel;
+
 var logger = require('./logger.js');
+
+// Setup the Azure and Google objects
+var azure = new Azure(config.microsoftAzure);
+var bluemix = new Bluemix(config.ibmBluemix);
+
+// Establish connection to cloud providers
+azure.connect();
+bluemix.connect();
 
 var utils = {
     getSensorIDs: function (data) {

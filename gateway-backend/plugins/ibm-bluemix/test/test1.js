@@ -8,31 +8,19 @@ count = 0;
 var result = [];
 
 
-while (count < 5)
+while (count < 50)
 {
-  result.push({ sensor_id : 'sensor-4321',
+  result.push({ sensor_id : 'light',
   value : (Math.random() * 30) + 60,
-  timestamp : Math.floor(Date.now()/1000)
+  timestamp : Math.floor((Math.random() * 542356) + 789876)
 });
 count++;
 }
 
-//console.log(result);
-
-data = {
-  sensor_id: "5678",
-  value : 80,
-  timestamp : Date.now()
-}
-
 ibm.write(result);
 
-var date = new Date();
-date.setDate(date.getDate() - 1);
-
 ibm.read({
-  "sensor_id" : "sensor-4321",
-  "timestamp" : Date.parse(date)/1000
+  "sensor_id" : "light"
 }, function(err, res){
-  if(!err) console.log(res);
+  // if(!err) console.log(res);
 });
