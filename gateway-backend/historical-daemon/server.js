@@ -61,15 +61,12 @@ function formatDataForPlot(results, name){
         entity.y = results[i].value;
         values.push(entity);
     }
-    sensorData = {
+    graphData = [{
       "name" : name,
       "color" : config.color,
       "data" : values
-      };
-
-    graphData = [];
-    graphData.push(sensorData);
-    graphData.push(sensorData);
+    }];
+    sensorData = {"values": values};
     //logger.log(sensorData);
 }
 
