@@ -8,6 +8,11 @@ var ErrorSchema = new mongoose.Schema({
     message : {
         type: String,
         required: true
+    },
+    timestamp: {
+        type: Date,
+        default: Date.now,
+        required: true
     }
 });
 
