@@ -1,0 +1,12 @@
+Packages rquired before starting this installation: Node, npm, bower
+
+
+
+1. In gateway-frontend folder, run "npm install"
+
+2. Go to app folder "cd app"
+
+3. In app folder, run "bower install"
+
+
+To start frontend application, go to gateway-frontend folder and run "node server.js"
