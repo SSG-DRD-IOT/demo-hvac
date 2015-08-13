@@ -39,6 +39,7 @@ var client = {};
 //Now we can define a loop we'll be using later:
 function loop ()
 {
+    var data = "";
     var loopnum = 0; //Debugging.  Every time the loop restarts, the loopnum goes to 0.
     var interval = config.frequency * 1000; //Get our frequency, from config.
     //Defined in seconds.
@@ -47,7 +48,11 @@ function loop ()
                 {
                     winston.log('debug','Loop began.'); //Loop is beginning its work.
                     //Get a reading (UPM style)
-                    var data = component.value();
+                    data = component.value();
+                    if (config.name == "light")
+                    {
+                      data = component.raw_value();
+                    }
                     if (debug === true)
                     {
                       var numericValue = +data;
