@@ -64,7 +64,7 @@ angular.module('sbAdminApp')
   // To get data for graph display
   $http.get('http://localhost:4000/api/v0001/azure/historic/data?id=temperature').success(function(data,status) {
     //  alert(angular.toJson(data));
-    $scope.temperatue = angular.toJson(data);
+    $scope.temperature = angular.toJson(data);
   });
 
   $scope.url = $scope.swaggerUrl = 'http://10.246.15.211:10010';
