@@ -1,6 +1,6 @@
 {
   "name": "intel-comm-transport-manager",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Networking interfaces for IoT Commercial projects.",
   "main": "index.js",
   "scripts": {
