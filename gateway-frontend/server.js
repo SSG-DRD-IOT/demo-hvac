@@ -28,6 +28,16 @@ restapi.use(express.static(__dirname + '/app'));
 
 
 
+// API to get list from Error table
+restapi.get('/listerror', function(req, res){
+    Error.find({}, function(err, errors) {
+        res.json(errors);
+    });
+});
+
+
+
+
 // API to get list from actuator table
 restapi.get('/listActuator', function(req, res){
     Actuator.find({}, function(err, actuators) {

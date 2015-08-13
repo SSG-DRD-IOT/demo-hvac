@@ -37,13 +37,15 @@ angular.module('sbAdminApp')
   };
 
   // To get data for customization of cloud
-  $http.get('/getCustomizeCloud').success(function(data,status) {
-    $scope.customizeCloud = data;
+  //$http.get('/getCustomizeCloud').success(function(data,status) {
+   // $scope.customizeCloud = data;
+  //});
+
+
+  // To get data from actuator table
+  $http.get('/listerror').success(function(data,status) {
+    $scope.errors = data;
   });
-
-
-
-
 
 
   // To get data from actuator table
@@ -62,17 +64,17 @@ angular.module('sbAdminApp')
   });
 
   // To get data for graph display
-  $http.get('http://localhost:4000/api/v0001/azure/historic/data?id=temperature').success(function(data,status) {
+ // $http.get('http://localhost:4000/api/v0001/azure/historic/data?id=temperature').success(function(data,status) {
     //  alert(angular.toJson(data));
     // $scope.temperature = angular.toJson(data);
-  });
+  //});
 
-  $http.get('http://localhost:4000/api/v0001/bluemix/historic/data?id=light').success(function(data,status) {
+  //$http.get('http://localhost:4000/api/v0001/bluemix/historic/data?id=light').success(function(data,status) {
     //  alert(angular.toJson(data));
     // $scope.light = angular.toJson(data);
-  });
+  //});
 
-  $scope.url = $scope.swaggerUrl = 'http://10.246.15.211:10010';
+  //$scope.url = $scope.swaggerUrl = 'http://10.246.15.211:10010';
 
   $scope.removeRow = function(triggerId){
     var data = "{\"id\":\""+triggerId+ "\"}";

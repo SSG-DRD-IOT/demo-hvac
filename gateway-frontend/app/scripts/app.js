@@ -287,6 +287,30 @@ angular
           }
         }
    })
+   
+   
+   .state('dashboard.errorListTable',{
+       templateUrl:'views/ui-elements/errorListTable.html',
+       url:'/errorListTable',
+        controller:'MainCtrl',
+       resolve: {
+          loadMyFile:function($ocLazyLoad) {
+            $ocLazyLoad.load({
+                name:'sbAdminApp',
+                files:[
+				'scripts/controllers/main.js',
+				'scripts/controllers/table.js'
+				]
+            })
+            $ocLazyLoad.load(
+                {
+                  name:'ngRoute',
+                  files:['bower_components/angular-route/angular-route.js']
+                })
+          }
+        }
+   })
+   
   }]);
 
     
