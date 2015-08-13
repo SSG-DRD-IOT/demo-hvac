@@ -1,6 +1,6 @@
 {
   "name": "trigger-daemon",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Reads triggers from the database and check for when they should be executed",
   "main": "server.js",
   "scripts": {
@@ -14,6 +14,7 @@
   "author": "Intel",
   "license": "MIT",
   "dependencies": {
+    "http-request": "^0.7.0",
     "intel-commerical-iot-database-models": "^1.0.9",
     "lodash": "^3.10.1",
     "mongoose": "^4.1.1",

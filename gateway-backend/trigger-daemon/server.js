@@ -2,6 +2,7 @@
 //conditions as needed.
 var mqtt = require('mqtt');
 var mongoose = require('mongoose');
+var http = require('http-request');
 var _ = require("lodash"); //Library needed for data paring work.
 var config = require("./config.json"); //Configuration information
 
@@ -9,7 +10,7 @@ var config = require("./config.json"); //Configuration information
 //var DataModel = require('intel-commerical-iot-database-models').DataModel;
 //var SensorCloudModel = require('intel-commerical-iot-database-models').SensorCloudModel;
 var TriggerModel = require('intel-commerical-iot-database-models').TriggerModel;
-var errorModel = require('intel-commerical-iot-database-models').ErrorModel;
+var ErrorModel = require('intel-commerical-iot-database-models').ErrorModel;
 
 var logger = require('./logger.js');
 
@@ -189,22 +190,71 @@ var TriggerDaemon = function (config) {
 
     self.temperature_ok = function() {
         self.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Ok\"}' );
+
+        http.get('http://fanandsound/...', function (err, res) {
+	    if (err) {
+		logger.error(err);
+	    }
+
+	    //console.log(res.code, res.headers, res.buffer.toString());
+        });
+
+
+        http.get('http://lightandlamp/...', function (err, res) {
+	    if (err) {
+		logger.error(err);
+	    }
+
+	    //console.log(res.code, res.headers, res.buffer.toString());
+        });
     };
 
     self.temperature_too_cold = function() {
         self.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Cold\"}' );
+
+        http.get('http://lightandlamp/...', function (err, res) {
+	    if (err) {
+		logger.error(err);
+	    }
+
+	    //console.log(res.code, res.headers, res.buffer.toString());
+        });
     };
 
     self.temperature_too_hot = function() {
         self.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Hot\"}' );
+
+        http.get('http://fanandsound/...', function (err, res) {
+	    if (err) {
+		logger.error(err);
+	    }
+
+	    //console.log(res.code, res.headers, res.buffer.toString());
+        });
     };
 
+
     self.temperature_cooling_error = function() {
+        // The LCD screen status will changed based on this MQTT alert
+        logger.error("Cooling Error");
         self.mqttClient.publish('sensors/temperature/errors','{\"alert\" : \"ColdError\"}' );
+
+        var error = new ErrorModel({ type: "ColdError", message: "The lamp has failed to run, and the temperature is too cold"});
+
+        error.save(function(err, sensor) {
+            if (err) { throw(err); }
+        });
     };
 
     self.temperature_heating_error = function() {
+        // The LCD screen status will changed based on this MQTT alert
+        logger.error("Heating Error");
         self.mqttClient.publish('sensors/temperature/errors','{\"alert\" : \"HotError\"}' );
+        var error = new ErrorModel({ type: "HotError", message: "The fan has failed to run, and the temperature is too hot"});
+
+        error.save(function(err, sensor) {
+            if (err) { throw(err); }
+        });
     };
 
 };
