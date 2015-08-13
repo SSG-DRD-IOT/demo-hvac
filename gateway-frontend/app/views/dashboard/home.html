@@ -29,64 +29,29 @@
       <div class="panel panel-default">
         <div class="panel-heading">Temperature Sensor</div>
         <div class="panel-body">
-          <rickshaw rickshaw-options="options2" rickshaw-features="features2" rickshaw-series="temperature">    </rickshaw>
+          <rickshaw rickshaw-options="tempOptions" rickshaw-features="features" rickshaw-series="temperature">    </rickshaw>
         </div>
       </div>
     </div>
   </div>
 
-
-  <!--
   <div class="row">
-  <div class="col-lg-6 col-sm-12" id="doughnut-chart" ng-controller="ChartCtrl">
-  <div class="panel panel-default">
-  <div class="panel-heading">Doughnut Chart</div>
-  <div class="panel-body">
-  <canvas id="doughnut" class="chart chart-doughnut chart-xs" data="line1.data" labels="line1.labels" legend="false"></canvas>
-</div>
-</div>
-</div>
-<div class="col-lg-6 col-sm-12" id="radar-chart" ng-controller="ChartCtrl">
-<div class="panel panel-default">
-<div class="panel-heading">Radar Chart</div>
-<div class="panel-body">
-<canvas id="area" class="chart chart-radar" data="line2.data" labels="line2.labels" click="onClick"></canvas>
-</div>
-</div>
-</div>
-<div class="col-lg-6 col-sm-12" id="pie-chart" ng-controller="ChartCtrl">
-<div class="panel panel-default">
-<div class="panel-heading">Pie Chart</div>
-<div class="panel-body">
-<canvas id="pie" class="chart chart-pie chart-xs" data="pie.data" labels="pie.labels"></canvas>
-</div>
-</div>
-</div>
-<div class="col-lg-6 col-sm-12" id="polar area-chart" ng-controller="ChartCtrl">
-<div class="panel panel-default">
-<div class="panel-heading">Polar Area Chart</div>
-<div class="panel-body">
-<canvas id="polar" class="chart chart-polar-area" data="polar.data" labels="polar.labels"></canvas>
-</div>
-</div>
-</div>
-<div class="col-lg-6 col-sm-12" id="base-chart" ng-controller="ChartCtrl">
-<div class="panel panel-default">
-<div class="panel-heading">Dynamic Chart</div>
-<div class="panel-body">
-<canvas id="base" class="chart chart-base" chart-type="dynamic.type" data="dynamic.data" labels="dynamic.labels" legend="true"></canvas>
-</div>
-</div>
-<button type="button" class="btn btn-primary pull-right" ng-click="dynamic.toggle()">Toggle</button>
-</div>
-</div>  -->
+    <div class="col-lg-12 col-sm-12" id="sound-chart" ng-controller="ChartCtrl">
+      <div class="panel panel-default">
+        <div class="panel-heading">Sound Sensor</div>
+        <div class="panel-body">
+          <rickshaw rickshaw-options="soundOptions" rickshaw-features="features" rickshaw-series="sound">    </rickshaw>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <div class="row">
   <div class="col-lg-12 col-sm-12" id="light-chart" ng-controller="ChartCtrl">
     <div class="panel panel-default">
       <div class="panel-heading">Light Sensor</div>
       <div class="panel-body">
-        <rickshaw rickshaw-options="options2" rickshaw-features="features2" rickshaw-series="light">    </rickshaw>
+        <rickshaw rickshaw-options="lightOptions" rickshaw-features="features" rickshaw-series="light">    </rickshaw>
       </div>
     </div>
   </div>
