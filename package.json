@@ -1,6 +1,6 @@
 {
   "name": "intel-commercial-iot-demo",
-  "version": "1.0.9",
+  "version": "1.0.12",
   "description": "An example IoT training architecture for modeling various commerical deployments",
   "main": "index.json",
   "dependencies": {
