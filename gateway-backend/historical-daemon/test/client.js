@@ -2,7 +2,7 @@ var http = require('http');
 var options = {
             hostname: "localhost"
             ,port: 4000
-            ,path: '/api/v0001/historic/data'
+            ,path: '/api/v0001/azure/historic/data?id=temperature'
             ,method: 'GET'
         };
 

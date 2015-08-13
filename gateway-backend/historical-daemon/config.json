@@ -34,5 +34,7 @@
     "ibmBluemix" : {
         "url" : "mongodb://IbmCloud_ft37d2t4_8o67b5uj_o42uclt0:4EzYj7oYBUymgyE3LhW2-eqt27sQB-tN@ds027613.mongolab.com:27613/IbmCloud_ft37d2t4_8o67b5uj",
         "db": "iotdemoTest1"
-    }
+    },
+
+    "color" : "steelblue"
 }

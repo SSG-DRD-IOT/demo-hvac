@@ -16,13 +16,12 @@ azure.connect(function(status)
 // return;
 
 count = 0;
-var result = [];
+result = [];
 
 
 while (count < 50)
 {
-  //sleep.msleep(200);
-  result.push({ sensor_id : 'sensor-4321',
+  result.push({ sensor_id : 'temperature',
 		value : Math.floor((Math.random() * 30) + 60),
 		timestamp : Math.floor((Math.random() * 542356) + 789876)
 	      });
@@ -31,19 +30,11 @@ while (count < 50)
 
 //console.log(result);
 
-data = {
-    devId: "sensor-4321",
-    value : 80,
-    timestamp : Date.now()
-}
-
-azure.write(result);
+// azure.write(result);
 // return;
-var date = new Date();
-date.setDate(date.getDate() - 1);
 
 azure.read({
-     sensor_id : "sensor-4321"
+     sensor_id : "temperature"
 }, function(err, res){
   if(err) console.log(err);
   // else console.log(res);
