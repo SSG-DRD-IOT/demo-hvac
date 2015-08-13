@@ -104,7 +104,7 @@ angular.module('sbAdminApp')
       }
     }
   };
-  $scope.temperatue = [{
+  $scope.temperature = [{
     name: 'Series 1',
     color: 'steelblue',
     data: [{x: 0, y: 23}, {x: 1, y: 15}, {x: 2, y: 79}, {x: 3, y: 31}, {x: 4, y: 60}]
