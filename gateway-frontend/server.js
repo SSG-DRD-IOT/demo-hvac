@@ -131,18 +131,18 @@ restapi.post('/addTrigger',function(req,res){
 });
 
 // To get api according to actuator Id
-restapi.post('/getApi',function(req,res){
-    db.all("SELECT api FROM actuators WHERE id =\'" + req.param('id') +"\'" , function(err, row){
-        if (err){
-            console.err(err);
-            res.status(500);
-        }
-        else {
-            res.json(eval(row));
-        }
-        res.end();
-    });
-});
+//restapi.post('/getApi',function(req,res){
+   // db.all("SELECT api FROM actuators WHERE id =\'" + req.param('id') +"\'" , function(err, row){
+  //      if (err){
+    //        console.err(err);
+     //       res.status(500);
+      //  }
+       // else {
+        //    res.json(eval(row));
+        //}
+        //res.end();
+    //});
+//});
 
 // API to send sensor data for charts
 // restapi.get('/getSensorData',function(req,res){
@@ -168,13 +168,13 @@ restapi.post('/getApi',function(req,res){
 // });
 
 // Api to customize cloud data
-restapi.get('/getCustomizeCloud', function(req, res){
-    var sql = "SELECT sensors.name AS sensorName, cloudproviders.name AS cloudName, sensors.id AS sensorId, cloudproviders.id AS cloudId FROM cloudproviders, sensors, sensors_clouds WHERE sensors_clouds.sensor_id = sensors.id AND cloudproviders.id = sensors_clouds.cloudprovider_id "
+//restapi.get('/getCustomizeCloud', function(req, res){
+ //   var sql = "SELECT sensors.name AS sensorName, cloudproviders.name AS cloudName, sensors.id AS sensorId, cloudproviders.id AS cloudId FROM cloudproviders, sensors, sensors_clouds WHERE sensors_clouds.sensor_id = sensors.id AND cloudproviders.id = sensors_clouds.cloudprovider_id "
     //  console.log(sql);
-    db.all(sql, function(err,rows){
-        res.json(rows);
-    });
-});
+   // db.all(sql, function(err,rows){
+    //    res.json(rows);
+    //});
+//});
 
 
 // Api to redirect to Angular.JS website
