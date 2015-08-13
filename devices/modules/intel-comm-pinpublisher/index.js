@@ -70,6 +70,8 @@ function loop ()
 
 exports.publishDataLoop = function dataLoop(ip, config) {
 
+    winston.add(winston.transports.File, { filename: 'somefile.log' });
+    winston.remove(winston.transports.Console);
     gatewayIp = ip;
     console.log("'" + gatewayIp + "'");
 

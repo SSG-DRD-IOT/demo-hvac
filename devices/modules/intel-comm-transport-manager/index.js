@@ -24,6 +24,9 @@ function returnDeviceID(configFile)
 /////chosen transportation protocol. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 exports.connectToTransport = function connectToTransport(gatewayIP, configFile)
 {
+  winston.add(winston.transports.File, { filename: 'somefile.log' });
+  winston.remove(winston.transports.Console);
+
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
 
@@ -31,7 +34,6 @@ exports.connectToTransport = function connectToTransport(gatewayIP, configFile)
 
   if (transportProtocol === "mqtt")
   {
-    console.log(gatewayIP);
     client  = mqtt.connectClient(gatewayIP);
     winston.info('Connected to: ' + gatewayIP );
   }
@@ -47,6 +49,8 @@ exports.connectToTransport = function connectToTransport(gatewayIP, configFile)
 /////Publish an announcement to gateway announcement topic. \\\\\\\\\\\\\\\\\\\\
 exports.announcePresence = function announcePresence(client, configFile)
 {
+  winston.add(winston.transports.File, { filename: 'somefile.log' });
+  winston.remove(winston.transports.Console);
 
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
@@ -67,7 +71,6 @@ exports.announcePresence = function announcePresence(client, configFile)
     else if (configFile.type === "actuator")
     {
 		var announceJSON = { id: deviceID, name: configFile.name, description: configFile.description, api: configFile.api, pin: configFile.pin, active: true, ioType: configFile.ioType };
-		console.log(announceJSON);
 		var pubString = JSON.stringify(announceJSON);
 		winston.info('Announcement sent: ' + pubString);
         mqtt.publishAnnouncement(pubString,client);
@@ -87,6 +90,9 @@ exports.announcePresence = function announcePresence(client, configFile)
 //Note: this only publishes one instance of data.  Needs to be called in a loop\
 exports.publishData = function publishDataTopic(client, newData, configFile)
 {
+  winston.add(winston.transports.File, { filename: 'somefile.log' });
+  winston.remove(winston.transports.Console);
+
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
 
@@ -120,6 +126,9 @@ exports.publishData = function publishDataTopic(client, newData, configFile)
 /////Publish errors to device error topic. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 exports.publishError = function publishErrorTopic(client, newError)
 {
+  winston.add(winston.transports.File, { filename: 'somefile.log' });
+  winston.remove(winston.transports.Console);
+
   var deviceID = returnDeviceID(configFile);
   var transportProtocol = getTransportProtocol(configFile);
 
@@ -151,6 +160,9 @@ exports.publishError = function publishErrorTopic(client, newError)
 /////Subscribe to gateway's control topic. Called from actuators. \\\\\\\\\\\\\\
 exports.subscribeControl = function subscribeControlTopic(client, configFile)
 {
+  winston.add(winston.transports.File, { filename: 'somefile.log' });
+  winston.remove(winston.transports.Console);
+  
 	var deviceID = returnDeviceID(configFile);
 	var channelTitle = "actuator/" + deviceID + "/trigger";
 
