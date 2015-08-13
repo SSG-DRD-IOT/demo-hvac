@@ -14,10 +14,15 @@ function bluemix(json){
   self.id = self.config.id;
   self.port = self.config.port;
   self.username = self.config.username;
-  self.password = self.config['auth-token'];
+  self.password = self.config.password;
   self.route = self.config.route;
   self.broker = self.organization + self.route;
+  self.sub_topic = self.config.sub_topic;
+  self.clientId = "d:" + self.organization + ":" + self.type + ":" + self.id;
   self.options = {};
+
+  //Create the url string
+  self.url = self.protocol + '://' + self.broker + ':' + self.port;
 
   if(self.config.debug != "true") {
     logger.remove(winston.transports.Console);
@@ -29,35 +34,34 @@ function bluemix(json){
 
     self.options.username = self.username;
     self.options.password = self.password;
-    self.options.clientId = "d:" + self.organization + ":" + self.type + ":" + self.id;
-    self.client = mqtt.createClient(self.port, self.broker, self.options);
-    // self.client = mqtt.connect(
-    //   {
-    //     host: self.broker,
-    //     port: self.port,
-    //     username: self.username,
-    //     password : self.password,
-    //     clientId : "d:" + self.organization + ":" + self.type + ":" + self.id
-    //   });
+    self.options.clientId = self.clientId;
+
+    self.client = mqtt.connect(
+      {
+        host: self.broker,
+        port: self.port,
+        username: self.username,
+        password : self.password,
+        clientId : self.clientId
+      });
 
     logger.info('Broker: ' + self.broker);
     logger.info('Port: ' + self.port);
     logger.info('User: ' + self.username);
     logger.info('Password: ' + self.password);
-    logger.info('Client ID: ' + "d:" + self.organization + ":" + self.type + ":" + self.id);
+    logger.info('Client ID: ' + self.clientId);
 
     self.client.on('connect', function () {
-      self.topic_sub = 'iot-2/cmd/trigger/fmt/json';
       self.client.subscribe(self.topic_sub);
       logger.info('Connected and subscribed to ' + self.topic_sub);
     });
 
     self.client.on('message', function(topic, message) {
       logger.info('Received command on topic: ' + topic);
-      logger.info(message);
+      logger.info(JSON.parse(message));
       try {
         self.msg = JSON.parse(message);
-        self.emit('trigger', message);
+        self.emit('trigger', self.msg);
       }
       catch (e) {
         logger.error("Couldn't parse recieved command. Please ensure it is valid JSON.");
@@ -70,7 +74,7 @@ function bluemix(json){
   // This allows us to retrieve the records based on devID
 
   this.on('write', function(value) {
-    self.topic_pub = "iot-2/evt/" + self.id + "/fmt/json";
+    self.topic_pub = "iot-2/evt/status/fmt/json";
     self.message = {
       "d" : {
         "value" : value,

@@ -23,7 +23,7 @@ while (count < 50)
 {
   //sleep.msleep(200);
   result.push({ sensor_id : 'sensor-4321',
-		value : Math.floor((Math.random() * 30) + 60),
+		value : (Math.random() * 30) + 60,
 		timestamp : Math.floor((Math.random() * 542356) + 789876)
 	      });
   count++;

@@ -36,5 +36,9 @@
       "sub": "light_off",
       "options": {"sqlExpressionFilter": "value > 70"}
     }
+  ],
+
+  "triggers": [
+    "fan_on": {"":""},
   ]
 }
