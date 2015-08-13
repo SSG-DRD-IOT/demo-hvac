@@ -3,7 +3,7 @@
 
 //As of 7-30-15, we're opting to use UPM for sensors.
 var upm = require('jsupm_grove');
-var loudnessSensor = require('jsupm_groveloudness');
+var loudness = require('jsupm_groveloudness');
 //However, due to the nature of the relays, relays still require
 //a separate API
 
