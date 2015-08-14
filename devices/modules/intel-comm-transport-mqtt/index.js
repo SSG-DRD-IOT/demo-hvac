@@ -39,7 +39,7 @@ exports.publishData = function publishData(devID, client, string)
     //Print to the server
     var channelTitle = "sensors/"+devID+"/data";
     client.publish(channelTitle, string);
-    console.log("Published "+string+ " to "+devID);
+    //console.log("Published "+string+ " to "+devID);
 };
 
 //Publishes errors to the error channel.
