@@ -20,7 +20,7 @@ var ActuatorModel = require('intel-commerical-iot-database-models').ActuatorMode
 var actuators = [
     {
         "id": "fan",
-        "ipaddress": "http://fanandsound:10010",
+        "ipaddress": "http://192.168.1.194:10010",
         "name": "fan",
         "description": "Decreases the temperature",
         "active": "true",
@@ -28,7 +28,7 @@ var actuators = [
     },
     {
         "id": "light",
-        "ipaddress": "http://lightandlamp:10010",
+        "ipaddress": "http://192.168.1.113:10010",
         "name": "light",
         "description": "Increases the temperature",
         "active": "true",
