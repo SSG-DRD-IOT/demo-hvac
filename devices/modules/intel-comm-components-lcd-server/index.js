@@ -72,7 +72,7 @@ client.on('message', function (topic, message)
     }
     if (parsedMessage.alert === "ColdError" )   //If there's another error condition...
     {
-      myLCD.setColor(255,0,255);
+      myLCD.setColor(255,255,0);
     }
   }
 });

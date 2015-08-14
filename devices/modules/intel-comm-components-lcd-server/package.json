@@ -1,6 +1,6 @@
 {
   "name": "intel-comm-components-lcd-server",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "LCD server (watches MQTT streams + reports data)",
   "main": "index.js",
   "scripts": {
