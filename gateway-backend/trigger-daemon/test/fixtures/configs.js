@@ -22,8 +22,19 @@ var triggerd_config_fixture = {
         },
 
         "debug" : {
-            "level" : "error"
+            "level" : {
+                "console" : "error",
+                "file" : "error"
+            }
+        },
+
+        "threshold" : {
+            "temp_high" : 27,
+            "temp_low" : 20,
+            "sound" : 40,
+            "light" : 700
         }
+
     },
     config_1 : {
         "mqtt" : {

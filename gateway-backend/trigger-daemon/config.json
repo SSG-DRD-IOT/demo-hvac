@@ -8,6 +8,16 @@
     },
 
     "debug" : {
-       "level" : "trace"
+       "level" : {
+           "console" : "trace",
+           "file" : "trace"
+       }
+    },
+
+    "threshold" : {
+        "temp_high" : 27,
+        "temp_low" : 20,
+        "sound" : 40,
+        "light" : 700
     }
 }

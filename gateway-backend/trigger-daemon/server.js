@@ -6,20 +6,16 @@ var http = require('http-request');
 var _ = require("lodash"); //Library needed for data paring work.
 var config = require("./config.json"); //Configuration information
 
+var sound_threshold = config.threshold.sound;
+var light_threshold = config.threshold.light;
+var temp_high_threshold = config.threshold.temp_high;
+var temp_low_threshold = config.threshold.temp_low;
+
 // Import the Database Model Objects
-//var DataModel = require('intel-commerical-iot-database-models').DataModel;
-//var SensorCloudModel = require('intel-commerical-iot-database-models').SensorCloudModel;
 var TriggerModel = require('intel-commerical-iot-database-models').TriggerModel;
 var ErrorModel = require('intel-commerical-iot-database-models').ErrorModel;
 
 var logger = require('./logger.js');
-
-logger.info("Trigger Daemon is starting...");
-
-//if(config.debug.level != "true") {
-logger.transports.file.level = config.debug.level;
-logger.transports.console.level = config.debug.level;
-//}
 
 // Import the Utilities functions
 var utils = require("./utils.js");
@@ -38,25 +34,45 @@ var TriggerDaemon = function (config) {
         },
 
         "debug" : {
-            "level" : "error"
+            "level" : {
+                "console" : "error",
+                "file" : "error"
+            }
+        },
+
+        "threshold" : {
+            "temp_high" : 27,
+            "temp_low" : 20,
+            "sound" : 40,
+            "light" : 700
         }
     };
 
     // Set default properties of the Trigger Daemon
     self.config = config || default_config;
 
-    self.start = function () {};
+    // Set default logging options
+    logger.transports.file.level = self.config.debug.level.file || 'error';
+    logger.transports.console.level = self.config.debug.level.console || 'error';
+    logger.info("Trigger Daemon is starting...");
 
+    // Holds the trigger conditions and functions
     self.triggers = [];
+
+    // Holds the last value of each sensor and makes the value available
+    // to the conditions and functions
     self.stash = [];
 
     // Connect to the MQTT server
     self.mqttClient  = mqtt.connect(self.config.mqtt.uri);
 
     // Connect to the MongoDB server
-    var db = mongoose.connect(config.mongodb.uri);
+    self.db = mongoose.createConnection(self.config.mongodb.uri);
+    //console.log(self.db);
     logger.info("Getting Triggers from the database");
 
+    // On Server start, read the triggers from the db and store them
+    // the triggers array.
     TriggerModel.find({}, function (err, triggers) {
         if (err) {
             logger.error("Error in fetching triggers from the database");
@@ -66,16 +82,10 @@ var TriggerDaemon = function (config) {
                       function(triggerJSON) {
                           self.addTrigger(triggerJSON);
                       });
-       	    console.log(self.triggers);
+       	    logger.trace(self.triggers);
 	}
     });
 
-
-    // Save the MongoDB client instance to a property in
-    // the Trigger Daemon object
-    self.mongodb_client = db;
-
-    //var mongodb_connected;
     //    db.on('error', console.error.bind(console, 'connection error:'));
     // db.on('error', function(err) {
     //     throw(err);
@@ -184,11 +194,6 @@ var TriggerDaemon = function (config) {
                 }
             });
     };
-
-    var sound_threshold = 40;
-    var light_threshold = 40;
-    var temp_high_threshold = 27;
-    var temp_low_threshold = 20;
 
     self.temperature_greater_than_27_condition = function(temperature) {
         return temperature > temp_high_threshold;
