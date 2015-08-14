@@ -6,8 +6,8 @@ var crypto = require('crypto');
 var winston = require('winston');
 var mqtt = require('intel-comm-transport-mqtt');
 
-winston.add(winston.transports.File, { filename: 'sensors.log' });
-winston.remove(winston.transports.Console);
+//winston.add(winston.transports.File, { filename: 'sensors.log' });
+//winston.remove(winston.transports.Console);
 
 //var configFile = require('../../config.json');
 
