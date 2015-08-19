@@ -20,10 +20,10 @@ try {
 //If we're debugging, require information for the potentiometer.
 if (debug == true)
 {
-  var upm_grove = require('jsupm_grove');
-  //If we're debugging this code, we're going to be using a potentiometer.
-  //It must be on A3.
-  var groveRotary = new upm_grove.GroveRotary(3);
+    var upm_grove = require('jsupm_grove');
+    //If we're debugging this code, we're going to be using a potentiometer.
+    //It must be on A3.
+    var groveRotary = new upm_grove.GroveRotary(3);
 }
 
 //Now for our normal requirements!
@@ -44,28 +44,24 @@ function loop ()
     var interval = config.frequency * 1000; //Get our frequency, from config.
     //Defined in seconds.
     var component = componentManager.getComponent(config.name, config.pin);
-    setInterval(function () //Start our loop....
-                {
-                    winston.log('debug','Loop began.'); //Loop is beginning its work.
-                    //Get a reading (UPM style)
-                    data = component.value();
-                    if (config.name == "light")
-                    {
-                      data = component.raw_value();
-                    }
-                    if (debug === true)
-                    {
-                      var numericValue = +data;
-                      var rel = +groveRotary.rel_value() * 0.05;
-                      var firstPassData = numericValue + rel;
-                      var data = firstPassData.toFixed(2)
-                    }
-                    winston.log('debug','Data was read from a pin: ' + data);
+    setInterval(function () {
+        //Get a reading (UPM style)
+        data = component.value();
+        if (config.name == "light") {
+            data = component.raw_value();
+        }
+        if (debug === true) {
+            var numericValue = +data;
+            var rel = +groveRotary.rel_value() * 0.05;
+            var firstPassData = numericValue + rel;
+            var data = firstPassData.toFixed(2);
+        }
+        winston.log('debug','Data was read from a pin: ' + data);
 
-                    //Send a reading
-                    transportManager.publishData(client, data, config);
+        //Send a reading
+        transportManager.publishData(client, data, config);
 
-                }, interval);  //Once a [interval]!
+    }, interval);  //Once a [interval]!
 };
 
 exports.publishDataLoop = function dataLoop(ip, config) {
