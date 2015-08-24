@@ -26,11 +26,11 @@
     },
     {
       "sub": "fan_off",
-      "options": {"sqlExpressionFilter": "value >= 68 and value < 75"}
+      "options": {"sqlExpressionFilter": "value >= 70 and value < 75"}
     },
     {
       "sub": "light_on",
-      "options": {"sqlExpressionFilter": "value < 68"}
+      "options": {"sqlExpressionFilter": "value < 65"}
     },
     {
       "sub": "light_off",

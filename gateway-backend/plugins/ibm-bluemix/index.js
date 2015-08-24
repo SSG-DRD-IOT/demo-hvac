@@ -17,7 +17,8 @@ function bluemix(json){
   self.password = self.config.password;
   self.route = self.config.route;
   self.broker = self.organization + self.route;
-  self.sub_topic = self.config.sub_topic;
+  self.topic_sub = self.config.topic_sub;
+  self.topic_pub = self.config.topic_pub;
   self.clientId = "d:" + self.organization + ":" + self.type + ":" + self.id;
   self.options = {};
 
@@ -50,6 +51,7 @@ function bluemix(json){
     logger.info('User: ' + self.username);
     logger.info('Password: ' + self.password);
     logger.info('Client ID: ' + self.clientId);
+    logger.info('Topic Sub: ' + self.topic_sub);
 
     self.client.on('connect', function () {
       self.client.subscribe(self.topic_sub);
@@ -74,7 +76,6 @@ function bluemix(json){
   // This allows us to retrieve the records based on devID
 
   this.on('write', function(value) {
-    self.topic_pub = "iot-2/evt/status/fmt/json";
     self.message = {
       "d" : {
         "value" : value,

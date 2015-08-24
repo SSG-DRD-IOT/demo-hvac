@@ -4,11 +4,11 @@
     "type" : "iot-gateway",
     "id" : "020086a5e8ec",
     "auth-method" : "token",
-    "password" : "T@)NTF54I2PaWK5-Y0",
+    "password" : "J8HO7BNVG_&en1LqO3",
     "username" : "use-token-auth",
     "route" : ".messaging.internetofthings.ibmcloud.com",
     "debug" : "true",
     "protocol" : "mqtt",
-    "sub_topic" : "iot-2/cmd/trigger/fmt/json",
-    "pub_topic" : ""
+    "topic_sub" : "iot-2/cmd/trigger/fmt/json",
+    "topic_pub" : "iot-2/evt/status/fmt/json"
 }
