@@ -1,6 +1,14 @@
 var fixtures = {
-    temperature_greater_than_27: {"sensor_id": "temperature", "value": "28", "timestamp":"1438015679772"},
-    light_on: {"sensor_id": "light", "value": "on", "timestamp":"1438015679772"},
+    too_hot: {
+        "sensor_id": "temperature",
+        "value": "28",
+        "timestamp":"1438015679772"
+    },
+    light_on: {
+        "sensor_id": "light",
+        "value": "1000",
+        "timestamp":"1438015679772"
+    },
     fan_on: {"sensor_id": "fan", "value": "on", "timestamp":"1438015679772"},
 
     temperature_less_than_20: {"sensor_id": "temperature", "value": "19", "timestamp":"1438015679772"},

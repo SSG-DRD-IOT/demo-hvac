@@ -1,3 +1,26 @@
+/*
+ * Author: Daniel Holmlund <daniel.w.holmlund@Intel.com>
+ * Copyright (c) 2015 Intel Corporation.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 //This daemon listens to all data streams, and checks for particular trigger
 //conditions as needed.
 var mqtt = require('mqtt');
@@ -195,11 +218,11 @@ var TriggerDaemon = function (config) {
             });
     };
 
-    self.temperature_greater_than_27_condition = function(temperature) {
+    self.too_hot_condition = function(temperature) {
         return temperature > temp_high_threshold;
     };
 
-    self.temperature_less_than_20_condition = function (temperature) {
+    self.too_cold_condition = function (temperature) {
         return temperature < temp_low_threshold;
     };
 
@@ -207,22 +230,31 @@ var TriggerDaemon = function (config) {
         return temperature > temp_low_threshold && temperature <= temp_high_threshold;
     };
 
-    self.temperature_greater_than_27_light_on_condition = function (temperature) {
-        return self.stash["light"] > light_threshold && temperature > temp_high_threshold;
+    self.light_on_condition = function(light) {
+        return self.stash["light"] > light_threshold;
     };
 
-    self.temperature_less_than_20_fan_on_condition = function(temperature) {
-        return self.stash["sound"] > sound_threshold && temperature < temp_low_threshold;
+    self.fan_on_condition = function(light) {
+        return self.stash["sound"] > light_threshold;
     };
 
-    self.temperature_greater_than_27_fan_off_condition = function (temperature) {
-        return self.stash["sound"] < sound_threshold && temperature > temp_high_threshold;
+   self.light_off_condition = function(light) {
+        return self.stash["light"] <= light_threshold;
     };
 
-    self.temperature_less_than_20_light_off_condition = function(temperature) {
-        return self.stash["light"] < light_threshold && temperature < temp_low_threshold;
+    self.fan_off_condition = function(light) {
+        return self.stash["sound"] <= light_threshold;
     };
 
+    self.heating_error_condition = function (temperature) {
+        return (self.light_on_condition() && self.temperature_too_hot()) ||
+            (self.fan_off_condition() && self.temperature_too_hot());
+    };
+
+    self.cooling_error_condition = function(temperature) {
+        return (self.fan_on_condition() && self.temperature_too_cold()) ||
+            (self.light_off_condition() && self.temperature_too_cold());
+    };
 
     self.temperature_ok = function() {
         self.mqttClient.publish('sensors/temperature/alerts','{\"alert\" : \"Ok\"}' );
@@ -232,9 +264,7 @@ var TriggerDaemon = function (config) {
                 logger.error("Unable to turn fan off");
 		logger.error(err);
 	    }
-            logger.info("Turning fan off");
-	    //logger.trace(res.code, res.headers, res.buffer.toString());
-        });
+	});
 
 
         http.get('http://lightandlamp:10010/action?deviceId=light&action=off', function (err, res) {
@@ -242,8 +272,6 @@ var TriggerDaemon = function (config) {
                 logger.error("Unable to turn light off");
 		logger.error(err);
 	    }
-
-	    //console.log(res.code, res.headers, res.buffer.toString());
         });
     };
 
@@ -255,8 +283,6 @@ var TriggerDaemon = function (config) {
                 logger.error("Unable to turn light on");
 		logger.error(err);
 	    }
-
-	    //console.log(res.code, res.headers, res.buffer.toString());
         });
     };
 
@@ -269,7 +295,6 @@ var TriggerDaemon = function (config) {
 		logger.error(err);
 	    }
             logger.info("Turning fan off");
-//	    logger.trace(res.code, res.headers, res.buffer.toString());
         });
     };
 
@@ -298,54 +323,6 @@ var TriggerDaemon = function (config) {
     };
 
 };
-
-// // Every time a new message is received, do the following
-// mqttClient.on('message', function (topic, message) {
-//     logger.trace(topic + ":" + message);
-//     var json;
-
-//     // Parse incoming JSON and print an error if JSON is bad
-//     try {
-//         json = JSON.parse(message);
-//     } catch(error) {
-//         logger.error("Malformated JSON received: " + message);
-//     }
-
-//     // Determine which topic Command Dispatcher
-//     if (utils.isSensorTopic(topic)) {
-//         // Received a message on a Sensor MQTT topic
-//         processSensorData(json);
-//     } else if (utils.isRefreshTopic(topic)) {
-//         // Received a message on the Refresh MQTT topic
-//         processRefresh(json);
-//     } else if (utils.isTriggerTopic(topic)) {
-//         // Received a message on the Trigger MQTT topic
-//         processTriggers(json);
-//     }
-
-// });
-
-// function processTriggers(triggers) {
-//     logger.info("Received a message on the Trigger MQTT topic");
-//     logger.info(triggers);
-//     var triggerFuncs = _.map(triggers, function(element) {
-
-//         logger.info("element.condition: " + element.condition);
-//         var op = element.condition.match(/[<>=]+/);
-//         var triggerValue = element.condition.match(/\d+/);
-
-//         if (op == "" || triggerValue == "") {
-//             logger.error("SyntaxError: with op or triggerValue");
-//             return;
-//         }
-//         var fcond = compareFuncBuilder(op, triggerValue);
-//         return _.extend({}, element, {condfunc: fcond});
-//     });
-
-//     triggers_by_sensor_id = _.groupBy(triggerFuncs, "sensor_id");
-//     logger.debug(triggers_by_sensor_id);
-// }
-
 
 module.exports = TriggerDaemon;
 

@@ -1,0 +1,58 @@
+{
+    "apps" : [
+        {
+            "name"             : "Edge Device Daemon",
+            "script"           : "./gateway-backend/edge-device-daemon/server.js",
+            "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+            "error_file"       : "/srv/log/edge-device-daemon.stderr.log",
+            "out_file"         : "/srv/log/edge-device-daemon.stdout.log",
+            "pid_file"         : "/srv/pids/edge-device-daemon.pid",
+            "min_uptime"       : "200s", //200 seconds, defaults to 1000
+            "max_restarts"     : "15", //, defaults to 15
+            "watch"            : false,
+            "ignore_watch"     : ["[\\/\\\\]\\./", "node_modules"],
+            "merge_logs"       : true,
+            "exec_interpreter" : "node",
+            "autorestart"      : true, // enable/disable automatic restart when an app crashes or exits
+            "env": {
+                "NODE_ENV": "production"
+            }
+        },
+        {
+            "name"             : "Trigger Daemon",
+            "script"           : "./gateway-backend/trigger-daemon/server.js",
+            "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+            "error_file"       : "/srv/log/trigger-dameon.stderr.log",
+            "out_file"         : "/srv/log/trigger-daemon.stdout.log",
+            "pid_file"         : "/srv/pids/trigger-daemon.pid",
+            "min_uptime"       : "200s", // 200 seconds, defaults to 1000
+            "max_restarts"     : "15", // defaults to 15
+            "watch"            : false,
+            "ignore_watch"     : ["[\\/\\\\]\\./", "node_modules"],
+            "merge_logs"       : true,
+            "exec_interpreter" : "node",
+            "autorestart"      : true, // enable/disable automatic restart when an app crashes or exits
+            "env": {
+                "NODE_ENV": "production"
+            }
+        },
+        {
+            "name"             : "Administrative REST Services",
+            "script"           : "./gateway-frontend/server.js",
+            "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+            "error_file"       : "/srv/log/admin-rest-service.stderr.log",
+            "out_file"         : "/srv/log/admin-rest-service.stdout.log",
+            "pid_file"         : "/srv/pids/admin-rest-service.pid",
+            "min_uptime"       : "200s", // 200 seconds, defaults to 1000
+            "max_restarts"     : "15", // defaults to 15
+            "watch"            : false,
+            "ignore_watch"     : ["[\\/\\\\]\\./", "node_modules"],
+            "merge_logs"       : true,
+            "exec_interpreter" : "node",
+            "autorestart"      : true, // enable/disable automatic restart when an app crashes or exits
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    ]
+}
