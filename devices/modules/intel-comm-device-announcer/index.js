@@ -26,7 +26,7 @@ announcer.announce();
 announcer.start(function() {
     var cp = require("child_process");
 
-//    cp.exec("cd ../../actuator/relay");
+    //    cp.exec("cd ../../actuator/relay");
     cp.exec("swagger project start");
 
     var exec = require('child_process').exec;

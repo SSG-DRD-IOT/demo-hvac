@@ -1,3 +1,5 @@
+
+
 var mongoose = require('mongoose');
 
 var SensorSchema = require('./schema/sensorSchema.js');
