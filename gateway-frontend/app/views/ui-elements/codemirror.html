@@ -1,3 +1,4 @@
+<script> onsubmit="setTimeout(function () { window.location.reload(); }, 10)" </script>
 <div class="row">
   <div class="col-lg-12">
     <h1 class="page-header">Triggers</h1>
@@ -31,15 +32,8 @@
 
               <div class="form-group">
                 <label>Enter Condition</label>
-                <textarea id="condition" name="code">
-(
-  function(temperature) {
-    return this.temperature_greater_than_27_condition(temperature)
-  }
-)
-                </textarea>
-
                 <input class="form-control" ng-model = "form.conditions" required>
+                <p class="help-block">&lt;condition&gt;&lt;space&gt;&lt;value&gt; Example, >= 50 </p>
               </div>
 
               <div class="form-group">
@@ -50,6 +44,14 @@
               </div>
 
               <div class="form-group">
+                <label>Select Validator Sensor</label>
+                <select class="form-control" ng-model = "form.validator" required>
+                  <option ng-repeat="sensor in sensors" value="{{sensor.id}}">{{sensor.name}}</option>
+		</select>
+              </div>
+
+
+              <div class="form-group">
                 <label>Select Function</label>
                 <select class="form-control" ng-model = "form.control" required>
                   <option value="{&quot;triggerFunc&quot;:&quot;on&quot;}">ON</option>
@@ -57,35 +59,35 @@
                 </select>
               </div>
 
-              <textarea id="trigger" name="code">
-
-              </textarea>
-
 
 	      <div class="form-group">
+                <label>Here is Example:</label>
+		<img src="views/ui-elements/image.png" alt="Example" class="img-responsive">
+              </div>
+
+              <div class="form-group">
                 <button type="submit" class="btn btn-outline btn-primary btn-lg" id="text-center">Save</button>
               </div>
 
 
-<script>
-  var editort = CodeMirror.fromTextArea(document.getElementById("trigger"), {
-    lineNumbers: true,
-    theme: "base16-light",
-    styleActiveLine: true,
-    matchBrackets: true,
-    extraKeys: {
-        "F10": function(cm) {
-          cm.setOption("fullScreen", !cm.getOption("fullScreen"));
-        },
-        "Esc": function(cm) {
-          if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
-        }
-      }
-  });
+              <textarea id="code" name="code">
+function findSequence(goal) {
+  function find(start, history) {
+    if (start == goal)
+      return history;
+    else if (start > goal)
+      return null;
+    else
+      return find(start + 5, "(" + history + " + 5)") ||
+             find(start * 3, "(" + history + " * 3)");
+  }
+  return find(1, "1");
+}</textarea>
 
-  var editorc = CodeMirror.fromTextArea(document.getElementById("condition"), {
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     lineNumbers: true,
-    theme: "base16-light",
+    //theme: "midnight",
     styleActiveLine: true,
     matchBrackets: true,
     extraKeys: {

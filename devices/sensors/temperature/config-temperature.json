@@ -1,10 +1,9 @@
 {
     "name" : "temperature",
     "description" : "A temperature sensor.",
-    "verification-sensor" : "false",
     "type" : "sensor",
     "io": "aio",
-    "frequency" : "1",
+    "maxfrequency" : "1",
     "pin" : "0",
     "transport" : "mqtt"
     "gateway" : {

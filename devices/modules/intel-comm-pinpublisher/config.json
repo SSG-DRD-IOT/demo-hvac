@@ -1,7 +1,6 @@
 {
     "name" : "temperature",
     "description" : "A temperature sensor.",
-    "verification-sensor" : "false",
     "type" : "sensor",
     "io": "aio",
     "frequency" : "1",
