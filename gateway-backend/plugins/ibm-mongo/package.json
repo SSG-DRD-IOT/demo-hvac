@@ -1,5 +1,5 @@
 {
-  "name": "intel-commerical-iot-ibm-bluemix-storage",
+  "name": "intel-commercial-iot-ibm-bluemix-storage",
   "version": "1.0.0",
   "description": "A plugin for the Intel Edison Iot Cloud tools to enable MongoDB connection to IBM BlueMix",
   "main": "index.js",
@@ -14,6 +14,8 @@
     "mongo"
   ],
   "dependencies": {
-    "mongodb": "latest"
+    "mongodb": "latest",
+    "lodash": "latest",
+    "winston": "latest"
   }
 }

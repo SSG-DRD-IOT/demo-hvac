@@ -19,12 +19,6 @@ count++;
 
 //console.log(result);
 
-data = {
-  sensor_id: "5678",
-  value : 80,
-  timestamp : Date.now()
-}
-
 ibm.write(result);
 
 var date = new Date();

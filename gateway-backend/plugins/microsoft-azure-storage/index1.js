@@ -22,13 +22,13 @@ function azure(json) {
   }
 
   azure.prototype.connect = function(callback){
-    
+
     //  logger.info('Azure: Entered connect function');
     azureTable.setDefaultClient({
       accountUrl: 'http://' + self.config.accountName + '.table.core.windows.net/',
       accountName: self.config.accountName,
       accountKey: self.config.accessKey,
-      timeout: 10000
+      // timeout: 10000
     });
 
     self.client = azureTable.getDefaultClient();
